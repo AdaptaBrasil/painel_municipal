@@ -3,6 +3,8 @@ import pandas as pd
 import pydeck as pdk
 import json
 from database.connection import get_connection
+from pathlib import Path
+import base64
 
 # Configuração da página
 st.set_page_config(
@@ -12,20 +14,24 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS adicional
+# CSS personalizado (incluindo ajuste de padding)
 st.markdown("""
 <style>
+    .main > .block-container {
+        padding-top: 0rem !important;
+        padding-bottom: 0rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
     [data-testid="collapsedControl"] {
         display: none;
     }
     .stApp > header {
         display: none;
     }
-    /* Aumenta o espaçamento horizontal entre as duas colunas */
     div[data-testid="stHorizontalBlock"] {
         column-gap: 100px !important;
     }
-    /* Tooltip customizado */
     .tooltip-cell {
         position: relative;
         cursor: pointer;
@@ -66,17 +72,42 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("Painel Municipal")
+# -------------------------------------------------------------------
+# Cabeçalho customizado com tabela HTML
+# -------------------------------------------------------------------
+logo_path = Path(__file__).parent / "assets" / "AdaptaLogo.png"
+
+def image_to_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+if logo_path.exists():
+    logo_base64 = image_to_base64(logo_path)
+    st.markdown(f"""
+    <div style="margin-top: -1rem; margin-bottom: 0.5rem;">
+        <table style="border-collapse: collapse; border: none;">
+            <tr>
+                <td style="border: none; padding: 0; vertical-align: middle;">
+                    <img src="data:image/png;base64,{logo_base64}" width="180" style="display: block;">
+                </td>
+                <td style="border: none; padding-left: 10px; vertical-align: middle;">
+                    <h1 style="margin: 0; font-size: 2.5rem; line-height: 1.2;">Painel Municipal</h1>
+                </td>
+            </tr>
+        </table>
+    </div>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("<h1 style='margin-top: -1rem;'>Painel Municipal</h1>", unsafe_allow_html=True)
+
+# Linha separadora (opcional)
 st.markdown("---")
 
 # -------------------------------------------------------------------
-# Funções de carregamento de dados com cache
+# Funções de carregamento de dados com cache (mantidas iguais)
 # -------------------------------------------------------------------
 @st.cache_data(ttl=600)
 def load_municipios():
-    """
-    Carrega a lista de municípios: id e nome formatado como "nome - UF"
-    """
     query = """
     SELECT id, CONCAT(name, ' - ', state) AS display
     FROM adaptabrasil.county
@@ -93,11 +124,6 @@ def load_municipios():
 
 @st.cache_data(ttl=600)
 def load_city_geojson(cidade_id):
-    """
-    Carrega a geometria da cidade e seu centroide, retorna:
-    - lista com uma feature GeoJSON
-    - latitude e longitude do centroide
-    """
     query = f"""
     SELECT 
         id, 
@@ -135,11 +161,6 @@ def load_city_geojson(cidade_id):
 
 @st.cache_data(ttl=600)
 def load_county_data_view(cidade_id):
-    """
-    Carrega os dados da view materializada para o município selecionado.
-    Retorna DataFrame com sep, imageurl, color, value.
-    Ordenado do maior valor para o menor (value DESC).
-    """
     query = f"""
     SELECT sep, imageurl, color, value
     FROM adaptabrasil.mv_adapta_cidades
@@ -212,7 +233,6 @@ with col_esquerda:
                 bearing=0
             )
 
-            # Estilo de mapa público (não requer token)
             deck = pdk.Deck(
                 layers=[geojson_layer],
                 initial_view_state=view_state,
@@ -238,9 +258,7 @@ with col_direita:
             """
             for _, row in df_dados.iterrows():
                 html += "<tr style='border: 0;'>"
-                # Ícone com padding direito e classe tooltip-cell
                 html += f"<td style='padding: 5px 15px 5px 5px; text-align: center; border: none;' class='tooltip-cell' data-tooltip='{row['sep']}'><img src='{row['imageurl']}' width='32' height='32'></td>"
-                # Valor com padding interno e classe tooltip-cell
                 html += f"<td style='padding: 5px 5px 5px 10px; text-align: left; font-family: \"Courier New\", monospace; font-weight: bold; background-color: {row['color']}; border-radius: 4px; line-height: 32px; border: none;' class='tooltip-cell' data-tooltip='{row['sep']}'>{row['value']:.3f}</td>"
                 html += "</tr>"
             html += """
