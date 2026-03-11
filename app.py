@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS personalizado (incluindo ajuste de padding)
+# CSS personalizado
 st.markdown("""
 <style>
     .main > .block-container {
@@ -73,7 +73,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # -------------------------------------------------------------------
-# Cabeçalho customizado com tabela HTML
+# Cabeçalho customizado (sem linha separadora)
 # -------------------------------------------------------------------
 logo_path = Path(__file__).parent / "assets" / "AdaptaLogo.png"
 
@@ -100,14 +100,15 @@ if logo_path.exists():
 else:
     st.markdown("<h1 style='margin-top: -1rem;'>Painel Municipal</h1>", unsafe_allow_html=True)
 
-# Linha separadora (opcional)
-st.markdown("---")
-
 # -------------------------------------------------------------------
-# Funções de carregamento de dados com cache (mantidas iguais)
+# Funções de carregamento de dados com cache
 # -------------------------------------------------------------------
 @st.cache_data(ttl=600)
 def load_municipios():
+    """
+    Carrega a lista de municípios: id e nome formatado como "nome - UF"
+    (sem filtro de ano)
+    """
     query = """
     SELECT id, CONCAT(name, ' - ', state) AS display
     FROM adaptabrasil.county
@@ -123,7 +124,30 @@ def load_municipios():
         return pd.DataFrame()
 
 @st.cache_data(ttl=600)
+def load_anos_para_cidade(cidade_id):
+    """
+    Carrega a lista de anos disponíveis para a cidade selecionada.
+    """
+    query = f"""
+    SELECT DISTINCT "year"
+    FROM adaptabrasil.mv_adapta_cidades
+    WHERE county_id = {cidade_id}
+    ORDER BY "year";
+    """
+    try:
+        conn = get_connection()
+        df = pd.read_sql(query, conn)
+        conn.close()
+        return df["year"].tolist()
+    except Exception as e:
+        st.error(f"Erro ao carregar anos para a cidade: {e}")
+        return []
+
+@st.cache_data(ttl=600)
 def load_city_geojson(cidade_id):
+    """
+    Carrega a geometria da cidade e seu centroide.
+    """
     query = f"""
     SELECT 
         id, 
@@ -160,11 +184,14 @@ def load_city_geojson(cidade_id):
         return [], None, None
 
 @st.cache_data(ttl=600)
-def load_county_data_view(cidade_id):
+def load_county_data_view(cidade_id, ano):
+    """
+    Carrega os dados da view materializada para o município e ano selecionados.
+    """
     query = f"""
     SELECT sep, imageurl, color, value
     FROM adaptabrasil.mv_adapta_cidades
-    WHERE county_id = {cidade_id}
+    WHERE county_id = {cidade_id} AND "year" = '{ano}'
     ORDER BY value DESC;
     """
     try:
@@ -177,32 +204,59 @@ def load_county_data_view(cidade_id):
         return pd.DataFrame()
 
 # -------------------------------------------------------------------
-# Carregar lista de municípios
+# Carregar lista de municípios (inicial)
 # -------------------------------------------------------------------
 with st.spinner("Carregando municípios..."):
     df_municipios = load_municipios()
 
 # -------------------------------------------------------------------
-# Layout em duas colunas
+# Layout em duas colunas (filtros ficam na coluna esquerda, acima do mapa)
 # -------------------------------------------------------------------
 col_esquerda, col_direita = st.columns([1, 1], gap="large")
 
 with col_esquerda:
+    # Seleção da cidade (primeiro)
     if not df_municipios.empty:
-        opcoes = df_municipios['display'].tolist()
+        opcoes_cidades = df_municipios['display'].tolist()
         selected_display = st.selectbox(
             label="Selecione uma cidade",
-            options=opcoes,
+            options=opcoes_cidades,
             index=None,
             placeholder="Digite o nome da cidade",
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key="cidade_select"
         )
     else:
         st.warning("Lista de municípios não disponível.")
         selected_display = None
 
+    # Se uma cidade foi selecionada, carregar os anos correspondentes
     if selected_display:
         cidade_id = df_municipios[df_municipios['display'] == selected_display]['id'].values[0]
+        with st.spinner("Carregando anos disponíveis..."):
+            anos_disponiveis = load_anos_para_cidade(cidade_id)
+
+        # Seleção do ano (agora dependente da cidade)
+        if anos_disponiveis:
+            default_index = 0
+            if " Presente" in anos_disponiveis:
+                default_index = anos_disponiveis.index(" Presente")
+            selected_ano = st.selectbox(
+                label="Selecione o ano",
+                options=anos_disponiveis,
+                index=default_index,
+                label_visibility="collapsed",
+                placeholder="Escolha um ano",
+                key="ano_select"
+            )
+        else:
+            st.warning("Nenhum ano disponível para esta cidade.")
+            selected_ano = None
+    else:
+        selected_ano = None
+
+    # Mapa da cidade (se houver cidade e ano selecionados)
+    if selected_display and selected_ano:
         with st.spinner("Carregando mapa da cidade..."):
             cidade_features, lat, lon = load_city_geojson(cidade_id)
 
@@ -243,15 +297,16 @@ with col_esquerda:
             st.pydeck_chart(deck, width='stretch', height=400)
         else:
             st.warning("Geometria da cidade não disponível.")
+    elif selected_display:
+        st.info("Selecione um ano para visualizar o mapa e os dados.")
 
 with col_direita:
-    if selected_display:
+    if selected_display and selected_ano:
         cidade_id = df_municipios[df_municipios['display'] == selected_display]['id'].values[0]
         with st.spinner("Carregando indicadores..."):
-            df_dados = load_county_data_view(cidade_id)
+            df_dados = load_county_data_view(cidade_id, selected_ano)
 
         if not df_dados.empty:
-            # Tabela com padding-bottom extra para tooltips
             html = """
             <div style='max-height: 450px; overflow-y: auto; font-family: sans-serif; margin-top: 20px; padding-bottom: 50px;'>
                 <table style='border-collapse: collapse; border: 0; margin-right: auto;'>
@@ -267,10 +322,10 @@ with col_direita:
             """
             st.markdown(html, unsafe_allow_html=True)
         else:
-            st.info("Nenhum dado disponível para este município.")
+            st.info("Nenhum dado disponível para este município no ano selecionado.")
     else:
-        st.info("Selecione um município para visualizar os indicadores.")
+        st.info("Selecione um município e um ano para visualizar os indicadores.")
 
-# Rodapé
+# Rodapé (sem linha extra, apenas a caption)
 st.markdown("---")
 st.caption("Fonte: adaptabrasil")
