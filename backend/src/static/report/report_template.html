@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plano de Adaptação - {{ county_name }}</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+            @bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+                font-family: sans-serif;
+                font-size: 9pt;
+            }
+        }
+        body { font-family: sans-serif; color: #333; }
+        .page-break { page-break-before: always; }
+        h1 { color: #2c3e50; text-align: center; }
+        h2 { color: #e74c3c; border-bottom: 2px solid #e74c3c; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .badge { padding: 4px 8px; border-radius: 4px; color: white; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="page1">
+        <h1>PAINEL ADAPTACIDADES</h1>
+        <h2>Instruções e resumo do documento</h2>
+        <p>Olhar para dentro do município (<b>{{ county_name }} - {{ state }}</b>), não comparar um município com o outro nesse momento.</p>
+        <p>Textos que irão direcionar como fazer a leitura das informações que contêm nesse documento.</p>
+        <p>ksnfouwe bfgiwuegfhwuncjdancl\adfnoinclkefc cfr</p>
+        <p>ksnfouwe bfgiwuegfhwuncjdancl\adfnoinclkefc cfr</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div id="page2">
+        <h1>PAINEL ADAPTACIDADES</h1>
+        <h2>1. Resumo dos Riscos</h2>
+        <p>Sempre antes da figura, adicionar as informações textuais relacionadas com os índices e indicadores e como interpretar essas informações.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Setor</th>
+                    <th>Microrregião</th>
+                    <th>Ano</th>
+                    <th>Valor</th>
+                    <th>Risco</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item.sep }}</td>
+                    <td>{{ item.microregion }}</td>
+                    <td>{{ item.year }}</td>
+                    <td>{{ item.value }}</td>
+                    <td>
+                        <span class="badge" style="background-color: {{ item.color }};">
+                            {{ item.label }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div id="page3">
+        <h2>5. Dimensões do Risco</h2>
+        <p>Desdobramento da composição do risco dos setores do AdaptaBrasil.</p>
+        <p>Sempre antes da figura, adicionar as informações textuais relacionadas com os índices e indicadores e como interpretar essas informações.</p>
+        <p>Adicionar aqui a capacidade adaptativa e sensibilidade, como decomposição das componentes adaptativas.</p>
+    </div>
+
+</body>
+</html>
