@@ -1,7 +1,10 @@
 # backend/src/application/dependencies.py
 from ..infrastructure.database import PostgresDatabase
 from ..infrastructure.repository import CountyRepository
-from ..infrastructure.pdf_service import WeasyPrintPdfService
+from ..infrastructure.pdf_service import WeasyPrintPdfService, WkHtmlToPdfService
+from ..domain.interfaces import PdfServiceInterface
+from ..core.config import settings
+from ..core.constants import PdfEngineType, ErrorKeys
 
 def get_database() -> PostgresDatabase:
     return PostgresDatabase()
@@ -10,5 +13,15 @@ def get_county_repository() -> CountyRepository:
     db = get_database()
     return CountyRepository(db)
 
-def get_pdf_service() -> WeasyPrintPdfService:
-    return WeasyPrintPdfService()
+def get_pdf_service() -> PdfServiceInterface:
+    """
+    Factory method to decide which PDF engine to use based on configuration.
+    Follows the Strategy Pattern.
+    """
+    if settings.pdf_engine == PdfEngineType.WKHTMLTOPDF:
+        return WkHtmlToPdfService()
+    
+    if settings.pdf_engine == PdfEngineType.WEASYPRINT:
+        return WeasyPrintPdfService()
+        
+    raise ValueError(ErrorKeys.INVALID_PDF_ENGINE.value)

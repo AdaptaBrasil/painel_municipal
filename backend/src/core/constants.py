@@ -1,6 +1,10 @@
 # backend/src/core/constants.py
 from enum import Enum
 
+class PdfEngineType(str, Enum):
+    WEASYPRINT = "weasyprint"
+    WKHTMLTOPDF = "wkhtmltopdf"
+    
 class ErrorKeys(str, Enum):
     DB_CONNECTION_FAILED = "ERR_DB_CONNECTION_FAILED"
     COUNTY_NOT_FOUND = "ERR_COUNTY_NOT_FOUND"

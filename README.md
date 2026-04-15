@@ -25,7 +25,7 @@ The **Municipal Dashboard** is a robust web application developed based on **Cle
 
 ## ✨ Features
 - **Interactive Data Visualization**: Intuitive interface for exploring socioclimatic indicators and municipal data.
-- **Automated Reports (PDF Export)**: Native and parameterized generation of adaptation plan PDFs using HTML templates and WeasyPrint services.
+- **Automated Reports (PDF Export)**: Native and parameterized generation of adaptation plan PDFs using HTML templates, with support for both WeasyPrint and Wkhtmltopdf services.
 - **Fast RESTful API**: High-performance backend provided by the FastAPI framework and a relational database.
 
 ## 🏗 Project Architecture
@@ -36,7 +36,7 @@ The project is strictly modularized into two main parts:
 ## 🛠 Technologies Used
 - **Main Language**: Python 3.12+ 🐍
 - **API Framework**: FastAPI
-- **PDF Processing**: WeasyPrint / Jinja2 (for template rendering)
+- **PDF Processing**: WeasyPrint or Wkhtmltopdf / Jinja2 (for template rendering)
 - **Persistence**: PostgreSQL / SQLAlchemy
 - **Graphical Interface**: HTML5, CSS3, Vanilla JavaScript ⚡️
 - **Dependency Orchestration**: Poetry
@@ -46,9 +46,17 @@ Ensure you have the following tools installed and configured in your development
 - **Python 3.12** or higher
 - **[Poetry](https://python-poetry.org/)** for package management and backend environment isolation
 - **PostgreSQL** database running locally (or via a container)
-- **WeasyPrint** system dependencies for PDF generation:
-  - **GNU/Linux (Ubuntu/Debian):** `sudo apt install weasyprint`
-  - **Windows:** Download the installer from the [official website](https://weasyprint.org/download/) or via Chocolatey: `choco install -y weasyprint`
+- **PDF Generation Engine dependencies** (Install one depending on the `PDF_ENGINE` you choose to use):
+  - **WeasyPrint**:
+    - **GNU/Linux (Ubuntu/Debian):** `sudo apt install weasyprint`
+    - **Windows:** Download the installer from the [official website](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation). To use WeasyPrint on Windows, the easiest way is to use the [executable ](https://github.com/Kozea/WeasyPrint/releases) of the latest release.
+
+
+  - **Wkhtmltopdf**:
+    - **GNU/Linux (Ubuntu/Debian):** `sudo apt install python3-dev wkhtmltopdf`
+    - **Windows:** Download the installer from the [official website](https://wkhtmltopdf.org/downloads.html) or via Chocolatey: `choco install -y wkhtmltopdf`
+  
+  - **Recommended**: Use wkhtmltopdf for better performance and compatibility, especially on Windows. Use WeasyPrint if you prefer a pure Python solution or have specific rendering needs that it handles better, especially on Linux.
 
 ## 🚀 Installation & Setup
 
@@ -71,6 +79,11 @@ Ensure you have the following tools installed and configured in your development
    ```
 
 3. **Environment Variables:**
+   You should also configure the `PDF_ENGINE` variable in your `.env` file to select the PDF generation tool (`weasyprint` or `wkhtmltopdf`):
+   ```dotenv
+   # PDF generation engine to use: 'wkhtmltopdf' or 'weasyprint'
+   PDF_ENGINE="weasyprint"
+   ```
    In the project root (or inside the backend folder), create a file based on the existing template to set up your database credentials and other sensitive parameters.
    ```bash
    cp .env.example .env
