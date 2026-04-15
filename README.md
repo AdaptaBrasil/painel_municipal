@@ -56,7 +56,7 @@ Ensure you have the following tools installed and configured in your development
     - **GNU/Linux (Ubuntu/Debian):** `sudo apt install python3-dev wkhtmltopdf`
     - **Windows:** Download the installer from the [official website](https://wkhtmltopdf.org/downloads.html) or via Chocolatey: `choco install -y wkhtmltopdf`
   
-  - **Recommended**: Use wkhtmltopdf for better performance and compatibility, especially on Windows. Use WeasyPrint if you prefer a pure Python solution or have specific rendering needs that it handles better, especially on Linux.
+  - **Recommended**: Use `wkhtmltopdf` for better performance and compatibility, especially on Windows. Use `WeasyPrint` if you prefer a pure Python solution or have specific rendering needs that it handles better, especially on Linux.
 
 ## 🚀 Installation & Setup
 
@@ -82,7 +82,7 @@ Ensure you have the following tools installed and configured in your development
    You should also configure the `PDF_ENGINE` variable in your `.env` file to select the PDF generation tool (`weasyprint` or `wkhtmltopdf`):
    ```dotenv
    # PDF generation engine to use: 'wkhtmltopdf' or 'weasyprint'
-   PDF_ENGINE="weasyprint"
+   PDF_ENGINE="wkhtmltopdf"
    ```
    In the project root (or inside the backend folder), create a file based on the existing template to set up your database credentials and other sensitive parameters.
    ```bash
