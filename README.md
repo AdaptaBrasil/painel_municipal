@@ -1,9 +1,9 @@
-# Municipal Dashboard - AdaptaBrasil
+# Painel Municipal - AdaptaBrasil
 
-The **Municipal Dashboard** is a robust web application developed based on **Clean Architecture** principles. The main objective of this tool is to enable detailed visualization and export of municipal adaptation plans, providing direct support for decision-making regarding public policies and climate resilience.
+The **Painel Municipal** is a robust web application developed based on **Clean Architecture** principles. The main objective of this tool is to enable detailed visualization and export of municipal adaptation plans, providing direct support for decision-making regarding public policies and climate resilience.
 
 ## 📋 Table of Contents
-- [Municipal Dashboard - AdaptaBrasil](#municipal-dashboard---adaptabrasil)
+- [Painel Municipal - AdaptaBrasil](#painel-municipal---adaptabrasil)
   - [📋 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
   - [🏗 Project Architecture](#-project-architecture)
