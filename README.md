@@ -69,13 +69,21 @@ Ensure you have the following tools installed and configured in your development
 2. **Virtual Environment:**
    Create and activate a local virtual environment to isolate the project's dependencies:
    ```bash
-   # Create the virtual environment
-   python -m venv .venv
+      # 1.2 Create and activate a virtual environment (optional but recommended)
+      python -m venv .venv
 
-   # Activate on Linux/macOS
-   source .venv/bin/activate
-   # OR activate on Windows
-   .venv\Scripts\activate
+      # 1.3 Activate the virtual environment
+      source .venv/bin/activate # On Linux/MacOS
+      .venv\Scripts\activate # On Windows
+
+      # 2. Install Poetry (if needed)
+      pip install poetry
+
+      # 3. Install dependencies
+      poetry install
+
+      # 4. Activate the virtual environment
+      eval $(poetry env activate)
    ```
 
 3. **Environment Variables:**
