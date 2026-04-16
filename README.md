@@ -66,41 +66,57 @@ Ensure you have the following tools installed and configured in your development
    cd painel_municipal
    ```
 
-2. **Virtual Environment:**
+2. **Virtual Environment (Only for Backend):**
    Create and activate a local virtual environment to isolate the project's dependencies:
    ```bash
-      # 1.2 Create and activate a virtual environment (optional but recommended)
+      # 1. Using Python's built-in venv module:
+      ## 1.1 Create and activate a virtual environment (optional but recommended)
+      cd backend
       python -m venv .venv
 
-      # 1.3 Activate the virtual environment
+      ## 1.2 Activate the virtual environment
       source .venv/bin/activate # On Linux/MacOS
       .venv\Scripts\activate # On Windows
-
-      # 2. Install Poetry (if needed)
-      pip install poetry
-
-      # 3. Install dependencies
-      poetry install
-
-      # 4. Activate the virtual environment
+      
+      # OR
+      
+      # 2. Using Poetry's built-in environment management:
+      ## 2.1 Create and activate a Poetry-managed virtual environment
+      cd backend
       eval $(poetry env activate)
+
+      # 3. Install Poetry (if needed)
+      pip install poetry
+      
    ```
 
 3. **Environment Variables:**
-   You should also configure the `PDF_ENGINE` variable in your `.env` file to select the PDF generation tool (`weasyprint` or `wkhtmltopdf`):
-   ```dotenv
-   # PDF generation engine to use: 'wkhtmltopdf' or 'weasyprint'
-   PDF_ENGINE="wkhtmltopdf"
-   ```
-   In the project root (or inside the backend folder), create a file based on the existing template to set up your database credentials and other sensitive parameters.
-   ```bash
-   cp .env.example .env
-   ```
+      In the project root (or inside the backend folder), create a file based on the existing template to set up your database credentials and other sensitive parameters.
+        ```bash
+        cp .env.example .env
+        ```
+
+      You should also configure the `PDF_ENGINE` variable in your `.env` file to select the PDF generation tool (`weasyprint` or `wkhtmltopdf`):
+      ```dotenv
+            # PDF generation engine to use: 'wkhtmltopdf' or 'weasyprint'
+            PDF_ENGINE="wkhtmltopdf"
+      ```
+      
+      Configure the PostgreSQL database connection credentials by filling in the `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, and `DB_PASSWORD` variables in the `.env` file created from the template.
+      ```dotenv
+            # PostgreSQL database connection settings
+            DB_HOST="localhost"
+            DB_PORT=5432
+            DB_NAME="database_name"
+            DB_USER="database_user"
+            DB_PASSWORD="your_secure_password"
+      ```
 
 4. **Backend Installation:**
    Navigate to the backend folder and instruct Poetry to install all Python dependencies. With the virtual environment activated, Poetry will use it automatically.
    ```bash
    cd backend
+   eval $(poetry env activate)
    poetry install
    ```
 
@@ -110,7 +126,7 @@ Ensure you have the following tools installed and configured in your development
 Activate the project's virtual environment and invoke the application entry point directly (Uvicorn):
 ```bash
 cd backend
-poetry shell
+eval $(poetry env activate) # or source .venv/bin/activate if you created a venv manually
 uvicorn src.main:app --reload
 ```
 This will launch the API, making it accessible at `http://localhost:8000`. The interactive REST route documentation (Swagger UI) can be tested at `http://localhost:8000/docs`.
