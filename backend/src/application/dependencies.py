@@ -18,6 +18,7 @@ def get_pdf_service() -> PdfServiceInterface:
     Factory method to decide which PDF engine to use based on configuration.
     Follows the Strategy Pattern.
     """
+    print(f"Selected PDF Engine: {settings.pdf_engine}")
     if settings.pdf_engine == PdfEngineType.WKHTMLTOPDF:
         return WkHtmlToPdfService()
     

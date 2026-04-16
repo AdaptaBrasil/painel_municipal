@@ -1,9 +1,9 @@
-# Municipal Dashboard - AdaptaBrasil
+# Painel Municipal - AdaptaBrasil
 
-The **Municipal Dashboard** is a robust web application developed based on **Clean Architecture** principles. The main objective of this tool is to enable detailed visualization and export of municipal adaptation plans, providing direct support for decision-making regarding public policies and climate resilience.
+The **Painel Municipal** is a robust web application developed based on **Clean Architecture** principles. The main objective of this tool is to enable detailed visualization and export of municipal adaptation plans, providing direct support for decision-making regarding public policies and climate resilience.
 
 ## 📋 Table of Contents
-- [Municipal Dashboard - AdaptaBrasil](#municipal-dashboard---adaptabrasil)
+- [Painel Municipal - AdaptaBrasil](#painel-municipal---adaptabrasil)
   - [📋 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
   - [🏗 Project Architecture](#-project-architecture)
@@ -69,13 +69,21 @@ Ensure you have the following tools installed and configured in your development
 2. **Virtual Environment:**
    Create and activate a local virtual environment to isolate the project's dependencies:
    ```bash
-   # Create the virtual environment
-   python -m venv .venv
+      # 1.2 Create and activate a virtual environment (optional but recommended)
+      python -m venv .venv
 
-   # Activate on Linux/macOS
-   source .venv/bin/activate
-   # OR activate on Windows
-   .venv\Scripts\activate
+      # 1.3 Activate the virtual environment
+      source .venv/bin/activate # On Linux/MacOS
+      .venv\Scripts\activate # On Windows
+
+      # 2. Install Poetry (if needed)
+      pip install poetry
+
+      # 3. Install dependencies
+      poetry install
+
+      # 4. Activate the virtual environment
+      eval $(poetry env activate)
    ```
 
 3. **Environment Variables:**

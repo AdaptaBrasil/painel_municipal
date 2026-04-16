@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     db_password: str
     
     # Nova variável para trocar o motor de PDF via .env
-    pdf_engine: PdfEngineType = PdfEngineType.WEASYPRINT
+    pdf_engine: PdfEngineType = PdfEngineType.WKHTMLTOPDF
     
     template_dir: Path = BACKEND_DIR / "src" / "static" / "report"
 
