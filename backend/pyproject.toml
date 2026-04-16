@@ -1,18 +1,25 @@
 [project]
 name = "backend"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+description = "Painel Municipal Backend API"
 authors = [
-    {name = "Mário Carvalho",email = "mariodearaujocarvalho@gmail.com"}
+    {name = "Mário Carvalho", email = "mariodearaujocarvalho@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "pdfkit (>=1.0.0,<2.0.0)"
+    "pdfkit (>=1.0.0,<2.0.0)",
+    "fastapi",
+    "uvicorn",
+    "asyncpg",
+    "pydantic",
+    "pydantic-settings",
+    "weasyprint",
+    "jinja2"
 ]
 
 [tool.poetry]
-packages = [{include = "backend", from = "src"}]
+package-mode = false
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
