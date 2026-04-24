@@ -4,7 +4,7 @@ FROM python:3.12-slim-bookworm
 # Set environment variables for non-interactive installs and unbuffered Python output
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    POETRY_VERSION=1.8.2 \
+    POETRY_VERSION=2.3.4 \
     POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_CREATE=false
 
