@@ -10,7 +10,7 @@ services:
       POSTGRES_DB: ${DB_NAME}
     ports:
       # Explicitly bind to 127.0.0.1 to prevent external internet access to the DB port
-      - "127.0.0.1:5432:5432"
+      - "127.0.0.1:5531:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -37,7 +37,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "80:80"
+      - "5530:80"
 
 volumes:
   postgres_data:
