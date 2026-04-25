@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch counties
     try {
         const response = await fetch(`${API_BASE_URL}/counties`);
-        if (!response.ok) throw new Error('Failed to fetch counties');
+        if (!response.ok) throw new Error('Falha ao carregar os municípios');
         
         const counties = await response.json();
         
         // Populate select
-        selectElement.innerHTML = '<option value="" disabled selected>Select a County...</option>';
+        selectElement.innerHTML = '<option value="" disabled selected>Selecione um Município...</option>';
         counties.forEach(county => {
             const option = document.createElement('option');
             option.value = county.id;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     } catch (error) {
         console.error(error);
-        selectElement.innerHTML = '<option value="" disabled>Error loading data</option>';
+        selectElement.innerHTML = '<option value="" disabled>Erro ao carregar os municípios</option>';
     }
 
     // Enable button when a county is selected
