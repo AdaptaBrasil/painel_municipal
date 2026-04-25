@@ -12,10 +12,16 @@ class CountyRepositoryInterface(ABC):
     @abstractmethod
     async def get_all_counties(self) -> List[County]:
         pass
+    
+    @abstractmethod
+    async def get_county_by_id(self, county_id: int) -> County:
+        pass
 
     @abstractmethod
     async def get_data_by_county(self, county_id: int) -> List[AdaptationData]:
         pass
+    
+    
 
 class PdfServiceInterface(ABC):
     @abstractmethod

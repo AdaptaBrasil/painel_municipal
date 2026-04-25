@@ -1,5 +1,10 @@
 # backend/src/application/router.py
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException, Response, Request
+from typing import List
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+
+
 from typing import List
 from .dependencies import get_county_repository, get_pdf_service
 from ..domain.interfaces import CountyRepositoryInterface, PdfServiceInterface
@@ -7,6 +12,13 @@ from ..domain.entities import County
 from ..core.constants import ErrorKeys
 
 router = APIRouter(prefix="/api/v1")
+
+# Initialize rate limiter with remote address as key function
+limiter = Limiter(key_func=get_remote_address)
+
+@router.get("/health")
+async def health_check():
+    return {"status": "ok", "message": "Service is running"}
 
 @router.get("/counties", response_model=List[County])
 async def list_counties(
@@ -17,13 +29,17 @@ async def list_counties(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+# Rate Limit Decorator: Max 2 PDFs per minute per IP!
 @router.get("/reports/pdf/{county_id}")
+@limiter.limit("2/minute")
 async def download_report_pdf(
+    request: Request,
     county_id: int,
     repo: CountyRepositoryInterface = Depends(get_county_repository),
     pdf_service: PdfServiceInterface = Depends(get_pdf_service)
 ):
     adaptation_data = await repo.get_data_by_county(county_id)
+    county_data = await repo.get_county_by_id(county_id)
     
     # Guard clause: No data found
     if not adaptation_data:
@@ -33,6 +49,8 @@ async def download_report_pdf(
     context = {
         "county_name": first_record.county,
         "state": first_record.state,
+        "region": first_record.region,
+        "population": county_data.population if hasattr(county_data, 'population') else "N/A",
         "data": adaptation_data
     }
 

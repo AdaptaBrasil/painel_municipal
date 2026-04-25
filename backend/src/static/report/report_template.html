@@ -1,82 +1,327 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Plano de Adaptação - {{ county_name }}</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 2cm;
-            @bottom-right {
-                content: "Page " counter(page) " of " counter(pages);
-                font-family: sans-serif;
-                font-size: 9pt;
-            }
-        }
-        body { font-family: sans-serif; color: #333; }
-        .page-break { page-break-before: always; }
-        h1 { color: #2c3e50; text-align: center; }
-        h2 { color: #e74c3c; border-bottom: 2px solid #e74c3c; padding-bottom: 5px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .badge { padding: 4px 8px; border-radius: 4px; color: white; font-weight: bold; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Território - Fravria</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .mockup-frame {
+      max-width: 340px;
+      min-height: 100vh;
+      padding: 0;
+      background-color: #f0f2f5;
+      overflow: hidden;
+    }
+
+    /* ── Placeholder: topo ── */
+    .placeholder-header {
+      background: #c2c5cc;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+    }
+
+    .ph-pill {
+      background: #d9dce2;
+      border-radius: 20px;
+      height: 20px;
+      width: 96px;
+    }
+
+    .ph-header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ph-circle {
+      background: #d9dce2;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .ph-rect-sm {
+      background: #d9dce2;
+      border-radius: 4px;
+      height: 20px;
+      width: 64px;
+    }
+
+    /* ── Placeholder: linhas de texto ── */
+    .placeholder-lines {
+      padding: 14px 16px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ph-line {
+      background: #c8ccd3;
+      border-radius: 4px;
+      height: 13px;
+    }
+
+    .ph-line-full  { width: 100%; }
+    .ph-line-85    { width: 85%; }
+    .ph-line-70    { width: 70%; }
+
+    /* ── Card principal ── */
+    .territorio-card {
+      border: none !important;
+      border-radius: 14px !important;
+      margin: 0 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.10) !important;
+    }
+
+    .territorio-card .card-body {
+      padding: 22px 20px 20px;
+    }
+
+    /* Badge número */
+    .badge-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #0e5a2e;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    /* Título */
+    .title-territorio {
+      color: #0e5a2e;
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-bottom: 0;
+    }
+
+    /* Ícone mapa */
+    .map-icon-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 70px;
+    }
+
+    .map-base {
+      width: 68px;
+      height: 58px;
+      border-radius: 6px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+      background: #a0b87a;
+    }
+
+    .map-cell { display: block; }
+    .map-cell-tl { background: #6da04b; }
+    .map-cell-tr { background: #8ab55e; }
+    .map-cell-bl { background: #7baf52; }
+    .map-cell-br { background: #a8c870; }
+
+    .map-pin {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 26px;
+      color: #d13a3a;
+      line-height: 1;
+      text-shadow: 0 1px 3px rgba(0,0,0,.25);
+    }
+
+    /* Subtítulo */
+    .observar-title {
+      font-weight: 700;
+      font-size: .97rem;
+      color: #1a1a1a;
+    }
+
+    /* Lista */
+    .observar-list {
+      text-align: left;
+      padding-left: 1.4rem;
+      margin-bottom: 0;
+      font-size: .88rem;
+      color: #333;
+    }
+
+    .observar-list li {
+      margin-bottom: 4px;
+    }
+
+    /* ── Bloco azul claro ── */
+    .example-box {
+      background: #d8ecf9;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 14px;
+      text-align: left;
+    }
+
+    .example-title {
+      color: #0e5a2e;
+      font-size: .91rem;
+      margin-bottom: 10px;
+    }
+
+    .example-title strong {
+      font-weight: 700;
+    }
+
+    .field-label {
+      font-weight: 700;
+      font-size: .88rem;
+      color: #1a1a1a;
+      white-space: nowrap;
+      min-width: 80px;
+    }
+
+    .field-input {
+      flex: 1;
+      background: #eaf3fa;
+      border: 1px solid #c5daea;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: .86rem;
+      color: #333;
+      width: 100%;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+
+    .field-input:focus {
+      border-color: #7bbcd5;
+      box-shadow: 0 0 0 3px rgba(123,188,213,.25);
+      background: #fff;
+    }
+
+    /* ── Placeholder: rodapé ── */
+    .placeholder-footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 14px 16px 20px;
+    }
+
+    .ph-footer-rect {
+      background: #c2c5cc;
+      border-radius: 6px;
+      width: 120px;
+      height: 34px;
+    }
+  </style>
 </head>
 <body>
+  <div class="mockup-frame mx-auto">
 
-    <div id="page1">
-        <h1>PAINEL ADAPTACIDADES</h1>
-        <h2>Instruções e resumo do documento</h2>
-        <p>Olhar para dentro do município (<b>{{ county_name }} - {{ state }}</b>), não comparar um município com o outro nesse momento.</p>
-        <p>Textos que irão direcionar como fazer a leitura das informações que contêm nesse documento.</p>
-        <p>ksnfouwe bfgiwuegfhwuncjdancl\adfnoinclkefc cfr</p>
-        <p>ksnfouwe bfgiwuegfhwuncjdancl\adfnoinclkefc cfr</p>
+    <!-- Barra topo -->
+    <div class="placeholder-header">
+      <div class="ph-pill"></div>
+      <div class="ph-header-right">
+        <div class="ph-circle"></div>
+        <div class="ph-rect-sm"></div>
+      </div>
     </div>
 
-    <div class="page-break"></div>
-
-    <div id="page2">
-        <h1>PAINEL ADAPTACIDADES</h1>
-        <h2>1. Resumo dos Riscos</h2>
-        <p>Sempre antes da figura, adicionar as informações textuais relacionadas com os índices e indicadores e como interpretar essas informações.</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Setor</th>
-                    <th>Microrregião</th>
-                    <th>Ano</th>
-                    <th>Valor</th>
-                    <th>Risco</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in data %}
-                <tr>
-                    <td>{{ item.sep }}</td>
-                    <td>{{ item.microregion }}</td>
-                    <td>{{ item.year }}</td>
-                    <td>{{ item.value }}</td>
-                    <td>
-                        <span class="badge" style="background-color: {{ item.color }};">
-                            {{ item.label }}
-                        </span>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <!-- Linhas de texto placeholder -->
+    <div class="placeholder-lines">
+      <div class="ph-line ph-line-full"></div>
+      <div class="ph-line ph-line-85"></div>
+      <div class="ph-line ph-line-70"></div>
     </div>
 
-    <div class="page-break"></div>
+    <!-- Card Território -->
+    <div class="card territorio-card">
+      <div class="card-body text-center">
 
-    <div id="page3">
-        <h2>5. Dimensões do Risco</h2>
-        <p>Desdobramento da composição do risco dos setores do AdaptaBrasil.</p>
-        <p>Sempre antes da figura, adicionar as informações textuais relacionadas com os índices e indicadores e como interpretar essas informações.</p>
-        <p>Adicionar aqui a capacidade adaptativa e sensibilidade, como decomposição das componentes adaptativas.</p>
+        <!-- Cabeçalho: badge + título -->
+        <div class="d-flex align-items-center justify-content-center mb-3">
+          <span class="badge-num">1</span>
+          <h2 class="title-territorio ml-2">Território</h2>
+        </div>
+
+        <!-- Ícone mapa + pin -->
+        <div class="d-flex justify-content-center mb-3">
+          <div class="map-icon-wrapper">
+            <div class="map-base">
+              <span class="map-cell map-cell-tl"></span>
+              <span class="map-cell map-cell-tr"></span>
+              <span class="map-cell map-cell-bl"></span>
+              <span class="map-cell map-cell-br"></span>
+            </div>
+            <span class="map-pin">
+              <i class="bi bi-geo-alt-fill"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Subtítulo -->
+        <p class="observar-title mb-2">O que observar</p>
+
+        <!-- Lista -->
+        <ul class="observar-list mb-0">
+          <li>Área, população, bairros/regiões</li>
+          <li>Hierarquia urbana e influência regional</li>
+        </ul>
+
+        <!-- Bloco azul claro -->
+        <div class="example-box">
+          <div class="d-flex align-items-center mb-2">
+            <span class="example-title mb-0 mr-2"><strong>Exemplo:</strong></span>
+            <input class="field-input" type="text" value="{{ county_name }} - {{ state }}" style="font-weight:600; color:#0e5a2e;">
+          </div>
+
+          <!-- Área -->
+          <div class="d-flex align-items-center mb-2">
+            <label class="field-label mr-2 mb-0" for="campo-area">Área:</label>
+            <input id="campo-area" class="field-input" type="text" value="1.522,683 km²">
+          </div>
+
+          <!-- População -->
+          <div class="d-flex align-items-center mb-2">
+            <label class="field-label mr-2 mb-0" for="campo-populacao">População:</label>
+            <input id="campo-populacao" class="field-input" type="text" value="{{population}} habitantes">
+          </div>
+
+          <!-- Bairros + Região -->
+          <div class="row no-gutters">
+            <div class="col-6 pr-1">
+              <input class="field-input text-center" type="text" value="472 bairros">
+            </div>
+            <div class="col-6 pl-1">
+              <input class="field-input text-center" type="text" value="{{region}}">
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
+    <!-- Rodapé placeholder -->
+    <div class="placeholder-footer">
+      <div class="ph-footer-rect"></div>
+    </div>
+
+  </div>
 </body>
 </html>

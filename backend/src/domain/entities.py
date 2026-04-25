@@ -3,10 +3,14 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 class County(BaseModel):
-    id: int
-    name: str
-    state: str
-    display: str
+    id: Optional[int] = None
+    name: Optional[str] = None
+    state: Optional[str] = None
+    display: Optional[str] = None
+    gdp: Optional[float] = None
+    area: Optional[float] = None
+    idh: Optional[float] = None
+    population: Optional[int] = None
 
 class AdaptationData(BaseModel):
     id: int

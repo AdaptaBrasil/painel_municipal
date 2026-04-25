@@ -1,0 +1,23 @@
+name: Continuous Deployment (AWS EC2)
+
+# Trigger the workflow only on pushes to the master branch
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Execute Deployment Script via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          # This command executes the script we created securely on the server
+          script: |
+            cd ~/inpe/painel_municipal
+            ./deploy.sh
