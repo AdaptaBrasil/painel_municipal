@@ -2,9 +2,13 @@
 from ..infrastructure.database import PostgresDatabase
 from ..infrastructure.repository import CountyRepository
 from ..infrastructure.pdf_service import WeasyPrintPdfService, WkHtmlToPdfService
-from ..domain.interfaces import PdfServiceInterface
+from ..infrastructure.project_info_service import TomlProjectInfoService
+from ..domain.interfaces import PdfServiceInterface, ProjectInfoServiceInterface
 from ..core.config import settings
 from ..core.constants import PdfEngineType, ErrorKeys
+
+def get_project_info_service() -> ProjectInfoServiceInterface:
+    return TomlProjectInfoService()
 
 def get_database() -> PostgresDatabase:
     return PostgresDatabase()

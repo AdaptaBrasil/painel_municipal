@@ -1,4 +1,4 @@
-# GitHub Copilot Instructions (Painel Municipal)
+# GitHub Copilot Instructions (Folha Municipal)
 
 ## Language
 The default language for all communication, documentation, and user responses in this repository must be **English (en-US)**.

@@ -16,6 +16,8 @@ class Settings(BaseSettings):
     pdf_engine: PdfEngineType = PdfEngineType.WKHTMLTOPDF
     
     template_dir: Path = BACKEND_DIR / "src" / "static" / "report"
+    
+    pyproject_path: Path = BACKEND_DIR / "pyproject.toml"
 
     model_config = SettingsConfigDict(
         env_file=str(BACKEND_DIR.parent / ".env"),

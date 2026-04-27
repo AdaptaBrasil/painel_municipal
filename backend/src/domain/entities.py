@@ -33,3 +33,8 @@ class PdfReportData(BaseModel):
     county_name: str
     state: str
     adaptation_data: List[AdaptationData]
+
+class ProjectInfo(BaseModel):
+    name: str
+    version: str
+    description: str

@@ -1,9 +1,9 @@
-# Painel Municipal - AdaptaBrasil
+# Folha Municipal - AdaptaBrasil
 
-The **Painel Municipal** is a robust web application developed based on **Clean Architecture** principles. The main objective of this tool is to enable detailed visualization and export of municipal adaptation plans, providing direct support for decision-making regarding public policies and climate resilience.
+The **Folha Municipal** is a robust web application developed based on **Clean Architecture** principles. The main objective of this tool is to enable detailed visualization and export of municipal adaptation plans, providing direct support for decision-making regarding public policies and climate resilience.
 
 ## 📋 Table of Contents
-- [Painel Municipal - AdaptaBrasil](#painel-municipal---adaptabrasil)
+- [Folha Municipal - AdaptaBrasil](#painel-municipal---adaptabrasil)
   - [📋 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
   - [🏗 Project Architecture](#-project-architecture)
@@ -11,7 +11,9 @@ The **Painel Municipal** is a robust web application developed based on **Clean 
   - [⚙️ Prerequisites](#️-prerequisites)
   - [🚀 Installation \& Setup](#-installation--setup)
   - [💻 Running the Application](#-running-the-application)
-    - [Starting the Backend Server (API)](#starting-the-backend-server-api)
+    - [Running with Docker (Recommended)](#running-with-docker-recommended)
+    - [Starting Locally (Without Docker)](#starting-locally-without-docker)
+      - [Starting the Backend Server (API)](#starting-the-backend-server-api)
     - [Starting the Frontend](#starting-the-frontend)
   - [📂 Directory Structure](#-directory-structure)
   - [🤝 Contributing](#-contributing)
@@ -43,8 +45,10 @@ The project is strictly modularized into two main parts:
 
 ## ⚙️ Prerequisites
 Ensure you have the following tools installed and configured in your development environment:
-- **Python 3.12** or higher
-- **[Poetry](https://python-poetry.org/)** for package management and backend environment isolation
+- **Docker** and **Docker Compose** (for running the entire stack easily)
+- **Make** (for using the provided Makefile)
+- **Python 3.12** or higher (if running backend locally)
+- **[Poetry](https://python-poetry.org/)** for package management and backend environment isolation (if running backend locally)
 - **PostgreSQL** database running locally (or via a container)
 - **PDF Generation Engine dependencies** (Install one depending on the `PDF_ENGINE` you choose to use):
   - **WeasyPrint**:
@@ -122,7 +126,33 @@ Ensure you have the following tools installed and configured in your development
 
 ## 💻 Running the Application
 
-### Starting the Backend Server (API)
+### Running with Docker (Recommended)
+You can easily start the entire stack (Database, Backend, and Frontend) using Docker and the provided `Makefile`. Ensure you have defined your `.env` file first.
+
+```bash
+# Build the images and start the containers in the background
+make run
+
+# View the logs of all containers
+make logs
+
+# Stop and remove the containers
+make stop
+```
+
+**Other useful `make` commands:**
+- `make build`: Build docker images without starting.
+- `make start`: Start existing containers without rebuilding them.
+- `make restart`: Restart containers.
+- `make ps`: List running containers.
+- `make shell-backend` / `make shell-frontend` / `make shell-db`: Access the container shell for debugging.
+- `make help`: Show all available commands.
+
+---
+
+### Starting Locally (Without Docker)
+
+#### Starting the Backend Server (API)
 Activate the project's virtual environment and invoke the application entry point directly (Uvicorn):
 ```bash
 cd backend

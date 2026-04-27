@@ -1,0 +1,24 @@
+# .dockerignore
+.git
+.gitignore
+.github/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+tests/
+Makefile
+setup_env.sh
+.env
+
+# Ignore local data to avoid leaking state into the base image
+data/
+# The local Hugging Face cache should not be included in the image
+~/.cache/huggingface/
