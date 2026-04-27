@@ -1,0 +1,24 @@
+# .dockerignore
+.git
+.gitignore
+.github/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+tests/
+Makefile
+setup_env.sh
+.env
+
+# Ignorar dados locais para evitar vazar estado para a imagem base
+data/
+# O cache do Hugging Face local não deve ir para a imagem
+~/.cache/huggingface/

@@ -23,6 +23,8 @@ services:
       - db
     ports:
       - "${BACKEND_SECRET_PORT}:8000"
+    volumes:
+      - ./backend:/app
     environment:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
@@ -30,6 +32,7 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - PDF_ENGINE=${PDF_ENGINE}
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload --proxy-headers --forwarded-allow-ips="*"
 
   frontend:
     build:
@@ -40,6 +43,8 @@ services:
       - backend
     environment:
       - FRONTEND_SECRET_PORT=${FRONTEND_SECRET_PORT}
+    volumes:
+      - ./frontend/:/usr/share/nginx/html/
     ports:
       - "${FRONTEND_SECRET_PORT}:80"
 

@@ -1,15 +1,15 @@
 # backend/src/application/router.py
-from fastapi import APIRouter, Depends, HTTPException, Response, Request
 from typing import List
+
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
-
-from typing import List
-from .dependencies import get_county_repository, get_pdf_service
-from ..domain.interfaces import CountyRepositoryInterface, PdfServiceInterface
-from ..domain.entities import County
+from ..core.config import settings
 from ..core.constants import ErrorKeys
+from ..domain.entities import County
+from ..domain.interfaces import CountyRepositoryInterface, PdfServiceInterface, ProjectInfoServiceInterface
+from .dependencies import get_county_repository, get_pdf_service, get_project_info_service
 
 router = APIRouter(prefix="/api/v1")
 
@@ -17,8 +17,18 @@ router = APIRouter(prefix="/api/v1")
 limiter = Limiter(key_func=get_remote_address)
 
 @router.get("/health")
-async def health_check():
-    return {"status": "ok", "message": "Service is running"}
+async def health_check(
+    project_info_service: ProjectInfoServiceInterface = Depends(get_project_info_service)
+):
+    health_msg =  {"status": "ok", "message": "Service is running"}
+    project_info = {}
+    try:
+        info_entity = project_info_service.get_project_info()
+        project_info = {"project": info_entity.model_dump()}
+    except Exception as e:
+        print(f"Error reading project info: {e}")
+        
+    return {**health_msg, **project_info}
 
 @router.get("/counties", response_model=List[County])
 async def list_counties(

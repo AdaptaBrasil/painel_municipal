@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const counties = await response.json();
         
         // Populate select
-        selectElement.innerHTML = '<option value="" disabled selected>Selecione um Município...</option>';
+        selectElement.innerHTML = '<option value="" disabled selected>Selecione um município...</option>';
         counties.forEach(county => {
             const option = document.createElement('option');
             option.value = county.id;
