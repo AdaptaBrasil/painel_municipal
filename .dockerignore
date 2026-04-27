@@ -18,7 +18,7 @@ Makefile
 setup_env.sh
 .env
 
-# Ignorar dados locais para evitar vazar estado para a imagem base
+# Ignore local data to avoid leaking state into the base image
 data/
-# O cache do Hugging Face local não deve ir para a imagem
+# The local Hugging Face cache should not be included in the image
 ~/.cache/huggingface/
