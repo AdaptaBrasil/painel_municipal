@@ -9,8 +9,7 @@ function resolveApiBaseUrl() {
     const hostname = window.location.hostname;
     const port = window.location.port;
     const isLocalFrontendHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '0.0.0.0';
-    const isBackendOrigin = port === '8000';
-    if (isLocalFrontendHost && !isBackendOrigin) {
+    if (isLocalFrontendHost) {
         return LOCAL_API_BASE_URL;
     }
     return DEFAULT_API_BASE_URL;
