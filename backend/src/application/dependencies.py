@@ -1,6 +1,6 @@
 # backend/src/application/dependencies.py
 from ..infrastructure.database import PostgresDatabase
-from ..infrastructure.repository import CountyRepository
+from ..infrastructure.repository import CountyRepository, TerritoryRepository
 from ..infrastructure.pdf_service import WeasyPrintPdfService, WkHtmlToPdfService
 from ..infrastructure.project_info_service import TomlProjectInfoService
 from ..domain.interfaces import PdfServiceInterface, ProjectInfoServiceInterface
@@ -16,6 +16,10 @@ def get_database() -> PostgresDatabase:
 def get_county_repository() -> CountyRepository:
     db = get_database()
     return CountyRepository(db)
+
+def get_territory_repository() -> CountyRepository:
+    db = get_database()
+    return TerritoryRepository(db)
 
 def get_pdf_service() -> PdfServiceInterface:
     """

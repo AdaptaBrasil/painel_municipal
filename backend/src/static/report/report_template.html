@@ -288,19 +288,19 @@
         <div class="example-box">
           <div class="d-flex align-items-center mb-2">
             <span class="example-title mb-0 mr-2"><strong>Exemplo:</strong></span>
-            <input class="field-input" type="text" value="{{ county_name }} - {{ state }}" style="font-weight:600; color:#0e5a2e;">
+            <input class="field-input" type="text" value="{{ territory_record.county }} - {{ territory_record.state }}" style="font-weight:600; color:#0e5a2e;">
           </div>
 
           <!-- Área -->
           <div class="d-flex align-items-center mb-2">
             <label class="field-label mr-2 mb-0" for="campo-area">Área:</label>
-            <input id="campo-area" class="field-input" type="text" value="1.522,683 km²">
+            <input id="campo-area" class="field-input" type="text" value="{{county_record.formatted_area}} km²">
           </div>
 
           <!-- População -->
           <div class="d-flex align-items-center mb-2">
             <label class="field-label mr-2 mb-0" for="campo-populacao">População:</label>
-            <input id="campo-populacao" class="field-input" type="text" value="{{population}} habitantes">
+            <input id="campo-populacao" class="field-input" type="text" value="{{county_record.population}} habitantes">
           </div>
 
           <!-- Bairros + Região -->
@@ -309,7 +309,7 @@
               <input class="field-input text-center" type="text" value="472 bairros">
             </div>
             <div class="col-6 pl-1">
-              <input class="field-input text-center" type="text" value="{{region}}">
+              <input class="field-input text-center" type="text" value="{{territory_record.region}}">
             </div>
           </div>
         </div>

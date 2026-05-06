@@ -1,7 +1,7 @@
 # backend/src/domain/interfaces.py
 from abc import ABC, abstractmethod
 from typing import List
-from .entities import County, AdaptationData, ProjectInfo
+from .entities import County, Territory, ProjectInfo
 
 class DatabaseInterface(ABC):
     @abstractmethod
@@ -10,15 +10,16 @@ class DatabaseInterface(ABC):
 
 class CountyRepositoryInterface(ABC):
     @abstractmethod
-    async def get_all_counties(self) -> List[County]:
+    async def get_counties(self) -> List[County]:
         pass
     
     @abstractmethod
-    async def get_county_by_id(self, county_id: int) -> County:
+    async def get_county(self, county_id: int) -> County:
         pass
-
+    
+class TerritoryRepositoryInterface(ABC):
     @abstractmethod
-    async def get_data_by_county(self, county_id: int) -> List[AdaptationData]:
+    async def get_territory(self, county_id: int) -> List[Territory]:
         pass
 
 class PdfServiceInterface(ABC):

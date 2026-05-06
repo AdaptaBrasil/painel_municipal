@@ -7,8 +7,8 @@ from slowapi.util import get_remote_address
 
 from ..core.constants import ErrorKeys
 from ..domain.entities import County
-from ..domain.interfaces import CountyRepositoryInterface, PdfServiceInterface, ProjectInfoServiceInterface
-from .dependencies import get_county_repository, get_pdf_service, get_project_info_service
+from ..domain.interfaces import CountyRepositoryInterface, TerritoryRepositoryInterface, PdfServiceInterface, ProjectInfoServiceInterface
+from .dependencies import get_county_repository, get_pdf_service, get_project_info_service, get_territory_repository
 
 router = APIRouter(prefix="/api/v1")
 
@@ -34,7 +34,7 @@ async def list_counties(
     repo: CountyRepositoryInterface = Depends(get_county_repository)
 ):
     try:
-        return await repo.get_all_counties()
+        return await repo.get_counties()
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -44,34 +44,36 @@ async def list_counties(
 async def download_report_pdf(
     request: Request,
     county_id: int,
-    repo: CountyRepositoryInterface = Depends(get_county_repository),
+    territory_repo: TerritoryRepositoryInterface = Depends(get_territory_repository),
+    county_repo: CountyRepositoryInterface = Depends(get_county_repository),
     pdf_service: PdfServiceInterface = Depends(get_pdf_service)
 ):
-    adaptation_data = await repo.get_data_by_county(county_id)
-    county_data = await repo.get_county_by_id(county_id)
+    # Get all data needed for the report
+    county_data = await county_repo.get_county(county_id)
+    territory_data = await territory_repo.get_territory(county_id)
     
     # Guard clause: No data found
-    if not adaptation_data:
+    if not territory_data:
+        raise HTTPException(status_code=404, detail=ErrorKeys.COUNTY_NOT_FOUND.value)
+    if not county_data:
         raise HTTPException(status_code=404, detail=ErrorKeys.COUNTY_NOT_FOUND.value)
 
-    first_record = adaptation_data[0]
+    # Prepare context for PDF generation
+    territory_record = territory_data
+    county_record = county_data
+    
     context = {
-        "county_name": first_record.county,
-        "state": first_record.state,
-        "region": first_record.region,
-        "population": county_data.population if hasattr(county_data, 'population') else "N/A",
-        "data": adaptation_data
+        "territory_record": territory_record,
+        "county_record": county_record,
     }
 
     try:
-        # Apenas passamos o nome do arquivo, a configuração resolve o resto.
         pdf_bytes = pdf_service.generate_pdf("report_template.html", context)
     except Exception as e:
-        # Imprime o erro real no console para debugar se der ruim
         print(f"Error generating PDF: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
     headers = {
-        "Content-Disposition": f'attachment; filename="Plano_Adaptacao_{first_record.county}.pdf"'
+        "Content-Disposition": f'attachment; filename="Plano_Adaptacao_{territory_record.county}.pdf"'
     }
     return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
