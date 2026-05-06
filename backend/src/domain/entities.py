@@ -3,8 +3,8 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 class County(BaseModel):
-    id: Optional[int] = None
-    name: Optional[str] = None
+    county_id: Optional[int] = None
+    county: Optional[str] = None
     state: Optional[str] = None
     display: Optional[str] = None
     gdp: Optional[float] = None

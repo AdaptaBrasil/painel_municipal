@@ -9,10 +9,9 @@ class CountyRepository(CountyRepositoryInterface):
         self.db = db
 
     async def get_all_counties(self) -> List[County]:
+        
         query = """
-            SELECT id, name, state, CONCAT(name, ' - ', state) AS display
-            FROM adaptabrasil.county
-            ORDER BY display;
+            SELECT DISTINCT county_id, county, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data ORDER BY display;
         """
         try:
             records = await self.db.fetch_all(query)
