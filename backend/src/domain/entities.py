@@ -34,6 +34,26 @@ class CountyStatistics(BaseModel):
             formatted_value = NumberFormattingProcessing.format_number_brazilian(self.population)
         return formatted_value
 
+class AdaptaData(BaseModel):
+    id: Optional[int] = None
+    sep_id: Optional[int] = None
+    county_id: Optional[int] = None
+    sep: Optional[str] = None
+    risk: Optional[str] = None
+    county: Optional[str] = None
+    microregion: Optional[str] = None
+    mesoregion: Optional[str] = None
+    state: Optional[str] = None
+    region: Optional[str] = None
+    imageurl: Optional[str] = None
+    level: Optional[int] = None
+    year: Optional[str] = None
+    color: Optional[str] = None
+    label: Optional[str] = None
+    order: Optional[int] = None
+    value: Optional[float] = None
+    
+
 class PdfReportData(BaseModel):
     county_name: str
     state: str

@@ -1,7 +1,7 @@
 # backend/src/infrastructure/repository.py
 from typing import List
-from ..domain.interfaces import DatabaseInterface, CountyStatisticsRepositoryInterface, CountyRepositoryInterface
-from ..domain.entities import CountyStatistics, County
+from ..domain.interfaces import DatabaseInterface, CountyStatisticsRepositoryInterface, CountyRepositoryInterface, AdaptaDataRepositoryInterface
+from ..domain.entities import CountyStatistics, County, AdaptaData
 from ..core.constants import ErrorKeys
 
 class CountyStatisticsRepository(CountyStatisticsRepositoryInterface):
@@ -54,5 +54,37 @@ class CountyRepository(CountyRepositoryInterface):
             if not records:
                 raise Exception(ErrorKeys.COUNTY_NOT_FOUND.value)
             return County(**records[0])
+        except Exception as e:
+            raise Exception(str(e))
+        
+class AdaptaDataRepository(AdaptaDataRepositoryInterface):
+    def __init__(self, db: DatabaseInterface):
+        self.db = db
+        
+    async def get_main_risks_by_county_id(self, county_id: int) -> List[AdaptaData]:
+        query = """
+            SELECT id, sep_id, county_id, sep, risk, county, microregion, mesoregion, state, region, imageurl, "level", "year", color, "label", "order", value
+            FROM painel_municipal.adapta_data
+            WHERE "level" = 2 and county_id = $1 and "year" = ' Ano Presente';
+        """
+        try:
+            records = await self.db.fetch_all(query, county_id)
+            if not records:
+                raise Exception(ErrorKeys.ADAPTA_DATA_NOT_FOUND.value)
+            return [AdaptaData(**record) for record in records]
+        except Exception as e:
+            raise Exception(str(e))
+        
+    async def get_main_factors_by_county_id(self, county_id: int) -> List[AdaptaData]:
+        query = """
+            SELECT DISTINCT sep_id, sep, imageurl 
+            FROM painel_municipal.adapta_data 
+            WHERE level = 2 AND county_id = $1 AND "year" = ' Ano Presente'; 
+        """
+        try:
+            records = await self.db.fetch_all(query, county_id)
+            if not records:
+                raise Exception(ErrorKeys.ADAPTA_DATA_NOT_FOUND.value)
+            return [AdaptaData(**record) for record in records]
         except Exception as e:
             raise Exception(str(e))

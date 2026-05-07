@@ -1,7 +1,7 @@
 # backend/src/domain/interfaces.py
 from abc import ABC, abstractmethod
 from typing import List
-from .entities import County, CountyStatistics, ProjectInfo
+from .entities import County, CountyStatistics, AdaptaData,  ProjectInfo
 
 class DatabaseInterface(ABC):
     @abstractmethod
@@ -24,6 +24,16 @@ class CountyRepositoryInterface(ABC):
     
     @abstractmethod
     async def get_county(self, county_id: int) -> County:
+        pass
+    
+class AdaptaDataRepositoryInterface(ABC):
+    @abstractmethod
+    async def get_main_risks_by_county_id(self, county_id: int) -> List[AdaptaData]:
+        pass
+    
+    # get_main_factors_by_county_id
+    @abstractmethod
+    async def get_main_factors_by_county_id(self, county_id: int) -> List[AdaptaData]:
         pass
 
 class PdfServiceInterface(ABC):
