@@ -9,8 +9,7 @@ function resolveApiBaseUrl() {
     const hostname = window.location.hostname;
     const port = window.location.port;
     const isLocalFrontendHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '0.0.0.0';
-    const isBackendOrigin = port === '8000';
-    if (isLocalFrontendHost && !isBackendOrigin) {
+    if (isLocalFrontendHost) {
         return LOCAL_API_BASE_URL;
     }
     return DEFAULT_API_BASE_URL;
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         selectElement.innerHTML = '<option value="" disabled selected>Selecione um município...</option>';
         counties.forEach(county => {
             const option = document.createElement('option');
-            option.value = county.id;
+            option.value = county.county_id; // Use county_id as value
             option.textContent = county.display;
             selectElement.appendChild(option);
         });
