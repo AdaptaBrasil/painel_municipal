@@ -1,6 +1,6 @@
 [project]
 name = "backend"
-version = "0.1.1"
+version = "0.1.2"
 description = "Folha Municipal Backend API"
 authors = [
     {name = "Mário Carvalho", email = "mariodearaujocarvalho@gmail.com"}
@@ -16,7 +16,9 @@ dependencies = [
     "pydantic-settings",
     "weasyprint",
     "jinja2",
-    "slowapi (>=0.1.9,<0.2.0)"
+    "slowapi (>=0.1.9,<0.2.0)",
+    "babel (>=2.18.0,<3.0.0)",
+    "pandas (>=3.0.2,<4.0.0)"
 ]
 
 [tool.poetry]

@@ -6,9 +6,9 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 
 from ..core.constants import ErrorKeys
-from ..domain.entities import County
-from ..domain.interfaces import CountyRepositoryInterface, TerritoryRepositoryInterface, PdfServiceInterface, ProjectInfoServiceInterface
-from .dependencies import get_county_repository, get_pdf_service, get_project_info_service, get_territory_repository
+from ..domain.entities import County, CountyStatistics
+from ..domain.interfaces import CountyStatisticsRepositoryInterface, CountyRepositoryInterface, PdfServiceInterface, ProjectInfoServiceInterface
+from .dependencies import get_county_repository, get_county_statistics_repository, get_pdf_service, get_project_info_service
 
 router = APIRouter(prefix="/api/v1")
 
@@ -44,27 +44,27 @@ async def list_counties(
 async def download_report_pdf(
     request: Request,
     county_id: int,
-    territory_repo: TerritoryRepositoryInterface = Depends(get_territory_repository),
     county_repo: CountyRepositoryInterface = Depends(get_county_repository),
+    county_statistic_repo: CountyStatisticsRepositoryInterface = Depends(get_county_statistics_repository),
     pdf_service: PdfServiceInterface = Depends(get_pdf_service)
 ):
     # Get all data needed for the report
     county_data = await county_repo.get_county(county_id)
-    territory_data = await territory_repo.get_territory(county_id)
+    county_statistic_data = await county_statistic_repo.get_county_statistics(county_id)
     
     # Guard clause: No data found
-    if not territory_data:
-        raise HTTPException(status_code=404, detail=ErrorKeys.COUNTY_NOT_FOUND.value)
+    if not county_statistic_data:
+        raise HTTPException(status_code=404, detail=ErrorKeys.COUNTY_STATISTICS_NOT_FOUND.value)
     if not county_data:
         raise HTTPException(status_code=404, detail=ErrorKeys.COUNTY_NOT_FOUND.value)
 
     # Prepare context for PDF generation
-    territory_record = territory_data
     county_record = county_data
+    county_statistic_record = county_statistic_data
     
     context = {
-        "territory_record": territory_record,
         "county_record": county_record,
+        "county_statistic_record": county_statistic_record,
     }
 
     try:
@@ -74,6 +74,6 @@ async def download_report_pdf(
         raise HTTPException(status_code=500, detail=str(e))
 
     headers = {
-        "Content-Disposition": f'attachment; filename="Plano_Adaptacao_{territory_record.county}.pdf"'
+        "Content-Disposition": f'attachment; filename="{county_record.county_id}_{county_record.county}_Plano_Adaptacao.pdf"'
     }
     return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
