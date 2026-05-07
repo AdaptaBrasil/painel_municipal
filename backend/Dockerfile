@@ -15,6 +15,7 @@ ENV PATH="$POETRY_HOME/bin:$PATH"
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     wkhtmltopdf \
+    weasyprint \
     build-essential \
     libcairo2 \
     libpango-1.0-0 \
