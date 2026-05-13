@@ -1,6 +1,9 @@
 # backend/Dockerfile
 FROM python:3.12-slim-bookworm
 
+ARG PDF_ENGINE=playwright
+
+
 # Set environment variables for non-interactive installs and unbuffered Python output
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -36,6 +39,9 @@ COPY pyproject.toml poetry.lock* ./
 
 # Install Python dependencies
 RUN poetry install --no-root
+
+RUN if [ "$PDF_ENGINE" = "playwright" ]; then poetry run playwright install --with-deps chromium; fi
+
 
 # Copy the rest of the application
 COPY . .

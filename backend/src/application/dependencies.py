@@ -1,7 +1,7 @@
 # backend/src/application/dependencies.py
 from ..infrastructure.database import PostgresDatabase
 from ..infrastructure.repository import CountyRepository, CountyStatisticsRepository, AdaptaDataRepository
-from ..infrastructure.pdf_service import WeasyPrintPdfService, WkHtmlToPdfService
+from ..infrastructure.pdf_service import PlaywrightPdfService, WeasyPrintPdfService, WkHtmlToPdfService, PuppeteerPdfService
 from ..infrastructure.project_info_service import TomlProjectInfoService
 from ..domain.interfaces import PdfServiceInterface, ProjectInfoServiceInterface
 from ..core.config import settings
@@ -38,5 +38,11 @@ def get_pdf_service() -> PdfServiceInterface:
     
     if settings.pdf_engine == PdfEngineType.WEASYPRINT:
         return WeasyPrintPdfService()
+    
+    if settings.pdf_engine == PdfEngineType.PLAYWRIGHT:
+        return PlaywrightPdfService()
+    
+    if settings.pdf_engine == PdfEngineType.PUPPETEER:
+        return PuppeteerPdfService()
         
     raise ValueError(ErrorKeys.INVALID_PDF_ENGINE.value)

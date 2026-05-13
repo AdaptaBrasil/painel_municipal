@@ -11,9 +11,10 @@ class Settings(BaseSettings):
     db_name: str
     db_user: str
     db_password: str
+    db_use_ssl: bool = False
     
     # Nova variável para trocar o motor de PDF via .env
-    pdf_engine: PdfEngineType = PdfEngineType.WKHTMLTOPDF
+    pdf_engine: PdfEngineType = PdfEngineType.PLAYWRIGHT
     
     template_dir: Path = BACKEND_DIR / "src" / "static" / "report"
     

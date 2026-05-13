@@ -4,6 +4,35 @@ from ..domain.interfaces import DatabaseInterface, CountyStatisticsRepositoryInt
 from ..domain.entities import CountyStatistics, County, AdaptaData
 from ..core.constants import ErrorKeys
 
+class CountyRepository(CountyRepositoryInterface):
+    def __init__(self, db: DatabaseInterface):
+        self.db = db
+    
+    async def get_status_database(self) -> bool:
+        return await self.db.test_connection()
+    
+    async def get_counties(self) -> List[County]:
+        query = """
+            SELECT  distinct county_id, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data ORDER BY display;
+        """
+        try:
+            records = await self.db.fetch_all(query)
+            return [County(**record) for record in records]
+        except Exception:
+            raise Exception(ErrorKeys.DATA_RETRIEVAL_FAILED.value)
+
+    async def get_county(self, county_id: int) -> County:
+        query = """
+            SELECT  distinct county_id, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data WHERE county_id = $1 ORDER BY display;
+        """
+        try:
+            records = await self.db.fetch_all(query, county_id)
+            if not records:
+                raise Exception(ErrorKeys.COUNTY_NOT_FOUND.value)
+            return County(**records[0])
+        except Exception as e:
+            raise Exception(str(e))
+        
 class CountyStatisticsRepository(CountyStatisticsRepositoryInterface):
     def __init__(self, db: DatabaseInterface):
         self.db = db
@@ -28,32 +57,6 @@ class CountyStatisticsRepository(CountyStatisticsRepositoryInterface):
             if not records:
                 raise Exception(ErrorKeys.COUNTY_NOT_FOUND.value)
             return CountyStatistics(**records[0])
-        except Exception as e:
-            raise Exception(str(e))
-
-class CountyRepository(CountyRepositoryInterface):
-    def __init__(self, db: DatabaseInterface):
-        self.db = db
-        
-    async def get_counties(self) -> List[County]:
-        query = """
-            SELECT  distinct county_id, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data ORDER BY display;
-        """
-        try:
-            records = await self.db.fetch_all(query)
-            return [County(**record) for record in records]
-        except Exception:
-            raise Exception(ErrorKeys.DATA_RETRIEVAL_FAILED.value)
-
-    async def get_county(self, county_id: int) -> County:
-        query = """
-            SELECT  distinct county_id, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data WHERE county_id = $1 ORDER BY display;
-        """
-        try:
-            records = await self.db.fetch_all(query, county_id)
-            if not records:
-                raise Exception(ErrorKeys.COUNTY_NOT_FOUND.value)
-            return County(**records[0])
         except Exception as e:
             raise Exception(str(e))
         

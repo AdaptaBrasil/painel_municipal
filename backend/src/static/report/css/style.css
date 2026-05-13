@@ -1,0 +1,91 @@
+
+.factors-container {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 8px; /* Espaçamento vertical entre as linhas */
+}
+
+.factor-row {
+display: flex;
+align-items: center;
+gap: 12px; /* Espaçamento entre o ícone e o texto */
+font-family: Arial, sans-serif; /* Ajuste para a fonte do seu projeto */
+font-size: 16px;
+color: #333;
+}
+
+.factor-icon {
+width: 28px; /* Tamanho aproximado dos ícones da sua imagem */
+height: 28px;
+object-fit: contain;
+}
+
+.risks-container {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: column;
+width: max-content; /* Mantém a largura ajustada ao conteúdo */
+}
+
+.risk-row {
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-family: Arial, sans-serif;
+font-size: 15px;
+color: #333;
+}
+
+.risk-info {
+display: flex;
+align-items: center;
+gap: 8px; /* Espaço entre o ícone e o texto do risco */
+padding-right: 15px; /* Espaço entre o texto e a caixa colorida */
+}
+
+.risk-icon {
+width: 24px; /* Tamanho ajustado proporcionalmente à imagem */
+height: 24px;
+object-fit: contain;
+}
+
+.risk-text {
+font-weight: bold;
+color: #444; /* Cor um pouco mais suave que o preto puro */
+}
+
+.risk-value-box {
+width: 45px; /* Largura fixa para alinhar perfeitamente todos os números */
+text-align: center;
+padding: 3px 0;
+border: 2px solid black;
+font-weight: bold;
+color: #666; /* Texto cinza como na imagem original */
+margin-top: -2px; /* Truque: faz as bordas se sobreporem para criar o efeito de agrupamento */
+}
+
+/* Remove a margem negativa do primeiro item para a borda não cortar */
+.risk-row:first-child .risk-value-box {
+margin-top: 0;
+}
+
+
+.blue-title {
+color: #6de40c; /* Azul vibrante */
+font-family: 'Arial Black', Arial, sans-serif; /* Fonte mais grossa para destacar */
+font-size: 24px; /* Tamanho maior para chamar atenção */
+margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.blue-box {
+border: 3px solid #6de40c; /* Borda azul vibrante */
+padding: 15px; /* Espaçamento interno */
+border-radius: 8px; /* Cantos arredondados para um visual mais moderno */
+background-color: #f0f8ff; /* Fundo azul claro para destacar ainda mais */
+margin-top: 20px; /* Espaço acima da caixa */
+}

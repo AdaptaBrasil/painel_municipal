@@ -7,6 +7,9 @@ class DatabaseInterface(ABC):
     @abstractmethod
     async def fetch_all(self, query: str, *args) -> List[dict]:
         pass
+    @abstractmethod
+    async def test_connection(self) -> bool:
+        pass
 
 class CountyStatisticsRepositoryInterface(ABC):
     @abstractmethod
@@ -38,7 +41,7 @@ class AdaptaDataRepositoryInterface(ABC):
 
 class PdfServiceInterface(ABC):
     @abstractmethod
-    def generate_pdf(self, template_name: str, context: dict) -> bytes:
+    async def generate_pdf(self, template_name: str, context: dict) -> bytes:
         pass
 
 class ProjectInfoServiceInterface(ABC):

@@ -17,6 +17,8 @@ services:
   backend:
     build:
       context: ./backend
+      args:
+        - PDF_ENGINE=${PDF_ENGINE:-playwright}
     container_name: painel_backend
     restart: always
     depends_on:
