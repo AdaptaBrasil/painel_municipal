@@ -19,6 +19,7 @@ const API_BASE_URL = resolveApiBaseUrl();
 document.addEventListener('DOMContentLoaded', async () => {
     const selectElement = document.getElementById('county-select');
     const downloadBtn = document.getElementById('download-btn');
+    const downloadAllBtn = document.getElementById('download-all-btn');
 
     // Fetch counties
     try {
@@ -56,5 +57,49 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Open in new tab which triggers the download
         const pdfUrl = `${API_BASE_URL}/reports/pdf/${countyId}`;
         window.open(pdfUrl, '_blank');
+    });
+
+    // Modal elements
+    const modal = document.getElementById('confirmation-modal');
+    const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+    const modalCancelBtn = document.getElementById('modal-cancel-btn');
+
+    // Handle ZIP download of all municipalities
+    downloadAllBtn.addEventListener('click', () => {
+        // Show confirmation modal
+        modal.style.display = 'flex';
+    });
+
+    // Modal - Confirm button
+    modalConfirmBtn.addEventListener('click', async () => {
+        modal.style.display = 'none';
+        downloadAllBtn.disabled = true;
+        downloadAllBtn.textContent = 'Gerando PDFs...';
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/reports/zip/all`);
+            if (!response.ok) throw new Error('Falha ao gerar o arquivo ZIP');
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'todos_municipios_Plano_Adaptacao.zip';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        } catch (error) {
+            console.error(error);
+            alert('Erro ao gerar o arquivo ZIP. Tente novamente.');
+        } finally {
+            downloadAllBtn.disabled = false;
+            downloadAllBtn.textContent = 'Download All';
+        }
+    });
+
+    // Modal - Cancel button
+    modalCancelBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
     });
 });

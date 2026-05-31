@@ -1,7 +1,7 @@
 # backend/src/application/dependencies.py
 from ..infrastructure.database import PostgresDatabase
 from ..infrastructure.repository import CountyRepository, CountyStatisticsRepository, AdaptaDataRepository
-from ..infrastructure.pdf_service import PlaywrightPdfService, WeasyPrintPdfService, WkHtmlToPdfService, PuppeteerPdfService
+from ..infrastructure.pdf_service import PlaywrightPdfService
 from ..infrastructure.project_info_service import TomlProjectInfoService
 from ..domain.interfaces import PdfServiceInterface, ProjectInfoServiceInterface
 from ..core.config import settings
@@ -31,18 +31,23 @@ def get_pdf_service() -> PdfServiceInterface:
     """
     Factory method to decide which PDF engine to use based on configuration.
     Follows the Strategy Pattern.
-    """
-    print(f"Selected PDF Engine: {settings.pdf_engine}")
+    
+    Future expansion: Add more PDF engines here as needed, e.g., WeasyPrint, Puppeteer, etc.    
+    if settings.pdf_engine == PdfEngineType.WEASYPRINT:
+        return WeasyPrintPdfService()
+        
     if settings.pdf_engine == PdfEngineType.WKHTMLTOPDF:
         return WkHtmlToPdfService()
     
-    if settings.pdf_engine == PdfEngineType.WEASYPRINT:
-        return WeasyPrintPdfService()
+    if settings.pdf_engine == PdfEngineType.PUPPETEER:
+        return PuppeteerPdfService()
+    """
     
     if settings.pdf_engine == PdfEngineType.PLAYWRIGHT:
         return PlaywrightPdfService()
     
-    if settings.pdf_engine == PdfEngineType.PUPPETEER:
-        return PuppeteerPdfService()
-        
+    print(f"Selected PDF Engine: {settings.pdf_engine}")
+    
+    
+
     raise ValueError(ErrorKeys.INVALID_PDF_ENGINE.value)

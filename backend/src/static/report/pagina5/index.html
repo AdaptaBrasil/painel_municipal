@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="{{ base_url }}">
+    <title>AdaptaBrasil — Página 5</title>
+    <link rel="stylesheet" href="../shared/css/fonts.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="layout">
+        <!-- Coluna esquerda: município + clima atual -->
+        <div class="col-left">
+          <div class="municipio">
+            <span data-bind="location.cityState">Curitiba - Paraná</span>
+          </div>
+
+          <section class="caixa clima-atual">
+            <header class="caixa-header">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Zm-9 13H4V7h8v10Zm8 0h-7V7h7v10Z"/>
+              </svg>
+              <span data-bind="climaAtual.title">Clima atual a</span>
+            </header>
+            <div class="grid-graficos" data-bind-list="climaAtual.graficos" data-template="tpl-card-grafico"></div>
+          </section>
+        </div>
+
+        <!-- Coluna direita: projeção + temperatura -->
+        <div class="col-right">
+          <section class="caixa projecao">
+            <header class="caixa-header">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h1.5v16.5H21V21H3V3Zm4 13h2v3H7v-3Zm4-5h2v8h-2v-8Zm4-4h2v12h-2V7Zm4 6h2v6h-2v-6Z"/>
+              </svg>
+              <span data-bind="projecaoClima.title">Projeção clima a</span>
+            </header>
+            <table class="projecao-table">
+              <colgroup>
+                <col class="col-indicador" />
+                <col class="col-passado" />
+                <col class="col-projecao" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th data-bind="projecaoClima.columns.indicadorHeader">Indicador anual</th>
+                  <th data-bind="projecaoClima.columns.passadoHeader">Passado</th>
+                  <th data-bind="projecaoClima.columns.projecaoHeader">Projeção</th>
+                </tr>
+              </thead>
+              <tbody data-bind-list="projecaoClima.rows" data-template="tpl-row-projecao"></tbody>
+            </table>
+          </section>
+
+          <section class="caixa temperatura">
+            <header class="caixa-header">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h1.5v16.5H21V21H3V3Zm4 13h2v3H7v-3Zm4-5h2v8h-2v-8Zm4-4h2v12h-2V7Zm4 6h2v6h-2v-6Z"/>
+              </svg>
+              <span data-bind="temperaturaSuperficie.title">Temperatura máxima da superfície a</span>
+            </header>
+            <div class="mapa-wrap">
+              <div class="mapa">
+                <img class="mapa-img" data-bind-src="temperaturaSuperficie.mapImage" alt="Mapa de Curitiba" />
+                <svg class="map-marker" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C7.58 2 4 5.58 4 10c0 6 8 12 8 12s8-6 8-12c0-4.42-3.58-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/>
+                </svg>
+                <div class="map-tooltip">
+                  <span data-bind="temperaturaSuperficie.tooltip">Curitiba, State of Paraná, Brazil</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Templates de itens de lista (renderizados por shared/js/app.js) -->
+    <template id="tpl-card-grafico">
+      <div class="card-grafico">
+        <img data-field="icon" alt="" />
+      </div>
+    </template>
+
+    <template id="tpl-row-projecao">
+      <tr>
+        <td class="indicador">
+          <span class="row-label">
+            <img data-field="icon" alt="" />
+            <span data-field="label"></span>
+          </span>
+        </td>
+        <td data-field="passado"></td>
+        <td data-field="projecao"></td>
+      </tr>
+    </template>
+
+    <script src="./data.js"></script>
+    <script src="../shared/js/app.js"></script>
+  </body>
+</html>

@@ -7,12 +7,11 @@ from ..core.constants import ErrorKeys
 
 class PostgresDatabase(DatabaseInterface):
     def __init__(self):
-        # A classe não precisa mais de estado interno para SSL, 
-        # pois lerá do singleton 'settings'
+        # The class no longer needs internal SSL state as it will read from the singleton 'settings'
         pass
 
     async def _get_connection(self):
-        """Centraliza a conexão utilizando a configuração do .env"""
+        """Centralizes the connection using the .env configuration"""
         return await asyncpg.connect(
             host=settings.db_host,
             port=settings.db_port,
@@ -32,8 +31,7 @@ class PostgresDatabase(DatabaseInterface):
             finally:
                 await conn.close()
         except Exception as e:
-            print(f"ERRO NO BANCO [fetch_all]: {type(e).__name__} -> {repr(e)}") 
-            raise Exception(ErrorKeys.DB_CONNECTION_FAILED.value)
+            print(f"DATABASE ERROR [fetch_all]: {type(e).__name__} -> {repr(e)}")
         
     async def test_connection(self) -> bool:
         try:

@@ -1,8 +1,11 @@
 # backend/src/infrastructure/pdf_service.py
 
 import os
+import io
+from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
+from pypdf import PdfMerger
 from ..domain.interfaces import PdfServiceInterface
 from ..core.config import settings
 from ..core.constants import ErrorKeys
@@ -16,114 +19,79 @@ class BasePdfService:
         template = self.env.get_template(template_name)
         return template.render(**context)
 
-class WeasyPrintPdfService(BasePdfService, PdfServiceInterface):
-    def generate_pdf(self, template_name: str, context: dict) -> bytes:
-        # Lazy import: Only loads WeasyPrint if this strategy is actively used
-        try:
-            from weasyprint import HTML
-        except ImportError as e:
-            print("WeasyPrint is not installed or missing system libraries: ", e)
-            raise Exception(ErrorKeys.PDF_GENERATION_FAILED.value)
-
-        try:
-            html_content = self.render_template(template_name, context)
-            return HTML(string=html_content).write_pdf()
-        except Exception as e:
-            print(f"WeasyPrint Exception: {e}")
-            raise Exception(ErrorKeys.PDF_GENERATION_FAILED.value)
-
-class WkHtmlToPdfService(BasePdfService, PdfServiceInterface):
-    def generate_pdf(self, template_name: str, context: dict) -> bytes:
-        try:
-            html_content = self.render_template(template_name, context)
-            
-            options = {
-                'page-size': 'A4',
-                'margin-top': '0.75in',
-                'margin-right': '0.75in',
-                'margin-bottom': '0.75in',
-                'margin-left': '0.75in',
-                'encoding': "UTF-8",
-                # 'no-outline': None, 
-                
-                # Configurações de JavaScript
-                'enable-javascript': '',   
-                'javascript-delay': '1000', 
-                
-                # Tratamento de Rede e Arquivos
-                'enable-local-file-access': '',
-                'load-error-handling': 'ignore',
-                'load-media-error-handling': 'ignore'
-            }
-            
-            # Lazy import: Only loads pdfkit if this strategy is actively used
-            try:
-                import pdfkit
-            except ImportError as e:
-                print("pdfkit is not installed or wkhtmltopdf is not available: ", e)
-                raise Exception(ErrorKeys.PDF_GENERATION_FAILED.value)
-            
-            
-            return pdfkit.from_string(html_content, False, options=options)
-        except Exception as e:
-            print(f"WkHtmlToPdf Exception: {e}")
-            raise Exception(ErrorKeys.PDF_GENERATION_FAILED.value) 
-        
 class PlaywrightPdfService(BasePdfService, PdfServiceInterface):
-    async def generate_pdf(self, template_name: str, context: dict) -> bytes:
+    async def generate_single_page_pdf(self, page_path: Path, context: dict, config: dict) -> bytes:
+        """Generates a PDF for a specific page with its configuration."""
         from playwright.async_api import async_playwright
         import tempfile
         
-        context["base_url"] = settings.template_dir.absolute().as_uri() + "/"
+        # Uses the page-specific configuration
+        print(f"Config: {config}")  # Debugging line
+        
+        # page_path is: BACKEND_DIR / "src" / "static" / "report" / "page_02" / "index.html"
+        base_dir_path = page_path.parent  # This will give us the directory containing the template
+        template_name = page_path.name  # This will give us the template file name (e.g., "index.html")
+        print(f"Base directory for template: {base_dir_path}")  # Debugging line
+        print(f"Template name: {template_name}")  # Debugging line
+        
+        # Renders the page template
+        context["base_url"] = base_dir_path.absolute().as_uri() + "/"
         print(f"Base URL for template: {context['base_url']}")  # Debugging line
         
-        html_content = self.render_template(template_name, context)
+        template_file = page_path
+        if not template_file.exists():
+            raise FileNotFoundError(f"Template not found: {template_file}")
+        
+        # Uses the loader with the page-specific directory
+        page_env = Environment(loader=FileSystemLoader(str(base_dir_path)))
+        template = page_env.get_template(template_name)
+        html_content = template.render(**context)
         
         async with async_playwright() as p:
-            # Mantemos as flags de segurança desligadas
             browser = await p.chromium.launch(args=[
                 '--disable-web-security',
                 '--allow-file-access-from-files'
             ])
             page = await browser.new_page()
             
-            # 1. Cria um ficheiro HTML temporário fisicamente no disco do Docker
             with tempfile.NamedTemporaryFile(delete=False, suffix=".html", mode='w', encoding='utf-8') as tmp_file:
                 tmp_file.write(html_content)
                 tmp_file_path = tmp_file.name
             
-            # Define o conteúdo e aguarda o carregamento do DOM e execução do JS
             try:
-                # 2. Usa o goto() em vez de set_content(). Agora a página tem permissão real!
                 await page.goto(f"file://{tmp_file_path}", wait_until="networkidle")
-            
-                # Gera o PDF zerando as margens para "colar" o layout
-                pdf_bytes = await page.pdf(
-                    format="A3", 
-                    print_background=True, 
-                    landscape=False,
-                    margin={"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"} # <- ADICIONE ESTA LINHA
-                )
-            
+                
+                # Uses the page-specific configuration
+                print(f"Config: {config}")  # Debugging line
+                pdf_bytes = await page.pdf(**config)
             finally:
-                # 4. Apaga o ficheiro temporário para não acumular lixo no disco do servidor
                 if os.path.exists(tmp_file_path):
                     os.remove(tmp_file_path)
             
             await browser.close()
             return pdf_bytes
-
-class PuppeteerPdfService(BasePdfService, PdfServiceInterface):
-    async def generate_pdf(self, template_name: str, context: dict) -> bytes:
-        import asyncio
-        from pyppeteer import launch
+    
+    async def generate_pdf_merged(self, context: dict) -> bytes:
+        """Generates PDFs for each page separately and then merges them."""
+        pdf_merger = PdfMerger()
         
-        html_content = self.render_template(template_name, context)
+        # Iterates through each page defined in settings.pages_dir
+        for page_config in settings.pages_dir:
+            for page_path, config in page_config.items():
+                print(f"Generating PDF for: {page_path}")
+                
+                # Generates the PDF for this page
+                pdf_bytes = await self.generate_single_page_pdf(page_path, context, config)
+                
+                # Adds to the merger
+                pdf_file = io.BytesIO(pdf_bytes)
+                pdf_merger.append(pdf_file)
         
-        browser = await launch(args=['--no-sandbox'])
-        page = await browser.newPage()
-        await page.setContent(html_content, waitUntil="networkidle0")
+        # Writes the final PDF to memory
+        output = io.BytesIO()
+        pdf_merger.write(output)
+        pdf_merger.close()
         
-        pdf_bytes = await page.pdf({'format': 'A4', 'printBackground': True})
-        await browser.close()
-        return pdf_bytes
+        output.seek(0)
+        return output.getvalue()
+   

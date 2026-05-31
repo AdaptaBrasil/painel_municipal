@@ -1,0 +1,255 @@
+/* ---------- Reset & base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-text, #1E1E1E);
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ---------- Page board (842 x 595) ---------- */
+.page {
+  width: 842px;
+  height: 595px;
+  background: var(--color-bg, #F2F2F2);
+  padding: 19px 57px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.layout {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+}
+
+.col-left,
+.col-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-left { gap: 12px; align-items: flex-start; width: 359px; }
+.col-right { gap: 0; width: 358px; }
+
+/* ---------- Município ---------- */
+.municipio {
+  width: 177.93px;
+  height: 40px;
+  background: var(--color-surface, #D9D9D9);
+  border: 1px solid var(--color-border, #6D797A);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-text, #1E1E1E);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/* ---------- Caixa (genérica) ---------- */
+.caixa {
+  background: var(--color-surface, #D9D9D9);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.caixa-header {
+  background: var(--color-primary, #354F9D);
+  color: var(--color-onPrimary, #FCFCFC);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  flex: 0 0 40px;
+}
+
+.caixa-header svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-onPrimary, #FCFCFC);
+  flex: 0 0 auto;
+}
+
+/* ---------- Clima atual (esquerda) ---------- */
+.caixa.clima-atual {
+  width: 359px;
+  height: 503.34px;
+}
+
+.grid-graficos {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 152.94px);
+  column-gap: 24px;
+  row-gap: 8.4px;
+  justify-content: center;
+  padding: 27px 14px 37px;
+}
+
+.card-grafico {
+  width: 152.94px;
+  height: 127.6px;
+  background: var(--color-surfaceInner, #FFFFFF);
+  border: 1px solid var(--color-border, #6D797A);
+  border-radius: 4px;
+  position: relative;
+}
+
+.card-grafico img {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 23.5px;
+  height: 23.5px;
+  object-fit: contain;
+}
+
+/* ---------- Projeção clima (direita superior) ---------- */
+.caixa.projecao {
+  width: 358px;
+  height: 297px;
+}
+
+.caixa.projecao .caixa-header {
+  font-size: 18px;
+}
+
+.projecao-table {
+  flex: 1;
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surfaceInner, #FFFFFF);
+  font-family: 'Inter', sans-serif;
+}
+
+.projecao-table th {
+  background: var(--color-tableHeaderBg, #6D797A);
+  color: var(--color-tableHeaderText, #FFFFFF);
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 6px 4px;
+  text-align: center;
+  border: 1px solid var(--color-border, #6D797A);
+}
+
+.projecao-table th:first-child { text-align: left; padding-left: 10px; }
+
+.projecao-table td {
+  border: 1px solid var(--color-border, #6D797A);
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--color-text, #1E1E1E);
+  background: #FFFFFF;
+  padding: 4px 6px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.projecao-table td.indicador {
+  text-align: left;
+  padding-left: 6px;
+}
+
+.projecao-table td.indicador .row-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.15;
+}
+
+.projecao-table td.indicador img {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  object-fit: contain;
+}
+
+/* Largura das colunas */
+.projecao-table col.col-indicador { width: 60%; }
+.projecao-table col.col-passado   { width: 20%; }
+.projecao-table col.col-projecao  { width: 20%; }
+
+/* ---------- Temperatura máxima da superfície ---------- */
+.caixa.temperatura {
+  width: 358px;
+  height: 254px;
+}
+
+.caixa.temperatura .caixa-header { font-size: 14px; letter-spacing: 0.25px; }
+
+.mapa-wrap {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0;
+  background: var(--color-surface, #D9D9D9);
+}
+
+.mapa {
+  position: relative;
+  width: 251.27px;
+  height: 214px;
+  border-radius: 4.09px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.mapa img.mapa-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Marker do mapa — posição aproximada conforme Penpot */
+.map-marker {
+  position: absolute;
+  /* posicionamento relativo dentro do mapa: ≈ 80% horizontal, ≈ 18% vertical */
+  left: 80%;
+  top: 18.3%;
+  width: 14px;
+  height: 21px;
+  transform: translate(-50%, -100%);
+  fill: var(--color-mapMarker, #42A5F5);
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
+}
+
+.map-tooltip {
+  position: absolute;
+  left: 80%;
+  top: 18.3%;
+  transform: translate(-50%, calc(-100% - 18px));
+  background: var(--color-tooltipBg, #0F0F14);
+  color: var(--color-tooltipText, #FFFFFF);
+  opacity: 0.88;
+  padding: 2.5px 4.2px;
+  border-radius: 2px;
+  font-family: 'Inter', sans-serif;
+  font-size: 4.61px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+}

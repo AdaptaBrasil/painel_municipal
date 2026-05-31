@@ -41,3 +41,6 @@ shell-frontend: ## Access the frontend container shell
 
 shell-db: ## Access the database container shell
 	docker compose exec db /bin/sh
+
+ui: ## Open Docker Compose UI (if available)
+	docker compose up -d && docker compose logs -f

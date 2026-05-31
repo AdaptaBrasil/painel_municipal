@@ -1,4 +1,6 @@
 # backend/src/application/router.py
+import io
+import zipfile
 from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
@@ -32,6 +34,9 @@ async def health_check(
     county_repo: CountyRepositoryInterface = Depends(get_county_repository)
 ):
     health_msg =  {"backend":{"status": "ok", "message": "Service is running"}}
+    health_msg["pdf_engine"] = settings.pdf_engine
+    health_msg["pages_dir"] = settings.pages_dir
+    
     try:
         info_entity = project_info_service.get_project_info()
         health_msg.update({"project": info_entity.model_dump()})
@@ -56,6 +61,59 @@ async def list_counties(
         return await repo.get_counties()
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# Rate Limit Decorator: Max 1 ZIP per hour per IP (heavy operation)
+@router.get("/reports/zip/all")
+@limiter.limit("1/hour")
+async def download_all_reports_zip(
+    request: Request,
+    county_repo: CountyRepositoryInterface = Depends(get_county_repository),
+    county_statistic_repo: CountyStatisticsRepositoryInterface = Depends(get_county_statistics_repository),
+    adapta_data_repo: AdaptaDataRepositoryInterface = Depends(get_adapta_data_repository),
+    pdf_service: PdfServiceInterface = Depends(get_pdf_service)
+):
+    counties = await county_repo.get_counties()
+    if not counties:
+        raise HTTPException(status_code=404, detail=ErrorKeys.COUNTY_NOT_FOUND.value)
+
+    zip_buffer = io.BytesIO()
+
+    with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
+        # Deixar o counties com somente 5 municípios para teste, depois retirar o slicing
+        counties = counties[:5]  # --- IGNORE --- Remove this line to process all counties in production
+        for county in counties:
+            try:
+                county_data = await county_repo.get_county(county.county_id)
+                county_statistic_data = await county_statistic_repo.get_county_statistics(county.county_id)
+                adapta_risks_data = await adapta_data_repo.get_main_risks_by_county_id(county.county_id)
+                adapta_main_factors_data = await adapta_data_repo.get_main_factors_by_county_id(county.county_id)
+
+                if not all([county_data, county_statistic_data, adapta_risks_data, adapta_main_factors_data]):
+                    print(f"Skipping county {county.county_id}: incomplete data")
+                    continue
+
+                context = {
+                    "county_record": county_data,
+                    "county_statistic_record": county_statistic_data,
+                    "main_factors_record": adapta_main_factors_data,
+                    "risks_record": adapta_risks_data,
+                    "pdf_engine": settings.pdf_engine,
+                }
+
+                pdf_bytes = await pdf_service.generate_pdf_merged(context)
+                filename = f"{county_data.county_id}_{county_data.county}_Plano_Adaptacao.pdf"
+                zf.writestr(filename, pdf_bytes)
+
+            except Exception as e:
+                print(f"Error generating PDF for county {county.county_id}: {e}")
+                continue
+
+    zip_buffer.seek(0)
+    headers = {
+        "Content-Disposition": 'attachment; filename="todos_municipios_Plano_Adaptacao.zip"'
+    }
+    return Response(content=zip_buffer.getvalue(), media_type="application/zip", headers=headers)
+
 
 # Rate Limit Decorator: Max 2 PDFs per minute per IP!
 @router.get("/reports/pdf/{county_id}")
@@ -94,11 +152,12 @@ async def download_report_pdf(
         "county_statistic_record": county_statistic_record,
         "main_factors_record": main_factors_record,
         "risks_record": risks_record,
-        "pdf_engine": settings.pdf_engine
+        "pdf_engine": settings.pdf_engine,
     }
 
     try:
-        pdf_bytes = await pdf_service.generate_pdf("report_template.html", context)
+        # Generates PDFs for each page separately and merges them
+        pdf_bytes = await pdf_service.generate_pdf_merged(context)
     except Exception as e:
         print(f"Error generating PDF: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -109,7 +168,7 @@ async def download_report_pdf(
     return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
 
 
-# Principais fatores 
+# Main factors 
 @router.get("/counties/{county_id}/main-factors", response_model=List[AdaptaData])
 async def get_main_factors(
     county_id: int,
@@ -120,7 +179,7 @@ async def get_main_factors(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
-# Principais riscos
+# Main risks
 @router.get("/counties/{county_id}/main-risks", response_model=List[AdaptaData])
 async def get_main_risks(
     county_id: int,

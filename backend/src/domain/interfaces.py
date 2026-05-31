@@ -1,7 +1,14 @@
 # backend/src/domain/interfaces.py
 from abc import ABC, abstractmethod
 from typing import List
-from .entities import County, CountyStatistics, AdaptaData,  ProjectInfo
+from pathlib import Path
+from .entities import County, CountyStatistics, AdaptaData,  ProjectInfo, LegendItem
+
+
+class LegendItemRepositoryInterface(ABC):
+    @abstractmethod
+    async def get_legend_items(self) -> List[LegendItem]:
+        pass
 
 class DatabaseInterface(ABC):
     @abstractmethod
@@ -41,7 +48,11 @@ class AdaptaDataRepositoryInterface(ABC):
 
 class PdfServiceInterface(ABC):
     @abstractmethod
-    async def generate_pdf(self, template_name: str, context: dict) -> bytes:
+    async def generate_single_page_pdf(self, page_path: Path, context: dict, config: dict) -> bytes:
+        pass
+    
+    @abstractmethod
+    async def generate_pdf_merged(self, context: dict) -> bytes:
         pass
 
 class ProjectInfoServiceInterface(ABC):

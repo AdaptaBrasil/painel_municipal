@@ -2,10 +2,10 @@
 from enum import Enum
 
 class PdfEngineType(str, Enum):
-    WEASYPRINT = "weasyprint"
-    WKHTMLTOPDF = "wkhtmltopdf"
     PLAYWRIGHT = "playwright"
-    PUPPETEER = "puppeteer"
+    # WEASYPRINT = "weasyprint"
+    # WKHTMLTOPDF = "wkhtmltopdf"
+    # PUPPETEER = "puppeteer"
     
 class ErrorKeys(str, Enum):
     DB_CONNECTION_FAILED = "ERR_DB_CONNECTION_FAILED"
