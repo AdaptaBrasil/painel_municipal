@@ -1,255 +1,2141 @@
-/* ---------- Reset & base ---------- */
-*,
-*::before,
-*::after { box-sizing: border-box; }
+/* cyrillic-ext */
 
-html, body { margin: 0; padding: 0; }
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* math */
+
+/* symbols */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+}
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  color: var(--color-text, #1E1E1E);
-  background: #ffffff;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
 }
 
-/* ---------- Page board (842 x 595) ---------- */
-.page {
+* {
+  box-sizing: border-box;
+}
+
+.text-node { background-clip: text !important; -webkit-background-clip: text !important; }
+
+/* PÁGINA5 */
+.p-g-i-n-a5-756b91ea1310 {
+  position: relative;
   width: 842px;
   height: 595px;
-  background: var(--color-bg, #F2F2F2);
-  padding: 19px 57px;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
-.layout {
-  display: flex;
-  gap: 12px;
-  height: 100%;
-}
-
-.col-left,
-.col-right {
-  display: flex;
-  flex-direction: column;
-}
-
-.col-left { gap: 12px; align-items: flex-start; width: 359px; }
-.col-right { gap: 0; width: 358px; }
-
-/* ---------- Município ---------- */
-.municipio {
-  width: 177.93px;
-  height: 40px;
-  background: var(--color-surface, #D9D9D9);
-  border: 1px solid var(--color-border, #6D797A);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Roboto', 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--color-text, #1E1E1E);
-  text-transform: uppercase;
-  letter-spacing: 0.2px;
-}
-
-/* ---------- Caixa (genérica) ---------- */
-.caixa {
-  background: var(--color-surface, #D9D9D9);
-  border-radius: 8px;
+  background: #f2f2f2FF;
+  box-shadow: ;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  mix-blend-mode: normal;
+  z-index: 0;
 }
 
-.caixa-header {
-  background: var(--color-primary, #354F9D);
-  color: var(--color-onPrimary, #FCFCFC);
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  flex: 0 0 40px;
-}
-
-.caixa-header svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--color-onPrimary, #FCFCFC);
-  flex: 0 0 auto;
-}
-
-/* ---------- Clima atual (esquerda) ---------- */
-.caixa.clima-atual {
-  width: 359px;
-  height: 503.34px;
-}
-
-.grid-graficos {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 152.94px);
-  column-gap: 24px;
-  row-gap: 8.4px;
-  justify-content: center;
-  padding: 27px 14px 37px;
-}
-
-.card-grafico {
-  width: 152.94px;
-  height: 127.6px;
-  background: var(--color-surfaceInner, #FFFFFF);
-  border: 1px solid var(--color-border, #6D797A);
-  border-radius: 4px;
-  position: relative;
-}
-
-.card-grafico img {
+/* quadrados coloridos */
+.quadrados-40e06dccd421 {
   position: absolute;
-  top: 6px;
-  left: 6px;
+  left: 797px;
+  top: 358px;
+  width: 147.15px;
+  height: 150px;
+  background: url(./imgs/quadrados-2.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* quadrados coloridos */
+.quadrados-9945a441a43d {
+  position: absolute;
+  left: -113.51px;
+  top: -12px;
+  width: 157.3px;
+  height: 160.36px;
+  background: url(./imgs/quadrados-1.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* PROJECAO ATUAL */
+.p-r-o-j-e-c-a-o-a-9e5adfbabcee {
+  position: absolute;
+  left: 428px;
+  top: 10px;
+  width: 357.18px;
+  height: 301.07px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* tabela */
+.tabela-d5a165135083 {
+  position: absolute;
+  left: 0px;
+  top: 40.06px;
+  width: 357px;
+  height: 261.01px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 104 */
+.rectangle-1c02757a302b {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357px;
+  height: 261px;
+  border: 1px solid #6d797aFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Chuvas extremas */
+.chuvas-ext-6c5f4b50e2bd {
+  position: absolute;
+  left: 51px;
+  top: 239.75px;
+  width: 117px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.chuvas-ext-6c5f4b50e2bd .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.chuvas-ext-6c5f4b50e2bd .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.chuvas-ext-6c5f4b50e2bd .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.chuvas-ext-6c5f4b50e2bd .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* dias chuvosos 1 */
+.dias-chuvo-e8b1aefc3228 {
+  position: absolute;
+  left: 15px;
+  top: 233px;
   width: 23.5px;
   height: 23.5px;
-  object-fit: contain;
+  background: url(./imgs/icone-chuvas-extremas.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
 }
 
-/* ---------- Projeção clima (direita superior) ---------- */
-.caixa.projecao {
-  width: 358px;
-  height: 297px;
+/* +10mm */
+.c-10mm-9744f42dd29f {
+  position: absolute;
+  left: 292px;
+  top: 240.25px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
 }
-
-.caixa.projecao .caixa-header {
-  font-size: 18px;
-}
-
-.projecao-table {
-  flex: 1;
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--color-surfaceInner, #FFFFFF);
-  font-family: 'Inter', sans-serif;
-}
-
-.projecao-table th {
-  background: var(--color-tableHeaderBg, #6D797A);
-  color: var(--color-tableHeaderText, #FFFFFF);
-  font-weight: 600;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  padding: 6px 4px;
-  text-align: center;
-  border: 1px solid var(--color-border, #6D797A);
-}
-
-.projecao-table th:first-child { text-align: left; padding-left: 10px; }
-
-.projecao-table td {
-  border: 1px solid var(--color-border, #6D797A);
-  font-size: 9px;
-  font-weight: 400;
-  color: var(--color-text, #1E1E1E);
-  background: #FFFFFF;
-  padding: 4px 6px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.projecao-table td.indicador {
-  text-align: left;
-  padding-left: 6px;
-}
-
-.projecao-table td.indicador .row-label {
+.c-10mm-9744f42dd29f .root-0 {
+  
+  
   display: flex;
+  white-space: break-spaces;
   align-items: center;
-  gap: 6px;
-  line-height: 1.15;
+}
+.c-10mm-9744f42dd29f .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-10mm-9744f42dd29f .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-10mm-9744f42dd29f .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
 }
 
-.projecao-table td.indicador img {
-  width: 14px;
-  height: 14px;
-  flex: 0 0 14px;
-  object-fit: contain;
+/* 70mm */
+.c-70mm-e931d132a939 {
+  position: absolute;
+  left: 204px;
+  top: 240.25px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-70mm-e931d132a939 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-70mm-e931d132a939 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-70mm-e931d132a939 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-70mm-e931d132a939 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+.c-70mm-e931d132a939 .root-0-paragraph-set-0-paragraph-0-text-1 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
 }
 
-/* Largura das colunas */
-.projecao-table col.col-indicador { width: 60%; }
-.projecao-table col.col-passado   { width: 20%; }
-.projecao-table col.col-projecao  { width: 20%; }
+/* Intensidade de precipitação */
+.intensidad-eb3d99471a63 {
+  position: absolute;
+  left: 51px;
+  top: 207.75px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.intensidad-eb3d99471a63 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.intensidad-eb3d99471a63 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.intensidad-eb3d99471a63 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.intensidad-eb3d99471a63 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
 
-/* ---------- Temperatura máxima da superfície ---------- */
-.caixa.temperatura {
+/* icone intesidade de precipitacao 2 */
+.icone-inte-8620ec0980e3 {
+  position: absolute;
+  left: 15px;
+  top: 201px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-intensidade.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* +2mm */
+.c-2mm-11d218cd86bd {
+  position: absolute;
+  left: 294px;
+  top: 207.25px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-2mm-11d218cd86bd .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-2mm-11d218cd86bd .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-2mm-11d218cd86bd .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-2mm-11d218cd86bd .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 10mm */
+.c-10mm-47b692bb2c13 {
+  position: absolute;
+  left: 205px;
+  top: 207.25px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-10mm-47b692bb2c13 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-10mm-47b692bb2c13 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-10mm-47b692bb2c13 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-10mm-47b692bb2c13 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Números máximo de dias de chuva consecutivos */
+.nmeros-m-ce6e42b17144 {
+  position: absolute;
+  left: 51px;
+  top: 169.75px;
+  width: 118px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.nmeros-m-ce6e42b17144 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.nmeros-m-ce6e42b17144 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.nmeros-m-ce6e42b17144 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.nmeros-m-ce6e42b17144 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* icone de numero maximo de dias chuva consecutivos 3 */
+.icone-de-n-a969322ce980 {
+  position: absolute;
+  left: 15px;
+  top: 169px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-dias-chuva.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* +1 */
+.c-1-fa902a8fdb05 {
+  position: absolute;
+  left: 291px;
+  top: 176.25px;
+  width: 33.52px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-1-fa902a8fdb05 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-1-fa902a8fdb05 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-1-fa902a8fdb05 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-1-fa902a8fdb05 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 3 */
+.c-3-8b3d9bedcb16 {
+  position: absolute;
+  left: 215px;
+  top: 176.25px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-3-8b3d9bedcb16 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-3-8b3d9bedcb16 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-3-8b3d9bedcb16 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-3-8b3d9bedcb16 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* +8 */
+.c-8-b22a8c4c07c9 {
+  position: absolute;
+  left: 302px;
+  top: 144px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-8-b22a8c4c07c9 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-8-b22a8c4c07c9 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-8-b22a8c4c07c9 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-8-b22a8c4c07c9 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 12 */
+.c-12-c64725bebe7c {
+  position: absolute;
+  left: 213px;
+  top: 137px;
+  width: 10px;
+  height: 24px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-12-c64725bebe7c .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-12-c64725bebe7c .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-12-c64725bebe7c .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-12-c64725bebe7c .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* icone de numero maximo de dias chuva consecutivos 2 */
+.icone-de-n-357a05a780b5 {
+  position: absolute;
+  left: 15px;
+  top: 137px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-dias-secos.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Números máximo de dias secos consecutivos */
+.nmeros-m-2369e030fd4a {
+  position: absolute;
+  left: 51px;
+  top: 137.25px;
+  width: 112.72px;
+  height: 24px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.nmeros-m-2369e030fd4a .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.nmeros-m-2369e030fd4a .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.nmeros-m-2369e030fd4a .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.nmeros-m-2369e030fd4a .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* +2,2º */
+.c-22-78c870ba380f {
+  position: absolute;
+  left: 296px;
+  top: 111.75px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-22-78c870ba380f .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-22-78c870ba380f .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-22-78c870ba380f .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-22-78c870ba380f .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 38º */
+.c-38-b1a35b924760 {
+  position: absolute;
+  left: 210px;
+  top: 111.75px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-38-b1a35b924760 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-38-b1a35b924760 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-38-b1a35b924760 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-38-b1a35b924760 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Temperatura máxima */
+.temperatur-84a61e125aaf {
+  position: absolute;
+  left: 51px;
+  top: 105.75px;
+  width: 90px;
+  height: 22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.temperatur-84a61e125aaf .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.temperatur-84a61e125aaf .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.temperatur-84a61e125aaf .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.temperatur-84a61e125aaf .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* icone temperatura maxima 2 */
+.icone-temp-e3b701e94e68 {
+  position: absolute;
+  left: 15px;
+  top: 105px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-temp-maxima.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* +1,2º */
+.c-12-f95033ef3e56 {
+  position: absolute;
+  left: 297px;
+  top: 79.75px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-12-f95033ef3e56 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-12-f95033ef3e56 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-12-f95033ef3e56 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-12-f95033ef3e56 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 10º */
+.c-10-4924c9e451da {
+  position: absolute;
+  left: 211px;
+  top: 79.75px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-10-4924c9e451da .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-10-4924c9e451da .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-10-4924c9e451da .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-10-4924c9e451da .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Temperatura mínima */
+.temperatur-4833bd14dcc5 {
+  position: absolute;
+  left: 51px;
+  top: 79.75px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.temperatur-4833bd14dcc5 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.temperatur-4833bd14dcc5 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.temperatur-4833bd14dcc5 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.temperatur-4833bd14dcc5 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* icone temperatura minima 2 */
+.icone-temp-884373fc8e71 {
+  position: absolute;
+  left: 15px;
+  top: 73px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-temp-minima.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* +1,5º */
+.c-15-e41f07c66620 {
+  position: absolute;
+  left: 297px;
+  top: 48px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-15-e41f07c66620 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-15-e41f07c66620 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-15-e41f07c66620 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-15-e41f07c66620 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 22º */
+.c-22-895a0d3c94d0 {
+  position: absolute;
+  left: 210px;
+  top: 48px;
+  height: 11px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-22-895a0d3c94d0 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.c-22-895a0d3c94d0 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-22-895a0d3c94d0 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.c-22-895a0d3c94d0 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Temperatura média */
+.temperatur-432d1ab6c020 {
+  position: absolute;
+  left: 51px;
+  top: 47.75px;
+  width: 83px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.temperatur-432d1ab6c020 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: center;
+}
+.temperatur-432d1ab6c020 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.temperatur-432d1ab6c020 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.temperatur-432d1ab6c020 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 9px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* icone temperatura media 2 */
+.icone-temp-61c409b6490a {
+  position: absolute;
+  left: 15px;
+  top: 41px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-temp-media.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Line 10 */
+.line-10-717e8ca675a4 > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-10-717e8ca675a4 {
+  position: absolute;
+  left: 1px;
+  top: 261px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 9 */
+.line-9-b7c21d85167d > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-9-b7c21d85167d {
+  position: absolute;
+  left: 1px;
+  top: 229px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 8 */
+.line-8-29846ed98734 > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-8-29846ed98734 {
+  position: absolute;
+  left: 1px;
+  top: 197px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 7 */
+.line-7-1dbd6c4dc892 > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-7-1dbd6c4dc892 {
+  position: absolute;
+  left: 1px;
+  top: 165px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 6 */
+.line-6-9a3315f92870 > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-6-9a3315f92870 {
+  position: absolute;
+  left: 1px;
+  top: 133px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 5 */
+.line-5-52d85a6edd9f > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-5-52d85a6edd9f {
+  position: absolute;
+  left: 1px;
+  top: 101px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 4 */
+.line-4-25681fb3811f > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-4-25681fb3811f {
+  position: absolute;
+  left: 1px;
+  top: 69px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 3 */
+.line-3-dd7f83dd83af > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-3-dd7f83dd83af {
+  position: absolute;
+  left: 1px;
+  top: 37px;
+  width: 356px;
+  height: 0.01px;
+  mix-blend-mode: normal;
+}
+
+/* Line 2 */
+.line-2-7a7a0c0c928f > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-2-7a7a0c0c928f {
+  position: absolute;
+  left: 262.75px;
+  top: 0px;
+  width: 0.01px;
+  height: 261px;
+  mix-blend-mode: normal;
+}
+
+/* Line 1 */
+.line-1-09a46c4e89dc > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.line-1-09a46c4e89dc {
+  position: absolute;
+  left: 173px;
+  top: 0px;
+  width: 0.01px;
+  height: 261px;
+  mix-blend-mode: normal;
+}
+
+/* Projeção */
+.projeo-8411f8c842c9 {
+  position: absolute;
+  left: 281px;
+  top: 13px;
+  height: 12px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.projeo-8411f8c842c9 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.projeo-8411f8c842c9 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.projeo-8411f8c842c9 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.projeo-8411f8c842c9 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9.932161331176758px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* passado */
+.passado-cebb7a2946e3 {
+  position: absolute;
+  left: 193px;
+  top: 13px;
+  height: 12px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.passado-cebb7a2946e3 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.passado-cebb7a2946e3 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.passado-cebb7a2946e3 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.passado-cebb7a2946e3 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9.932161331176758px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Indicador anual */
+.indicador-58639a1b2796 {
+  position: absolute;
+  left: 36px;
+  top: 13px;
+  height: 12px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.indicador-58639a1b2796 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.indicador-58639a1b2796 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.indicador-58639a1b2796 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.indicador-58639a1b2796 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 9.932161331176758px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 103 */
+.rectangle-d30ad8eb4fa6 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357px;
+  height: 37px;
+  background: #6d797aFF;
+  border: 1px solid #ffffffFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 102 */
+.rectangle-b162451f94c5 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357px;
+  height: 261px;
+  background: #d9d9d9FF;
+  border: 1px solid #ffffffFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* caixa projecao clima a */
+.caixa-proj-d8509b06efa0 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.18px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* projecao clima a */
+.projecao-c-a921fb7c9416 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.18px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* projeção clima */
+.projeo-c-46458b3359ad {
+  position: absolute;
+  left: 102.15px;
+  top: 9px;
+  height: 22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.projeo-c-46458b3359ad .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.projeo-c-46458b3359ad .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.projeo-c-46458b3359ad .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+.projeo-c-46458b3359ad .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 18px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 78 */
+.rectangle-ae14f9958d22 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.18px;
+  height: 40px;
+  background: #354f9dFF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* CLIMA ATUAL  */
+.c-l-i-m-a-a-t-u-a-6da73d263796 {
+  position: absolute;
+  left: 57px;
+  top: 70.66px;
+  width: 358px;
+  height: 503.34px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* CLIMA ATUAL */
+.c-l-i-m-a-a-t-u-a-dc3413e2a93a {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 358px;
+  height: 503.34px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* grafico intensidade de precipitacao */
+.grafico-in-77b3eb5f43fd {
+  position: absolute;
+  left: 190px;
+  top: 339.34px;
+  width: 152.71px;
+  height: 127.37px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* icone intesidade de precipitacao 1 */
+.icone-inte-37409ee2a2c8 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-intensidade.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 100 */
+.rectangle-bc057a3f71bc {
+  position: absolute;
+  left: 0px;
+  top: 25.06px;
+  width: 152.71px;
+  height: 102.31px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* grafico dias de chuva */
+.grafico-di-20e83bfa1d8f {
+  position: absolute;
+  left: 13px;
+  top: 338.34px;
+  width: 152.94px;
+  height: 127.91px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* icone de numero maximo de dias chuva consecutivos 1 */
+.icone-de-n-1b9452706468 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-dias-chuva.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 99 */
+.rectangle-74d2a4a04d33 {
+  position: absolute;
+  left: 0.23px;
+  top: 25.6px;
+  width: 152.71px;
+  height: 102.31px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* grafico temperatura maxima */
+.grafico-te-6b5d3c4f6451 {
+  position: absolute;
+  left: 13px;
+  top: 203.34px;
+  width: 152.94px;
+  height: 127.89px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* icone temperatura maxima 1 */
+.icone-temp-ca73738df947 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-temp-maxima.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 97 */
+.rectangle-e6085f014130 {
+  position: absolute;
+  left: 0.23px;
+  top: 25.58px;
+  width: 152.71px;
+  height: 102.31px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* grafico dias secos */
+.grafico-di-238f2090d270 {
+  position: absolute;
+  left: 190px;
+  top: 203.34px;
+  width: 152.71px;
+  height: 128.57px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* icone numero maximo de dias secos consecutivos 1 */
+.icone-nume-9c6691cb5548 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-dias-secos.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 98 */
+.rectangle-271cd1113927 {
+  position: absolute;
+  left: 0px;
+  top: 26.27px;
+  width: 152.71px;
+  height: 102.31px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* grafico temperatura minima */
+.grafico-te-61a247951d28 {
+  position: absolute;
+  left: 190px;
+  top: 67.34px;
+  width: 152.71px;
+  height: 127.6px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* icone temperatura minima 1 */
+.icone-temp-335f4f79b456 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-temp-minima.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 96 */
+.rectangle-c7cc3b030133 {
+  position: absolute;
+  left: 0px;
+  top: 25.29px;
+  width: 152.71px;
+  height: 102.31px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* grafico temperatura minima */
+.grafico-te-6931b2fe0d54 {
+  position: absolute;
+  left: 13px;
+  top: 67.34px;
+  width: 152.94px;
+  height: 127.6px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* icone temperatura media 1 */
+.icone-temp-f7f92ab23dee {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 23.5px;
+  height: 23.5px;
+  background: url(./imgs/icone-temp-media.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 95 */
+.rectangle-9c42e8c18d2e {
+  position: absolute;
+  left: 0.23px;
+  top: 25.29px;
+  width: 152.71px;
+  height: 102.31px;
+  background: #fcfcfcFF;
+  border: 1px solid #6d797aFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* clima atual a */
+.clima-atua-a7105a940a9d {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 358px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Clima atual */
+.clima-atua-f3bf6e46b240 {
+  position: absolute;
+  left: 120px;
+  top: 8.34px;
+  width: 134px;
+  height: 22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.clima-atua-f3bf6e46b240 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.clima-atua-f3bf6e46b240 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.clima-atua-f3bf6e46b240 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+.clima-atua-f3bf6e46b240 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 18px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 59 */
+.rectangle-f57d31566baa {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 358px;
+  height: 40px;
+  background: #354f9dFF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 56 */
+.rectangle-415fbea1d065 {
+  position: absolute;
+  left: 0px;
+  top: 0.34px;
+  width: 358px;
+  height: 503px;
+  background: #abc837FF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* TEMPERATURA MAXIMA DA SUPERFICIE */
+.t-e-m-p-e-r-a-t-u-r-70e42ad4f8bd {
+  position: absolute;
+  left: 427px;
+  top: 320px;
   width: 358px;
   height: 254px;
+  box-shadow: ;
+  mix-blend-mode: normal;
 }
 
-.caixa.temperatura .caixa-header { font-size: 14px; letter-spacing: 0.25px; }
+/* temperatura maxima da superficie a */
+.temperatur-3a0857fc4fe1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
 
-.mapa-wrap {
-  flex: 1;
+/* temperatura máxima da superfície */
+.temperatur-9f5d44b1a949 {
+  position: absolute;
+  left: 35px;
+  top: 11px;
+  height: 17px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.temperatur-9f5d44b1a949 .root-0 {
+  
+  
   display: flex;
+  white-space: break-spaces;
   align-items: flex-start;
-  justify-content: center;
-  padding-top: 0;
-  background: var(--color-surface, #D9D9D9);
 }
-
-.mapa {
-  position: relative;
-  width: 251.27px;
-  height: 214px;
-  border-radius: 4.09px;
-  overflow: hidden;
-  background: #FFFFFF;
+.temperatur-9f5d44b1a949 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
 }
-
-.mapa img.mapa-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Marker do mapa — posição aproximada conforme Penpot */
-.map-marker {
-  position: absolute;
-  /* posicionamento relativo dentro do mapa: ≈ 80% horizontal, ≈ 18% vertical */
-  left: 80%;
-  top: 18.3%;
-  width: 14px;
-  height: 21px;
-  transform: translate(-50%, -100%);
-  fill: var(--color-mapMarker, #42A5F5);
-  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.35));
-}
-
-.map-tooltip {
-  position: absolute;
-  left: 80%;
-  top: 18.3%;
-  transform: translate(-50%, calc(-100% - 18px));
-  background: var(--color-tooltipBg, #0F0F14);
-  color: var(--color-tooltipText, #FFFFFF);
-  opacity: 0.88;
-  padding: 2.5px 4.2px;
-  border-radius: 2px;
-  font-family: 'Inter', sans-serif;
-  font-size: 4.61px;
-  font-weight: 500;
+.temperatur-9f5d44b1a949 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
   line-height: 1.2;
-  white-space: nowrap;
+  margin: 0;
+  text-align: left;
 }
+.temperatur-9f5d44b1a949 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 14px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 101 */
+.rectangle-3febd46461c4 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  background: #354f9dFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 58 */
+.rectangle-80f32174c834 > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(0px,0px);
+}
+.rectangle-80f32174c834 {
+  position: absolute;
+  left: 0px;
+  top: 40px;
+  width: 358px;
+  height: 214px;
+  mix-blend-mode: normal;
+}
+
+/* NOME DO MUNICIPIO */
+.n-o-m-e-d-o-m-u-eec8e43c1463 {
+  position: absolute;
+  left: 56.45px;
+  top: 18.94px;
+  width: 177.93px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Curitiba - Paraná */
+.curitiba-f607d51775b3 {
+  position: absolute;
+  left: 16px;
+  top: 0px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.curitiba-f607d51775b3 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.curitiba-f607d51775b3 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.curitiba-f607d51775b3 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 2.5;
+  margin: 0;
+  text-align: left;
+}
+.curitiba-f607d51775b3 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 16px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* gray-rectangle */
+.grayrecta-00b0dec9ff2d {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 177.93px;
+  height: 40px;
+  background: #d9d9d9FF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+.c-70mm-e931d132a939 .root-0-paragraph-set-0-paragraph-0-text-0 { text-transform: none; }

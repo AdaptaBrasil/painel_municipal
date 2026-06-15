@@ -1,102 +1,631 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <base href="{{ base_url }}">
-    <title>AdaptaBrasil — Página 5</title>
-    <link rel="stylesheet" href="../shared/css/fonts.css" />
-    <link rel="stylesheet" href="./styles.css" />
+    <title>AdaptaBrasil — Página 5 (Clima atual e projeção)</title>
+    <link rel="stylesheet" href="./shared/css/fonts.css">
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <main class="page">
-      <div class="layout">
-        <!-- Coluna esquerda: município + clima atual -->
-        <div class="col-left">
-          <div class="municipio">
-            <span data-bind="location.cityState">Curitiba - Paraná</span>
+  <!-- frame: PÁGINA5 -->
+<div class="frame p-g-i-n-a5-756b91ea1310">
+  <!-- group: NOME DO MUNICIPIO -->
+  <div class="group n-o-m-e-d-o-m-u-eec8e43c1463">
+    <!-- rect: gray-rectangle -->
+    <div class="shape rect grayrecta-00b0dec9ff2d">
+    </div>
+    <!-- text: Curitiba - Paraná -->
+    <div class="shape text curitiba-f607d51775b3">
+      <div class="text-node-html" id="html-text-node-a4a6d1d8-d7ad-5f50-88ba-f607d51775b3" data-x="954.447265625" data-y="18.941650390625">
+        <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="paragraph-set root-0-paragraph-set-0">
+            <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="location.cityState">Curitiba - Paraná</span></p>
           </div>
-
-          <section class="caixa clima-atual">
-            <header class="caixa-header">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Zm-9 13H4V7h8v10Zm8 0h-7V7h7v10Z"/>
-              </svg>
-              <span data-bind="climaAtual.title">Clima atual a</span>
-            </header>
-            <div class="grid-graficos" data-bind-list="climaAtual.graficos" data-template="tpl-card-grafico"></div>
-          </section>
         </div>
-
-        <!-- Coluna direita: projeção + temperatura -->
-        <div class="col-right">
-          <section class="caixa projecao">
-            <header class="caixa-header">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 3h1.5v16.5H21V21H3V3Zm4 13h2v3H7v-3Zm4-5h2v8h-2v-8Zm4-4h2v12h-2V7Zm4 6h2v6h-2v-6Z"/>
-              </svg>
-              <span data-bind="projecaoClima.title">Projeção clima a</span>
-            </header>
-            <table class="projecao-table">
-              <colgroup>
-                <col class="col-indicador" />
-                <col class="col-passado" />
-                <col class="col-projecao" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th data-bind="projecaoClima.columns.indicadorHeader">Indicador anual</th>
-                  <th data-bind="projecaoClima.columns.passadoHeader">Passado</th>
-                  <th data-bind="projecaoClima.columns.projecaoHeader">Projeção</th>
-                </tr>
-              </thead>
-              <tbody data-bind-list="projecaoClima.rows" data-template="tpl-row-projecao"></tbody>
-            </table>
-          </section>
-
-          <section class="caixa temperatura">
-            <header class="caixa-header">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 3h1.5v16.5H21V21H3V3Zm4 13h2v3H7v-3Zm4-5h2v8h-2v-8Zm4-4h2v12h-2V7Zm4 6h2v6h-2v-6Z"/>
-              </svg>
-              <span data-bind="temperaturaSuperficie.title">Temperatura máxima da superfície a</span>
-            </header>
-            <div class="mapa-wrap">
-              <div class="mapa">
-                <img class="mapa-img" data-bind-src="temperaturaSuperficie.mapImage" alt="Mapa de Curitiba" />
-                <svg class="map-marker" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2C7.58 2 4 5.58 4 10c0 6 8 12 8 12s8-6 8-12c0-4.42-3.58-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/>
-                </svg>
-                <div class="map-tooltip">
-                  <span data-bind="temperaturaSuperficie.tooltip">Curitiba, State of Paraná, Brazil</span>
-                </div>
+      </div>
+    </div>
+  </div>
+  <!-- group: TEMPERATURA MAXIMA DA SUPERFICIE -->
+  <div class="group t-e-m-p-e-r-a-t-u-r-70e42ad4f8bd">
+    <!-- path: Rectangle 58 -->
+    <div class="shape path rectangle-80f32174c834">
+      <svg width="358" xmlns="http://www.w3.org/2000/svg" height="214" id="screenshot-a67d1d2b-528b-532e-b4bb-80f32174c834" viewBox="1309 360 358 214" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+        <g id="shape-a67d1d2b-528b-532e-b4bb-80f32174c834" style="opacity:1">
+          <defs>
+            <pattern patternUnits="userSpaceOnUse" x="1309" y="360" width="358" height="214" patternTransform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" id="fill-0-render-5903">
+              <g>
+                <image id="fill-image-render-5903-0" href="./imgs/mapa-curitiba.png" preserveAspectRatio="xMidYMid slice" width="358" height="214" opacity="1"></image>
+              </g>
+            </pattern>
+          </defs>
+          <g class="fills" id="fills-a67d1d2b-528b-532e-b4bb-80f32174c834">
+            <path d="M1309,360L1667,360L1667,574L1309,574L1309,360Z" fill="url(#fill-0-render-5903)" fill-rule="nonzero"></path>
+          </g>
+          <g fill-rule="nonzero" id="strokes-01f992e8-2db0-80e0-8008-297344292393-a67d1d2b-528b-532e-b4bb-80f32174c834" class="strokes">
+            <g class="inner-stroke-shape">
+              <defs>
+                <clipPath id="inner-stroke-render-5903-a67d1d2b-528b-532e-b4bb-80f32174c834-0">
+                  <use href="#stroke-shape-render-5903-a67d1d2b-528b-532e-b4bb-80f32174c834-0"></use>
+                </clipPath>
+                <path d="M1309,360L1667,360L1667,574L1309,574L1309,360Z" style="fill:none;fill-opacity:none;stroke-width:2;stroke:#6d797a;stroke-opacity:1" id="stroke-shape-render-5903-a67d1d2b-528b-532e-b4bb-80f32174c834-0"></path>
+              </defs>
+              <use href="#stroke-shape-render-5903-a67d1d2b-528b-532e-b4bb-80f32174c834-0" clip-path="url(&#x27;#inner-stroke-render-5903-a67d1d2b-528b-532e-b4bb-80f32174c834-0&#x27;)"></use>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <!-- group: temperatura maxima da superficie a -->
+    <div class="group temperatur-3a0857fc4fe1">
+      <!-- rect: Rectangle 101 -->
+      <div class="shape rect rectangle-3febd46461c4">
+      </div>
+      <!-- text: temperatura máxima da superfície -->
+      <div class="shape text temperatur-9f5d44b1a949">
+        <div class="text-node-html" id="html-text-node-c4ada236-13b2-5ec6-949b-9f5d44b1a949" data-x="1344" data-y="331">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="temperaturaMapa.title">temperatura máxima da superfície </span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- group: CLIMA ATUAL  -->
+  <div class="group c-l-i-m-a-a-t-u-a-6da73d263796">
+    <!-- group: CLIMA ATUAL -->
+    <div class="group c-l-i-m-a-a-t-u-a-dc3413e2a93a">
+      <!-- rect: Rectangle 56 -->
+      <div class="shape rect rectangle-415fbea1d065">
+      </div>
+      <!-- group: clima atual a -->
+      <div class="group clima-atua-a7105a940a9d">
+        <!-- rect: Rectangle 59 -->
+        <div class="shape rect rectangle-f57d31566baa">
+        </div>
+        <!-- text: Clima atual -->
+        <div class="shape text clima-atua-f3bf6e46b240">
+          <div class="text-node-html" id="html-text-node-edd60b1e-9fe6-51b5-86f3-f3bf6e46b240" data-x="1059" data-y="79">
+            <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="paragraph-set root-0-paragraph-set-0">
+                <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="climaAtual.title">Clima atual </span></p>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
-    </main>
-
-    <!-- Templates de itens de lista (renderizados por shared/js/app.js) -->
-    <template id="tpl-card-grafico">
-      <div class="card-grafico">
-        <img data-field="icon" alt="" />
+      <!-- group: grafico temperatura minima -->
+      <div class="group grafico-te-6931b2fe0d54">
+        <!-- rect: Rectangle 95 -->
+        <div class="shape rect rectangle-9c42e8c18d2e">
+        </div>
+        <!-- rect: icone temperatura media 1 -->
+        <div class="shape rect icone-temp-f7f92ab23dee">
+        </div>
       </div>
-    </template>
-
-    <template id="tpl-row-projecao">
-      <tr>
-        <td class="indicador">
-          <span class="row-label">
-            <img data-field="icon" alt="" />
-            <span data-field="label"></span>
-          </span>
-        </td>
-        <td data-field="passado"></td>
-        <td data-field="projecao"></td>
-      </tr>
-    </template>
-
+      <!-- group: grafico temperatura minima -->
+      <div class="group grafico-te-61a247951d28">
+        <!-- rect: Rectangle 96 -->
+        <div class="shape rect rectangle-c7cc3b030133">
+        </div>
+        <!-- rect: icone temperatura minima 1 -->
+        <div class="shape rect icone-temp-335f4f79b456">
+        </div>
+      </div>
+      <!-- group: grafico dias secos -->
+      <div class="group grafico-di-238f2090d270">
+        <!-- rect: Rectangle 98 -->
+        <div class="shape rect rectangle-271cd1113927">
+        </div>
+        <!-- rect: icone numero maximo de dias secos consecutivos 1 -->
+        <div class="shape rect icone-nume-9c6691cb5548">
+        </div>
+      </div>
+      <!-- group: grafico temperatura maxima -->
+      <div class="group grafico-te-6b5d3c4f6451">
+        <!-- rect: Rectangle 97 -->
+        <div class="shape rect rectangle-e6085f014130">
+        </div>
+        <!-- rect: icone temperatura maxima 1 -->
+        <div class="shape rect icone-temp-ca73738df947">
+        </div>
+      </div>
+      <!-- group: grafico dias de chuva -->
+      <div class="group grafico-di-20e83bfa1d8f">
+        <!-- rect: Rectangle 99 -->
+        <div class="shape rect rectangle-74d2a4a04d33">
+        </div>
+        <!-- rect: icone de numero maximo de dias chuva consecutivos 1 -->
+        <div class="shape rect icone-de-n-1b9452706468">
+        </div>
+      </div>
+      <!-- group: grafico intensidade de precipitacao -->
+      <div class="group grafico-in-77b3eb5f43fd">
+        <!-- rect: Rectangle 100 -->
+        <div class="shape rect rectangle-bc057a3f71bc">
+        </div>
+        <!-- rect: icone intesidade de precipitacao 1 -->
+        <div class="shape rect icone-inte-37409ee2a2c8">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- group: PROJECAO ATUAL -->
+  <div class="group p-r-o-j-e-c-a-o-a-9e5adfbabcee">
+    <!-- group: caixa projecao clima a -->
+    <div class="group caixa-proj-d8509b06efa0">
+      <!-- group: projecao clima a -->
+      <div class="group projecao-c-a921fb7c9416">
+        <!-- rect: Rectangle 78 -->
+        <div class="shape rect rectangle-ae14f9958d22">
+        </div>
+        <!-- text: projeção clima -->
+        <div class="shape text projeo-c-46458b3359ad">
+          <div class="text-node-html" id="html-text-node-6eb04699-09c3-5710-927a-46458b3359ad" data-x="1412.1502685546875" data-y="19">
+            <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="paragraph-set root-0-paragraph-set-0">
+                <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.title">projeção clima </span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- group: tabela -->
+    <div class="group tabela-d5a165135083">
+      <!-- rect: Rectangle 102 -->
+      <div class="shape rect rectangle-b162451f94c5">
+      </div>
+      <!-- rect: Rectangle 103 -->
+      <div class="shape rect rectangle-d30ad8eb4fa6">
+      </div>
+      <!-- text: Indicador anual -->
+      <div class="shape text indicador-58639a1b2796">
+        <div class="text-node-html" id="html-text-node-0fc829f0-3efe-5c9e-a552-58639a1b2796" data-x="1346" data-y="63.058837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.columns.indicador">Indicador anual</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: passado -->
+      <div class="shape text passado-cebb7a2946e3">
+        <div class="text-node-html" id="html-text-node-faacb297-5627-58fe-8ec6-cebb7a2946e3" data-x="1503" data-y="63.058837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.columns.passado">passado</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: Projeção -->
+      <div class="shape text projeo-8411f8c842c9">
+        <div class="text-node-html" id="html-text-node-e688bd81-f020-5c7e-9261-8411f8c842c9" data-x="1591" data-y="63.058837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.columns.projecao">Projeção</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- path: Line 1 -->
+      <div class="shape path line-1-09a46c4e89dc">
+        <svg width="4.01" xmlns="http://www.w3.org/2000/svg" height="265" id="screenshot-09d359ba-db9f-591a-a816-09a46c4e89dc" viewBox="1481 48.059 4.01 265" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-09d359ba-db9f-591a-a816-09a46c4e89dc" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-09d359ba-db9f-591a-a816-09a46c4e89dc">
+              <path d="M1483,311.058837890625L1483,50.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442a26ff-09d359ba-db9f-591a-a816-09a46c4e89dc" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1483,311.058837890625L1483,50.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#fcfcfc;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 2 -->
+      <div class="shape path line-2-7a7a0c0c928f">
+        <svg width="4.01" xmlns="http://www.w3.org/2000/svg" height="265.001" id="screenshot-1f8b305d-f8a7-5849-83d0-7a7a0c0c928f" viewBox="1570.751 48.059 4.01 265.001" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-1f8b305d-f8a7-5849-83d0-7a7a0c0c928f" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-1f8b305d-f8a7-5849-83d0-7a7a0c0c928f">
+              <path d="M1572.7509765625,311.0600280761719L1572.7509765625,50.05859375"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442a7695-1f8b305d-f8a7-5849-83d0-7a7a0c0c928f" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1572.7509765625,311.0600280761719L1572.7509765625,50.05859375" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 3 -->
+      <div class="shape path line-3-dd7f83dd83af">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-c198d4f8-a950-5803-bacf-dd7f83dd83af" viewBox="1309 85.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-c198d4f8-a950-5803-bacf-dd7f83dd83af" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-c198d4f8-a950-5803-bacf-dd7f83dd83af">
+              <path d="M1311,87.058837890625L1667,87.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442a7696-c198d4f8-a950-5803-bacf-dd7f83dd83af" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,87.058837890625L1667,87.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 4 -->
+      <div class="shape path line-4-25681fb3811f">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-f44c9c21-5754-5174-96e7-25681fb3811f" viewBox="1309 117.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-f44c9c21-5754-5174-96e7-25681fb3811f" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-f44c9c21-5754-5174-96e7-25681fb3811f">
+              <path d="M1311,119.058837890625L1667,119.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442a9651-f44c9c21-5754-5174-96e7-25681fb3811f" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,119.058837890625L1667,119.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 5 -->
+      <div class="shape path line-5-52d85a6edd9f">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-1ad49cca-c7ac-519f-95e0-52d85a6edd9f" viewBox="1309 149.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-1ad49cca-c7ac-519f-95e0-52d85a6edd9f" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-1ad49cca-c7ac-519f-95e0-52d85a6edd9f">
+              <path d="M1311,151.058837890625L1667,151.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442a9652-1ad49cca-c7ac-519f-95e0-52d85a6edd9f" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,151.058837890625L1667,151.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 6 -->
+      <div class="shape path line-6-9a3315f92870">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-29032aca-7b95-5235-96d2-9a3315f92870" viewBox="1309 181.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-29032aca-7b95-5235-96d2-9a3315f92870" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-29032aca-7b95-5235-96d2-9a3315f92870">
+              <path d="M1311,183.058837890625L1667,183.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442ac3b4-29032aca-7b95-5235-96d2-9a3315f92870" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,183.058837890625L1667,183.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 7 -->
+      <div class="shape path line-7-1dbd6c4dc892">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-4fb9e085-cfac-5605-bea2-1dbd6c4dc892" viewBox="1309 213.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-4fb9e085-cfac-5605-bea2-1dbd6c4dc892" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-4fb9e085-cfac-5605-bea2-1dbd6c4dc892">
+              <path d="M1311,215.058837890625L1667,215.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442b2942-4fb9e085-cfac-5605-bea2-1dbd6c4dc892" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,215.058837890625L1667,215.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 8 -->
+      <div class="shape path line-8-29846ed98734">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-d35a1add-0aa8-5124-a8f9-29846ed98734" viewBox="1309 245.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-d35a1add-0aa8-5124-a8f9-29846ed98734" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-d35a1add-0aa8-5124-a8f9-29846ed98734">
+              <path d="M1311,247.058837890625L1667,247.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442b2943-d35a1add-0aa8-5124-a8f9-29846ed98734" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,247.058837890625L1667,247.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 9 -->
+      <div class="shape path line-9-b7c21d85167d">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-26b0386e-2b38-5bbf-bc22-b7c21d85167d" viewBox="1309 277.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-26b0386e-2b38-5bbf-bc22-b7c21d85167d" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-26b0386e-2b38-5bbf-bc22-b7c21d85167d">
+              <path d="M1311,279.058837890625L1667,279.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442b6bfe-26b0386e-2b38-5bbf-bc22-b7c21d85167d" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,279.058837890625L1667,279.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- path: Line 10 -->
+      <div class="shape path line-10-717e8ca675a4">
+        <svg width="360" xmlns="http://www.w3.org/2000/svg" height="4.01" id="screenshot-dd8240b6-cd80-5821-bccb-717e8ca675a4" viewBox="1309 309.059 360 4.01" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+          <g id="shape-dd8240b6-cd80-5821-bccb-717e8ca675a4" style="opacity:1">
+            <defs></defs>
+            <g class="fills" id="fills-dd8240b6-cd80-5821-bccb-717e8ca675a4">
+              <path d="M1311,311.058837890625L1667,311.058837890625"></path>
+            </g>
+            <g id="strokes-01f992e8-2db0-80e0-8008-2973442b6bff-dd8240b6-cd80-5821-bccb-717e8ca675a4" class="strokes">
+              <g class="stroke-shape">
+                <defs></defs>
+                <path d="M1311,311.058837890625L1667,311.058837890625" style="fill:none;fill-opacity:none;stroke-width:1;stroke:#ffffff;stroke-opacity:1"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <!-- rect: icone temperatura media 2 -->
+      <div class="shape rect icone-temp-61c409b6490a">
+      </div>
+      <!-- text: Temperatura média -->
+      <div class="shape text temperatur-432d1ab6c020">
+        <div class="text-node-html" id="html-text-node-bba38092-0493-5994-ad46-432d1ab6c020" data-x="1361" data-y="97.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.0.label">Temperatura média</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: 22º -->
+      <div class="shape text c-22-895a0d3c94d0">
+        <div class="text-node-html" id="html-text-node-ee8fa75b-ad55-53af-997d-895a0d3c94d0" data-x="1520" data-y="98.058837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.0.passado">22º</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: +1,5º -->
+      <div class="shape text c-15-e41f07c66620">
+        <div class="text-node-html" id="html-text-node-6f5a61c1-acbf-53b7-bd1c-e41f07c66620" data-x="1607" data-y="98.058837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.0.projecao">+1,5º</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rect: icone temperatura minima 2 -->
+      <div class="shape rect icone-temp-884373fc8e71">
+      </div>
+      <!-- text: Temperatura mínima -->
+      <div class="shape text temperatur-4833bd14dcc5">
+        <div class="text-node-html" id="html-text-node-c8b5ad35-7989-5be4-a0b8-4833bd14dcc5" data-x="1361" data-y="129.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.1.label">Temperatura mínima</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: 10º -->
+      <div class="shape text c-10-4924c9e451da">
+        <div class="text-node-html" id="html-text-node-0c7dcb20-a803-5ef5-8a9f-4924c9e451da" data-x="1521" data-y="129.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.1.passado">10º</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: +1,2º -->
+      <div class="shape text c-12-f95033ef3e56">
+        <div class="text-node-html" id="html-text-node-1fc8c1d3-181d-5bc7-85b2-f95033ef3e56" data-x="1607" data-y="129.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.1.projecao">+1,2º</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rect: icone temperatura maxima 2 -->
+      <div class="shape rect icone-temp-e3b701e94e68">
+      </div>
+      <!-- text: Temperatura máxima -->
+      <div class="shape text temperatur-84a61e125aaf">
+        <div class="text-node-html" id="html-text-node-bed8304d-4b74-5e7c-91c0-84a61e125aaf" data-x="1361" data-y="155.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.2.label">Temperatura máxima</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: 38º -->
+      <div class="shape text c-38-b1a35b924760">
+        <div class="text-node-html" id="html-text-node-d92a3430-d7a1-5ffe-a28a-b1a35b924760" data-x="1520" data-y="161.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.2.passado">38º</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: +2,2º -->
+      <div class="shape text c-22-78c870ba380f">
+        <div class="text-node-html" id="html-text-node-eec7d846-ace6-5da4-81d3-78c870ba380f" data-x="1606" data-y="161.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.2.projecao">+2,2º</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: Números máximo de dias secos consecutivos -->
+      <div class="shape text nmeros-m-2369e030fd4a">
+        <div class="text-node-html" id="html-text-node-0e7204aa-df69-5ea2-ad97-2369e030fd4a" data-x="1361" data-y="187.308837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.3.label">Números máximo de dias secos consecutivos</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rect: icone de numero maximo de dias chuva consecutivos 2 -->
+      <div class="shape rect icone-de-n-357a05a780b5">
+      </div>
+      <!-- text: 12 -->
+      <div class="shape text c-12-c64725bebe7c">
+        <div class="text-node-html" id="html-text-node-220b8313-ad47-54a0-be62-c64725bebe7c" data-x="1523" data-y="187.058837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.3.passado">12</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: +8 -->
+      <div class="shape text c-8-b22a8c4c07c9">
+        <div class="text-node-html" id="html-text-node-6385d488-140e-5ac3-8a68-b22a8c4c07c9" data-x="1612" data-y="194.058837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.3.projecao">+8</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: 3 -->
+      <div class="shape text c-3-8b3d9bedcb16">
+        <div class="text-node-html" id="html-text-node-d432342a-2ed2-5951-9c35-8b3d9bedcb16" data-x="1525" data-y="226.308837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.4.passado">3</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: +1 -->
+      <div class="shape text c-1-fa902a8fdb05">
+        <div class="text-node-html" id="html-text-node-0d11a703-4321-57ec-a661-fa902a8fdb05" data-x="1601" data-y="226.308837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.4.projecao">+1</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rect: icone de numero maximo de dias chuva consecutivos 3 -->
+      <div class="shape rect icone-de-n-a969322ce980">
+      </div>
+      <!-- text: Números máximo de dias de chuva consecutivos -->
+      <div class="shape text nmeros-m-ce6e42b17144">
+        <div class="text-node-html" id="html-text-node-d8cd8c01-a2d4-5270-b8ae-ce6e42b17144" data-x="1361" data-y="219.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.4.label">Números máximo de dias de chuva consecutivos</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: 10mm -->
+      <div class="shape text c-10mm-47b692bb2c13">
+        <div class="text-node-html" id="html-text-node-c4fbb3a7-f33c-5f9b-b5ab-47b692bb2c13" data-x="1515" data-y="257.308837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.5.passado">10mm</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: +2mm -->
+      <div class="shape text c-2mm-11d218cd86bd">
+        <div class="text-node-html" id="html-text-node-ed013f5e-cdb1-5be5-b1eb-11d218cd86bd" data-x="1604" data-y="257.308837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.5.projecao">+2mm</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rect: icone intesidade de precipitacao 2 -->
+      <div class="shape rect icone-inte-8620ec0980e3">
+      </div>
+      <!-- text: Intensidade de precipitação -->
+      <div class="shape text intensidad-eb3d99471a63">
+        <div class="text-node-html" id="html-text-node-96f86d79-3519-5a8c-9084-eb3d99471a63" data-x="1361" data-y="257.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.5.label">Intensidade de precipitação</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: 70mm -->
+      <div class="shape text c-70mm-e931d132a939">
+        <div class="text-node-html" id="html-text-node-dd5d5904-afc5-5996-9160-e931d132a939" data-x="1514" data-y="290.308837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.6.passado">70</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- text: +10mm -->
+      <div class="shape text c-10mm-9744f42dd29f">
+        <div class="text-node-html" id="html-text-node-df4d9f9d-70fb-551c-b998-9744f42dd29f" data-x="1602" data-y="290.308837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.6.projecao">+10mm</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rect: dias chuvosos 1 -->
+      <div class="shape rect dias-chuvo-e8b1aefc3228">
+      </div>
+      <!-- text: Chuvas extremas -->
+      <div class="shape text chuvas-ext-6c5f4b50e2bd">
+        <div class="text-node-html" id="html-text-node-78026147-63d9-5a47-b52f-6c5f4b50e2bd" data-x="1361" data-y="289.808837890625">
+          <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="paragraph-set root-0-paragraph-set-0">
+              <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="projecao.rows.6.label">Chuvas extremas</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rect: Rectangle 104 -->
+      <div class="shape rect rectangle-1c02757a302b">
+      </div>
+    </div>
+  </div>
+  <!-- rect: quadrados coloridos -->
+  <div class="shape rect quadrados-9945a441a43d">
+  </div>
+  <!-- rect: quadrados coloridos -->
+  <div class="shape rect quadrados-40e06dccd421">
+  </div>
+</div>
+  
     <script src="./data.js"></script>
-    <script src="../shared/js/app.js"></script>
+    <script src="./shared/js/app.js"></script>
   </body>
 </html>

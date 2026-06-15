@@ -1,30 +1,23 @@
-// Página 3 — Relatório Municipal
-// Defaults espelham exatamente o board Penpot "PÁGINA 3 v2"
-// (id 8dbfb1f8-b22d-5bdc-bbac-f16afbce0cd6).
-// Nota: o título mostra "Curitiba - Paraná" enquanto vários dados referenciam
-// "Vilhena (RO)". Inconsistência preservada deliberadamente, espelhando o Penpot.
+// Página 3 — Relatório Municipal (versão atualizada)
+// Defaults espelham o board Penpot "PÁGINA3"
+// (id 51fd00f6-1549-5f73-b2cd-e1493455d680).
+// Futuramente estes valores virão de uma API; edite aqui para alterar a página.
 window.PAGE_DATA = {
   tokens: {
     colors: {
-      primary: '#354F9D',        // headers de card (azul Penpot)
-      surface: '#FCFCFC',        // campos de valor (off-white)
-      subCard: '#BCC9CA',        // sub-cards e blocos secundários
-      background: '#F2F2F2',     // fundo do board
-      headerBox: '#D9D9D9',      // caixa do nome do município
-      onSurface: '#1E1E1E',      // texto principal
+      primary: '#354F9D',     // headers de card (azul Penpot)
+      surface: '#FCFCFC',     // campos de valor (off-white)
+      background: '#F2F2F2',  // fundo do board
+      headerBox: '#D9D9D9',   // caixa do nome do município e fundos de card
+      onSurface: '#1E1E1E',   // texto principal
     },
   },
 
   location: { city: 'Curitiba', state: 'Paraná' },
 
-  page: {
-    title: 'Painel Adapta Cidades — Página 3',
-    florDeRiscoLabel: 'Flor de Risco',
-  },
-
   territorio: {
     area: '1.451.062 km²',
-    regiaoInfluencia: 'Vilhena (RO)',
+    regiaoInfluencia: 'Vilhena',
     densidadeUrbana: '2.000 hab/km²',
     pibPerCapita: 'R$5.000,00',
     idh: '0,772 (médio)',
@@ -62,12 +55,13 @@ window.PAGE_DATA = {
     domicilios: {
       favelas: '5000',
       semiInadequados: '2000',
+      semArborizacao: '5',
     },
     acessos: {
-      agua: '69,9%',
-      esgoto: '2,4%',
-      energia: '98,3%',
-      residuos: '40,3%',
+      agua: '69,9',
+      esgoto: '2,4',
+      energia: '98,3',
+      residuos: '40,3',
     },
   },
 };

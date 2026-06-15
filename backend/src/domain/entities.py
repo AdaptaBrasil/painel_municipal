@@ -1,6 +1,7 @@
 # backend/src/domain/entities.py
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import Optional, List, Dict, Any
+import pandas as pd
 
 from ..helpers.common.formatting.number_formatting_processing import NumberFormattingProcessing
 
@@ -34,18 +35,86 @@ class CountyStatistics(BaseModel):
             formatted_value = NumberFormattingProcessing.format_number_brazilian(self.population)
         return formatted_value
 
-
-class AdaptaData(BaseModel):
-    sep_name: Optional[str] = None
+class RiskFactor(BaseModel):
     risk_id: Optional[int] = None
-    risk_name: Optional[str] = None
-    risk_value: Optional[float] = None
-    threat: Optional[float] = None
-    exposure: Optional[float] = None
-    vulnerability: Optional[float] = None
+    detail_id: Optional[int] = None
+    sep_id: Optional[int] = None
+    county_id: Optional[int] = None
+    legend_id: Optional[int] = None
     
+    sep: Optional[str] = None
+    risk: Optional[str] = None
+    detail: Optional[str] = None
+    county: Optional[str] = None
+    state: Optional[str] = None
     
+    level: Optional[int] = None
+    year: Optional[str] = None
+    value: Optional[float] = None
+    color: Optional[str] = None
+    current_value: Optional[float] = None
+    current_value_color: Optional[str] = None
+    imageurl: Optional[str] = None
 
+class RiskFactorReport(BaseModel):
+    # Modificado para receber uma lista, já que precisamos agrupar vários itens
+    risk_factors: List[RiskFactor]
+        
+    @property
+    def formatted_data_dict(self) -> List[Dict[str, Any]]:
+        """
+        Retorna os dados agrupados como uma lista de dicionários,
+        preservando a ordem do banco de dados.
+        """
+        agrupado = {}
+        
+        for rf in self.risk_factors:
+            # Se é a primeira vez que vemos este risk_id, criamos a linha base
+            if rf.risk_id not in agrupado:
+                agrupado[rf.risk_id] = {
+                    "risk_id": rf.risk_id,
+                    "sep": rf.sep,
+                    "risk": rf.risk,
+                    "county": rf.county,
+                    "state": rf.state,
+                    "current_value": rf.current_value,
+                    "current_value_color": rf.current_value_color,
+                    "imageurl": rf.imageurl,
+                    "color": rf.color,
+                    "Ameaça": "",
+                    "Exposição": "",
+                    "Vulnerabilidade": "",
+                    "Sensibilidade": "",
+                    "Capacidade adaptativa": ""
+                }
+            
+            # Aqui fazemos a transposição: a string em 'detail' vira a chave (coluna),
+            # e recebe o valor 'value'. 
+            # Ex: agrupado[2]['Capacidade adaptativa'] = 0.38
+            if rf.detail:
+                # Opcional: Você pode querer normalizar a string (ex: title()) 
+                # caso o banco traga variações de maiúsculas/minúsculas
+                coluna_transposta = rf.detail.capitalize() if rf.detail.lower() == "capacidade adaptativa" else rf.detail
+                agrupado[rf.risk_id][rf.detail] = rf.value
+                
+                agrupado[rf.risk_id][f"{rf.detail}_color"] = rf.color
+                
+        # Retorna apenas os valores do dicionário (que será uma lista de dicionários na ordem original)
+        return list(agrupado.values())
+
+    @property
+    def formatted_data_df(self) -> pd.DataFrame:
+        """
+        Retorna os dados no formato DataFrame do Pandas,
+        mantendo a exata ordenação das linhas.
+        """
+        # O Pandas cria o DataFrame perfeitamente a partir de uma lista de dicionários
+        return pd.DataFrame(self.formatted_data_dict)
+    
+    
+    
+    
+    
 class LegendItem(BaseModel):
     id: Optional[int] = None
     label: Optional[str] = None

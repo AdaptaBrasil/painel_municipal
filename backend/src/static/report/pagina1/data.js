@@ -13,7 +13,7 @@ window.PAGE_DATA = {
     },
   },
 
-  location: { city: 'CuritibaXXXXXX', state: 'Paraná' },
+  location: { city: 'Curitiba', state: 'Paraná' },
 
   header: {
     phaseTitle: 'Fase 2 do Plano de Adaptação',
@@ -29,7 +29,7 @@ window.PAGE_DATA = {
   logicaPreenchimento: {
     title: 'A LÓGICA DE PREENCHIMENTO',
     steps: [
-      { number: '1', title: 'LEVANTE DE DADOS', caption: 'Use fontes oficiais e locais.' },
+      { number: '1', title: 'DADOS', caption: 'Use fontes oficiais e locais.' },
       { number: '2', title: 'SITUAÇÃO ATUAL', caption: 'Como é o território hoje?' },
       { number: '3', title: 'TENDÊNCIA', caption: 'O que pode mudar?' },
       { number: '4', title: 'CLIMA', caption: 'Quais riscos aumentam?' },
