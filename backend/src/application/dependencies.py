@@ -1,6 +1,6 @@
 # backend/src/application/dependencies.py
 from ..infrastructure.database import PostgresDatabase
-from ..infrastructure.repository import CountyRepository, CountyStatisticsRepository, RiskFactorRepository
+from ..infrastructure.repository import CountyRepository, RiskFactorRepository, MunicipalIndicatorsRepository
 from ..infrastructure.pdf_service import PlaywrightPdfService
 from ..infrastructure.project_info_service import TomlProjectInfoService
 from ..infrastructure.image_service import HttpImageService
@@ -8,25 +8,24 @@ from ..domain.interfaces import ImageServiceInterface, PdfServiceInterface, Proj
 from ..core.config import settings
 from ..core.constants import PdfEngineType, ErrorKeys
 
-def get_project_info_service() -> ProjectInfoServiceInterface:
-    return TomlProjectInfoService()
-
 def get_database() -> PostgresDatabase:
     return PostgresDatabase()
+
+def get_project_info_service() -> ProjectInfoServiceInterface:
+    return TomlProjectInfoService()
 
 
 def get_county_repository() -> CountyRepository:
     db = get_database()
     return CountyRepository(db)
 
-def get_county_statistics_repository() -> CountyStatisticsRepository:
-    db = get_database()
-    return CountyStatisticsRepository(db)
-
 def get_risk_factor_repository() -> RiskFactorRepository:
     db = get_database()
     return RiskFactorRepository(db)
 
+def get_municipal_report_repository() -> MunicipalIndicatorsRepository:
+    db = get_database()
+    return MunicipalIndicatorsRepository(db)
 
 # Shared singleton so the icon download cache is reused across requests.
 _image_service = HttpImageService()
@@ -55,7 +54,4 @@ def get_pdf_service() -> PdfServiceInterface:
         return PlaywrightPdfService()
     
     print(f"Selected PDF Engine: {settings.pdf_engine}")
-    
-    
-
     raise ValueError(ErrorKeys.INVALID_PDF_ENGINE.value)

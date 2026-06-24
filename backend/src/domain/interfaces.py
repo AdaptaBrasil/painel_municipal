@@ -2,13 +2,8 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
 from pathlib import Path
-from .entities import County, CountyStatistics, RiskFactor,  ProjectInfo, LegendItem
+from .entities import County, RiskFactor,  ProjectInfo, MunicipalIndicators
 
-
-class LegendItemRepositoryInterface(ABC):
-    @abstractmethod
-    async def get_legend_items(self) -> List[LegendItem]:
-        pass
 
 class DatabaseInterface(ABC):
     @abstractmethod
@@ -18,15 +13,6 @@ class DatabaseInterface(ABC):
     async def test_connection(self) -> bool:
         pass
 
-class CountyStatisticsRepositoryInterface(ABC):
-    @abstractmethod
-    async def get_counties_statistics(self) -> List[CountyStatistics]:
-        pass
-    
-    @abstractmethod
-    async def get_county_statistics(self, county_id: int) -> CountyStatistics:
-        pass
-    
 class CountyRepositoryInterface(ABC):
     @abstractmethod
     async def get_counties(self) -> List[County]:
@@ -35,15 +21,15 @@ class CountyRepositoryInterface(ABC):
     @abstractmethod
     async def get_county(self, county_id: int) -> County:
         pass
-    
+
+class MunicipalIndicatorsRepositoryInterface(ABC):
+    @abstractmethod
+    async def get_municipal_report(self, county_id: int) -> MunicipalIndicators:
+        pass
+
 class RiskFactorRepositoryInterface(ABC):
     @abstractmethod
     async def get_risk_factors_by_county_id(self, county_id: int) -> List[RiskFactor]:
-        pass
-    
-    # get_main_factors_by_county_id
-    @abstractmethod
-    async def get_main_factors_by_county_id(self, county_id: int) -> List[RiskFactor]:
         pass
 
 class PdfServiceInterface(ABC):

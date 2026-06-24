@@ -43,8 +43,7 @@ window.PAGE_DATA = {
   socioeconomicas: {
     firjan: {
       indice: '0.6951',
-      bolsaFamiliaFamilias: '2000 famílias',
-      bolsaFamiliaPct: '18,5%',
+      bolsaFamiliaFamilias: '18,5%',
       alfabetizados: '90,5%',
     },
     saude: {

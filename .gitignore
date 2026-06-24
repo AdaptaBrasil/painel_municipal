@@ -4,6 +4,7 @@ data/output/logs/
 code_test.py
 my_codes.py
 erase_docker.sh
+output/
 
 # Logs
 *.log

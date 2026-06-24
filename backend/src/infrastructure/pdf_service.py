@@ -28,15 +28,11 @@ class PlaywrightPdfService(BasePdfService, PdfServiceInterface):
         # Uses the page-specific configuration
         # print(f"Config: {config}")  # Debugging line
         
-        # page_path is: BACKEND_DIR / "src" / "static" / "report" / "page_02" / "index.html"
         base_dir_path = page_path.parent  # This will give us the directory containing the template
         template_name = page_path.name  # This will give us the template file name (e.g., "index.html")
-        # print(f"Base directory for template: {base_dir_path}")  # Debugging line
-        # print(f"Template name: {template_name}")  # Debugging line
         
         # Renders the page template
         context["base_url"] = base_dir_path.absolute().as_uri() + "/"
-        # print(f"Base URL for template: {context['base_url']}")  # Debugging line
         
         template_file = page_path
         if not template_file.exists():
@@ -53,22 +49,15 @@ class PlaywrightPdfService(BasePdfService, PdfServiceInterface):
                 '--allow-file-access-from-files'
             ])
             page = await browser.new_page(device_scale_factor=3)
-            # 1. Force um viewport de desktop (Full HD) para o CSS não esmagar as colunas
-            # await page.set_viewport_size({"width": 1920, "height": 1080, "device_scale_factor": 3})
               
             with tempfile.NamedTemporaryFile(delete=False, suffix=".html", mode='w', encoding='utf-8') as tmp_file:
                 tmp_file.write(html_content)
                 tmp_file_path = tmp_file.name
             
             try:
-                # await page.emulate_media(media="print")
                 await page.goto(f"file://{tmp_file_path}", wait_until="networkidle")
-                # await page.wait_for_timeout(1500) # Espera 1.5 segundos para garantir a renderização
-                # Force screen layout (keep links active).
-                # page.emulate_media(media="screen")
                 
                 # Uses the page-specific configuration
-                # print(f"Config: {config}")  # Debugging line
                 pdf_bytes = await page.pdf(**config)
             finally:
                 if os.path.exists(tmp_file_path):
@@ -84,7 +73,6 @@ class PlaywrightPdfService(BasePdfService, PdfServiceInterface):
         # Iterates through each page defined in settings.pages_dir
         for page_config in settings.pages_dir:
             for page_path, config in page_config.items():
-                # print(f"Generating PDF for: {page_path}")
                 
                 # Generates the PDF for this page
                 pdf_bytes = await self.generate_single_page_pdf(page_path, context, config)

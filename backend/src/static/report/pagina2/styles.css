@@ -351,7 +351,7 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 177.93px;
+  width: 337.4px;
   height: 40px;
   background: #d9d9d9FF;
   border: 1px solid #6d797aFF;
@@ -10334,14 +10334,7 @@ body {
   font-weight: 400;
 }
 
-
 @media print {
-    /* Define explicitamente o tamanho da página pro motor do Chrome */
-    @page {
-        size: A4 landscape;
-        margin: 10mm;
-    }
-
     /* Evita que as linhas do relatório sejam cortadas ao meio na quebra de página */
     /* Substitua '.linha-tabela' pela classe real que envolve a linha (row) dos seus dados */
     .row, .risk-row, tr, .container-linha { 
@@ -10354,4 +10347,16 @@ body {
         flex-shrink: 0 !important; /* Impede que a coluna encolha mais do que o conteúdo */
         word-wrap: break-word; /* Força palavras muito longas a quebrarem */
     }
+}
+
+
+/* link-45deg */
+.link45deg-4ae09664c29c {
+  position: absolute;
+  left: 243.98px;
+  top: 105.8px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  mix-blend-mode: normal;
 }

@@ -5,35 +5,39 @@ import pandas as pd
 
 from ..helpers.common.formatting.number_formatting_processing import NumberFormattingProcessing
 
+class CommonBusinessRules(BaseModel):
+    @staticmethod
+    def brazilian_formatted_value(value: Optional[float | int]) -> Optional[str]:
+        if value is None:
+            return "—"
+        truncated_value = NumberFormattingProcessing.to_decimal_truncated(value, value_to_ignore=None, precision=2)
+        
+        if isinstance(value, (float)):
+            return NumberFormattingProcessing.format_number_brazilian(float(truncated_value))
+        elif isinstance(value, (int)):
+            return NumberFormattingProcessing.format_number_brazilian(int(truncated_value))
+        
+        return "—"
+    
+    @staticmethod
+    def brazilian_formatted_value_ignore_two_zeros(value: Optional[float | int]) -> Optional[str]:
+        if value is None:
+            return "—"
+        truncated_value = NumberFormattingProcessing.to_decimal_truncated(value, value_to_ignore=None, precision=2)
+        
+        if isinstance(value, (float)):
+            return NumberFormattingProcessing.format_number_brazilian_ignore_two_zeros(float(truncated_value))
+        elif isinstance(value, (int)):
+            return NumberFormattingProcessing.format_number_brazilian_ignore_two_zeros(int(truncated_value))
+        
+        return "—"
+
 class County(BaseModel):
     county_id: int
     county: str
     state: str
     region: str
     display: Optional[str] = None
-    
-class CountyStatistics(BaseModel):
-    id: Optional[int] = None
-    county_id: Optional[int] = None
-    gdp: Optional[float] = None
-    area: Optional[float] = None
-    idh: Optional[float] = None
-    population: Optional[int] = None
-    
-    @property
-    def formatted_area(self) -> Optional[str]:
-        formatted_value = None
-        if self.area is not None:
-            truncated_value = NumberFormattingProcessing.to_decimal_truncated(self.area, value_to_ignore=None, precision=2)
-            formatted_value = NumberFormattingProcessing.format_number_brazilian(float(truncated_value))
-        return formatted_value
-    
-    @property
-    def formatted_population(self) -> Optional[str]:
-        formatted_value = None
-        if self.population is not None:
-            formatted_value = NumberFormattingProcessing.format_number_brazilian(self.population)
-        return formatted_value
 
 class RiskFactor(BaseModel):
     risk_id: Optional[int] = None
@@ -54,33 +58,38 @@ class RiskFactor(BaseModel):
     color: Optional[str] = None
     current_value: Optional[float] = None
     current_value_color: Optional[str] = None
+    future_value: Optional[float] = None
+    future_color: Optional[str] = None
     imageurl: Optional[str] = None
+    risk_url: Optional[str] = None
 
 class RiskFactorReport(BaseModel):
-    # Modificado para receber uma lista, já que precisamos agrupar vários itens
     risk_factors: List[RiskFactor]
         
     @property
     def formatted_data_dict(self) -> List[Dict[str, Any]]:
-        """
-        Retorna os dados agrupados como uma lista de dicionários,
-        preservando a ordem do banco de dados.
-        """
-        agrupado = {}
+        grouped_risks = {}
         
         for rf in self.risk_factors:
-            # Se é a primeira vez que vemos este risk_id, criamos a linha base
-            if rf.risk_id not in agrupado:
-                agrupado[rf.risk_id] = {
+            if rf.risk_id not in grouped_risks:
+                grouped_risks[rf.risk_id] = {
+                    "county_id": rf.county_id,
                     "risk_id": rf.risk_id,
                     "sep": rf.sep,
                     "risk": rf.risk,
                     "county": rf.county,
                     "state": rf.state,
+                    "color": rf.color,
+                    "imageurl": rf.imageurl,
+                    "risk_url": rf.risk_url,
                     "current_value": rf.current_value,
                     "current_value_color": rf.current_value_color,
-                    "imageurl": rf.imageurl,
-                    "color": rf.color,
+                    "formatted_current_value": CommonBusinessRules.brazilian_formatted_value(rf.current_value),
+                    
+                    "future_value": rf.future_value,
+                    "future_color": rf.future_color,
+                    "formatted_future_value": CommonBusinessRules.brazilian_formatted_value(rf.future_value),
+                    
                     "Ameaça": "",
                     "Exposição": "",
                     "Vulnerabilidade": "",
@@ -88,48 +97,124 @@ class RiskFactorReport(BaseModel):
                     "Capacidade adaptativa": ""
                 }
             
-            # Aqui fazemos a transposição: a string em 'detail' vira a chave (coluna),
-            # e recebe o valor 'value'. 
-            # Ex: agrupado[2]['Capacidade adaptativa'] = 0.38
             if rf.detail:
-                # Opcional: Você pode querer normalizar a string (ex: title()) 
-                # caso o banco traga variações de maiúsculas/minúsculas
-                coluna_transposta = rf.detail.capitalize() if rf.detail.lower() == "capacidade adaptativa" else rf.detail
-                agrupado[rf.risk_id][rf.detail] = rf.value
+                # If the detail is "capacidade adaptativa", we want to keep it as is, otherwise we can capitalize it
+                # coluna_transposta = rf.detail.capitalize() if rf.detail.lower() == "capacidade adaptativa" else rf.detail
                 
-                agrupado[rf.risk_id][f"{rf.detail}_color"] = rf.color
+                grouped_risks[rf.risk_id][rf.detail] = rf.value
+                grouped_risks[rf.risk_id][f"{rf.detail}_color"] = rf.color
                 
-        # Retorna apenas os valores do dicionário (que será uma lista de dicionários na ordem original)
-        return list(agrupado.values())
+        # Apply formatting to the specific columns after all values have been assigned
+        for key, item in grouped_risks.items():
+            for col in ["Ameaça", "Exposição", "Vulnerabilidade", "Sensibilidade", "Capacidade adaptativa"]:
+                if col in item and item[col] is not None:
+                    item[col] = CommonBusinessRules.brazilian_formatted_value(item[col])
+                
+        return list(grouped_risks.values())
 
     @property
     def formatted_data_df(self) -> pd.DataFrame:
-        """
-        Retorna os dados no formato DataFrame do Pandas,
-        mantendo a exata ordenação das linhas.
-        """
-        # O Pandas cria o DataFrame perfeitamente a partir de uma lista de dicionários
         return pd.DataFrame(self.formatted_data_dict)
-    
-    
-    
-    
-    
-class LegendItem(BaseModel):
-    id: Optional[int] = None
-    label: Optional[str] = None
-    color: Optional[str] = None
-    minvalue: Optional[float] = None
-    maxvalue: Optional[float] = None
-    legend_id: Optional[int] = None
-    order: Optional[int] = None
-    tag: Optional[str] = None
 
+class MunicipalIndicators(BaseModel):
+    
+    # Territorial fields
+    county_id: Optional[int] = None
+    area: Optional[float] = None
+    regic_influencia: Optional[str] = None
+    pop_urb_pessoas: Optional[float] = None # TODO: apply brazilian formatting to this field in the report
+    pop_urb_pct: Optional[float] = None
+    pop_rural_pessoas: Optional[float] = None
+    pop_rural_pct: Optional[float] = None
+    densidade_urb: Optional[float] = None
+    pib: Optional[float] = None
+    
+    # Population characteristics fields
+    mulheres: Optional[float] = None
+    pretos_pardos: Optional[float] = None
+    pop_inf: Optional[float] = None
+    pop_idosa: Optional[float] = None
+    imigrantes: Optional[float] = None
+    indigenas: Optional[float] = None
+    quilombolas: Optional[float] = None
+    
+    # Socioeconomic conditions
+    ## IDH and related indicators
+    idh: Optional[float] = None
+    renda_media: Optional[float] = None
+    escolaridade: Optional[float] = None
+    expec_vida: Optional[float] = None
+    
+    ## Social programs
+    firjan: Optional[float] = None
+    bolsa_familia: Optional[float] = None
+    alfabet: Optional[float] = None
+    
+    ## Infrastructure and services
+    leito_hab: Optional[float] = None
+    prof_hab: Optional[float] = None
+    cob_vacinal: Optional[float] = None
+    
+    ## Vulnerable populations
+    pop_fav: Optional[float] = None
+    dom_semi_inadeq: Optional[float] = None
+    
+    ## Access to services
+    acesso_agua2: Optional[float] = None
+    acesso_esgoto: Optional[float] = None
+    acesso_energia: Optional[float] = None
+    acesso_lixo: Optional[float] = None
 
-class PdfReportData(BaseModel):
-    county_name: str
-    state: str
-    adaptation_data: List[County]
+class MunicipalIndicatorsReport(BaseModel):
+    municipal_indicators: MunicipalIndicators
+    
+    @property
+    def formatted_data_dict(self) -> Dict[str, Any]:
+        data = self.municipal_indicators.dict()
+        for key, value in data.items():
+            if value is None:
+                data[key] = "—"
+                continue
+            if key == "area":
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} km²"
+            elif key in ["renda_media", "pib"]:
+                data[key] = f"R$ {CommonBusinessRules.brazilian_formatted_value(value)}"
+            elif key == "densidade_urb":
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} hab/km²"
+            elif key in ["pop_urb_pct", "pop_rural_pct", "mulheres", "pretos_pardos", "pop_inf", "pop_idosa", "imigrantes", "indigenas", "quilombolas", "alfabet", "cob_vacinal"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}%"
+            elif key in ["bolsa_familia"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}% das famílias pobres" 
+            elif key in ["firjan", "acesso_agua2", "acesso_esgoto", "acesso_energia", "acesso_lixo"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value(value)
+            elif key in ["pop_urb_pessoas", "pop_rural_pessoas"]:
+                if not isinstance(value, (float, int)):
+                    data[key] = "—"
+                else:
+                    data[key] = CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)
+            elif key in ["leito_hab", "prof_hab"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} para cada 1.000 hab"
+            elif key in ["escolaridade", "expec_vida"]:                
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)} anos"
+            elif key in ["pop_fav", "dom_semi_inadeq"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)
+            elif key == "idh":
+                if not isinstance(value, (float, int)):
+                    data[key] = "—"
+                elif value >= 0.800:
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Muito Alto)"
+                elif 0.700 <= value < 0.800:
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Alto)"
+                elif 0.550 <= value < 0.700:
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Médio)"
+                else:
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Baixo)"
+                
+        return data
+
+    @property
+    def formatted_data_df(self) -> pd.DataFrame:
+        return pd.DataFrame([self.formatted_data_dict])
 
 class ProjectInfo(BaseModel):
     name: str
