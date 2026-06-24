@@ -19,8 +19,8 @@ body {
 
 .text-node { background-clip: text !important; -webkit-background-clip: text !important; }
 
-/* PÁGINA4 */
-.p-g-i-n-a4-510c32d7efea {
+/* PÁGINA4atualizada */
+.p-g-i-n-a4atu-f5e5898488b0 {
   position: relative;
   width: 842px;
   height: 595px;
@@ -32,31 +32,31 @@ body {
 }
 
 /* quadrados coloridos */
-.quadrados-9665f0525352 {
+.quadrados-27adade63aa0 {
   position: absolute;
   left: -114px;
   top: -13.35px;
   width: 157.3px;
   height: 160.36px;
-  background: url("./imgs/quadrados coloridos.png") no-repeat center / contain;
+  background: url("./imgs/quadrados coloridos.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* quadrados coloridos */
-.quadrados-bd10c5a15649 {
+.quadrados-7c2d8db1ab39 {
   position: absolute;
   left: 798px;
   top: 355px;
   width: 148.13px;
   height: 151px;
-  background: url("./imgs/quadrados coloridos.png") no-repeat center / contain;
+  background: url("./imgs/quadrados coloridos.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Box-nome-do-municipio */
-.boxnomed-a540b137ad33 {
+.boxnomed-3cda479c4948 {
   position: absolute;
   left: 56.45px;
   top: 18.94px;
@@ -67,7 +67,7 @@ body {
 }
 
 /* Curitiba - Paraná */
-.curitiba-59d656e0f9a9 {
+.curitiba-ce6cf26d9065 {
   position: absolute;
   left: 16px;
   top: 0px;
@@ -75,14 +75,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.curitiba-59d656e0f9a9 .root-0 {
+.curitiba-ce6cf26d9065 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.curitiba-59d656e0f9a9 .root-0-paragraph-set-0 {
+.curitiba-ce6cf26d9065 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -90,13 +90,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.curitiba-59d656e0f9a9 .root-0-paragraph-set-0-paragraph-0 {
+.curitiba-ce6cf26d9065 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 2.5;
   margin: 0;
   text-align: left;
 }
-.curitiba-59d656e0f9a9 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.curitiba-ce6cf26d9065 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: uppercase;
   
@@ -114,7 +114,7 @@ body {
 }
 
 /* gray-rectangle */
-.grayrecta-c5a2c426f2a4 {
+.grayrecta-36209ab310be {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -131,7 +131,7 @@ body {
 }
 
 /* Uso do solo */
-.uso-do-sol-80e9a62778da {
+.uso-do-sol-3846d15439d3 {
   position: absolute;
   left: 56px;
   top: 70.66px;
@@ -142,7 +142,7 @@ body {
 }
 
 /* Uso e cobertura da terra:  */
-.uso-e-cobe-775a36437e13 {
+.uso-e-cobe-da29d6c5901e {
   position: absolute;
   left: 8px;
   top: 167.34px;
@@ -153,19 +153,19 @@ body {
 }
 
 /* link */
-.link-e3524b958b99 {
+.link-b5b7d657327c {
   position: absolute;
   left: 257px;
   top: 1px;
   width: 15.59px;
   height: 17.31px;
-  background: url("./imgs/link.png") no-repeat center / contain;
+  background: url("./imgs/link.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Uso e cobertura da terra: */
-.uso-e-cobe-0ca3ded8dbb1 {
+.uso-e-cobe-1c4bc9d04275 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -173,14 +173,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.uso-e-cobe-0ca3ded8dbb1 .root-0 {
+.uso-e-cobe-1c4bc9d04275 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.uso-e-cobe-0ca3ded8dbb1 .root-0-paragraph-set-0 {
+.uso-e-cobe-1c4bc9d04275 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -188,14 +188,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.uso-e-cobe-0ca3ded8dbb1 .root-0-paragraph-set-0-paragraph-0 {
+.uso-e-cobe-1c4bc9d04275 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.uso-e-cobe-0ca3ded8dbb1 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.uso-e-cobe-1c4bc9d04275 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -203,7 +203,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -212,7 +212,7 @@ body {
 }
 
 /* Rectangle 65 */
-.rectangle-9ab03648bcc6 {
+.rectangle-b33de126f559 {
   position: absolute;
   left: 154px;
   top: 0px;
@@ -228,7 +228,7 @@ body {
 }
 
 /* flor de risco1 */
-.flor-de-ri-8df982dbba6f {
+.flor-de-ri-1c92dac5da62 {
   position: absolute;
   left: 291px;
   top: 52.34px;
@@ -239,19 +239,19 @@ body {
 }
 
 /* flor de risco 1  */
-.flor-de-ri-ca62f1ed1a66 {
+.flor-de-ri-771c0c650403 {
   position: absolute;
   left: 3.27px;
   top: 2.5px;
   width: 56px;
   height: 56px;
-  background: url("./imgs/flor de risco1.png") no-repeat center / contain;
+  background: url("./imgs/flor de risco1.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Rectangle 68 */
-.rectangle-e94b095aa874 {
+.rectangle-e175be0d4a09 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -267,7 +267,7 @@ body {
 }
 
 /* Terras indígenas:  */
-.terras-ind-10fcbfe1afe9 {
+.terras-ind-ba81a82fb3bc {
   position: absolute;
   left: 8px;
   top: 144.34px;
@@ -278,7 +278,7 @@ body {
 }
 
 /* Terras indígenas: */
-.terras-ind-11f9556dd41a {
+.terras-ind-6d7620fca800 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -286,14 +286,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.terras-ind-11f9556dd41a .root-0 {
+.terras-ind-6d7620fca800 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.terras-ind-11f9556dd41a .root-0-paragraph-set-0 {
+.terras-ind-6d7620fca800 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -301,14 +301,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.terras-ind-11f9556dd41a .root-0-paragraph-set-0-paragraph-0 {
+.terras-ind-6d7620fca800 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.terras-ind-11f9556dd41a .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.terras-ind-6d7620fca800 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -316,7 +316,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -325,7 +325,7 @@ body {
 }
 
 /* 0% do município */
-.c-0-do-muni-d83d43bbcddd {
+.c-0-do-muni-b4bd62194ab2 {
   position: absolute;
   left: 174px;
   top: 3px;
@@ -333,14 +333,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-0-do-muni-d83d43bbcddd .root-0 {
+.c-0-do-muni-b4bd62194ab2 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-0-do-muni-d83d43bbcddd .root-0-paragraph-set-0 {
+.c-0-do-muni-b4bd62194ab2 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -348,13 +348,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-0-do-muni-d83d43bbcddd .root-0-paragraph-set-0-paragraph-0 {
+.c-0-do-muni-b4bd62194ab2 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-0-do-muni-d83d43bbcddd .root-0-paragraph-set-0-paragraph-0-text-0 {
+.c-0-do-muni-b4bd62194ab2 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -372,7 +372,7 @@ body {
 }
 
 /* Rectangle 64 */
-.rectangle-c35c9f5a0ce1 {
+.rectangle-c6cadf16b3f2 {
   position: absolute;
   left: 112px;
   top: 0px;
@@ -388,7 +388,7 @@ body {
 }
 
 /* Unidades de conservação:  */
-.unidades-d-a4cd6f3e70bf {
+.unidades-d-ec60b8a65778 {
   position: absolute;
   left: 8px;
   top: 121.34px;
@@ -399,7 +399,7 @@ body {
 }
 
 /* Unidades de conservação: */
-.unidades-d-5a71c8ed5452 {
+.unidades-d-b730f4246bc9 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -407,14 +407,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.unidades-d-5a71c8ed5452 .root-0 {
+.unidades-d-b730f4246bc9 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.unidades-d-5a71c8ed5452 .root-0-paragraph-set-0 {
+.unidades-d-b730f4246bc9 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -422,14 +422,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.unidades-d-5a71c8ed5452 .root-0-paragraph-set-0-paragraph-0 {
+.unidades-d-b730f4246bc9 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.unidades-d-5a71c8ed5452 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.unidades-d-b730f4246bc9 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -437,7 +437,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -446,7 +446,7 @@ body {
 }
 
 /* 8% do município */
-.c-8-do-muni-3130d1377cec {
+.c-8-do-muni-6a9d51c3afc8 {
   position: absolute;
   left: 180px;
   top: 3px;
@@ -454,14 +454,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-8-do-muni-3130d1377cec .root-0 {
+.c-8-do-muni-6a9d51c3afc8 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-8-do-muni-3130d1377cec .root-0-paragraph-set-0 {
+.c-8-do-muni-6a9d51c3afc8 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -469,13 +469,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-8-do-muni-3130d1377cec .root-0-paragraph-set-0-paragraph-0 {
+.c-8-do-muni-6a9d51c3afc8 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-8-do-muni-3130d1377cec .root-0-paragraph-set-0-paragraph-0-text-0 {
+.c-8-do-muni-6a9d51c3afc8 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -493,7 +493,7 @@ body {
 }
 
 /* Rectangle 63 */
-.rectangle-d58e1e0b0305 {
+.rectangle-c4c10cf8ff0d {
   position: absolute;
   left: 160px;
   top: 0px;
@@ -509,7 +509,7 @@ body {
 }
 
 /* Agropecuária: */
-.agropecur-19f027dc9716 {
+.agropecur-fb1a8a905f5c {
   position: absolute;
   left: 8px;
   top: 98.34px;
@@ -520,46 +520,45 @@ body {
 }
 
 /* Agropecuária: */
-.agropecur-cf0adffe6a14 {
+.agropecur-5b43d9016fac {
   position: absolute;
   left: 0px;
   top: 3px;
-  width: 84px;
   height: 15px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.agropecur-cf0adffe6a14 .root-0 {
+.agropecur-5b43d9016fac .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.agropecur-cf0adffe6a14 .root-0-paragraph-set-0 {
+.agropecur-5b43d9016fac .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
-  min-width: 100%;
+  
   margin-right: 1px;
   vertical-align: top;
 }
-.agropecur-cf0adffe6a14 .root-0-paragraph-set-0-paragraph-0 {
+.agropecur-5b43d9016fac .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.agropecur-cf0adffe6a14 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.agropecur-5b43d9016fac .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
   overflow-wrap: initial;
-  white-space: break-spaces;
+  white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -568,7 +567,7 @@ body {
 }
 
 /* 30% */
-.c-30-d41f2c16db8f {
+.c-30-06fbbbd3ffdc {
   position: absolute;
   left: 248px;
   top: 3px;
@@ -576,14 +575,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-30-d41f2c16db8f .root-0 {
+.c-30-06fbbbd3ffdc .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-30-d41f2c16db8f .root-0-paragraph-set-0 {
+.c-30-06fbbbd3ffdc .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -591,13 +590,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-30-d41f2c16db8f .root-0-paragraph-set-0-paragraph-0 {
+.c-30-06fbbbd3ffdc .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-30-d41f2c16db8f .root-0-paragraph-set-0-paragraph-0-text-0 {
+.c-30-06fbbbd3ffdc .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -615,7 +614,7 @@ body {
 }
 
 /* Rectangle 62 */
-.rectangle-3026398253cd {
+.rectangle-ca39fd582978 {
   position: absolute;
   left: 90px;
   top: 0px;
@@ -631,7 +630,7 @@ body {
 }
 
 /* Vegetação natural: */
-.vegetao-5425431c8b22 {
+.vegetao-2be8e560cb88 {
   position: absolute;
   left: 8px;
   top: 75.34px;
@@ -642,46 +641,45 @@ body {
 }
 
 /* Vegetação natural: */
-.vegetao-b1960cb26778 {
+.vegetao-2596af86d7ca {
   position: absolute;
   left: 0px;
   top: 3px;
-  width: 112px;
   height: 15px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.vegetao-b1960cb26778 .root-0 {
+.vegetao-2596af86d7ca .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.vegetao-b1960cb26778 .root-0-paragraph-set-0 {
+.vegetao-2596af86d7ca .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
-  min-width: 100%;
+  
   margin-right: 1px;
   vertical-align: top;
 }
-.vegetao-b1960cb26778 .root-0-paragraph-set-0-paragraph-0 {
+.vegetao-2596af86d7ca .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.vegetao-b1960cb26778 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.vegetao-2596af86d7ca .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
   overflow-wrap: initial;
-  white-space: break-spaces;
+  white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -690,7 +688,7 @@ body {
 }
 
 /* 10% do município */
-.c-10-do-mun-3c3c76733279 {
+.c-10-do-mun-4178d378dd64 {
   position: absolute;
   left: 174px;
   top: 3px;
@@ -698,14 +696,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-10-do-mun-3c3c76733279 .root-0 {
+.c-10-do-mun-4178d378dd64 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-10-do-mun-3c3c76733279 .root-0-paragraph-set-0 {
+.c-10-do-mun-4178d378dd64 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -713,13 +711,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-10-do-mun-3c3c76733279 .root-0-paragraph-set-0-paragraph-0 {
+.c-10-do-mun-4178d378dd64 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-10-do-mun-3c3c76733279 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.c-10-do-mun-4178d378dd64 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -737,7 +735,7 @@ body {
 }
 
 /* Rectangle 61 */
-.rectangle-6b4498063962 {
+.rectangle-78c0799ee0b3 {
   position: absolute;
   left: 129px;
   top: 0px;
@@ -753,7 +751,7 @@ body {
 }
 
 /* Bioma predominante: */
-.bioma-pred-81b657d68742 {
+.bioma-pred-226f8a6a96ea {
   position: absolute;
   left: 8px;
   top: 52.34px;
@@ -764,7 +762,7 @@ body {
 }
 
 /* Amazônia */
-.amaznia-42666a33e1ab {
+.amaznia-6de72966f7db {
   position: absolute;
   left: 217px;
   top: 3px;
@@ -772,14 +770,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.amaznia-42666a33e1ab .root-0 {
+.amaznia-6de72966f7db .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.amaznia-42666a33e1ab .root-0-paragraph-set-0 {
+.amaznia-6de72966f7db .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -787,13 +785,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.amaznia-42666a33e1ab .root-0-paragraph-set-0-paragraph-0 {
+.amaznia-6de72966f7db .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.amaznia-42666a33e1ab .root-0-paragraph-set-0-paragraph-0-text-0 {
+.amaznia-6de72966f7db .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -811,7 +809,7 @@ body {
 }
 
 /* Rectangle 60 */
-.rectangle-54548b2aff53 {
+.rectangle-f385086a7d56 {
   position: absolute;
   left: 131px;
   top: 0px;
@@ -827,46 +825,45 @@ body {
 }
 
 /* Bioma predominante: */
-.bioma-pred-b26cb5e48dee {
+.bioma-pred-4444eb1c5b0d {
   position: absolute;
   left: 0px;
   top: 3px;
-  width: 126px;
   height: 15px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.bioma-pred-b26cb5e48dee .root-0 {
+.bioma-pred-4444eb1c5b0d .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.bioma-pred-b26cb5e48dee .root-0-paragraph-set-0 {
+.bioma-pred-4444eb1c5b0d .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
-  min-width: 100%;
+  
   margin-right: 1px;
   vertical-align: top;
 }
-.bioma-pred-b26cb5e48dee .root-0-paragraph-set-0-paragraph-0 {
+.bioma-pred-4444eb1c5b0d .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.bioma-pred-b26cb5e48dee .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.bioma-pred-4444eb1c5b0d .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
   overflow-wrap: initial;
-  white-space: break-spaces;
+  white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -875,7 +872,7 @@ body {
 }
 
 /* uso do solo */
-.uso-do-sol-fed90d6983a8 {
+.uso-do-sol-b471ab8fb750 {
   position: absolute;
   left: 124.11px;
   top: 9.71px;
@@ -883,14 +880,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.uso-do-sol-fed90d6983a8 .root-0 {
+.uso-do-sol-b471ab8fb750 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.uso-do-sol-fed90d6983a8 .root-0-paragraph-set-0 {
+.uso-do-sol-b471ab8fb750 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -898,13 +895,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.uso-do-sol-fed90d6983a8 .root-0-paragraph-set-0-paragraph-0 {
+.uso-do-sol-b471ab8fb750 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.uso-do-sol-fed90d6983a8 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.uso-do-sol-b471ab8fb750 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(252, 252, 252, 1);
   text-transform: uppercase;
   
@@ -922,7 +919,7 @@ body {
 }
 
 /* Rectangle 59 */
-.rectangle-cec90c411b8a {
+.rectangle-ec5d0d709097 {
   position: absolute;
   left: 0.11px;
   top: 0px;
@@ -936,7 +933,7 @@ body {
 }
 
 /* Rectangle 56 */
-.rectangle-357c6c66540e {
+.rectangle-168003015c29 {
   position: absolute;
   left: 0px;
   top: 0.34px;
@@ -952,21 +949,21 @@ body {
 }
 
 /* Gestão municipal */
-.gesto-mun-468b2aeed68c {
+.gesto-mun-66630c49e8d1 {
   position: absolute;
   left: 56px;
   top: 286px;
   width: 358px;
-  height: 269px;
+  height: 248px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Municipal de Transporte */
-.plano-muni-65f5217eee77 {
+.plano-muni-842b294a9fe4 {
   position: absolute;
   left: 3px;
-  top: 227px;
+  top: 213px;
   width: 350px;
   height: 20px;
   box-shadow: ;
@@ -974,19 +971,19 @@ body {
 }
 
 /* AUSENTE */
-.a-u-s-e-n-t-e-36fcc5afafb6 {
+.a-u-s-e-n-t-e-f7d103db7e1f {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/AUSENTE.png") no-repeat center / contain;
+  background: url("./imgs/AUSENTE.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Municipal de Transporte */
-.plano-muni-9bf4a1e437af {
+.plano-muni-eceea6a93ccd {
   position: absolute;
   left: 21.89px;
   top: 3px;
@@ -994,14 +991,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-muni-9bf4a1e437af .root-0 {
+.plano-muni-eceea6a93ccd .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-muni-9bf4a1e437af .root-0-paragraph-set-0 {
+.plano-muni-eceea6a93ccd .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1009,13 +1006,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-muni-9bf4a1e437af .root-0-paragraph-set-0-paragraph-0 {
+.plano-muni-eceea6a93ccd .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.plano-muni-9bf4a1e437af .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-muni-eceea6a93ccd .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1033,7 +1030,7 @@ body {
 }
 
 /* Rectangle 105 */
-.rectangle-5d564ecc1270 {
+.rectangle-d220b5dcaa54 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1049,10 +1046,10 @@ body {
 }
 
 /* Plano Municipal de Habitação  */
-.plano-muni-d36fd5ba6824 {
+.plano-muni-927a8741df76 {
   position: absolute;
   left: 3px;
-  top: 202px;
+  top: 190px;
   width: 350px;
   height: 20px;
   box-shadow: ;
@@ -1060,19 +1057,19 @@ body {
 }
 
 /* NAO POSSUI */
-.n-a-o-p-o-s-s-u-i-03584f02f78e {
+.n-a-o-p-o-s-s-u-i-4e6f5c0a23c8 {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/NAO POSSUI.png") no-repeat center / contain;
+  background: url("./imgs/NAO POSSUI.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Municipal de Habitação  */
-.plano-muni-9967e5138824 {
+.plano-muni-3cd638c57ddc {
   position: absolute;
   left: 21.89px;
   top: 3px;
@@ -1080,14 +1077,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-muni-9967e5138824 .root-0 {
+.plano-muni-3cd638c57ddc .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-muni-9967e5138824 .root-0-paragraph-set-0 {
+.plano-muni-3cd638c57ddc .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1095,13 +1092,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-muni-9967e5138824 .root-0-paragraph-set-0-paragraph-0 {
+.plano-muni-3cd638c57ddc .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.plano-muni-9967e5138824 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-muni-3cd638c57ddc .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1119,7 +1116,7 @@ body {
 }
 
 /* Rectangle 104 */
-.rectangle-599c6ab672c7 {
+.rectangle-b3c7f930b6da {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1135,10 +1132,10 @@ body {
 }
 
 /* Plano Municipal de Saneamento Básico */
-.plano-muni-49ae3c6aa010 {
+.plano-muni-31cef74387f3 {
   position: absolute;
   left: 3px;
-  top: 152px;
+  top: 144px;
   width: 277px;
   height: 20px;
   box-shadow: ;
@@ -1146,19 +1143,19 @@ body {
 }
 
 /* NAO POSSUI */
-.n-a-o-p-o-s-s-u-i-36d479ceefc0 {
+.n-a-o-p-o-s-s-u-i-d73397fe7be3 {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/NAO POSSUI.png") no-repeat center / contain;
+  background: url("./imgs/NAO POSSUI.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Municipal de Saneamento Básico */
-.plano-muni-b57b6f051b4a {
+.plano-muni-c4eef982f2c8 {
   position: absolute;
   left: 22px;
   top: 3px;
@@ -1166,14 +1163,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-muni-b57b6f051b4a .root-0 {
+.plano-muni-c4eef982f2c8 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-muni-b57b6f051b4a .root-0-paragraph-set-0 {
+.plano-muni-c4eef982f2c8 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1181,13 +1178,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-muni-b57b6f051b4a .root-0-paragraph-set-0-paragraph-0 {
+.plano-muni-c4eef982f2c8 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.plano-muni-b57b6f051b4a .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-muni-c4eef982f2c8 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1205,7 +1202,7 @@ body {
 }
 
 /* Rectangle 102 */
-.rectangle-32e26eda1bb1 {
+.rectangle-68db49c635bf {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1221,10 +1218,10 @@ body {
 }
 
 /* Plano Municipal de Redução de Riscos */
-.plano-muni-13b872f7f7a1 {
+.plano-muni-78863ad4746f {
   position: absolute;
   left: 3px;
-  top: 127px;
+  top: 121px;
   width: 277px;
   height: 20px;
   box-shadow: ;
@@ -1232,19 +1229,19 @@ body {
 }
 
 /* NAO POSSUI */
-.n-a-o-p-o-s-s-u-i-69d4361f395e {
+.n-a-o-p-o-s-s-u-i-22987c6f39da {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/NAO POSSUI.png") no-repeat center / contain;
+  background: url("./imgs/NAO POSSUI.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Municipal de Redução de Riscos */
-.plano-muni-3b3f5fc14a42 {
+.plano-muni-3143604bb3a2 {
   position: absolute;
   left: 21.89px;
   top: 3px;
@@ -1252,14 +1249,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-muni-3b3f5fc14a42 .root-0 {
+.plano-muni-3143604bb3a2 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-muni-3b3f5fc14a42 .root-0-paragraph-set-0 {
+.plano-muni-3143604bb3a2 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1267,13 +1264,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-muni-3b3f5fc14a42 .root-0-paragraph-set-0-paragraph-0 {
+.plano-muni-3143604bb3a2 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.plano-muni-3b3f5fc14a42 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-muni-3143604bb3a2 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1291,7 +1288,7 @@ body {
 }
 
 /* Rectangle 101 */
-.rectangle-efac05397ad5 {
+.rectangle-c796affffa80 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1307,10 +1304,10 @@ body {
 }
 
 /* Plano de Contingência */
-.plano-de-c-5148f092513b {
+.plano-de-c-5b98d93ef3fa {
   position: absolute;
   left: 3px;
-  top: 102px;
+  top: 98px;
   width: 277px;
   height: 20px;
   box-shadow: ;
@@ -1318,19 +1315,19 @@ body {
 }
 
 /* NAO POSSUI  */
-.n-a-o-p-o-s-s-u-i-167cec722c05 {
+.n-a-o-p-o-s-s-u-i-267859f9d3b9 {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/NAO POSSUI.png") no-repeat center / contain;
+  background: url("./imgs/NAO POSSUI.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano de Contingência */
-.plano-de-c-73bb768d7dd2 {
+.plano-de-c-8fea9c298c65 {
   position: absolute;
   left: 21.89px;
   top: 3px;
@@ -1338,14 +1335,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-de-c-73bb768d7dd2 .root-0 {
+.plano-de-c-8fea9c298c65 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-de-c-73bb768d7dd2 .root-0-paragraph-set-0 {
+.plano-de-c-8fea9c298c65 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1353,13 +1350,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-de-c-73bb768d7dd2 .root-0-paragraph-set-0-paragraph-0 {
+.plano-de-c-8fea9c298c65 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.plano-de-c-73bb768d7dd2 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-de-c-8fea9c298c65 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1377,7 +1374,7 @@ body {
 }
 
 /* Rectangle 100 */
-.rectangle-551111d1d52f {
+.rectangle-72c3aba2eced {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1393,10 +1390,10 @@ body {
 }
 
 /* Plano Municipal de Resíduos Sólidos */
-.plano-muni-c8eae823e5ff {
+.plano-muni-d6bd31a4eb9e {
   position: absolute;
   left: 3px;
-  top: 177px;
+  top: 167px;
   width: 350px;
   height: 20px;
   box-shadow: ;
@@ -1404,19 +1401,19 @@ body {
 }
 
 /* POSSUI */
-.p-o-s-s-u-i-11ad94e9dcdc {
+.p-o-s-s-u-i-fb3d3b96c1d0 {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/POSSUI.png") no-repeat center / contain;
+  background: url("./imgs/POSSUI.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Municipal de Resíduos Sólidos */
-.plano-muni-51538fb55e3e {
+.plano-muni-e0adb149db70 {
   position: absolute;
   left: 21.89px;
   top: 3px;
@@ -1424,14 +1421,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-muni-51538fb55e3e .root-0 {
+.plano-muni-e0adb149db70 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-muni-51538fb55e3e .root-0-paragraph-set-0 {
+.plano-muni-e0adb149db70 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1439,13 +1436,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-muni-51538fb55e3e .root-0-paragraph-set-0-paragraph-0 {
+.plano-muni-e0adb149db70 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.plano-muni-51538fb55e3e .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-muni-e0adb149db70 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1463,7 +1460,7 @@ body {
 }
 
 /* Rectangle 103 */
-.rectangle-6638a17922cc {
+.rectangle-a53ca41efa72 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1479,10 +1476,10 @@ body {
 }
 
 /* Plano Diretor de Drenagem e Manejo de Águas Pluviais */
-.plano-dire-b168162a1696 {
+.plano-dire-ebab2c3feff2 {
   position: absolute;
   left: 3px;
-  top: 77px;
+  top: 75px;
   width: 350px;
   height: 20px;
   box-shadow: ;
@@ -1490,19 +1487,19 @@ body {
 }
 
 /* POSSUI */
-.p-o-s-s-u-i-835573c89460 {
+.p-o-s-s-u-i-b32ec9e08468 {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/POSSUI.png") no-repeat center / contain;
+  background: url("./imgs/POSSUI.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Diretor de Drenagem e Manejo de Águas Pluviais */
-.plano-dire-07ee253b8205 {
+.plano-dire-4f8fb5969486 {
   position: absolute;
   left: 21.89px;
   top: 3px;
@@ -1513,7 +1510,7 @@ body {
 }
 
 /* Plano Diretor de Drenagem e Manejo de Águas Pluviais */
-.plano-dire-7075caebc957 {
+.plano-dire-a1b7e3d73fd5 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1521,14 +1518,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-dire-7075caebc957 .root-0 {
+.plano-dire-a1b7e3d73fd5 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-dire-7075caebc957 .root-0-paragraph-set-0 {
+.plano-dire-a1b7e3d73fd5 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1536,13 +1533,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-dire-7075caebc957 .root-0-paragraph-set-0-paragraph-0 {
+.plano-dire-a1b7e3d73fd5 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.plano-dire-7075caebc957 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-dire-a1b7e3d73fd5 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1560,7 +1557,7 @@ body {
 }
 
 /* Rectangle 99 */
-.rectangle-1d2d48768049 {
+.rectangle-f35efcde525c {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1576,7 +1573,7 @@ body {
 }
 
 /* Plano Diretor incluindo Proteção e Defesa Civil */
-.plano-dire-1b8e6c1a610d {
+.plano-dire-876130ba859f {
   position: absolute;
   left: 3px;
   top: 52px;
@@ -1587,19 +1584,19 @@ body {
 }
 
 /* POSSUI */
-.p-o-s-s-u-i-f872c731769d {
+.p-o-s-s-u-i-439e721ee160 {
   position: absolute;
   left: 5px;
   top: 4px;
   width: 12px;
   height: 12px;
-  background: url("./imgs/POSSUI.png") no-repeat center / contain;
+  background: url("./imgs/POSSUI.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Plano Diretor incluindo Proteção e Defesa Civil */
-.plano-dire-d77e2423e6c9 {
+.plano-dire-06a6fc5e0e3b {
   position: absolute;
   left: 21.89px;
   top: 3px;
@@ -1607,14 +1604,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.plano-dire-d77e2423e6c9 .root-0 {
+.plano-dire-06a6fc5e0e3b .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.plano-dire-d77e2423e6c9 .root-0-paragraph-set-0 {
+.plano-dire-06a6fc5e0e3b .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1622,13 +1619,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.plano-dire-d77e2423e6c9 .root-0-paragraph-set-0-paragraph-0 {
+.plano-dire-06a6fc5e0e3b .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.plano-dire-d77e2423e6c9 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.plano-dire-06a6fc5e0e3b .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -1646,7 +1643,7 @@ body {
 }
 
 /* Rectangle 98 */
-.rectangle-e58f6356d3ff {
+.rectangle-9ef49e184817 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1662,10 +1659,10 @@ body {
 }
 
 /* flor de risco2 */
-.flor-de-ri-b1115d8a8284 {
+.flor-de-ri-8b3984fd2b35 {
   position: absolute;
   left: 291px;
-  top: 108px;
+  top: 100.15px;
   width: 61.5px;
   height: 60.85px;
   box-shadow: ;
@@ -1673,19 +1670,19 @@ body {
 }
 
 /* flor de risco 3 */
-.flor-de-ri-ad981779294e {
+.flor-de-ri-3030358e38cb {
   position: absolute;
   left: 4.04px;
   top: 2.76px;
-  width: 51px;
+  width: 56px;
   height: 56px;
-  background: url("./imgs/flor de risco2.png") no-repeat center / contain;
+  background: url("./imgs/flor de risco2.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Rectangle 77 */
-.rectangle-5aaaa9adc24e {
+.rectangle-d3937b98b5d4 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1701,7 +1698,7 @@ body {
 }
 
 /* gestão municipal */
-.gesto-mun-5e34ed2b0a44 {
+.gesto-mun-47f1021c85dd {
   position: absolute;
   left: 91px;
   top: 9px;
@@ -1709,14 +1706,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.gesto-mun-5e34ed2b0a44 .root-0 {
+.gesto-mun-47f1021c85dd .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.gesto-mun-5e34ed2b0a44 .root-0-paragraph-set-0 {
+.gesto-mun-47f1021c85dd .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1724,13 +1721,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.gesto-mun-5e34ed2b0a44 .root-0-paragraph-set-0-paragraph-0 {
+.gesto-mun-47f1021c85dd .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.gesto-mun-5e34ed2b0a44 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.gesto-mun-47f1021c85dd .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(252, 252, 252, 1);
   text-transform: uppercase;
   
@@ -1748,7 +1745,7 @@ body {
 }
 
 /* Rectangle 70 */
-.rectangle-429fa96be5ee {
+.rectangle-e105bef4f196 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1762,12 +1759,12 @@ body {
 }
 
 /* Rectangle 90 */
-.rectangle-c068ea59a4d2 {
+.rectangle-6c8d466b3042 {
   position: absolute;
   left: 0px;
   top: 0px;
   width: 358px;
-  height: 269px;
+  height: 248px;
   background: #bcc9caFF;
   border-start-start-radius: 8px;
   border-start-end-radius: 8px;
@@ -1778,18 +1775,18 @@ body {
 }
 
 /* Desastres */
-.desastres-f9923e215a87 {
+.desastres-ea29bde76b19 {
   position: absolute;
   left: 427px;
   top: 8px;
   width: 358px;
-  height: 583px;
+  height: 578px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Histórico de desastres (2014 a 2024)   */
-.histrico-8e09bff5f6d1 {
+.histrico-38c41497d9a3 {
   position: absolute;
   left: 0px;
   top: 40px;
@@ -1800,22 +1797,22 @@ body {
 }
 
 /* Histórico de desastres (2014 a 2024) */
-.histrico-ed3f5dbdf0de {
+.histrico-1583cfae7ba9 {
   position: absolute;
-  left: 54px;
-  top: 7px;
+  left: 53px;
+  top: 5.5px;
   height: 15px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.histrico-ed3f5dbdf0de .root-0 {
+.histrico-1583cfae7ba9 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.histrico-ed3f5dbdf0de .root-0-paragraph-set-0 {
+.histrico-1583cfae7ba9 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1823,13 +1820,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.histrico-ed3f5dbdf0de .root-0-paragraph-set-0-paragraph-0 {
+.histrico-1583cfae7ba9 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: left;
 }
-.histrico-ed3f5dbdf0de .root-0-paragraph-set-0-paragraph-0-text-0 {
+.histrico-1583cfae7ba9 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(252, 252, 252, 1);
   text-transform: uppercase;
   
@@ -1847,7 +1844,7 @@ body {
 }
 
 /* Danos e prejuízos totais: */
-.danos-e-pr-43eb940d8920 {
+.danos-e-pr-9ade8644ad5b {
   position: absolute;
   left: 11px;
   top: 168px;
@@ -1858,7 +1855,7 @@ body {
 }
 
 /* R$24,5 Mi */
-.r245-mi-4d4d06d40f01 {
+.r245-mi-91595b0cf8ea {
   position: absolute;
   left: 195px;
   top: 3px;
@@ -1866,14 +1863,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.r245-mi-4d4d06d40f01 .root-0 {
+.r245-mi-91595b0cf8ea .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.r245-mi-4d4d06d40f01 .root-0-paragraph-set-0 {
+.r245-mi-91595b0cf8ea .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1881,14 +1878,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.r245-mi-4d4d06d40f01 .root-0-paragraph-set-0-paragraph-0 {
+.r245-mi-91595b0cf8ea .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.r245-mi-4d4d06d40f01 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.r245-mi-91595b0cf8ea .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -1896,7 +1893,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -1905,7 +1902,7 @@ body {
 }
 
 /* Danos e prejuízos totais: */
-.danos-e-pr-88fff4e57d93 {
+.danos-e-pr-cdec114c414a {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -1913,14 +1910,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.danos-e-pr-88fff4e57d93 .root-0 {
+.danos-e-pr-cdec114c414a .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.danos-e-pr-88fff4e57d93 .root-0-paragraph-set-0 {
+.danos-e-pr-cdec114c414a .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -1928,14 +1925,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.danos-e-pr-88fff4e57d93 .root-0-paragraph-set-0-paragraph-0 {
+.danos-e-pr-cdec114c414a .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: center;
 }
-.danos-e-pr-88fff4e57d93 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.danos-e-pr-cdec114c414a .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -1943,7 +1940,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -1952,7 +1949,7 @@ body {
 }
 
 /* Rectangle 95 */
-.rectangle-0971d24b4986 {
+.rectangle-f661ed6c8346 {
   position: absolute;
   left: 156px;
   top: 0px;
@@ -1968,7 +1965,7 @@ body {
 }
 
 /* Desalojados: */
-.desalojado-73862fd431f8 {
+.desalojado-8ed624ae0d2b {
   position: absolute;
   left: 11px;
   top: 145px;
@@ -1979,7 +1976,7 @@ body {
 }
 
 /* 200 */
-.c-200-c1037ff36021 {
+.c-200-8d012aa59ae3 {
   position: absolute;
   left: 230px;
   top: 3px;
@@ -1987,14 +1984,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-200-c1037ff36021 .root-0 {
+.c-200-8d012aa59ae3 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-200-c1037ff36021 .root-0-paragraph-set-0 {
+.c-200-8d012aa59ae3 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2002,14 +1999,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-200-c1037ff36021 .root-0-paragraph-set-0-paragraph-0 {
+.c-200-8d012aa59ae3 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-200-c1037ff36021 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.c-200-8d012aa59ae3 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2017,7 +2014,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2026,7 +2023,7 @@ body {
 }
 
 /* Desalojados: */
-.desalojado-38038ce387f7 {
+.desalojado-ee1a6a739bb2 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -2034,14 +2031,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.desalojado-38038ce387f7 .root-0 {
+.desalojado-ee1a6a739bb2 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.desalojado-38038ce387f7 .root-0-paragraph-set-0 {
+.desalojado-ee1a6a739bb2 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2049,14 +2046,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.desalojado-38038ce387f7 .root-0-paragraph-set-0-paragraph-0 {
+.desalojado-ee1a6a739bb2 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: center;
 }
-.desalojado-38038ce387f7 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.desalojado-ee1a6a739bb2 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2064,7 +2061,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2073,7 +2070,7 @@ body {
 }
 
 /* Rectangle 94 */
-.rectangle-4d381ad1578e {
+.rectangle-7cf36ee07b7c {
   position: absolute;
   left: 97px;
   top: 0px;
@@ -2089,7 +2086,7 @@ body {
 }
 
 /* Desabrigados: */
-.desabrigad-52b24f92f825 {
+.desabrigad-fd909fe4027b {
   position: absolute;
   left: 11px;
   top: 122px;
@@ -2100,7 +2097,7 @@ body {
 }
 
 /* 20 */
-.c-20-9ada03c2b78c {
+.c-20-e7dfd98ed42b {
   position: absolute;
   left: 234px;
   top: 3px;
@@ -2108,14 +2105,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-20-9ada03c2b78c .root-0 {
+.c-20-e7dfd98ed42b .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-20-9ada03c2b78c .root-0-paragraph-set-0 {
+.c-20-e7dfd98ed42b .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2123,14 +2120,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-20-9ada03c2b78c .root-0-paragraph-set-0-paragraph-0 {
+.c-20-e7dfd98ed42b .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-20-9ada03c2b78c .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.c-20-e7dfd98ed42b .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2138,7 +2135,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2147,7 +2144,7 @@ body {
 }
 
 /* Desabrigados: */
-.desabrigad-08cce04a8269 {
+.desabrigad-4150c6c07e42 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -2155,14 +2152,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.desabrigad-08cce04a8269 .root-0 {
+.desabrigad-4150c6c07e42 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.desabrigad-08cce04a8269 .root-0-paragraph-set-0 {
+.desabrigad-4150c6c07e42 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2170,14 +2167,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.desabrigad-08cce04a8269 .root-0-paragraph-set-0-paragraph-0 {
+.desabrigad-4150c6c07e42 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: center;
 }
-.desabrigad-08cce04a8269 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.desabrigad-4150c6c07e42 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2185,7 +2182,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2194,7 +2191,7 @@ body {
 }
 
 /* Rectangle 93 */
-.rectangle-e4dc00bc5ef6 {
+.rectangle-d7ae53da5101 {
   position: absolute;
   left: 97px;
   top: 0px;
@@ -2210,7 +2207,7 @@ body {
 }
 
 /* Óbitos: */
-.bitos-0c9f28e1fd0c {
+.bitos-13caa5dbeffb {
   position: absolute;
   left: 11px;
   top: 99px;
@@ -2221,7 +2218,7 @@ body {
 }
 
 /* 10 */
-.c-10-80faee632d70 {
+.c-10-778585d1dac0 {
   position: absolute;
   left: 239px;
   top: 3px;
@@ -2229,14 +2226,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-10-80faee632d70 .root-0 {
+.c-10-778585d1dac0 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-10-80faee632d70 .root-0-paragraph-set-0 {
+.c-10-778585d1dac0 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2244,14 +2241,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-10-80faee632d70 .root-0-paragraph-set-0-paragraph-0 {
+.c-10-778585d1dac0 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-10-80faee632d70 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.c-10-778585d1dac0 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2259,7 +2256,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2268,7 +2265,7 @@ body {
 }
 
 /* Óbitos: */
-.bitos-65edd4238937 {
+.bitos-4e1fcd5cef05 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -2276,14 +2273,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.bitos-65edd4238937 .root-0 {
+.bitos-4e1fcd5cef05 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.bitos-65edd4238937 .root-0-paragraph-set-0 {
+.bitos-4e1fcd5cef05 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2291,14 +2288,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.bitos-65edd4238937 .root-0-paragraph-set-0-paragraph-0 {
+.bitos-4e1fcd5cef05 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: center;
 }
-.bitos-65edd4238937 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.bitos-4e1fcd5cef05 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2306,7 +2303,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2315,7 +2312,7 @@ body {
 }
 
 /* Rectangle 92 */
-.rectangle-15e550e9fdcb {
+.rectangle-27c991b0da78 {
   position: absolute;
   left: 53px;
   top: 0px;
@@ -2331,7 +2328,7 @@ body {
 }
 
 /* Tornados e Vendavais: */
-.tornados-e-74c1de30e7f1 {
+.tornados-e-cf569f188413 {
   position: absolute;
   left: 11px;
   top: 76px;
@@ -2342,7 +2339,7 @@ body {
 }
 
 /* 5 */
-.c-5-26000339568c {
+.c-5-40b2320303c6 {
   position: absolute;
   left: 245px;
   top: 3px;
@@ -2350,14 +2347,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-5-26000339568c .root-0 {
+.c-5-40b2320303c6 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-5-26000339568c .root-0-paragraph-set-0 {
+.c-5-40b2320303c6 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2365,14 +2362,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-5-26000339568c .root-0-paragraph-set-0-paragraph-0 {
+.c-5-40b2320303c6 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-5-26000339568c .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.c-5-40b2320303c6 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2380,7 +2377,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2388,8 +2385,8 @@ body {
   font-weight: 400;
 }
 
-/* Tornados e Vendavais: */
-.tornados-e-4898e5f29750 {
+/* Tornados e vendavais: */
+.tornados-e-0807546c6578 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -2397,14 +2394,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.tornados-e-4898e5f29750 .root-0 {
+.tornados-e-0807546c6578 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.tornados-e-4898e5f29750 .root-0-paragraph-set-0 {
+.tornados-e-0807546c6578 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2412,14 +2409,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.tornados-e-4898e5f29750 .root-0-paragraph-set-0-paragraph-0 {
+.tornados-e-0807546c6578 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: center;
 }
-.tornados-e-4898e5f29750 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.tornados-e-0807546c6578 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2427,7 +2424,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2436,7 +2433,7 @@ body {
 }
 
 /* Rectangle 89 */
-.rectangle-4ee337d766fa {
+.rectangle-c10d6503c772 {
   position: absolute;
   left: 145px;
   top: 0px;
@@ -2452,7 +2449,7 @@ body {
 }
 
 /* Geo-hidrológicos: */
-.geohidrol-bd8646b11776 {
+.geohidrol-991b0e79f3bc {
   position: absolute;
   left: 11px;
   top: 53px;
@@ -2463,7 +2460,7 @@ body {
 }
 
 /* 8 */
-.c-8-dc3224697be6 {
+.c-8-a0853c7361da {
   position: absolute;
   left: 245px;
   top: 3px;
@@ -2471,14 +2468,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-8-dc3224697be6 .root-0 {
+.c-8-a0853c7361da .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-8-dc3224697be6 .root-0-paragraph-set-0 {
+.c-8-a0853c7361da .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2486,14 +2483,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-8-dc3224697be6 .root-0-paragraph-set-0-paragraph-0 {
+.c-8-a0853c7361da .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-8-dc3224697be6 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.c-8-a0853c7361da .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2501,7 +2498,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2510,7 +2507,7 @@ body {
 }
 
 /* Geo-hidrológicos: */
-.geohidrol-e9299e55c6a9 {
+.geohidrol-f29d0f60ab39 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -2518,14 +2515,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.geohidrol-e9299e55c6a9 .root-0 {
+.geohidrol-f29d0f60ab39 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.geohidrol-e9299e55c6a9 .root-0-paragraph-set-0 {
+.geohidrol-f29d0f60ab39 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2533,14 +2530,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.geohidrol-e9299e55c6a9 .root-0-paragraph-set-0-paragraph-0 {
+.geohidrol-f29d0f60ab39 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: center;
 }
-.geohidrol-e9299e55c6a9 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.geohidrol-f29d0f60ab39 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2548,7 +2545,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2557,7 +2554,7 @@ body {
 }
 
 /* Rectangle 87 */
-.rectangle-f654417deb25 {
+.rectangle-e803c766d18c {
   position: absolute;
   left: 119px;
   top: 0px;
@@ -2573,7 +2570,7 @@ body {
 }
 
 /* Estiagens e Incêndios: */
-.estiagens-5ff2d19a42be {
+.estiagens-ca7046348fb0 {
   position: absolute;
   left: 11px;
   top: 30px;
@@ -2584,7 +2581,7 @@ body {
 }
 
 /* 20 */
-.c-20-d98af075afd2 {
+.c-20-5d922687b504 {
   position: absolute;
   left: 238px;
   top: 3px;
@@ -2592,14 +2589,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.c-20-d98af075afd2 .root-0 {
+.c-20-5d922687b504 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.c-20-d98af075afd2 .root-0-paragraph-set-0 {
+.c-20-5d922687b504 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2607,14 +2604,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.c-20-d98af075afd2 .root-0-paragraph-set-0-paragraph-0 {
+.c-20-5d922687b504 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: right;
 }
-.c-20-d98af075afd2 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.c-20-5d922687b504 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2622,7 +2619,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2630,8 +2627,8 @@ body {
   font-weight: 400;
 }
 
-/* Estiagens e Incêndios: */
-.estiagens-1858ab97e0f2 {
+/* Estiagens e incêndios: */
+.estiagens-aa8b028d0f9c {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -2639,14 +2636,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.estiagens-1858ab97e0f2 .root-0 {
+.estiagens-aa8b028d0f9c .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.estiagens-1858ab97e0f2 .root-0-paragraph-set-0 {
+.estiagens-aa8b028d0f9c .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2654,14 +2651,14 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.estiagens-1858ab97e0f2 .root-0-paragraph-set-0-paragraph-0 {
+.estiagens-aa8b028d0f9c .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2000000476837158;
   margin: 0;
   text-align: center;
 }
-.estiagens-1858ab97e0f2 .root-0-paragraph-set-0-paragraph-0-text-0 {
-  color: rgba(30, 30, 30, 1);
+.estiagens-aa8b028d0f9c .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(0, 0, 0, 1);
   text-transform: none;
   
   line-break: auto;
@@ -2669,7 +2666,7 @@ body {
   white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(0, 0, 0, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Inter";
@@ -2678,7 +2675,7 @@ body {
 }
 
 /* Rectangle 85 */
-.rectangle-50a104c64de8 {
+.rectangle-b45b69fb9b37 {
   position: absolute;
   left: 145px;
   top: 0px;
@@ -2694,7 +2691,7 @@ body {
 }
 
 /* flor de risco3 */
-.flor-de-ri-6b05033fc6ad {
+.flor-de-ri-83c0b3353915 {
   position: absolute;
   left: 287px;
   top: 78px;
@@ -2705,19 +2702,19 @@ body {
 }
 
 /* flor de risco 3 1 */
-.flor-de-ri-fad275fe16d9 {
+.flor-de-ri-9c20f724b535 {
   position: absolute;
   left: 5.7px;
   top: 2.54px;
   width: 56px;
   height: 56px;
-  background: url("./imgs/flor de risco3.png") no-repeat center / contain;
+  background: url("./imgs/flor de risco3.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* flor de risco vulnerabilidade */
-.flor-de-ri-dd2fbc0397b1 {
+.flor-de-ri-8e8bb9aade66 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -2728,7 +2725,7 @@ body {
 }
 
 /* flor de risco */
-.flor-de-ri-3c6a8e4bce1b {
+.flor-de-ri-478ac1a06759 {
   position: absolute;
   left: 8.55px;
   top: 3.9px;
@@ -2740,7 +2737,7 @@ body {
 }
 
 /* Ellipse 1 */
-.ellipse-1-b5d5210a6438 {
+.ellipse-1-1f8592e7cb94 {
   position: absolute;
   left: 17.05px;
   top: 16.82px;
@@ -2752,7 +2749,7 @@ body {
 }
 
 /* Ellipse 4 */
-.ellipse-4-e699ee07f7ea {
+.ellipse-4-1ca5beeaa0a2 {
   position: absolute;
   left: 9.89px;
   top: 22.56px;
@@ -2767,7 +2764,7 @@ body {
 }
 
 /* Ellipse 3 */
-.ellipse-3-23e4f61af8bd {
+.ellipse-3-93dea8058acc {
   position: absolute;
   left: 11.86px;
   top: 9.81px;
@@ -2780,7 +2777,7 @@ body {
 }
 
 /* Ellipse 2 */
-.ellipse-2-d1df32d1f24b {
+.ellipse-2-e6cfe1aed1de {
   position: absolute;
   left: 1.07px;
   top: 13.26px;
@@ -2795,7 +2792,7 @@ body {
 }
 
 /* Rectangle 79 */
-.rectangle-8b2aec1dfe02 {
+.rectangle-1c728e63da69 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -2811,13 +2808,13 @@ body {
 }
 
 /* Rectangle 107 */
-.rectangle-2abfed695077 > svg {
+.rectangle-291561d2694f > svg {
   position: absolute;
   top: 0px;
   left: 0px;
   transform: translate(0px,0px);
 }
-.rectangle-2abfed695077 {
+.rectangle-291561d2694f {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -2827,13 +2824,13 @@ body {
 }
 
 /* Rectangle 82 */
-.rectangle-4e86647f338c > svg {
+.rectangle-c83104539b36 > svg {
   position: absolute;
   top: 0px;
   left: 0px;
   transform: translate(0px,0px);
 }
-.rectangle-4e86647f338c {
+.rectangle-c83104539b36 {
   position: absolute;
   left: 10px;
   top: 0px;
@@ -2843,33 +2840,33 @@ body {
 }
 
 /* Cemaden */
-.cemaden-b8cf6da59b58 {
+.cemaden-4214d9c4713d {
   position: absolute;
   left: 0px;
   top: 231px;
   width: 358px;
-  height: 112px;
+  height: 107px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Total de eventos geo-hidrológico (2011-2026): */
-.total-de-e-36a50e8f1b67 {
+.total-de-e-9901a8223137 {
   position: absolute;
   left: 10px;
-  top: 76px;
+  top: 80px;
   width: 338.44px;
-  height: 30.67px;
+  height: 20px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 
 /* Rectangle 101 */
-.rectangle-208074e420c7 {
+.rectangle-2b73c9f2cd83 {
   position: absolute;
-  left: 199.44px;
+  left: 274.5px;
   top: 0px;
-  width: 139px;
+  width: 63.94px;
   height: 20px;
   background: #fcfcfcFF;
   border-start-start-radius: 4px;
@@ -2880,58 +2877,58 @@ body {
   mix-blend-mode: normal;
 }
 
-/* Total de eventos geo-hidrológico (2011-2026): */
-.total-de-e-0ea46213445b {
+/* Total de eventos geo-hidrológicos (2011-2026): */
+.total-de-e-5035357832d1 {
   position: absolute;
   left: 0px;
   top: 1.67px;
-  width: 224.94px;
+  height: 15px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.total-de-e-0ea46213445b .root-0 {
+.total-de-e-5035357832d1 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.total-de-e-0ea46213445b .root-0-paragraph-set-0 {
+.total-de-e-5035357832d1 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
-  min-width: 100%;
+  
   margin-right: 1px;
   vertical-align: top;
 }
-.total-de-e-0ea46213445b .root-0-paragraph-set-0-paragraph-0 {
+.total-de-e-5035357832d1 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.total-de-e-0ea46213445b .root-0-paragraph-set-0-paragraph-0-text-0 {
+.total-de-e-5035357832d1 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
   line-break: auto;
   overflow-wrap: initial;
-  white-space: break-spaces;
+  white-space: pre;
   font-size: 12px;
   text-rendering: geometricPrecision;
   caret-color: rgba(30, 30, 30, 1);
   text-decoration: none;
-  letter-spacing: 0px;
+  letter-spacing: -0.24px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
 }
 
 /* Pessoas em áreas de risco: */
-.pessoas-em-61c868b7c328 {
+.pessoas-em-f7f641ca6fd9 {
   position: absolute;
   left: 10px;
-  top: 53px;
+  top: 57px;
   width: 338.44px;
   height: 20px;
   box-shadow: ;
@@ -2939,7 +2936,7 @@ body {
 }
 
 /* Rectangle 100 */
-.rectangle-09c25ebadee7 {
+.rectangle-e543f6cc289e {
   position: absolute;
   left: 165.44px;
   top: 0px;
@@ -2955,7 +2952,7 @@ body {
 }
 
 /* Pessoas em áreas de risco: */
-.pessoas-em-7b913a0b0c1d {
+.pessoas-em-e422d821d147 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -2963,14 +2960,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.pessoas-em-7b913a0b0c1d .root-0 {
+.pessoas-em-e422d821d147 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.pessoas-em-7b913a0b0c1d .root-0-paragraph-set-0 {
+.pessoas-em-e422d821d147 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -2978,13 +2975,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.pessoas-em-7b913a0b0c1d .root-0-paragraph-set-0-paragraph-0 {
+.pessoas-em-e422d821d147 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.pessoas-em-7b913a0b0c1d .root-0-paragraph-set-0-paragraph-0-text-0 {
+.pessoas-em-e422d821d147 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -3002,10 +2999,10 @@ body {
 }
 
 /* Escolas públicas em áreas de risco:  */
-.escolas-p-9617351a1e8d {
+.escolas-p-13e7f2f9b737 {
   position: absolute;
   left: 10px;
-  top: 30px;
+  top: 34px;
   width: 338.44px;
   height: 20px;
   box-shadow: ;
@@ -3013,7 +3010,7 @@ body {
 }
 
 /* Rectangle 97 */
-.rectangle-f64a86dd80b4 {
+.rectangle-62358e5bade8 {
   position: absolute;
   left: 214.44px;
   top: 0px;
@@ -3029,7 +3026,7 @@ body {
 }
 
 /* Escolas públicas em áreas de risco: */
-.escolas-p-d59328ae01b5 {
+.escolas-p-58c8bdcf84b7 {
   position: absolute;
   left: 0px;
   top: 3px;
@@ -3037,14 +3034,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.escolas-p-d59328ae01b5 .root-0 {
+.escolas-p-58c8bdcf84b7 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.escolas-p-d59328ae01b5 .root-0-paragraph-set-0 {
+.escolas-p-58c8bdcf84b7 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -3052,13 +3049,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.escolas-p-d59328ae01b5 .root-0-paragraph-set-0-paragraph-0 {
+.escolas-p-58c8bdcf84b7 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.escolas-p-d59328ae01b5 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.escolas-p-58c8bdcf84b7 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
   
@@ -3075,23 +3072,23 @@ body {
   font-weight: 700;
 }
 
-/* Cemaden */
-.cemaden-6ab50c70cb09 {
+/* Monitoramento de desastres (CEMADEN) */
+.monitorame-1f77372dab6e {
   position: absolute;
-  left: 148px;
-  top: 5px;
+  left: 40px;
+  top: 6.36px;
   height: 15px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.cemaden-6ab50c70cb09 .root-0 {
+.monitorame-1f77372dab6e .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.cemaden-6ab50c70cb09 .root-0-paragraph-set-0 {
+.monitorame-1f77372dab6e .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -3099,13 +3096,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.cemaden-6ab50c70cb09 .root-0-paragraph-set-0-paragraph-0 {
+.monitorame-1f77372dab6e .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.cemaden-6ab50c70cb09 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.monitorame-1f77372dab6e .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(252, 252, 252, 1);
   text-transform: uppercase;
   
@@ -3123,13 +3120,13 @@ body {
 }
 
 /* Rectangle 108 */
-.rectangle-eea158ead2be > svg {
+.rectangle-2c8ce4a739a3 > svg {
   position: absolute;
   top: 0px;
   left: 0px;
   transform: translate(0px,0px);
 }
-.rectangle-eea158ead2be {
+.rectangle-2c8ce4a739a3 {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -3139,26 +3136,26 @@ body {
 }
 
 /* Rectangle 94 */
-.rectangle-606218e9256c > svg {
+.rectangle-fae9e99ecac1 > svg {
   position: absolute;
   top: 0px;
   left: 0px;
   transform: translate(0px,0px);
 }
-.rectangle-606218e9256c {
+.rectangle-fae9e99ecac1 {
   position: absolute;
   left: 0px;
   top: 1px;
   width: 358px;
-  height: 111px;
+  height: 106px;
   mix-blend-mode: normal;
 }
 
 /* Áreas de risco */
-.reas-de-r-7312c59dc114 {
+.reas-de-r-1ea4c9e954fa {
   position: absolute;
   left: 0px;
-  top: 343px;
+  top: 338px;
   width: 358px;
   height: 240px;
   box-shadow: ;
@@ -3166,7 +3163,7 @@ body {
 }
 
 /* Áreas de risco */
-.reas-de-r-6d2cefc9a7f1 {
+.reas-de-r-093f3989c5f5 {
   position: absolute;
   left: 129px;
   top: 6px;
@@ -3174,14 +3171,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.reas-de-r-6d2cefc9a7f1 .root-0 {
+.reas-de-r-093f3989c5f5 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.reas-de-r-6d2cefc9a7f1 .root-0-paragraph-set-0 {
+.reas-de-r-093f3989c5f5 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -3189,13 +3186,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.reas-de-r-6d2cefc9a7f1 .root-0-paragraph-set-0-paragraph-0 {
+.reas-de-r-093f3989c5f5 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: center;
 }
-.reas-de-r-6d2cefc9a7f1 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.reas-de-r-093f3989c5f5 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(252, 252, 252, 1);
   text-transform: uppercase;
   
@@ -3213,7 +3210,7 @@ body {
 }
 
 /* Rectangle 96 */
-.rectangle-6ed7a0236ae7 {
+.rectangle-e546fb23309b {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -3226,13 +3223,13 @@ body {
 }
 
 /* mapa */
-.mapa-7a44632f17f8 > svg {
+.mapa-eac6bfc29461 > svg {
   position: absolute;
   top: 0px;
   left: 0px;
   transform: translate(0px,0px);
 }
-.mapa-7a44632f17f8 {
+.mapa-eac6bfc29461 {
   position: absolute;
   left: 0px;
   top: 26px;
@@ -3242,7 +3239,7 @@ body {
 }
 
 /* Desastres */
-.desastres-2de8bfb36c30 {
+.desastres-0ecd00031fd3 {
   position: absolute;
   left: 125.11px;
   top: 9px;
@@ -3250,14 +3247,14 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
-.desastres-2de8bfb36c30 .root-0 {
+.desastres-0ecd00031fd3 .root-0 {
   
   
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.desastres-2de8bfb36c30 .root-0-paragraph-set-0 {
+.desastres-0ecd00031fd3 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
@@ -3265,13 +3262,13 @@ body {
   margin-right: 1px;
   vertical-align: top;
 }
-.desastres-2de8bfb36c30 .root-0-paragraph-set-0-paragraph-0 {
+.desastres-0ecd00031fd3 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
   text-align: left;
 }
-.desastres-2de8bfb36c30 .root-0-paragraph-set-0-paragraph-0-text-0 {
+.desastres-0ecd00031fd3 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(252, 252, 252, 1);
   text-transform: uppercase;
   
@@ -3289,7 +3286,7 @@ body {
 }
 
 /* Rectangle 78 */
-.rectangle-692630ff6da6 {
+.rectangle-a624833e35a5 {
   position: absolute;
   left: 0.11px;
   top: 0px;
@@ -3303,7 +3300,7 @@ body {
 }
 
 /* Rectangle 108 */
-.rectangle-abad8bc04711 {
+.rectangle-f2213b27197b {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -3315,12 +3312,12 @@ body {
 }
 
 /* Background */
-.background-cfb104cf669a {
+.background-e216a5ada2a8 {
   position: absolute;
   left: 0px;
   top: 0px;
   width: 358px;
-  height: 583px;
+  height: 578px;
   background: #bcc9caFF;
   border-start-start-radius: 8px;
   border-start-end-radius: 8px;
@@ -3329,3 +3326,4 @@ body {
   box-shadow: ;
   mix-blend-mode: normal;
 }
+    

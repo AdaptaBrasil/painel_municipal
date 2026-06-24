@@ -31,6 +31,19 @@ class CommonBusinessRules(BaseModel):
             return NumberFormattingProcessing.format_number_brazilian_ignore_two_zeros(int(truncated_value))
         
         return "—"
+    
+    @staticmethod
+    def brazilian_formatted_value_integer(value: Optional[float | int]) -> Optional[str]:
+        if value is None:
+            return "—"
+        truncated_value = NumberFormattingProcessing.to_decimal_truncated(value, value_to_ignore=None, precision=2)
+        
+        if isinstance(value, (float, int)):
+            return NumberFormattingProcessing.format_number_brazilian_ignore_two_zeros(int(truncated_value))
+        
+        return "—"
+    
+    
 
 class County(BaseModel):
     county_id: int
@@ -180,7 +193,7 @@ class MunicipalIndicatorsReport(BaseModel):
             elif key in ["renda_media", "pib"]:
                 data[key] = f"R$ {CommonBusinessRules.brazilian_formatted_value(value)}"
             elif key == "densidade_urb":
-                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} hab/km²"
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value_integer(value)} hab/km²"
             elif key in ["pop_urb_pct", "pop_rural_pct", "mulheres", "pretos_pardos", "pop_inf", "pop_idosa", "imigrantes", "indigenas", "quilombolas", "alfabet", "cob_vacinal"]:
                 data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}%"
             elif key in ["bolsa_familia"]:

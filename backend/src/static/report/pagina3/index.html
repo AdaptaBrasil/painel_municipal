@@ -910,7 +910,21 @@
 
       // Territorial fields
       window.PAGE_DATA.territorio.area = "{{ municipal_report_record.area }}";
+
+
       window.PAGE_DATA.territorio.regiaoInfluencia = "{{ municipal_report_record.regic_influencia }}";
+
+      const regiaoInfluenciaEl = document.querySelector('[data-bind="territorio.regiaoInfluencia"]');
+      const vilhenaEl = document.querySelector('.vilhena-401ee2e72666');
+
+      if (regiaoInfluenciaEl) {
+        regiaoInfluenciaEl.style.fontSize = window.PAGE_DATA.territorio.regiaoInfluencia.length > 10 ? '9px' : '12px';  
+        if (vilhenaEl) {
+          vilhenaEl.style.top = '94.87px';
+          vilhenaEl.style.left = '151.13px';
+        }
+      }
+
       window.PAGE_DATA.territorio.densidadeUrbana = "{{ municipal_report_record.densidade_urb }}";
       window.PAGE_DATA.territorio.pibPerCapita = "{{ municipal_report_record.pib }}";
       window.PAGE_DATA.territorio.idh = "{{ municipal_report_record.idh }}";

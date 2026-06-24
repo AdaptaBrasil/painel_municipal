@@ -46,6 +46,7 @@ window.PAGE_DATA = {
       desalojados: '200',
       danosPrejuizos: 'R$24,5 Mi',
     },
+    // Monitoramento de desastres (CEMADEN) — placeholders, sem valores no protótipo.
     cemaden: {
       escolasAreasRisco: '',
       pessoasAreasRisco: '',
