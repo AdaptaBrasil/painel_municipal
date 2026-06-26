@@ -1,6 +1,7 @@
 # backend/src/domain/entities.py
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
+from decimal import Decimal
 import pandas as pd
 
 from ..helpers.common.formatting.number_formatting_processing import NumberFormattingProcessing
@@ -40,10 +41,36 @@ class CommonBusinessRules(BaseModel):
         
         if isinstance(value, (float, int)):
             return NumberFormattingProcessing.format_number_brazilian_ignore_two_zeros(int(truncated_value))
-        
+
         return "—"
-    
-    
+
+    @staticmethod
+    def brazilian_formatted_value_currency_short(value: Optional[float | int]) -> Optional[str]:
+        """
+        Format a monetary value in short scale (Mi/Bi) with Brazilian conventions.
+
+        >= 1.000.000.000: divides by 1 Bi, truncates to 2 decimal places -> 'R$ 2,00 Bi'
+        >= 1.000.000:     divides by 1 Mi, truncates to 2 decimal places -> 'R$ 2,00 Mi'
+        Smaller values fall back to the plain Brazilian currency format.
+        """
+        if value is None:
+            return "—"
+
+        abs_value = abs(value)
+        if abs_value >= 1_000_000_000:
+            scaled = Decimal(str(value)) / Decimal(1_000_000_000)
+            suffix = "Bi"
+        elif abs_value >= 1_000_000:
+            scaled = Decimal(str(value)) / Decimal(1_000_000)
+            suffix = "Mi"
+        else:
+            return f"R$ {CommonBusinessRules.brazilian_formatted_value(value)}"
+
+        truncated_value = NumberFormattingProcessing.to_decimal_truncated(scaled, value_to_ignore=None, precision=2)
+        formatted_value = NumberFormattingProcessing.format_number_brazilian(float(truncated_value))
+        return f"R$ {formatted_value} {suffix}"
+
+
 
 class County(BaseModel):
     county_id: int
@@ -51,6 +78,10 @@ class County(BaseModel):
     state: str
     region: str
     display: Optional[str] = None
+    
+class CountyImage(BaseModel):
+    county_id: int
+    base64: Optional[str] = None
 
 class RiskFactor(BaseModel):
     risk_id: Optional[int] = None
@@ -153,7 +184,7 @@ class MunicipalIndicators(BaseModel):
     
     # Socioeconomic conditions
     ## IDH and related indicators
-    idh: Optional[float] = None
+    idh_m: Optional[float] = None
     renda_media: Optional[float] = None
     escolaridade: Optional[float] = None
     expec_vida: Optional[float] = None
@@ -211,7 +242,7 @@ class MunicipalIndicatorsReport(BaseModel):
                 data[key] = f"{CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)} anos"
             elif key in ["pop_fav", "dom_semi_inadeq"]:
                 data[key] = CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)
-            elif key == "idh":
+            elif key == "idh_m":
                 if not isinstance(value, (float, int)):
                     data[key] = "—"
                 elif value >= 0.800:
@@ -229,6 +260,71 @@ class MunicipalIndicatorsReport(BaseModel):
     def formatted_data_df(self) -> pd.DataFrame:
         return pd.DataFrame([self.formatted_data_dict])
 
+class MunicipalResilienceProfile(BaseModel):
+    # Identificação do município
+    county_id: Optional[int] = None
+    
+    # Uso do solo
+    bioma: Optional[str] = None
+    veg_natural: Optional[float] = None
+    agropec: Optional[float] = None
+    ucs: Optional[str] = None
+    ti: Optional[str] = None
+    # TODO: Missing fields for : Uso e cobertura da terra
+    
+    # gestão municipal
+    plano_saneam: Optional[str] = None
+    plano_residuos: Optional[str] = None
+    plano_drenagem: Optional[str] = None
+    plano_transporte: Optional[str] = None
+    plano_hab: Optional[str] = None
+    plano_diretor: Optional[str] = None
+    plano_rrd: Optional[str] = None
+    plano_conting: Optional[str] = None
+    cid_resilientes: Optional[str] = None
+    
+    # Desastres
+    estiagem_incend: Optional[float] = None
+    geohidro: Optional[float] = None
+    tornad_vendav: Optional[float] = None
+    obitos: Optional[float] = None
+    desabrig: Optional[float] = None
+    desaloj: Optional[float] = None
+    danos_prej_tot: Optional[float] = None
+    
+    # Monitoramento de desastres (CEMADEN)
+    escola_risco: Optional[float] = None
+    eventos_geohidro: Optional[float] = None
+    pessoas_area_risco_cemaden: Optional[float] = None
+    
+    # TODO: Missing fields for : Áreas de risco
+
+class MunicipalResilienceProfileReport(BaseModel):
+    municipal_resilience_profile: MunicipalResilienceProfile
+    
+    @property
+    def formatted_data_dict(self) -> Dict[str, Any]:
+        data = self.municipal_resilience_profile.dict()
+        for key, value in data.items():
+            if value is None:
+                data[key] = "—"
+                continue
+            
+            if key in ["veg_natural", "agropec"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}% do município"                
+            elif key in ["estiagem_incend", "geohidro", "tornad_vendav", "obitos", "desabrig", "desaloj"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value_integer(value)
+            elif key in ["danos_prej_tot"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value_currency_short(value)
+            elif key in ["escola_risco", "eventos_geohidro", "pessoas_area_risco_cemaden"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value_integer(value)
+                
+        return data
+
+    @property
+    def formatted_data_df(self) -> pd.DataFrame:
+        return pd.DataFrame([self.formatted_data_dict])
+    
 class ProjectInfo(BaseModel):
     name: str
     version: str

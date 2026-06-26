@@ -85,6 +85,29 @@
     if (bg) bg.style.fill = color;
   }
 
+  // Ícones do painel "gestão municipal". Cada rect carrega um caminho
+  // data-bind-status para o PAGE_DATA; o valor resolvido escolhe a imagem de
+  // fundo. Aceita tanto as chaves semânticas ('possui'/'naoPossui'/'ausente')
+  // quanto os códigos brutos (V / X / ?) que vêm da fonte de dados.
+  const STATUS_ICONS = {
+    possui: './imgs/POSSUI.png',
+    naoPossui: './imgs/NAO POSSUI.png',
+    ausente: './imgs/AUSENTE.png',
+    V: './imgs/POSSUI.png',
+    X: './imgs/NAO POSSUI.png',
+    '?': './imgs/AUSENTE.png',
+  };
+
+  function applyStatusIcons(data) {
+    document.querySelectorAll('[data-bind-status]').forEach((el) => {
+      const status = getByPath(data, el.getAttribute('data-bind-status'));
+      const icon = STATUS_ICONS[status];
+      // Status desconhecido/ausente no dado mantém o ícone do template.
+      if (!icon) return;
+      el.style.background = `url("${icon}") no-repeat center / contain`;
+    });
+  }
+
   function bindFieldToElement(el, value) {
     if (value == null) return;
     if (el.tagName === 'IMG') {
@@ -118,6 +141,8 @@
     if (data.tokens) applyTokens(data.tokens);
 
     renderLists(data);
+
+    applyStatusIcons(data);
 
     document.querySelectorAll('[data-bind]').forEach((el) => {
       const path = el.getAttribute('data-bind');

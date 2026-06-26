@@ -73,10 +73,10 @@ class PlaywrightPdfService(BasePdfService, PdfServiceInterface):
         # Iterates through each page defined in settings.pages_dir
         for page_config in settings.pages_dir:
             for page_path, config in page_config.items():
-                
+
                 # Generates the PDF for this page
                 pdf_bytes = await self.generate_single_page_pdf(page_path, context, config)
-                
+
                 # Adds to the merger
                 pdf_file = io.BytesIO(pdf_bytes)
                 pdf_merger.append(pdf_file)
