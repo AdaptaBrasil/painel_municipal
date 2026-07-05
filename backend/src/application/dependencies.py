@@ -1,6 +1,6 @@
 # backend/src/application/dependencies.py
 from ..infrastructure.database import PostgresDatabase
-from ..infrastructure.repository import CountyRepository, RiskFactorRepository, MunicipalIndicatorsRepository, MunicipalResilienceProfileRepository
+from ..infrastructure.repository import CountyRepository, RiskFactorRepository, MunicipalIndicatorsRepository, MunicipalResilienceProfileRepository, ClimateProjectionRepository
 from ..infrastructure.pdf_service import PlaywrightPdfService
 from ..infrastructure.project_info_service import TomlProjectInfoService
 from ..infrastructure.image_service import HttpImageService
@@ -26,6 +26,10 @@ def get_risk_factor_repository() -> RiskFactorRepository:
 def get_municipal_report_repository() -> MunicipalIndicatorsRepository:
     db = get_database()
     return MunicipalIndicatorsRepository(db)
+
+def get_climate_projection_repository() -> ClimateProjectionRepository:
+    db = get_database()
+    return ClimateProjectionRepository(db)
 
 def get_municipal_resilience_profile_repository() -> MunicipalResilienceProfileRepository:
     db = get_database()

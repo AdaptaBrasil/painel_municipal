@@ -5,6 +5,10 @@ code_test.py
 my_codes.py
 erase_docker.sh
 output/
+backend/src/static/report/pagina4/imgs/mapas/*
+backend/src/static/report/pagina5/imgs/graficos_temperatura/*
+backend/src/static/report/pagina5/imgs/mapas_temperatura/*
+
 
 # Logs
 *.log

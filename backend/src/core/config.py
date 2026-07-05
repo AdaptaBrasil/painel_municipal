@@ -23,8 +23,10 @@ class Settings(BaseSettings):
     pages_dir: List[Dict[Path, dict]] = [
         {BACKEND_DIR / "src" / "static" / "report" / "pagina1" / "index.html": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {BACKEND_DIR / "src" / "static" / "report" / "pagina2" / "index.html": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
-        {BACKEND_DIR / "src" / "static" / "report" / "pagina3" / "index.html": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+        {BACKEND_DIR / "src" / "static" / "report" / "pagina3" / "index.html": {"width": "842px", "height": "595px", "scale": 1.50, "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {BACKEND_DIR / "src" / "static" / "report" / "pagina4" / "index.html": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+        {BACKEND_DIR / "src" / "static" / "report" / "pagina5" / "index.html": {"width": "842px", "height": "595px", "scale": 1, "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+
     ]
     
     pyproject_path: Path = BACKEND_DIR / "pyproject.toml"

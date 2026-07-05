@@ -2,8 +2,8 @@ import json
 
 # backend/src/infrastructure/repository.py
 from typing import List
-from ..domain.interfaces import DatabaseInterface, MunicipalResilienceProfileRepositoryInterface, CountyRepositoryInterface, RiskFactorRepositoryInterface, MunicipalIndicatorsRepositoryInterface
-from ..domain.entities import County, RiskFactor, MunicipalIndicators
+from ..domain.interfaces import DatabaseInterface, MunicipalResilienceProfileRepositoryInterface, CountyRepositoryInterface, RiskFactorRepositoryInterface, MunicipalIndicatorsRepositoryInterface, ClimateProjectionRepositoryInterface
+from ..domain.entities import County, RiskFactor, MunicipalIndicators, ClimateProjection
 from ..core.constants import ErrorKeys
 
 class CountyRepository(CountyRepositoryInterface):
@@ -105,5 +105,24 @@ class MunicipalResilienceProfileRepository(MunicipalResilienceProfileRepositoryI
             else:
                 print(f"--- Municipal resilience profile found for county_id {county_id}: {len(records)}")  # Debugging line
             return dict(records[0])
+        except Exception as e:
+            raise Exception(str(e))
+        
+class ClimateProjectionRepository(ClimateProjectionRepositoryInterface):
+    def __init__(self, db: DatabaseInterface):
+        self.db = db
+        
+    async def get_climate_projection(self, county_id: int) -> ClimateProjection:
+        query = """
+            SELECT * FROM painel_municipal.pag5_climaticos_observados_cenarios WHERE county_id = $1;
+        """
+        try:
+            records = await self.db.fetch_all(query, county_id)
+            if not records:
+                print(f"--- No climate projection found for county_id: {county_id}")  # Debugging line
+                raise Exception(ErrorKeys.CLIMATE_PROJECTION_NOT_FOUND.value)
+            else:
+                print(f"--- Climate projection found for county_id {county_id}: {len(records)}")  # Debugging line
+            return ClimateProjection(**records[0])
         except Exception as e:
             raise Exception(str(e))

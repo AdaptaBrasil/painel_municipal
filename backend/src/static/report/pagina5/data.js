@@ -1,69 +1,109 @@
-// Página 5 — Clima atual e projeção climática.
-// Defaults gerados a partir do board Penpot "PÁGINA5" (id 68e50d75-…), pixel-idênticos.
-// Futuramente estes valores virão de uma API.
+// Página 5 (atualizada) — Projeção climática do município.
+// Defaults gerados a partir do board Penpot "PÁGINA5atualizada"
+// (board id db8a197f-48d7-5a85-92ca-562509b279ec), pixel-idênticos ao export.
+// Futuramente estes valores virão de uma API; edite aqui para trocar de município.
 window.PAGE_DATA = {
   "tokens": {
     "colors": {
       "primary": "#354F9D",
-      "panel": "#ABC837",
-      "chip": "#D9D9D9",
       "border": "#6D797A",
+      "subHeader": "#6D797A",
+      "chip": "#D9D9D9",
       "onPrimary": "#FCFCFC",
-      "surface": "#FFFFFF"
+      "surface": "#FFFFFF",
+      "text": "#1E1E1E",
+      "grid": "#FFFFFF"
     }
   },
   "location": {
     "city": "Curitiba",
     "state": "Paraná"
   },
-  "climaAtual": {
-    "title": "Clima atual"
+  // Imagens principais (vazio = mantém a imagem embutida do export).
+  // Preencha com uma URL/caminho para trocar por município (ex.: dados da API).
+  "city": { "image": "" },
+  "mapa": {
+    "title": "temperatura máxima da superfície ",
+    "image": ""
   },
-  "temperaturaMapa": {
-    "title": "temperatura máxima da superfície"
+  "temperatura": {
+    "title": "temperatura"
   },
+  "florDeRisco": { "image": "" },
   "projecao": {
-    "title": "projeção clima",
+    "title": "projeção clima ",
     "columns": {
       "indicador": "Indicador anual",
-      "passado": "passado",
-      "projecao": "Projeção"
+      "presente": "presente",
+      "tendencia": "tendência observada",
+      "futuro": "Cenário Futuro (2050)",
+      "otimista": "otimista",
+      "pessimista": "pessimista"
     },
     "rows": [
       {
         "label": "Temperatura média",
-        "passado": "22º",
-        "projecao": "+1,5º"
+        "icon": "./imgs/icone-temp-media.png",
+        "presente": "22º",
+        "tendencia": "+1,5º",
+        "otimista": "+1,5º",
+        "pessimista": "+1,5º"
       },
       {
         "label": "Temperatura mínima",
-        "passado": "10º",
-        "projecao": "+1,2º"
+        "icon": "./imgs/icone-temp-minima.png",
+        "presente": "10º",
+        "tendencia": "+1,2º",
+        "otimista": "+1,5º",
+        "pessimista": "+1,5º"
       },
       {
         "label": "Temperatura máxima",
-        "passado": "38º",
-        "projecao": "+2,2º"
+        "icon": "./imgs/icone-temp-maxima.png",
+        "presente": "38º",
+        "tendencia": "+2,2º",
+        "otimista": "+1,5º",
+        "pessimista": "+1,5º"
       },
       {
         "label": "Números máximo de dias secos consecutivos",
-        "passado": "12",
-        "projecao": "+8"
+        "icon": "./imgs/icone-dias-secos.png",
+        "presente": "12",
+        "tendencia": "+8",
+        "otimista": "+8",
+        "pessimista": "+8"
       },
       {
         "label": "Números máximo de dias de chuva consecutivos",
-        "passado": "3",
-        "projecao": "+1"
+        "icon": "./imgs/icone-dias-chuva.png",
+        "presente": "3",
+        "tendencia": "+1",
+        "otimista": "+8",
+        "pessimista": "+8"
       },
       {
         "label": "Intensidade de precipitação",
-        "passado": "10mm",
-        "projecao": "+2mm"
+        "icon": "./imgs/icone-intensidade.png",
+        "presente": "10mm",
+        "tendencia": "+2mm",
+        "otimista": "+2mm",
+        "pessimista": "+2mm"
       },
       {
         "label": "Chuvas extremas",
-        "passado": "70mm",
-        "projecao": "+10mm"
+        "icon": "./imgs/icone-chuvas-extremas.png",
+        "presente": "70mm",
+        "tendencia": "+10mm",
+        "otimista": "+2mm",
+        "pessimista": "+2mm"
+      },
+      {
+        "label": "Nível do mar",
+        "icon": "./imgs/icone-nivel-do-mar.png",
+        "presente": "70mm",
+        "tendencia": "+10mm",
+        "otimista": "+2mm",
+        "pessimista": "+2mm"
       }
     ]
   }

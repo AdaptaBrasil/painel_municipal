@@ -893,6 +893,29 @@
 
 
       console.log('PAGE_DATA (Depois da injeção):', window.PAGE_DATA);
+
+      // Mapa de áreas de risco — usa o mapa do geocode (./imgs/mapas/{geocode}.png)
+      // se ele existir; caso contrário, exibe a imagem padrão "sem mapa".
+      // A verificação de existência é feita via onerror do próprio <img>.
+      (function () {
+        var geocode = "{{ municipal_resilience_profile_record.geocode }}";
+        var mapImg = document.getElementById("fill-image-render-1870-0");
+        if (!mapImg) return;
+
+        var fallbackSrc = "./imgs/imagem-sem-mapa-do-municipio-v2.png";
+
+        if (!geocode) {
+          mapImg.src = fallbackSrc;
+          return;
+        }
+
+        mapImg.onerror = function () {
+          mapImg.onerror = null;
+          mapImg.src = fallbackSrc;
+        };
+        mapImg.src = "./imgs/mapas/" + geocode + ".png";
+        console.log("Caminho do mapa definido para geocode " + geocode + ": " + mapImg.src);
+      })();
     </script>
   </body>
 </html>

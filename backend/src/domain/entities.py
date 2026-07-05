@@ -79,10 +79,6 @@ class County(BaseModel):
     region: str
     display: Optional[str] = None
     
-class CountyImage(BaseModel):
-    county_id: int
-    base64: Optional[str] = None
-
 class RiskFactor(BaseModel):
     risk_id: Optional[int] = None
     detail_id: Optional[int] = None
@@ -178,7 +174,6 @@ class MunicipalIndicators(BaseModel):
     pretos_pardos: Optional[float] = None
     pop_inf: Optional[float] = None
     pop_idosa: Optional[float] = None
-    imigrantes: Optional[float] = None
     indigenas: Optional[float] = None
     quilombolas: Optional[float] = None
     
@@ -208,6 +203,13 @@ class MunicipalIndicators(BaseModel):
     acesso_esgoto: Optional[float] = None
     acesso_energia: Optional[float] = None
     acesso_lixo: Optional[float] = None
+    
+    # MOBILIDADE POPULATION
+    imig_regist: Optional[float] = None
+    solic_refugio: Optional[float] = None
+    imigrantes: Optional[float] = None
+    tx_turismo: Optional[float] = None
+    
 
 class MunicipalIndicatorsReport(BaseModel):
     municipal_indicators: MunicipalIndicators
@@ -253,6 +255,95 @@ class MunicipalIndicatorsReport(BaseModel):
                     data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Médio)"
                 else:
                     data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Baixo)"
+            
+            elif key in ["imig_regist"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value(value)
+            elif key in ["solic_refugio", "imigrantes", "tx_turismo"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}%"
+            
+            
+        return data
+
+    @property
+    def formatted_data_df(self) -> pd.DataFrame:
+        return pd.DataFrame([self.formatted_data_dict])
+
+
+class ClimateProjection(BaseModel):
+    geocode: Optional[int] = None
+    nm_munic: Optional[str] = None
+    county_id: Optional[int] = None
+    
+    temp_med: Optional[float] = None
+    temp_med_tend: Optional[float] = None
+    temp_med_otim: Optional[float] = None
+    temp_med_pes: Optional[float] = None
+
+
+    temp_max: Optional[float] = None
+    temp_max_tend: Optional[float] = None
+    temp_max_otim: Optional[float] = None
+    temp_max_pes: Optional[float] = None
+
+    temp_min_otim: Optional[float] = None
+    temp_min: Optional[float] = None
+    temp_min_tend: Optional[float] = None
+    temp_min_pes: Optional[float] = None
+    
+    dias_secos: Optional[float] = None
+    dias_secos_tend: Optional[float] = None
+    dias_secos_otim: Optional[float] = None
+    dias_secos_pes: Optional[float] = None
+
+
+    dias_chuva: Optional[float] = None
+    dias_chuva_tend: Optional[float] = None
+    dias_chuva_otim: Optional[float] = None
+    dias_chuva_pes: Optional[float] = None
+
+    
+    chuva_ext_pes: Optional[float] = None
+    chuva_ext: Optional[float] = None
+    chuva_ext_tend: Optional[float] = None
+    chuva_ext_otim: Optional[float] = None
+
+    precip: Optional[float] = None
+    precip_tend: Optional[float] = None
+    precip_otim: Optional[float] = None
+    precip_pes: Optional[float] = None
+    
+    nivel_mar: Optional[float] = None
+    nivel_mar_tend: Optional[float] = None
+    nivel_mar_30: Optional[float] = None
+    nivel_mar_50: Optional[float] = None
+    
+class ClimateProjectionReport(BaseModel):
+    climate_projection: ClimateProjection
+    
+    
+    @property
+    def pure_data_dict(self) -> Dict[str, Any]:
+        return self.climate_projection.dict()
+    @property
+    def formatted_data_dict(self) -> Dict[str, Any]:
+        data = self.climate_projection.dict()
+        for key, value in data.items():
+            if value is None:
+                data[key] = "—"
+                continue
+            
+            if key in ["temp_med", "temp_med_tend", "temp_med_otim", "temp_med_pes",
+                       "temp_max", "temp_max_tend", "temp_max_otim", "temp_max_pes",
+                       "temp_min", "temp_min_tend", "temp_min_otim", "temp_min_pes"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} °C"
+            elif key in ["dias_secos", "dias_secos_tend", "dias_secos_otim", "dias_secos_pes",
+                         "dias_chuva", "dias_chuva_tend", "dias_chuva_otim", "dias_chuva_pes"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value(value)
+            elif key in ["chuva_ext", "chuva_ext_tend", "chuva_ext_otim", "chuva_ext_pes",
+                         "precip", "precip_tend", "precip_otim", "precip_pes"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} mm"
+            elif key in ["nivel_mar", "nivel_mar_tend", "nivel_mar_30", "nivel_mar_50"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} mm"
                 
         return data
 
@@ -260,9 +351,11 @@ class MunicipalIndicatorsReport(BaseModel):
     def formatted_data_df(self) -> pd.DataFrame:
         return pd.DataFrame([self.formatted_data_dict])
 
+
 class MunicipalResilienceProfile(BaseModel):
     # Identificação do município
     county_id: Optional[int] = None
+    geocode: Optional[int] = None
     
     # Uso do solo
     bioma: Optional[str] = None
