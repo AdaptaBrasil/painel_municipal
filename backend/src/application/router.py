@@ -122,8 +122,9 @@ async def download_report_pdf(
         print(f"Error generating PDF: {ErrorKeys.PDF_GENERATION_FAILED.value} {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+    GEOCODE = pure_climate_projection_record.get("geocode", f"county_{county_id}")
     headers = {
-        "Content-Disposition": f'attachment; filename="{county_record.county_id}_{county_record.county}_Plano_Adaptacao.pdf"'
+        "Content-Disposition": f'attachment; filename="{GEOCODE}.pdf"'
     }
     print(f"---"*30)
     print("\n\n")

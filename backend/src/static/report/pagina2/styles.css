@@ -355,8 +355,6 @@ body {
   height: 40px;
   background: #d9d9d9FF;
   border: 1px solid #6d797aFF;
-  border-start-start-radius: 8px;
-  border-start-end-radius: 8px;
   border-end-start-radius: 8px;
   border-end-end-radius: 8px;
   
@@ -371,8 +369,6 @@ body {
   width: auto;
   height: 45px;
   background: #354f9dFF;
-  border-start-start-radius: 8px;
-  border-start-end-radius: 8px;
   
   mix-blend-mode: normal;
   display: flex;

@@ -84,8 +84,9 @@
   <div class="shape rect quadrados-a6e6c096e5f8">
   </div>
   <!-- rect: link-branco -->
-  <div class="shape rect linkbranc-483529ac0b94">
-  </div>
+  <a class="shape rect linkbranc-483529ac0b94" target="_blank" rel="noopener"
+     href="https://www.redus.org.br/georedus?v=v0&amp;municipioId={{ municipal_resilience_profile_record.geocode }}&amp;viewConf=N4IgRgngkgJiBcoAuBTAtgBxQJwIZIFc8B9AZwK2wDMBLAYxpQVBn12ZFUx3yNwCVcAOwDmTeAG0ATAAYANADYZAXQC%2BckDTjxO6SrxLlKtBk1XqQAG1wQA9gSQIJoLQisoqjjTS6knL7V1uPEJDChwTRhBVNTkAt2waEQALL01fJzU1IA">
+  </a>
   <!-- group: projecao clima (refatorado: SVG do Penpot -> tabela HTML com variaveis) -->
   <div class="projecao-clima">
     <div class="projecao-title" data-bind="projecao.title">projeção clima</div>
@@ -145,19 +146,17 @@
       const curitibaEl = document.querySelector('.curitiba-676df7a77bca');
 
       if (cityStateEl) {
-        cityStateEl.style.fontSize = cityStateData.length > 15 ? '8.9px' : '14px';  
+        cityStateEl.style.fontSize = cityStateData.length > 15 ? '9.5px' : '14px';  
         if (curitibaEl) {
           curitibaEl.style.top = '10px';
-          curitibaEl.style.left = '1px';
+          curitibaEl.style.left = '5px';
           curitibaEl.style.width = '100%';
         }
         if (cityStateEl.style.fontSize === '14px') {
-          cityStateEl.style.position = 'absolute';
-          cityStateEl.style.top = '50%';
-          cityStateEl.style.left = '50%';
-          cityStateEl.style.transform = 'translate(-50%, -50%)';
+          
         } 
       }
+      
       
       const cp = {{ climate_projection_record | tojson | safe }};
 
@@ -205,7 +204,7 @@
           mapImg.onerror = null;
           mapImg.src = fallbackSrc;
         };
-        mapImg.src = "./imgs/graficos_temperatura/" + geocode + ".png";
+        mapImg.src = "./imgs/graficos_temperatura/" + geocode + ".svg";
         console.log("Caminho do mapa definido para geocode " + geocode + ": " + mapImg.src);
       })();
 
@@ -227,7 +226,7 @@
           mapImg.onerror = null;
           mapImg.src = fallbackSrc;
         };
-        mapImg.src = "./imgs/mapas_temperatura/" + geocode + ".png";
+        mapImg.src = "./imgs/mapas_temperatura/" + geocode + "_lr.png";
         console.log("Caminho do mapa definido para geocode " + geocode + ": " + mapImg.src);
       })();
       

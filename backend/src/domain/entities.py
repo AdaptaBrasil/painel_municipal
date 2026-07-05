@@ -70,6 +70,26 @@ class CommonBusinessRules(BaseModel):
         formatted_value = NumberFormattingProcessing.format_number_brazilian(float(truncated_value))
         return f"R$ {formatted_value} {suffix}"
 
+    @staticmethod
+    def brazilian_formatted_signed_value(value: Optional[float | int]) -> Optional[str]:
+        """
+        Format a value with an explicit sign prefix using Brazilian conventions.
+
+        > 0:   '+1,23'
+        < 0:   '−1,23'
+        == 0:  '=0,00' (values that truncate to 0,00 count as zero)
+        None:  '—'
+        """
+        if value is None:
+            return "—"
+
+        truncated_value = NumberFormattingProcessing.to_decimal_truncated(value, value_to_ignore=None, precision=2)
+        if truncated_value > 0:
+            return f"+{CommonBusinessRules.brazilian_formatted_value(value)}"
+        if truncated_value < 0:
+            return f"−{CommonBusinessRules.brazilian_formatted_value(abs(value))}"
+        return f"={CommonBusinessRules.brazilian_formatted_value(abs(value))}"
+
 
 
 class County(BaseModel):
@@ -216,7 +236,7 @@ class MunicipalIndicatorsReport(BaseModel):
     
     @property
     def formatted_data_dict(self) -> Dict[str, Any]:
-        data = self.municipal_indicators.dict()
+        data = self.municipal_indicators.model_dump()
         for key, value in data.items():
             if value is None:
                 data[key] = "—"
@@ -323,28 +343,34 @@ class ClimateProjectionReport(BaseModel):
     
     @property
     def pure_data_dict(self) -> Dict[str, Any]:
-        return self.climate_projection.dict()
+        return self.climate_projection.model_dump()
     @property
     def formatted_data_dict(self) -> Dict[str, Any]:
-        data = self.climate_projection.dict()
+        data = self.climate_projection.model_dump()
         for key, value in data.items():
             if value is None:
                 data[key] = "—"
                 continue
-            
+
+            # Scenario columns (tendência observada, otimista, pessimista) carry an explicit sign
+            if key.endswith(("_tend", "_otim", "_pes")):
+                formatted_value = CommonBusinessRules.brazilian_formatted_signed_value(value)
+            else:
+                formatted_value = CommonBusinessRules.brazilian_formatted_value(value)
+
             if key in ["temp_med", "temp_med_tend", "temp_med_otim", "temp_med_pes",
                        "temp_max", "temp_max_tend", "temp_max_otim", "temp_max_pes",
                        "temp_min", "temp_min_tend", "temp_min_otim", "temp_min_pes"]:
-                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} °C"
+                data[key] = f"{formatted_value} °C"
             elif key in ["dias_secos", "dias_secos_tend", "dias_secos_otim", "dias_secos_pes",
                          "dias_chuva", "dias_chuva_tend", "dias_chuva_otim", "dias_chuva_pes"]:
-                data[key] = CommonBusinessRules.brazilian_formatted_value(value)
+                data[key] = formatted_value
             elif key in ["chuva_ext", "chuva_ext_tend", "chuva_ext_otim", "chuva_ext_pes",
                          "precip", "precip_tend", "precip_otim", "precip_pes"]:
-                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} mm"
+                data[key] = f"{formatted_value} mm"
             elif key in ["nivel_mar", "nivel_mar_tend", "nivel_mar_30", "nivel_mar_50"]:
-                data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} mm"
-                
+                data[key] = f"{formatted_value} mm"
+
         return data
 
     @property
@@ -397,7 +423,7 @@ class MunicipalResilienceProfileReport(BaseModel):
     
     @property
     def formatted_data_dict(self) -> Dict[str, Any]:
-        data = self.municipal_resilience_profile.dict()
+        data = self.municipal_resilience_profile.model_dump()
         for key, value in data.items():
             if value is None:
                 data[key] = "—"
