@@ -120,17 +120,17 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 357.78px;
+  width: 357.93px;
   height: 40px;
   background: #d9d9d9FF;
   border: 1px solid #6d797aFF;
-  border-start-start-radius: 8px;
-  border-start-end-radius: 8px;
   border-end-start-radius: 8px;
   border-end-end-radius: 8px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
+
+
 
 /* Uso do solo */
 .uso-do-sol-b19bd93025f7 {
@@ -947,8 +947,6 @@ body {
   width: 357.78px;
   height: 40px;
   background: #354f9dFF;
-  border-start-start-radius: 8px;
-  border-start-end-radius: 8px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
@@ -1871,8 +1869,6 @@ body {
   width: 357.78px;
   height: 40px;
   background: #354f9dFF;
-  border-start-start-radius: 8px;
-  border-start-end-radius: 8px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
@@ -3431,8 +3427,6 @@ body {
   width: 357.78px;
   height: 40px;
   background: #354f9dFF;
-  border-start-start-radius: 8px;
-  border-start-end-radius: 8px;
   box-shadow: ;
   mix-blend-mode: normal;
 }

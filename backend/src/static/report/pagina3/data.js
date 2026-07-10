@@ -52,8 +52,7 @@ window.PAGE_DATA = {
     },
     "domicilios": {
       "favelas": "5000",
-      "semiInadequados": "2000",
-      "semArborizacao": "5"
+      "semiInadequados": "2000"
     },
     "acessos": {
       "agua": "69,9",

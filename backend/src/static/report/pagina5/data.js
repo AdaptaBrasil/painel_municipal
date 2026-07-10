@@ -31,7 +31,7 @@ window.PAGE_DATA = {
   },
   "florDeRisco": { "image": "" },
   "projecao": {
-    "title": "projeção clima ",
+    "title": "Projeção do Clima ",
     "columns": {
       "indicador": "Indicador anual",
       "presente": "presente",

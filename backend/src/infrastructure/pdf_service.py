@@ -5,7 +5,7 @@ import io
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
-from pypdf import PdfMerger
+from pypdf import PdfReader, PdfWriter
 from ..domain.interfaces import PdfServiceInterface
 from ..core.config import settings
 from ..core.constants import ErrorKeys
@@ -68,26 +68,47 @@ class PlaywrightPdfService(BasePdfService, PdfServiceInterface):
             await browser.close()
             return pdf_bytes
     
+    @staticmethod
+    def _page_size_in_points(config: dict) -> tuple | None:
+        """Converts the CSS pixel size used by Playwright (96 dpi) to PDF points (72 dpi)."""
+        width, height = config.get("width"), config.get("height")
+        if not (width and height):
+            return None
+        to_points = lambda css_px: float(str(css_px).removesuffix("px")) * 72 / 96
+        return to_points(width), to_points(height)
+
     async def generate_pdf_merged(self, context: dict) -> bytes:
         """Generates PDFs for each page separately and then merges them."""
-        pdf_merger = PdfMerger()
-        
+        pdf_writer = PdfWriter()
+
         # Iterates through each page defined in settings.pages_dir
         for page_config in settings.pages_dir:
             for page_path, config in page_config.items():
 
+                if page_path.suffix.lower() == ".pdf":
+                    # Static page already in PDF: appends it keeping its position,
+                    # scaled to the same size as the rendered pages
+                    if not page_path.exists():
+                        raise FileNotFoundError(f"PDF not found: {page_path}")
+                    target_size = self._page_size_in_points(config)
+                    for page in PdfReader(str(page_path)).pages:
+                        if target_size:
+                            page.scale_to(*target_size)
+                        pdf_writer.add_page(page)
+                    continue
+
                 # Generates the PDF for this page
                 pdf_bytes = await self.generate_single_page_pdf(page_path, context, config)
-                
+
                 # Adds to the merger
-                pdf_file = io.BytesIO(pdf_bytes)
-                pdf_merger.append(pdf_file)
-        
+                for page in PdfReader(io.BytesIO(pdf_bytes)).pages:
+                    pdf_writer.add_page(page)
+
         # Writes the final PDF to memory
         output = io.BytesIO()
-        pdf_merger.write(output)
-        pdf_merger.close()
-        
+        pdf_writer.write(output)
+        pdf_writer.close()
+
         output.seek(0)
         return output.getvalue()
    
