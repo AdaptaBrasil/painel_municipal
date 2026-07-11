@@ -52,6 +52,10 @@ class PdfServiceInterface(ABC):
     async def generate_pdf_merged(self, context: dict) -> bytes:
         pass
 
+    @abstractmethod
+    async def generate_pdf_page(self, context: dict, page_name: str) -> bytes:
+        pass
+
 class ProjectInfoServiceInterface(ABC):
     @abstractmethod
     def get_project_info(self) -> ProjectInfo:

@@ -3503,3 +3503,13 @@ body {
   text-rendering: geometricPrecision;
   caret-color: rgba(0, 0, 0, 1);
 }
+/* ícones de link (indicadores) */
+.link-icon {
+  position: absolute;
+  width: 14.39px;
+  height: 15.98px;
+  display: block;
+}
+.link-icon img { width: 100%; height: 100%; display: block; object-fit: contain; }
+
+.link-areas-risco { left: 235px; top: 5.5px; }

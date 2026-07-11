@@ -111,4 +111,32 @@ class PlaywrightPdfService(BasePdfService, PdfServiceInterface):
 
         output.seek(0)
         return output.getvalue()
+
+    async def generate_pdf_page(self, context: dict, page_name: str) -> bytes:
+        """Generates the PDF of a single report page identified by its directory name (e.g. 'pagina1')."""
+        for page_config in settings.pages_dir:
+            for page_path, config in page_config.items():
+                if page_path.parent.name != page_name:
+                    continue
+
+                if page_path.suffix.lower() == ".pdf":
+                    # Static page already in PDF: returns it scaled to the
+                    # same size as the rendered pages
+                    if not page_path.exists():
+                        raise FileNotFoundError(f"PDF not found: {page_path}")
+                    pdf_writer = PdfWriter()
+                    target_size = self._page_size_in_points(config)
+                    for page in PdfReader(str(page_path)).pages:
+                        if target_size:
+                            page.scale_to(*target_size)
+                        pdf_writer.add_page(page)
+                    output = io.BytesIO()
+                    pdf_writer.write(output)
+                    pdf_writer.close()
+                    output.seek(0)
+                    return output.getvalue()
+
+                return await self.generate_single_page_pdf(page_path, context, config)
+
+        raise KeyError(f"{ErrorKeys.PAGE_NOT_FOUND.value}: {page_name}")
    

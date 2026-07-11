@@ -2,6 +2,7 @@
 local_data/
 data/output/logs/
 code_test.py
+output/*
 my_codes.py
 erase_docker.sh
 output/
