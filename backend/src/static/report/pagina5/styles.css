@@ -3226,6 +3226,7 @@ body {
   background: url("./imgs/imagem-cidade.png") no-repeat center center / cover;
   box-shadow: ;
   mix-blend-mode: normal;
+  z-index: 20;
 }
 
 /* ==========================================================================
