@@ -903,5 +903,40 @@
   
     <script src="./data.js"></script>
     <script src="./shared/js/app.js"></script>
+
+    <script>
+      // Injeção dos dados reais via Jinja2, antes do bind() do app.js
+      // (que só roda no DOMContentLoaded).
+      (function () {
+        console.log('PAGE_DATA (Antes):', window.PAGE_DATA);
+
+        // Dados básicos de localização
+        window.PAGE_DATA.location.city = "{{ county_record.county }}";
+        window.PAGE_DATA.location.state = "{{ county_record.state }}";
+
+        // MunicipalHealthReport.formatted_data_dict (backend/src/domain/entities.py):
+        // chaves = atributos de MunicipalHealth, valores já formatados (unidades,
+        // padrão brasileiro, "—" para ausentes).
+        var healthRecord = {{ municipal_health_record | tojson }};
+
+        // Cada item de PAGE_DATA que declara um "id" recebe o valor do
+        // atributo homônimo do record; itens sem "id" (ainda sem dado no
+        // backend) preservam o valor estático do data.js.
+        [
+          window.PAGE_DATA.perfilEpidemiologico.incidencia,
+          window.PAGE_DATA.perfilEpidemiologico.internacao,
+          window.PAGE_DATA.estruturaRecursos.itens,
+          window.PAGE_DATA.coberturaVacinal.itens
+        ].forEach(function (itens) {
+          itens.forEach(function (item) {
+            if (item.id && healthRecord[item.id] != null) {
+              item.valor = healthRecord[item.id];
+            }
+          });
+        });
+
+        console.log('PAGE_DATA (Depois da injeção):', window.PAGE_DATA);
+      })();
+    </script>
   </body>
 </html>

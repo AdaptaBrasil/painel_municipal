@@ -2,7 +2,12 @@
 // políticas e programas, cobertura vacinal).
 // Defaults gerados a partir do board Penpot "PÁGINA6"
 // (id acb7058d-36c5-59f7-b731-6e5b089b9d5f), pixel-idênticos ao export.
-// Futuramente estes valores virão de uma API; edite aqui para trocar de município.
+//
+// Itens com "id" são alimentados pelo backend: o id é o nome exato do
+// atributo em MunicipalHealth (backend/src/domain/entities.py), e o valor
+// injetado vem já formatado de MunicipalHealthReport.formatted_data_dict
+// (ver o <script> de injeção no index.html). Itens sem "id" ainda não têm
+// dado no backend e mantêm o valor estático do protótipo.
 window.PAGE_DATA = {
   "tokens": {
     "colors": {
@@ -24,14 +29,17 @@ window.PAGE_DATA = {
     "taxaIncidenciaLabel": "Taxa de incidência:",
     "incidencia": [
       {
+        "id": "incid_arbo_2025",
         "label": "Arboviroses:",
         "valor": "28 por 100 mil hab"
       },
       {
+        "id": "incid_lepto_2025",
         "label": "Leptospirose:",
         "valor": "8 por 100 mil hab"
       },
       {
+        "id": "incid_hepatitea_2023",
         "label": "Hepatite A:",
         "valor": "5 por 100 mil hab"
       }
@@ -39,16 +47,19 @@ window.PAGE_DATA = {
     "taxaInternacaoLabel": "Taxa de internação:",
     "internacao": [
       {
+        "id": "inter_doenc_circ_2025",
         "label": "Doenças aparelho circulatório:",
         "valor": "10255 por 100 mil hab"
       },
       {
+        "id": "intern_doenc_resp_2025",
         "label": "Doenças aparelho respiratório:",
         "valor": "8148 por 100 mil hab"
       },
       {
+        "id": "intern_dda_2025",
         "label": "Monitoramento de diarreia aguda:",
-        "valor": "4 por 100 mil hab",
+        "valor": "4 por 100 mil hab"
       }
     ],
     "painelCalorLabel": "Painel de excesso de calor:"
@@ -93,18 +104,22 @@ window.PAGE_DATA = {
         "valor": "11"
       },
       {
+        "id": "leitos_1000_hab",
         "label": "Leitos:",
         "valor": "8 para cada 1000 hab"
       },
       {
+        "id": "prof_saude_hab_2025",
         "label": "Profissionais de saúde:",
         "valor": "5 para cada 1000 hab"
       },
       {
+        "id": "medicos_hab_2025",
         "label": "Médicos:",
         "valor": "3 por 1000 hab"
       },
       {
+        "id": "despesas_saude",
         "label": "Despesas em saúde :",
         "valor": "R$5000/hab"
       }
@@ -136,14 +151,17 @@ window.PAGE_DATA = {
     "title": "Cobertura Vacinal",
     "itens": [
       {
+        "id": "cob_vac_geral",
         "label": "Geral:",
         "valor": "78"
       },
       {
+        "id": "cob_vac_menor_2",
         "label": "Menores \n2 anos:",
         "valor": "88,7"
       },
       {
+        "id": "cob_vac_influenza",
         "label": "Influenza 60+:",
         "valor": "56"
       }

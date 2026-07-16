@@ -66,7 +66,7 @@ window.PAGE_DATA = {
         "pessimista": "+1,5º"
       },
       {
-        "label": "Números máximo de dias secos consecutivos",
+        "label": "Número máximo de dias secos consecutivos",
         "icon": "./imgs/icone-dias-secos.png",
         "presente": "12",
         "tendencia": "+8",
@@ -74,7 +74,7 @@ window.PAGE_DATA = {
         "pessimista": "+8"
       },
       {
-        "label": "Números máximo de dias de chuva consecutivos",
+        "label": "Número máximo de dias de chuva consecutivos",
         "icon": "./imgs/icone-dias-chuva.png",
         "presente": "3",
         "tendencia": "+1",
