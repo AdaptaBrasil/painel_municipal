@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <base href="{{ base_url }}">
+    <title>AdaptaBrasil — Página 0 atualizada (Capa · Fichas Municipais)</title>
+    <link rel="stylesheet" href="./shared/css/fonts.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+  <!-- frame: PÁGINA-0-FINAL-15-07 -->
+<div class="frame p-g-i-n-a0-f-aea8f8f65cec">
+  <!-- text: Fichas Municipais -->
+  <div class="shape text fichas-mun-7a7adbfef98a">
+    <div class="text-node-html" id="html-text-node-05e6a1c3-8960-544e-8a66-7a7adbfef98a" data-x="309.5" data-y="71.57884979248047">
+      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="paragraph-set root-0-paragraph-set-0">
+          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="title.linha1">Fichas</span><span class="text-node root-0-paragraph-set-0-paragraph-0-text-1" data-bind="title.linha2"> Municipais</span><span class="text-node root-0-paragraph-set-0-paragraph-0-text-2"> </span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- rect: figura-mapa-quadrados-coloridos -->
+  <div class="shape rect figuramap-39cc7a3b95b8" data-bind-bg="figura.image">
+  </div>
+  <!-- rect: Rectangle (caixa do município) -->
+  <div class="shape rect rectangle-54ff94c2cd22">
+    <!-- text: São José do Vale do Rio Preto - RJ -->
+    <div class="shape text fichas-mun-54ffe43fe100">
+      <div class="text-node-html" id="html-text-node-437c8563-38ab-80b2-8008-54ffe43fe100" data-x="292.5" data-y="502">
+        <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="paragraph-set root-0-paragraph-set-0">
+            <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="location.city">São José do Vale do Rio Preto</span><span class="text-node root-0-paragraph-set-0-paragraph-0-text-1"> - </span><span class="text-node root-0-paragraph-set-0-paragraph-0-text-2" data-bind="location.state">RJ</span><span class="text-node root-0-paragraph-set-0-paragraph-0-text-3"> </span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="./data.js"></script>
+    <script src="./shared/js/app.js"></script>
+    <script>
+      // Imprimir o conteúdo de window.PAGE_DATA que vem de data.js para o console
+      console.log('PAGE_DATA (Antes):', window.PAGE_DATA);
+
+      // Injetando dados básicos de localização via Jinja2
+      window.PAGE_DATA.location.city = "{{ county_record.county }}";
+      window.PAGE_DATA.location.state = "{{ county_record.state }}";
+
+      (function () {
+        var geocode = "{{ county_record.geocode }}";
+        var mapEl = document.querySelector('[data-bind-bg="figura.image"]');
+        if (!mapEl) return;
+
+        var fallbackSrc = window.PAGE_DATA.figura.image || "./imgs/figura-mapa-quadrados-coloridos.png";
+
+        function applyBackground(src) {
+          window.PAGE_DATA.figura.image = src;
+          mapEl.style.background = 'url("' + src + '") no-repeat center center / cover';
+        }
+
+        if (!geocode || geocode === "None") {
+          applyBackground(fallbackSrc);
+          return;
+        }
+
+        var mapSrc = "./imgs/mapas_capa/" + geocode + ".png";
+        // background-image não dispara onerror; pré-carrega para poder cair no fallback.
+        var probe = new Image();
+        probe.onload = function () { applyBackground(mapSrc); };
+        probe.onerror = function () { applyBackground(fallbackSrc); };
+        probe.src = mapSrc;
+        console.log("Caminho do mapa definido para geocode " + geocode + ": " + mapSrc);
+      })();
+
+      </script>
+  </body>
+</html>

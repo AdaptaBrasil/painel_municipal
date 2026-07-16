@@ -1,6 +1,6 @@
 # backend/src/application/dependencies.py
 from ..infrastructure.database import PostgresDatabase
-from ..infrastructure.repository import CountyRepository, RiskFactorRepository, MunicipalIndicatorsRepository, MunicipalResilienceProfileRepository, ClimateProjectionRepository
+from ..infrastructure.repository import CountyRepository, RiskFactorRepository, MunicipalIndicatorsRepository, MunicipalResilienceProfileRepository, ClimateProjectionRepository, MunicipalHealthRepository
 from ..infrastructure.pdf_service import PlaywrightPdfService
 from ..infrastructure.project_info_service import TomlProjectInfoService
 from ..infrastructure.image_service import HttpImageService
@@ -34,6 +34,10 @@ def get_climate_projection_repository() -> ClimateProjectionRepository:
 def get_municipal_resilience_profile_repository() -> MunicipalResilienceProfileRepository:
     db = get_database()
     return MunicipalResilienceProfileRepository(db)
+
+def get_municipal_health_repository() -> MunicipalHealthRepository:
+    db = get_database()
+    return MunicipalHealthRepository(db)
 
 # Shared singleton so the icon download cache is reused across requests.
 _image_service = HttpImageService()

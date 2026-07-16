@@ -85,7 +85,7 @@
   </div>
   <!-- rect: link-branco -->
   <a class="shape rect linkbranc-483529ac0b94" target="_blank" rel="noopener"
-     href="https://www.redus.org.br/georedus?v=v0&amp;municipioId={{ municipal_resilience_profile_record.geocode }}&amp;viewConf=N4IgRgngkgJiBcoAuBTAtgBxQJwIZIFc8B9AZwK2wDMBLAYxpQVBn12ZFUx3yNwCVcAOwDmTeAG0ATAAYANADYZAXQC%2BckDTjxO6SrxLlKtBk1XqQAG1wQA9gSQIJoLQisoqjjTS6knL7V1uPEJDChwTRhBVNTkAt2waEQALL01fJzU1IA">
+     href="https://www.redus.org.br/georedus?v=v0&amp;municipioId={{ county_record.geocode }}&amp;viewConf=N4IgRgngkgJiBcoAuBTAtgBxQJwIZIFc8B9AZwK2wDMBLAYxpQVBn12ZFUx3yNwCVcAOwDmTeAG0ATAAYANADYZAXQC%2BckDTjxO6SrxLlKtBk1XqQAG1wQA9gSQIJoLQisoqjjTS6knL7V1uPEJDChwTRhBVNTkAt2waEQALL01fJzU1IA">
   </a>
   <!-- group: projecao clima (refatorado: SVG do Penpot -> tabela HTML com variaveis) -->
   <div class="projecao-clima">
@@ -189,7 +189,7 @@
       // Mapa do município — usa ./imgs/graficos_temperatura/{geocode}.png se existir;
       // caso contrário, exibe a imagem padrão "sem mapa" via onerror.
       (function () {
-        var geocode = "{{ municipal_resilience_profile_record.geocode }}";
+        var geocode = "{{ county_record.geocode }}";
         var mapImg = document.getElementById("grafico-temperatura-municipio-img");
         if (!mapImg) return;
 
@@ -211,7 +211,7 @@
       // Mapa do município — usa ./imgs/mapas_temperatura/{geocode}.png se existir;
       // caso contrário, exibe a imagem padrão "sem mapa" via onerror.
       (function () {
-        var geocode = "{{ municipal_resilience_profile_record.geocode }}";
+        var geocode = "{{ county_record.geocode }}";
         var mapImg = document.getElementById("mapa-temperatura-municipio-img");
         if (!mapImg) return;
 

@@ -88,12 +88,13 @@ class CommonBusinessRules(BaseModel):
             return f"+{CommonBusinessRules.brazilian_formatted_value(value)}"
         if truncated_value < 0:
             return f"−{CommonBusinessRules.brazilian_formatted_value(abs(value))}"
-        return f"={CommonBusinessRules.brazilian_formatted_value(abs(value))}"
+        return f"+{CommonBusinessRules.brazilian_formatted_value(abs(value))}"
 
 
 
 class County(BaseModel):
     county_id: int
+    geocode: int
     county: str
     state: str
     region: str
@@ -251,8 +252,10 @@ class MunicipalIndicatorsReport(BaseModel):
                 data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}%"
             elif key in ["bolsa_familia"]:
                 data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}% das famílias pobres" 
-            elif key in ["firjan", "acesso_agua2", "acesso_esgoto", "acesso_energia", "acesso_lixo"]:
+            elif key in ["firjan"]:
                 data[key] = CommonBusinessRules.brazilian_formatted_value(value)
+            elif key in ["acesso_agua2", "acesso_esgoto", "acesso_energia", "acesso_lixo"]:
+                data[key] = f'{CommonBusinessRules.brazilian_formatted_value(value)}%'
             elif key in ["pop_urb_pessoas", "pop_rural_pessoas"]:
                 if not isinstance(value, (float, int)):
                     data[key] = "—"
@@ -443,7 +446,67 @@ class MunicipalResilienceProfileReport(BaseModel):
     @property
     def formatted_data_df(self) -> pd.DataFrame:
         return pd.DataFrame([self.formatted_data_dict])
+
+class MunicipalHealth(BaseModel):
+    county_id: Optional[int] = None
+    geocode: Optional[int] = None
     
+    # Perfil epidemiológico
+    incid_arbo_2025: Optional[int] = None
+    incid_lepto_2025: Optional[int] = None
+    incid_hepatitea_2023: Optional[int] = None
+    intern_dda_2025: Optional[int] = None
+    
+    inter_doenc_circ_2025: Optional[int] = None
+    intern_doenc_resp_2025: Optional[int] = None
+    
+    leitos_1000_hab: Optional[int] = None
+    prof_saude_hab_2025: Optional[int] = None
+    medicos_hab_2025: Optional[int] = None
+    
+    despesas_saude: Optional[float] = None
+    
+    cob_vac_geral: Optional[str] = None
+    cob_vac_menor_2: Optional[float] = None
+    cob_vac_influenza: Optional[float] = None
+
+class MunicipalHealthReport(BaseModel):
+    municipal_health: MunicipalHealth
+    
+    @property
+    def formatted_data_dict(self) -> Dict[str, Any]:
+        data = self.municipal_health.model_dump()
+        for key, value in data.items():
+            if value is None:
+                data[key] = "—"
+                continue
+
+            if key in ["incid_arbo_2025", "incid_lepto_2025", "incid_hepatitea_2023", "intern_dda_2025",
+                       "inter_doenc_circ_2025", "intern_doenc_resp_2025"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value_integer(value)} por 100 mil hab"
+            elif key in ["leitos_1000_hab", "prof_saude_hab_2025", "medicos_hab_2025"]:
+                data[key] = f"{CommonBusinessRules.brazilian_formatted_value_integer(value)} para cada mil hab"
+            elif key == "despesas_saude":
+                data[key] = f"R${CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)}/hab"
+            elif key in ["cob_vac_menor_2", "cob_vac_influenza"]:
+                data[key] = f'{CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)}%'
+            elif key == "cob_vac_geral":
+                if isinstance(value, str):
+                    normalized_value = value.replace(".", "").replace(",", ".")
+                    try:
+                        numeric_value = float(normalized_value)
+                        data[key] = f'{CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(numeric_value)}%'
+                    except ValueError:
+                        data[key] = value
+                else:
+                    data[key] = f'{CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)}%'
+                
+        return data
+
+    @property
+    def formatted_data_df(self) -> pd.DataFrame:
+        return pd.DataFrame([self.formatted_data_dict])
+
 class ProjectInfo(BaseModel):
     name: str
     version: str

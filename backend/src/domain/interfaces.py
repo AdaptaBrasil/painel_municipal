@@ -2,7 +2,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
 from pathlib import Path
-from .entities import County, RiskFactor,  ProjectInfo, MunicipalIndicators, MunicipalResilienceProfile, ClimateProjection
+from .entities import County, RiskFactor,  ProjectInfo, MunicipalIndicators, MunicipalResilienceProfile, ClimateProjection, MunicipalHealth
 
 
 class DatabaseInterface(ABC):
@@ -41,6 +41,10 @@ class ClimateProjectionRepositoryInterface(ABC):
 class RiskFactorRepositoryInterface(ABC):
     @abstractmethod
     async def get_risk_factors_by_county_id(self, county_id: int) -> List[RiskFactor]:
+        pass
+class MunicipalHealthRepositoryInterface(ABC):
+    @abstractmethod
+    async def get_municipal_health(self, county_id: int) -> MunicipalHealth:
         pass
     
 class PdfServiceInterface(ABC):

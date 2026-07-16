@@ -1,0 +1,4233 @@
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* math */
+
+/* symbols */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.text-node { background-clip: text !important; -webkit-background-clip: text !important; }
+
+/* PÁGINA6 */
+.p-g-i-n-a6-6e5b089b9d5f {
+  position: relative;
+  width: 842px;
+  height: 595px;
+  background: #ffffffFF;
+  box-shadow: ;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  z-index: 0;
+}
+
+/* link */
+.link-503fb37e39e5 {
+  position: absolute;
+  left: 381.65px;
+  top: 318.96px;
+  width: 17.14px;
+  height: 19.04px;
+  background: url(./imgs/link.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Cobertura-Vacinal (percentual) */
+.cobertura-e7d057c0ffbe {
+  position: absolute;
+  left: 428.52px;
+  top: 427.25px;
+  width: 357.78px;
+  height: 148.44px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Cobertura Vacinal */
+.cobertura-2398c384053c {
+  position: absolute;
+  left: 79.89px;
+  top: 10.75px;
+  height: 22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.cobertura-2398c384053c .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.cobertura-2398c384053c .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.cobertura-2398c384053c .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+.cobertura-2398c384053c .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 18px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 68 */
+.rectangle-739007b865aa {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  background: #354f9dFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco */
+.flor-de-ri-68630d6cbc7b {
+  position: absolute;
+  left: 278.11px;
+  top: 65.83px;
+  width: 61.5px;
+  height: 60.85px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco 3 */
+.flor-de-ri-6edaba900df9 {
+  position: absolute;
+  left: 4.04px;
+  top: 2.76px;
+  width: 51px;
+  height: 56px;
+  background: url(./imgs/flor-de-risco-3.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 77 */
+.rectangle-a5002b9ece70 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 61.5px;
+  height: 60.85px;
+  transform: matrix(-1.00, 0.00, 0.00, 1.00, 0.00, 0.00);
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* influenza-60 */
+.influenza-61a26c2e432e {
+  position: absolute;
+  left: 182.71px;
+  top: 47.94px;
+  width: 79.21px;
+  height: 92.55px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* influenza-60 */
+.influenza-8dfb52f0201d {
+  position: absolute;
+  left: 30.55px;
+  top: 12.34px;
+  width: 24px;
+  height: 25.07px;
+  background: url(./imgs/influenza-60.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* valor */
+.valor-90934337d73c {
+  position: absolute;
+  left: 7.2px;
+  top: 70.91px;
+  width: 64.8px;
+  height: 12.55px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.valor-90934337d73c .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.valor-90934337d73c .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.valor-90934337d73c .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.valor-90934337d73c .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 10px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* acesso a energia */
+.acesso-a-e-d87088c5db18 {
+  position: absolute;
+  left: 7.2px;
+  top: 39.7px;
+  width: 64.8px;
+  height: 25.09px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.acesso-a-e-d87088c5db18 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.acesso-a-e-d87088c5db18 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.acesso-a-e-d87088c5db18 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.acesso-a-e-d87088c5db18 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 10px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 25 */
+.rectangle-52f51af286cb {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 79.21px;
+  height: 92.55px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* menores-de-2anos */
+.menoresde-e69171e4b778 {
+  position: absolute;
+  left: 96.94px;
+  top: 47.94px;
+  width: 80.41px;
+  height: 92.55px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* menores-de-2anos */
+.menoresde-560b4dd99877 {
+  position: absolute;
+  left: 28.2px;
+  top: 12.36px;
+  width: 24px;
+  height: 25.07px;
+  background: url(./imgs/menores-de-2anos.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* valor */
+.valor-cee7d6454c5e {
+  position: absolute;
+  left: 7.8px;
+  top: 69.86px;
+  width: 64.8px;
+  height: 14.64px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.valor-cee7d6454c5e .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.valor-cee7d6454c5e .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.valor-cee7d6454c5e .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.valor-cee7d6454c5e .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* acesso a esgosto */
+.acesso-a-e-1badc423aeb0 {
+  position: absolute;
+  left: 10.8px;
+  top: 39.7px;
+  width: 58.8px;
+  height: 25.09px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.acesso-a-e-1badc423aeb0 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.acesso-a-e-1badc423aeb0 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.acesso-a-e-1badc423aeb0 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.acesso-a-e-1badc423aeb0 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 10px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+.acesso-a-e-1badc423aeb0 .root-0-paragraph-set-0-paragraph-0-text-1 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 10px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+.acesso-a-e-1badc423aeb0 .root-0-paragraph-set-0-paragraph-0-text-2 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 10px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 21 */
+.rectangle-5f6d8663c78c {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 80.41px;
+  height: 92.55px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* geral */
+.geral-e73d330c6f6c {
+  position: absolute;
+  left: 12.37px;
+  top: 47.94px;
+  width: 79.21px;
+  height: 92.55px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* geral */
+.geral-f77494ef1851 {
+  position: absolute;
+  left: 28.54px;
+  top: 12.34px;
+  width: 24px;
+  height: 25.07px;
+  background: url(./imgs/geral.png) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* valor */
+.valor-261da51fc214 {
+  position: absolute;
+  left: 7.61px;
+  top: 69.86px;
+  width: 64.8px;
+  height: 12.22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.valor-261da51fc214 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.valor-261da51fc214 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.valor-261da51fc214 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.valor-261da51fc214 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* acesso a agua */
+.acesso-a-a-f3c64f611fbc {
+  position: absolute;
+  left: 18.77px;
+  top: 39.7px;
+  width: 43.53px;
+  height: 20.96px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.acesso-a-a-f3c64f611fbc .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.acesso-a-a-f3c64f611fbc .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.acesso-a-a-f3c64f611fbc .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.acesso-a-a-f3c64f611fbc .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 10px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 22 */
+.rectangle-069fe4c76351 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 79.21px;
+  height: 92.55px;
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 56 */
+.rectangle-434741acc6e7 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 148.44px;
+  background: #05a1a7FF;
+  border: 1px solid #6d797aFF;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Políticas e Programas de Saúde */
+.polticas-21799f940a91 {
+  position: absolute;
+  left: 55.77px;
+  top: 362.44px;
+  width: 357.78px;
+  height: 213.24px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco2 */
+.flor-de-ri-43edd811d46e {
+  position: absolute;
+  left: 288.72px;
+  top: 141.94px;
+  width: 61.5px;
+  height: 60.85px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco 3 */
+.flor-de-ri-5542db450dde {
+  position: absolute;
+  left: 4.04px;
+  top: 2.76px;
+  width: 51px;
+  height: 56px;
+  background: url(./imgs/flor-de-risco-3.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 77 */
+.rectangle-22458d77e2d6 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 61.5px;
+  height: 60.85px;
+  transform: matrix(-1.00, 0.00, 0.00, 1.00, 0.00, 0.00);
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Plano AdaptaSUSU */
+.plano-adap-cb16f4713f01 {
+  position: absolute;
+  left: 12.12px;
+  top: 178.11px;
+  width: 270.1px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* link */
+.link-6bf2578517b6 {
+  position: absolute;
+  left: 247.38px;
+  top: 0.42px;
+  width: 17.24px;
+  height: 19.15px;
+  background: url(./imgs/link.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 98 */
+.rectangle-c6984863d51a {
+  position: absolute;
+  left: 109.58px;
+  top: 0px;
+  width: 160.53px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Plano AdaptaSUS: */
+.plano-adap-6d5e47fb3346 {
+  position: absolute;
+  left: 0px;
+  top: 2.5px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.plano-adap-6d5e47fb3346 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.plano-adap-6d5e47fb3346 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.plano-adap-6d5e47fb3346 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.plano-adap-6d5e47fb3346 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: -0.24px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Políticas e Programas de Saúde */
+.polticas-e2e952232db1 {
+  position: absolute;
+  left: 14.39px;
+  top: 9px;
+  height: 22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.polticas-e2e952232db1 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.polticas-e2e952232db1 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.polticas-e2e952232db1 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+.polticas-e2e952232db1 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 18px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Política Nacional de Saúde Integral da População Negra (PNSIPN): */
+.poltica-n-f6a0630135dc {
+  position: absolute;
+  left: 12.12px;
+  top: 144.36px;
+  width: 270.1px;
+  height: 29px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Política Nacional de Saúde Integral da População Negra (PNSIPN): */
+.poltica-n-d352ef0dd647 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 195.63px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.poltica-n-d352ef0dd647 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.poltica-n-d352ef0dd647 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.poltica-n-d352ef0dd647 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.poltica-n-d352ef0dd647 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: -0.36px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* sem ações */
+.sem-aes-c3c91ceaa68f {
+  position: absolute;
+  left: 201.41px;
+  top: 7px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.sem-aes-c3c91ceaa68f .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.sem-aes-c3c91ceaa68f .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.sem-aes-c3c91ceaa68f .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.sem-aes-c3c91ceaa68f .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 99 */
+.rectangle-31f2c7343971 {
+  position: absolute;
+  left: 195.63px;
+  top: 4px;
+  width: 74.47px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Programa dignidade menstrual: */
+.programa-d-be5360452171 {
+  position: absolute;
+  left: 12.12px;
+  top: 111.36px;
+  width: 335.43px;
+  height: 29px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Programa Dignidade Menstrual (PDM): */
+.programa-d-9f1f0efdf4c5 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 335.43px;
+  height: 29px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Programa Dignidade Menstrual (PDM): */
+.programa-d-945d5e8480c4 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 155.13px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.programa-d-945d5e8480c4 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.programa-d-945d5e8480c4 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.programa-d-945d5e8480c4 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.programa-d-945d5e8480c4 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 221 beneficiadas */
+.c-221-benefi-a8725a998e94 {
+  position: absolute;
+  left: 231.1px;
+  top: 7px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-221-benefi-a8725a998e94 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-221-benefi-a8725a998e94 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-221-benefi-a8725a998e94 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-221-benefi-a8725a998e94 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 67 */
+.rectangle-f5550ba827a6 {
+  position: absolute;
+  left: 125.6px;
+  top: 4px;
+  width: 209.82px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Programa farmácia popular: */
+.programa-f-3fa1ed0b64dd {
+  position: absolute;
+  left: 12.12px;
+  top: 78.36px;
+  width: 335.43px;
+  height: 29px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Programa Farmácia Popular do Brasil (PFPB): */
+.programa-f-c860836656ae {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 167.42px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.programa-f-c860836656ae .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.programa-f-c860836656ae .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.programa-f-c860836656ae .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.programa-f-c860836656ae .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 3.516 beneficiados */
+.c-3516-bene-2840477a9a6b {
+  position: absolute;
+  left: 219.1px;
+  top: 7px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-3516-bene-2840477a9a6b .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-3516-bene-2840477a9a6b .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-3516-bene-2840477a9a6b .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-3516-bene-2840477a9a6b .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 66 */
+.rectangle-5c107ac3286d {
+  position: absolute;
+  left: 167.96px;
+  top: 4px;
+  width: 167.47px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Programa Academia da Saúde: */
+.programa-a-096e0358a4a0 {
+  position: absolute;
+  left: 12.12px;
+  top: 53.36px;
+  width: 335.43px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 3 polos */
+.c-3-polos-eaf537854975 {
+  position: absolute;
+  left: 285.1px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-3-polos-eaf537854975 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-3-polos-eaf537854975 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-3-polos-eaf537854975 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-3-polos-eaf537854975 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 60 */
+.rectangle-6d035c9dbe4a {
+  position: absolute;
+  left: 220.05px;
+  top: 0px;
+  width: 115.37px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Programa Academia da Saúde (PAS): */
+.programa-a-97686757755d {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.programa-a-97686757755d .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.programa-a-97686757755d .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.programa-a-97686757755d .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.programa-a-97686757755d .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 98 */
+.rectangle-d878cdbd7de6 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  background: #354f9dFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 59 */
+.rectangle-8893261431d3 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  background: #354f9dFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 56 */
+.rectangle-c22c4b65c652 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 213.24px;
+  background: #d9d9d9FF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Estrutura e Recursos em Saúde */
+.estrutura-a1edb716ebbc {
+  position: absolute;
+  left: 428.52px;
+  top: 27.56px;
+  width: 357.78px;
+  height: 389.69px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco2 */
+.flor-de-ri-2f8d39beaf52 {
+  position: absolute;
+  left: 276.26px;
+  top: 103.72px;
+  width: 61.5px;
+  height: 60.85px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco 3 2 */
+.flor-de-ri-3c68c6a94ed5 {
+  position: absolute;
+  left: 4.04px;
+  top: 2.76px;
+  width: 51px;
+  height: 56px;
+  background: url(./imgs/flor-de-risco-3.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 77 */
+.rectangle-7e29d7fbcbba {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 61.5px;
+  height: 60.85px;
+  transform: matrix(-1.00, 0.00, 0.00, 1.00, 0.00, 0.00);
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Estabelecimentos de saúde SUS: */
+.estabeleci-4f6d20794d2c {
+  position: absolute;
+  left: 20.01px;
+  top: 55.57px;
+  width: 317.75px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Estabelecimentos de saúde SUS: */
+.estabeleci-7cf8c0b34a12 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.estabeleci-7cf8c0b34a12 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.estabeleci-7cf8c0b34a12 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.estabeleci-7cf8c0b34a12 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.estabeleci-7cf8c0b34a12 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 45 */
+.c-45-7479cf067b9e {
+  position: absolute;
+  left: 206.9px;
+  top: 3px;
+  width: 102.85px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-45-7479cf067b9e .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-45-7479cf067b9e .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-45-7479cf067b9e .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-45-7479cf067b9e .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 91 */
+.rectangle-64e3feccbcaa {
+  position: absolute;
+  left: 195.34px;
+  top: 0px;
+  width: 122.4px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Despesas em saúde : */
+.despesas-e-15a94b6a3566 {
+  position: absolute;
+  left: 20.01px;
+  top: 359.28px;
+  width: 319.87px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* R$5000/hab */
+.r5000hab-d6fc99b5a5a4 {
+  position: absolute;
+  left: 243.9px;
+  top: 3px;
+  width: 71px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.r5000hab-d6fc99b5a5a4 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.r5000hab-d6fc99b5a5a4 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.r5000hab-d6fc99b5a5a4 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.r5000hab-d6fc99b5a5a4 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Despesas em saúde : */
+.despesas-e-b767c7fcc2cc {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.despesas-e-b767c7fcc2cc .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.despesas-e-b767c7fcc2cc .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.despesas-e-b767c7fcc2cc .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.despesas-e-b767c7fcc2cc .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 103 */
+.rectangle-6e1229dc38d6 {
+  position: absolute;
+  left: 130.13px;
+  top: 0px;
+  width: 189.75px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Médicos: */
+.mdicos-db080908b90a {
+  position: absolute;
+  left: 20.01px;
+  top: 325.29px;
+  width: 319.87px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 3 por 1000 hab */
+.c-3-por-1000-ad34ea3d8a53 {
+  position: absolute;
+  left: 228.9px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-3-por-1000-ad34ea3d8a53 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-3-por-1000-ad34ea3d8a53 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-3-por-1000-ad34ea3d8a53 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-3-por-1000-ad34ea3d8a53 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Médicos: */
+.mdicos-0c1d8ace013d {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.mdicos-0c1d8ace013d .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.mdicos-0c1d8ace013d .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.mdicos-0c1d8ace013d .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.mdicos-0c1d8ace013d .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 101 */
+.rectangle-1a537abd8086 {
+  position: absolute;
+  left: 59.87px;
+  top: 0px;
+  width: 260px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Profissionais de saúde: */
+.profission-3facda465429 {
+  position: absolute;
+  left: 20.01px;
+  top: 302.29px;
+  width: 319.87px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 5 para cada 1000 hab */
+.c-5-para-cad-c2517d5ccdfe {
+  position: absolute;
+  left: 191.9px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-5-para-cad-c2517d5ccdfe .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-5-para-cad-c2517d5ccdfe .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-5-para-cad-c2517d5ccdfe .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-5-para-cad-c2517d5ccdfe .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Profissionais de saúde: */
+.profission-3918cb7ee581 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.profission-3918cb7ee581 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.profission-3918cb7ee581 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.profission-3918cb7ee581 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.profission-3918cb7ee581 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 100 */
+.rectangle-e50359ca5123 {
+  position: absolute;
+  left: 140.97px;
+  top: 0px;
+  width: 178.9px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Leitos: */
+.leitos-49121b1e8f72 {
+  position: absolute;
+  left: 20.01px;
+  top: 279.29px;
+  width: 319.87px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 8 para cada 1000 hab */
+.c-8-para-cad-ed320f4430e4 {
+  position: absolute;
+  left: 191.9px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-8-para-cad-ed320f4430e4 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-8-para-cad-ed320f4430e4 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-8-para-cad-ed320f4430e4 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-8-para-cad-ed320f4430e4 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Leitos: */
+.leitos-c5d20fe8c976 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.leitos-c5d20fe8c976 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.leitos-c5d20fe8c976 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.leitos-c5d20fe8c976 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.leitos-c5d20fe8c976 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 99 */
+.rectangle-7fb7963c45b0 {
+  position: absolute;
+  left: 44.89px;
+  top: 0px;
+  width: 274.99px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Equipe saúde bucal: */
+.equipe-sa-f83047f8705b {
+  position: absolute;
+  left: 20.01px;
+  top: 239.57px;
+  width: 315.27px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 11 */
+.c-11-4763bdd1f240 {
+  position: absolute;
+  left: 195.9px;
+  top: 3px;
+  width: 113.79px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-11-4763bdd1f240 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-11-4763bdd1f240 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-11-4763bdd1f240 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-11-4763bdd1f240 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Equipe saúde bucal: */
+.equipe-sa-09c002945247 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.equipe-sa-09c002945247 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.equipe-sa-09c002945247 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.equipe-sa-09c002945247 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.equipe-sa-09c002945247 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 98 */
+.rectangle-90330305eb45 {
+  position: absolute;
+  left: 123.83px;
+  top: 0px;
+  width: 191.44px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Equipe multiprofissional ou cobertura AB: */
+.equipe-mul-a2bb07b09bf6 {
+  position: absolute;
+  left: 20.01px;
+  top: 216.57px;
+  width: 315.27px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 1 */
+.c-1-00285f4d5ec7 {
+  position: absolute;
+  left: 303.9px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-1-00285f4d5ec7 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-1-00285f4d5ec7 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-1-00285f4d5ec7 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-1-00285f4d5ec7 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Equipe multiprofissional: */
+.equipe-mul-2b27f69a0051 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.equipe-mul-2b27f69a0051 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.equipe-mul-2b27f69a0051 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.equipe-mul-2b27f69a0051 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.equipe-mul-2b27f69a0051 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 97 */
+.rectangle-e64144fb651e {
+  position: absolute;
+  left: 149.41px;
+  top: 0px;
+  width: 165.86px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Centros especializados em reabilitação: */
+.centros-es-516a3bc46281 {
+  position: absolute;
+  left: 20.01px;
+  top: 193.57px;
+  width: 315.27px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 0 */
+.c-0-02ef19caff39 {
+  position: absolute;
+  left: 195.9px;
+  top: 3px;
+  width: 113.79px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-0-02ef19caff39 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-0-02ef19caff39 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-0-02ef19caff39 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-0-02ef19caff39 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Centros especializados em reabilitação: */
+.centros-es-cc53641f57cf {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.centros-es-cc53641f57cf .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.centros-es-cc53641f57cf .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.centros-es-cc53641f57cf .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.centros-es-cc53641f57cf .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 96 */
+.rectangle-566f657ab01a {
+  position: absolute;
+  left: 246.99px;
+  top: 0px;
+  width: 68.28px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Centro de atenção psicossocial: */
+.centro-de-0b246bf0ac17 {
+  position: absolute;
+  left: 20.01px;
+  top: 170.57px;
+  width: 315.27px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 3 Caps */
+.c-3-caps-7098411be1c1 {
+  position: absolute;
+  left: 195.9px;
+  top: 3px;
+  width: 113.79px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-3-caps-7098411be1c1 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-3-caps-7098411be1c1 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-3-caps-7098411be1c1 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-3-caps-7098411be1c1 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Centro de atenção psicossocial: */
+.centro-de-0d9df0797920 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.centro-de-0d9df0797920 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.centro-de-0d9df0797920 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.centro-de-0d9df0797920 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.centro-de-0d9df0797920 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 94 */
+.rectangle-602f728b6f87 {
+  position: absolute;
+  left: 191.96px;
+  top: 0px;
+  width: 123.31px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* UPA: */
+.u-p-a-50d421702b3f {
+  position: absolute;
+  left: 20.01px;
+  top: 147.57px;
+  width: 252.27px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 2 por hab */
+.c-2-por-hab-7f5ae3645148 {
+  position: absolute;
+  left: 186.35px;
+  top: 3px;
+  width: 59.89px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-2-por-hab-7f5ae3645148 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-2-por-hab-7f5ae3645148 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-2-por-hab-7f5ae3645148 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-2-por-hab-7f5ae3645148 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* UPA: */
+.u-p-a-361d6823987d {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.u-p-a-361d6823987d .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.u-p-a-361d6823987d .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.u-p-a-361d6823987d .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.u-p-a-361d6823987d .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 92 */
+.rectangle-2fe0391420b5 {
+  position: absolute;
+  left: 34.97px;
+  top: 0px;
+  width: 217.3px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Centro de saúde e UBS: */
+.centro-de-aeb907a49926 {
+  position: absolute;
+  left: 20.01px;
+  top: 124.57px;
+  width: 252.27px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 26 */
+.c-26-16fb620b918a {
+  position: absolute;
+  left: 186.35px;
+  top: 3px;
+  width: 59.89px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-26-16fb620b918a .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-26-16fb620b918a .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-26-16fb620b918a .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-26-16fb620b918a .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Centro de saúde e UBS: */
+.centro-de-454f0dd998b5 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.centro-de-454f0dd998b5 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.centro-de-454f0dd998b5 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.centro-de-454f0dd998b5 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.centro-de-454f0dd998b5 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 89 */
+.rectangle-5d111e7e2c01 {
+  position: absolute;
+  left: 143.27px;
+  top: 0px;
+  width: 109px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Estabelecimentos de saúde não SUS: */
+.estabeleci-0361dfea69d1 {
+  position: absolute;
+  left: 20.01px;
+  top: 78.57px;
+  width: 317.75px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 15 */
+.c-15-f1091d6fd124 {
+  position: absolute;
+  left: 222.9px;
+  top: 3px;
+  width: 87.22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-15-f1091d6fd124 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-15-f1091d6fd124 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-15-f1091d6fd124 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-15-f1091d6fd124 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Estabelecimentos de saúde não SUS: */
+.estabeleci-c015b7db1ad4 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.estabeleci-c015b7db1ad4 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.estabeleci-c015b7db1ad4 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.estabeleci-c015b7db1ad4 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.estabeleci-c015b7db1ad4 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 85 */
+.rectangle-fc85caadeb2a {
+  position: absolute;
+  left: 222.52px;
+  top: 0px;
+  width: 95.22px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Hospital (geral + especializado): */
+.hospital-c09ed8eb31e9 {
+  position: absolute;
+  left: 20.01px;
+  top: 101.57px;
+  width: 251.27px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* 0 */
+.c-0-0d09ffd74ee5 {
+  position: absolute;
+  left: 196.35px;
+  top: 3px;
+  width: 49.47px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-0-0d09ffd74ee5 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-0-0d09ffd74ee5 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-0-0d09ffd74ee5 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-0-0d09ffd74ee5 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Hospital (geral e especializado): */
+.hospital-ff6605fa37e8 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.hospital-ff6605fa37e8 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.hospital-ff6605fa37e8 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.hospital-ff6605fa37e8 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: center;
+}
+.hospital-ff6605fa37e8 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 87 */
+.rectangle-401c86750434 {
+  position: absolute;
+  left: 191.96px;
+  top: 0px;
+  width: 59.31px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 82 */
+.rectangle-999723acf1d0 {
+  position: absolute;
+  left: 11.89px;
+  top: 46.79px;
+  width: 334px;
+  height: 222.02px;
+  background: #bcc9caFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Estrutura e Recursos em Saúde */
+.estrutura-e5a7c312b589 {
+  position: absolute;
+  left: 15.39px;
+  top: 9px;
+  height: 22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.estrutura-e5a7c312b589 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.estrutura-e5a7c312b589 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.estrutura-e5a7c312b589 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+.estrutura-e5a7c312b589 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 18px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 78 */
+.rectangle-2656326d918a {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  background: #354f9dFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 102 */
+.rectangle-1248799aa467 {
+  position: absolute;
+  left: 11.89px;
+  top: 355.33px;
+  width: 334px;
+  height: 27.51px;
+  background: #bcc9caFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 99 */
+.rectangle-994619a182ff {
+  position: absolute;
+  left: 11.89px;
+  top: 271.82px;
+  width: 334px;
+  height: 80.3px;
+  background: #bcc9caFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 58 */
+.rectangle-dab1121043e6 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 389.69px;
+  background: #d9d9d9FF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Perfil epidemiológico */
+.perfil-epi-9e12b24ae2c0 {
+  position: absolute;
+  left: 55.91px;
+  top: 84.34px;
+  width: 357.78px;
+  height: 267.92px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco2 */
+.flor-de-ri-5402cced047b {
+  position: absolute;
+  left: 288.59px;
+  top: 73.38px;
+  width: 61.5px;
+  height: 60.85px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* flor de risco 3 2 */
+.flor-de-ri-6d19d667e190 {
+  position: absolute;
+  left: 4.04px;
+  top: 2.76px;
+  width: 51px;
+  height: 56px;
+  background: url(./imgs/flor-de-risco-3.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 77 */
+.rectangle-2dea4207fd3c {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 61.5px;
+  height: 60.85px;
+  transform: matrix(-1.00, 0.00, 0.00, 1.00, 0.00, 0.00);
+  background: #ffffffFF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Perfil epidemiológico */
+.perfil-epi-a19602358130 {
+  position: absolute;
+  left: 67.45px;
+  top: 9.33px;
+  height: 22px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.perfil-epi-a19602358130 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.perfil-epi-a19602358130 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.perfil-epi-a19602358130 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+.perfil-epi-a19602358130 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 18px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Taxa de internação: */
+.taxa-de-in-9eee8368da79 {
+  position: absolute;
+  left: 10.49px;
+  top: 170.9px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.taxa-de-in-9eee8368da79 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.taxa-de-in-9eee8368da79 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.taxa-de-in-9eee8368da79 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.taxa-de-in-9eee8368da79 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/*Monitoramento de diarreia aguda: */
+.diarreia-a-4bf81cd89c1d {
+  position: absolute;
+  left: 12.52px;
+  top: 234.14px;
+  width: 334.89px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Painel de excesso de calor: */
+.painel-de-17b2de26de02 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.painel-de-17b2de26de02 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.painel-de-17b2de26de02 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.painel-de-17b2de26de02 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.painel-de-17b2de26de02 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 97 */
+.rectangle-8cf2ebba8938 {
+  position: absolute;
+  left: 161.48px;
+  top: 0px;
+  width: 173.42px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/*Monitoramento de diarreia aguda: */
+.diarreia-a-86c9e08862db {
+  position: absolute;
+  left: 12.52px;
+  top: 139.95px;
+  width: 334.89px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/*Monitoramento de diarreia aguda: */
+.diarreia-a-7658f20bd180 {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.diarreia-a-7658f20bd180 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.diarreia-a-7658f20bd180 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.diarreia-a-7658f20bd180 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.diarreia-a-7658f20bd180 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* link */
+.link-diarreia-dda {
+  position: absolute;
+  left: 312.75px;
+  top: 0.48px;
+  width: 17.14px;
+  height: 19.04px;
+  background: url(./imgs/link.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.link-diarreia-dda > a {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Rectangle 97 */
+.rectangle-428fdfd019c4 {
+  position: absolute;
+  left: 210.55px;
+  top: 0px;
+  width: 124.34px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Hepatite A: */
+.hepatite-a-a0ff96b9155c {
+  position: absolute;
+  left: 12.52px;
+  top: 116.99px;
+  width: 269.57px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Hepatite A: */
+.hepatite-a-be82c0df2d3f {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  width: 68.44px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.hepatite-a-be82c0df2d3f .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.hepatite-a-be82c0df2d3f .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.hepatite-a-be82c0df2d3f .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.hepatite-a-be82c0df2d3f .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 5 por 100 mil hab */
+.c-5-por-100-91633e3d5493 {
+  position: absolute;
+  left: 163.88px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-5-por-100-91633e3d5493 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-5-por-100-91633e3d5493 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-5-por-100-91633e3d5493 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-5-por-100-91633e3d5493 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 64 */
+.rectangle-98f5966a6873 {
+  position: absolute;
+  left: 71.69px;
+  top: 0px;
+  width: 197.88px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Doenças do aparelho respiratório: */
+.doenas-do-acc3cc573af5 {
+  position: absolute;
+  left: 12.52px;
+  top: 210.9px;
+  width: 334.89px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Doenças aparelho respiratório: */
+.doenas-ap-144591354d4b {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.doenas-ap-144591354d4b .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.doenas-ap-144591354d4b .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.doenas-ap-144591354d4b .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.doenas-ap-144591354d4b .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 8148 por 100 mil hab */
+.c-8148-por-1-9b338b4e71e4 {
+  position: absolute;
+  left: 207.49px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-8148-por-1-9b338b4e71e4 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-8148-por-1-9b338b4e71e4 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-8148-por-1-9b338b4e71e4 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-8148-por-1-9b338b4e71e4 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 96 */
+.rectangle-0acddd1937fe {
+  position: absolute;
+  left: 182.98px;
+  top: 0px;
+  width: 151.92px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Leptospirose */
+.leptospiro-07093aaabdda {
+  position: absolute;
+  left: 12.52px;
+  top: 93.8px;
+  width: 269.57px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Leptospirose: */
+.leptospiro-c0542addd65c {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  width: 84.01px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.leptospiro-c0542addd65c .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.leptospiro-c0542addd65c .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.leptospiro-c0542addd65c .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.leptospiro-c0542addd65c .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 8 por 100 mil hab */
+.c-8-por-100-a73191205e61 {
+  position: absolute;
+  left: 163.88px;
+  top: 2.98px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-8-por-100-a73191205e61 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-8-por-100-a73191205e61 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-8-por-100-a73191205e61 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-8-por-100-a73191205e61 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 67 */
+.rectangle-23a0038cc29e {
+  position: absolute;
+  left: 83.51px;
+  top: 0px;
+  width: 186.06px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Doenças do aparelho circulatório: */
+.doenas-do-93784570b986 {
+  position: absolute;
+  left: 12.52px;
+  top: 187.27px;
+  width: 334.89px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Doenças aparelho circulatório: */
+.doenas-ap-7440731f20de {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.doenas-ap-7440731f20de .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.doenas-ap-7440731f20de .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.doenas-ap-7440731f20de .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.doenas-ap-7440731f20de .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 10255 por 100 mil hab */
+.c-10255-por-7d7fe7436762 {
+  position: absolute;
+  left: 201.49px;
+  top: 3px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-10255-por-7d7fe7436762 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-10255-por-7d7fe7436762 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-10255-por-7d7fe7436762 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-10255-por-7d7fe7436762 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 95 */
+.rectangle-339511b58b48 {
+  position: absolute;
+  left: 182.98px;
+  top: 0px;
+  width: 151.92px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Arboviroses:  */
+.arbovirose-5122cb54c0b2 {
+  position: absolute;
+  left: 12.52px;
+  top: 70.3px;
+  width: 269.57px;
+  height: 20px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Arboviroses: */
+.arbovirose-13ec3b745b5e {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  width: 77.25px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.arbovirose-13ec3b745b5e .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.arbovirose-13ec3b745b5e .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.arbovirose-13ec3b745b5e .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.arbovirose-13ec3b745b5e .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* 28 por 100 mil hab */
+.c-28-por-100-528a8f2aa59b {
+  position: absolute;
+  left: 154.13px;
+  top: 3px;
+  width: 107.75px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.c-28-por-100-528a8f2aa59b .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.c-28-por-100-528a8f2aa59b .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 100%;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.c-28-por-100-528a8f2aa59b .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: right;
+}
+.c-28-por-100-528a8f2aa59b .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Rectangle 66 */
+.rectangle-f066907a5b0a {
+  position: absolute;
+  left: 81.55px;
+  top: 0px;
+  width: 188.03px;
+  height: 20px;
+  background: #ffffffFF;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border-end-end-radius: 4px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Taxa de incidência: */
+.taxa-de-in-3f8f739d0ed6 {
+  position: absolute;
+  left: 11.99px;
+  top: 52.47px;
+  height: 15px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.taxa-de-in-3f8f739d0ed6 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.taxa-de-in-3f8f739d0ed6 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.taxa-de-in-3f8f739d0ed6 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2000000476837158;
+  margin: 0;
+  text-align: left;
+}
+.taxa-de-in-3f8f739d0ed6 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 12px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle 98 */
+.rectangle-e079d76a9db2 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  background: #354f9dFF;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 59 */
+.rectangle-949775ef2cda {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 40px;
+  background: #354f9dFF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Rectangle 56 */
+.rectangle-cb5d8d10c215 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 357.78px;
+  height: 267.92px;
+  background: #abc837FF;
+  border: 1px solid #6d797aFF;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* quadrados coloridos */
+.quadrados-a83e2732450a {
+  position: absolute;
+  left: 798px;
+  top: 355px;
+  width: 148.13px;
+  height: 151px;
+  background: url(./imgs/quadrados-2.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* quadrados coloridos */
+.quadrados-83b83ba58e0d {
+  position: absolute;
+  left: -114px;
+  top: -13.35px;
+  width: 157.3px;
+  height: 160.36px;
+  background: url(./imgs/quadrados-1.webp) no-repeat center center / cover;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* box-nome-do-municipio */
+.boxnomed-05a848b26ede {
+  position: absolute;
+  left: 56.45px;
+  top: 18.94px;
+  width: 177.93px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+
+/* Curitiba - Paraná */
+.curitiba-fe86ee5368e5 {
+  position: absolute;
+  left: 16px;
+  top: 0px;
+  height: 40px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}
+.curitiba-fe86ee5368e5 .root-0 {
+  
+  
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.curitiba-fe86ee5368e5 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  margin-right: 1px;
+  vertical-align: top;
+}
+.curitiba-fe86ee5368e5 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 2.5;
+  margin: 0;
+  text-align: left;
+}
+.curitiba-fe86ee5368e5 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(30, 30, 30, 1);
+  text-transform: uppercase;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 16px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* gray-rectangle */
+.grayrecta-5d136cb45b31 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 177.93px;
+  height: 40px;
+  background: #d9d9d9FF;
+  border: 1px solid #6d797aFF;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: ;
+  mix-blend-mode: normal;
+}

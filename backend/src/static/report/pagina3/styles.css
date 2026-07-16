@@ -5273,7 +5273,54 @@ body {
 .link-renda-media        { left: 554.43px; top: 241.13px; }
 .link-alfabetizados      { left: 554.43px; top: 364.13px; }
 .link-favelas            { left: 605.82px; top: 395.51px; }
-.link-arborizacao        { left: 733.38px; top: 442.93px; }
+.link-arborizacao        { left: 740.24px; top: 442.93px; }
 .link-agua               { left: 513.10px; top: 492.31px; }
 .link-esgoto             { left: 589.42px; top: 492.31px; }
 .link-coleta             { left: 739.94px; top: 492.31px; }
+
+
+.titulo-centro{
+    width:358px !important;
+    left:0 !important;
+}
+
+.titulo-centro .text-node-html{
+    width:100%;
+}
+
+.titulo-centro .root-0{
+    display:flex;
+    justify-content:center;
+}
+
+.titulo-centro .root-0-paragraph-set-0{
+    width:100%;
+}
+
+.titulo-centro .root-0-paragraph-set-0-paragraph-0{
+    text-align:center !important;
+}
+
+/* Título Domicílios */
+.domiclios-4ce1b64c0d07{
+    left: 0 !important;
+    top: 5px !important;
+    width: 320.52px !important;
+    height: 18px;
+}
+
+.domiclios-4ce1b64c0d07 .root-0{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.domiclios-4ce1b64c0d07 .root-0-paragraph-set-0{
+    width:100%;
+}
+
+.domiclios-4ce1b64c0d07 .root-0-paragraph-set-0-paragraph-0{
+    text-align:center !important;
+}
+
+

@@ -1,0 +1,152 @@
+/* Página 0 atualizada — Capa (Fichas Municipais). Board Penpot "PÁGINA-0-FINAL-15-07".
+   CSS extraído do export do Penpot (sem @font-face — vêm de ../shared/css/fonts.css). */
+
+/* base */
+html, body {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.text-node { background-clip: text !important; -webkit-background-clip: text !important; }
+
+/* PÁGINA-0-FINAL-15-07 */
+.p-g-i-n-a0-f-aea8f8f65cec {
+  position: relative;
+  width: 842px;
+  height: 595px;
+  background: #ffffffFF;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  z-index: 0;
+}
+
+/* São José do Vale do Rio Preto - RJ (centrado na caixa via flex do pai) */
+.fichas-mun-54ffe43fe100 {
+  height: 20px;
+  mix-blend-mode: normal;
+  flex-shrink: 0;
+}
+.fichas-mun-54ffe43fe100 .root-0 {
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: start;
+}
+.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-0,
+.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-1,
+.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-2,
+.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-3 {
+  color: var(--color-onSurface, rgba(30, 30, 30, 1));
+  text-transform: capitalize;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 16px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Rectangle (caixa do município) */
+.rectangle-54ff94c2cd22 {
+  position: absolute;
+  left: 266px;
+  top: 492px;
+  width: 310px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-boxSurface, #d9d9d9);
+  border: 1px solid var(--color-boxBorder, #6d797a);
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+}
+
+/* figura-mapa-quadrados-coloridos */
+.figuramap-39cc7a3b95b8 {
+  position: absolute;
+  left: 0.23px;
+  top: 0px;
+  width: 842px;
+  height: 595px;
+  background: url("./imgs/figura-mapa-quadrados-coloridos.png") no-repeat center center / cover;
+  mix-blend-mode: normal;
+}
+
+/* Fichas Municipais (título) */
+.fichas-mun-7a7adbfef98a {
+  position: absolute;
+  left: 309.5px;
+  top: 71.58px;
+  height: 29px;
+  mix-blend-mode: normal;
+}
+.fichas-mun-7a7adbfef98a .root-0 {
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-0,
+.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-1,
+.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-2 {
+  color: var(--color-onSurface, rgba(30, 30, 30, 1));
+  text-transform: uppercase;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 24px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(30, 30, 30, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+}
+.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-1 {
+  font-weight: 400;
+}

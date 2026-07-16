@@ -2,8 +2,8 @@ import json
 
 # backend/src/infrastructure/repository.py
 from typing import List
-from ..domain.interfaces import DatabaseInterface, MunicipalResilienceProfileRepositoryInterface, CountyRepositoryInterface, RiskFactorRepositoryInterface, MunicipalIndicatorsRepositoryInterface, ClimateProjectionRepositoryInterface
-from ..domain.entities import County, RiskFactor, MunicipalIndicators, ClimateProjection
+from ..domain.interfaces import DatabaseInterface, MunicipalResilienceProfileRepositoryInterface, CountyRepositoryInterface, RiskFactorRepositoryInterface, MunicipalIndicatorsRepositoryInterface, ClimateProjectionRepositoryInterface, MunicipalHealthRepositoryInterface
+from ..domain.entities import County, RiskFactor, MunicipalIndicators, ClimateProjection, MunicipalHealth
 from ..core.constants import ErrorKeys
 
 class CountyRepository(CountyRepositoryInterface):
@@ -15,7 +15,7 @@ class CountyRepository(CountyRepositoryInterface):
     
     async def get_counties(self) -> List[County]:
         query = """
-            SELECT  distinct county_id, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data ORDER BY display;
+            SELECT  distinct county_id, geocode, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data ORDER BY display;
         """
         try:
             records = await self.db.fetch_all(query)
@@ -30,7 +30,7 @@ class CountyRepository(CountyRepositoryInterface):
 
     async def get_county(self, county_id: int) -> County:
         query = """
-            SELECT  distinct county_id, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data WHERE county_id = $1 ORDER BY display;
+            SELECT  distinct county_id, geocode, county, region, state, CONCAT(county, ' - ', state) AS display FROM painel_municipal.adapta_data WHERE county_id = $1 ORDER BY display;
         """
         try:
             records = await self.db.fetch_all(query, county_id)
@@ -124,5 +124,24 @@ class ClimateProjectionRepository(ClimateProjectionRepositoryInterface):
             else:
                 print(f"--- Climate projection found for county_id {county_id}: {len(records)}")  # Debugging line
             return ClimateProjection(**records[0])
+        except Exception as e:
+            raise Exception(str(e))
+        
+class MunicipalHealthRepository(MunicipalHealthRepositoryInterface):
+    def __init__(self, db: DatabaseInterface):
+        self.db = db
+        
+    async def get_municipal_health(self, county_id: int) -> MunicipalHealth:
+        query = """
+            SELECT * FROM painel_municipal.pg_6 WHERE county_id = $1;
+        """
+        try:
+            records = await self.db.fetch_all(query, county_id)
+            if not records:
+                print(f"--- No municipal health data found for county_id: {county_id}")  # Debugging line
+                raise Exception(ErrorKeys.MUNICIPAL_HEALTH_NOT_FOUND.value)
+            else:
+                print(f"--- Municipal health data found for county_id {county_id}: {len(records)}")  # Debugging line
+            return MunicipalHealth(**records[0])
         except Exception as e:
             raise Exception(str(e))
