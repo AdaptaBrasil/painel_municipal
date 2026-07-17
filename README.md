@@ -1,6 +1,6 @@
 # Folha Municipal - AdaptaBrasil
 
-The **Folha Municipal** is a robust web application developed based on **Clean Architecture** principles. The main objective of this tool is to enable detailed visualization and export of municipal adaptation plans, providing direct support for decision-making regarding public policies and climate resilience.
+The **Folha Municipal** is a web application built on **Clean Architecture** principles that generates municipal PDF reports ("fichas municipais") with socioclimatic indicators, supporting decision-making on public policies and climate resilience.
 
 ## 📋 Table of Contents
 - [Folha Municipal - AdaptaBrasil](#folha-municipal---adaptabrasil)
@@ -8,93 +8,58 @@ The **Folha Municipal** is a robust web application developed based on **Clean A
   - [✨ Features](#-features)
   - [🏗 Project Architecture](#-project-architecture)
   - [🛠 Technologies Used](#-technologies-used)
-  - [⚙️ Prerequisites](#️-prerequisites)
   - [🚀 Quick Start (Docker - Recommended)](#-quick-start-docker---recommended)
-    - [1. Clone the Repository](#1-clone-the-repository)
-    - [2. Configure Environment Variables](#2-configure-environment-variables)
-    - [3. Start the Application](#3-start-the-application)
   - [💻 Running the Application](#-running-the-application)
-    - [Docker Commands (Recommended)](#docker-commands-recommended)
-    - [Common Workflows](#common-workflows)
-    - [Starting Locally Without Docker](#starting-locally-without-docker)
-      - [Prerequisites](#prerequisites)
-      - [Backend Setup](#backend-setup)
-      - [Frontend Setup](#frontend-setup)
+    - [Docker Commands (Makefile)](#docker-commands-makefile)
+    - [Running Locally Without Docker](#running-locally-without-docker)
+  - [🌐 API Overview](#-api-overview)
   - [📂 Directory Structure](#-directory-structure)
-  - [PDF Generation Architecture](#pdf-generation-architecture)
+  - [📄 PDF Generation Architecture](#-pdf-generation-architecture)
+  - [📚 Project Documentation (.specs and .claude)](#-project-documentation-specs-and-claude)
   - [🤝 Contributing](#-contributing)
-    - [Development Process](#development-process)
-    - [Code Guidelines](#code-guidelines)
-    - [Backend Standards (Python)](#backend-standards-python)
-    - [Frontend Standards (JavaScript)](#frontend-standards-javascript)
   - [📋 Roadmap](#-roadmap)
-    - [Version 0.1.X (Current)](#version-01x-current)
-    - [Version 0.2.X (Planned)](#version-02x-planned)
   - [📄 License](#-license)
   - [👥 Authors](#-authors)
   - [🔗 Useful Links](#-useful-links)
-  - [🚀 Getting Help](#-getting-help)
 
 ## ✨ Features
-- **Interactive Data Visualization**: Intuitive interface for exploring socioclimatic indicators and municipal data.
-- **Automated Reports (PDF Export)**: Advanced PDF generation with multi-page support. Each report page is generated independently and merged seamlessly into a single PDF file, allowing complete design flexibility and configuration per page.
-- **Multi-Engine PDF Support**: Choose between Playwright (default), Puppeteer, WeasyPrint, or WkHtmlToPdf for PDF rendering based on your deployment needs.
-- **Fast RESTful API**: High-performance backend provided by the FastAPI framework and a PostgreSQL database.
-- **Clean Architecture**: Well-organized codebase with clear separation of concerns (Domain, Application, Infrastructure layers).
+- **Municipal report generation (PDF)**: multi-page report (cover + indicators + static institutional pages) rendered per page and merged into a single file.
+- **Single-page export**: any report page can be generated individually (`/reports/pdf/{page_name}/{county_id}/`) for debugging and batch workflows.
+- **Fast RESTful API**: FastAPI + PostgreSQL (asyncpg), with per-IP rate limiting (SlowAPI) and restricted CORS.
+- **Brazilian number formatting**: all values are formatted in the domain layer (pt-BR conventions, truncation, `—` for missing data).
+- **Clean Architecture**: clear separation between Domain, Application, Infrastructure and Core layers.
 
 ## 🏗 Project Architecture
-The project is strictly modularized into two main parts:
+- **Backend (Python)** — Clean Architecture (`backend/src/`):
+  - **Domain**: Pydantic entities, business/formatting rules and repository interfaces (no framework dependencies)
+  - **Application**: FastAPI routers and dependency injection
+  - **Infrastructure**: PostgreSQL access (asyncpg), PDF rendering (Playwright) and merging (pypdf)
+  - **Core**: Pydantic settings (`.env`), report page registry and error constants (`ERR_*`)
+- **Frontend (HTML/CSS/Vanilla JS)**: static page served by Nginx — selects a municipality and downloads its report.
 
-- **Backend (Python)**: Uses **Clean Architecture** with domain-driven design principles:
-  - **Domain Layer**: Entities and repository interfaces (no external dependencies)
-  - **Application Layer**: Use cases, routers, and dependency injection (FastAPI)
-  - **Infrastructure Layer**: Database adapters (SQLAlchemy), PDF services, and external integrations
-  - **Core Layer**: Global configurations, environment settings (Pydantic), and application constants
-
-- **Frontend (HTML/CSS/JS)**: A static web application based on Vanilla JavaScript, focusing on simplicity and performance without framework overhead.
+Full specifications live in [`.specs/`](.specs/README.md).
 
 ## 🛠 Technologies Used
-- **Main Language**: Python 3.12+ 🐍
-- **API Framework**: FastAPI
-- **PDF Processing**: Playwright (default) / Puppeteer / WeasyPrint / WkHtmlToPdf with Jinja2 templates
-- **Database**: PostgreSQL with SQLAlchemy ORM
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript ⚡️
-- **Package Management**: Poetry
-- **Containerization**: Docker & Docker Compose
-- **Rate Limiting**: SlowAPI
-
-## ⚙️ Prerequisites
-Ensure you have the following tools installed on your system:
-- **Docker** and **Docker Compose** (for the recommended containerized setup)
-- **Make** (for using the provided Makefile commands)
-- **Git** (for version control)
-
-**For Local Development (Without Docker):**
-- Python 3.12 or higher
-- Poetry (Python package manager)
-- PostgreSQL 15 or higher
-- A supported PDF engine (Playwright requires Chromium, others as listed below)
+- **Language**: Python 3.12+ 🐍 (Poetry)
+- **API**: FastAPI + Uvicorn
+- **Database**: PostgreSQL 15 (asyncpg, schema `painel_municipal`)
+- **PDF**: Jinja2 templates + Playwright (Chromium) + pypdf merge
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript ⚡️ (Nginx)
+- **Infra**: Docker & Docker Compose, Makefile, GitHub Actions
 
 ## 🚀 Quick Start (Docker - Recommended)
 
-### 1. Clone the Repository
 ```bash
 git clone https://github.com/AdaptaBrasil/painel_municipal.git
 cd painel_municipal
+cp .env.example .env   # then edit database credentials and ports
+make run
 ```
 
-### 2. Configure Environment Variables
-Copy the provided environment template and update with your settings:
-```bash
-cp .env.example .env
-```
-
-Edit the `.env` file to set your database credentials and preferred PDF engine:
+`.env` (see `.env.example` for defaults):
 ```dotenv
-# PDF generation engine: 'playwright' (default), 'puppeteer', 'wkhtmltopdf', or 'weasyprint'
 PDF_ENGINE=playwright
 
-# PostgreSQL database connection settings
 DB_HOST=your_db_host
 DB_PORT=5432
 DB_NAME=adaptabrasil
@@ -102,272 +67,138 @@ DB_USER=your_db_user
 DB_PASSWORD=your_secure_password
 DB_USE_SSL=False
 
-# Service ports (localhost binding for security)
-FRONTEND_SECRET_PORT=5530
-BACKEND_SECRET_PORT=8000
-DATABASE_SECRET_PORT=5432
+FRONTEND_SECRET_PORT=8000
+BACKEND_SECRET_PORT=3000
+DATABASE_SECRET_PORT=5533
 ```
 
-### 3. Start the Application
-Build and start all services with a single command:
-```bash
-make run
-```
-
-This will:
-- Build Docker images for backend, frontend, and database
-- Start all containers in the background
-- Initialize the PostgreSQL database
-- Launch the API server with Uvicorn
-- Serve the frontend via Nginx
-
-The application will be available at:
-- **Frontend**: `http://localhost:5530`
-- **Backend API**: `http://localhost:8000`
-- **API Documentation (Swagger UI)**: `http://localhost:8000/docs`
+With the default ports, the application is available at:
+- **Frontend**: `http://localhost:8000`
+- **Backend API**: `http://localhost:3000`
+- **API Documentation (Swagger UI)**: `http://localhost:3000/docs`
 
 ## 💻 Running the Application
 
-### Docker Commands (Recommended)
-
-All docker operations are managed via the Makefile. Below are the available commands:
+### Docker Commands (Makefile)
 
 | Command | Description |
 |---------|-------------|
 | `make help` | Show all available commands |
 | `make build` | Build Docker images without starting containers |
 | `make run` | Build and start all containers in the background (full stack) |
-| `make start` | Start existing containers without rebuilding images |
-| `make stop` | Stop and remove all containers |
-| `make restart` | Restart all containers (equivalent to `make stop start`) |
-| `make down` | Alias for `make stop` |
-| `make logs` | Stream logs from all running containers |
-| `make logs-backend` | Stream logs from the backend container only |
-| `make logs-frontend` | Stream logs from the frontend container only |
-| `make ps` | List all running containers and their status |
-| `make shell-backend` | Open an interactive shell inside the backend container |
-| `make shell-frontend` | Open an interactive shell inside the frontend container |
-| `make shell-db` | Open an interactive shell inside the database container |
+| `make start` / `make stop` / `make restart` | Manage containers without rebuilding |
+| `make logs` / `make logs-backend` / `make logs-frontend` | Stream container logs |
+| `make ps` | List running containers |
+| `make shell-backend` / `make shell-frontend` / `make shell-db` | Open a shell inside a container |
 
-### Common Workflows
+### Running Locally Without Docker
 
-**Start the full stack:**
+Requires Python 3.12+, Poetry, PostgreSQL 15+ and Chromium (installed by Playwright).
+
 ```bash
-make run
-```
+# Backend
+cd backend
+poetry env use 3.12
+poetry install
+poetry run playwright install chromium
+uvicorn src.main:app --reload --port 3000
 
-**Monitor application logs in real-time:**
-```bash
-make logs
-```
-
-**Check which services are running:**
-```bash
-make ps
-```
-
-**Stop all services:**
-```bash
-make stop
-```
-
-**Access the backend container for debugging:**
-```bash
-make shell-backend
-```
-
-### Starting Locally Without Docker
-
-If you prefer to run the application locally without Docker, follow these steps:
-
-#### Prerequisites
-- Python 3.12+
-- PostgreSQL 15+ running and accessible
-- Poetry installed (`pip install poetry`)
-- One of the PDF engines:
-  - **Playwright** (recommended): Installed via Poetry
-  - **WeasyPrint**: `sudo apt install weasyprint` (Ubuntu/Debian)
-  - **WkHtmlToPdf**: `sudo apt install wkhtmltopdf` (Ubuntu/Debian)
-
-#### Backend Setup
-
-1. **Navigate to the backend directory and create a virtual environment:**
-   ```bash
-   cd backend
-   poetry env use 3.12  # or your Python 3.12 installation
-   eval $(poetry env activate)
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   poetry install
-   ```
-
-3. **Create a `.env` file in the backend root** with your database credentials:
-   ```bash
-   cp ../.env .env.local
-   # Edit .env.local with your database connection details
-   ```
-
-4. **Run the backend server:**
-   ```bash
-   uvicorn src.main:app --reload --port 8000
-   ```
-
-   The API will be available at `http://localhost:8000` with interactive docs at `http://localhost:8000/docs`.
-
-#### Frontend Setup
-
-In a new terminal, serve the frontend:
-```bash
-# From the project root directory
+# Frontend (new terminal, from the project root)
 python -m http.server 8080 -d frontend
 ```
 
-Visit `http://localhost:8080/index.html` in your browser.
+The frontend resolves the API URL automatically: on `localhost` it targets `http://localhost:3000/api/v1` (override with `window.APP_CONFIG.API_BASE_URL` if needed).
 
-**Note:** Ensure that the API endpoints in `frontend/js/app.js` are correctly configured to point to your backend URL (e.g., `http://localhost:8000`).
+## 🌐 API Overview
+
+Base path `/api/v1` — full contract in [`.specs/api/01-rest-api.md`](.specs/api/01-rest-api.md):
+
+| Endpoint | Description |
+|---|---|
+| `GET /health` | Service, project and database status |
+| `GET /counties` | List of available municipalities |
+| `GET /reports/pdf/{county_id}` | Full merged report (downloads as `{geocode}.pdf`) |
+| `GET /reports/pdf/{page_name}/{county_id}/` | Single report page (`pagina0`…`pagina8`) |
 
 ## 📂 Directory Structure
 
 ```text
 painel_municipal/
-├── .env                          # Environment variables (credentials, ports, settings)
+├── .specs/                       # Technical specifications (architecture, API, business rules, use cases)
+├── .claude/                      # Claude Code configuration (rules, commands, agents, skills)
+├── CLAUDE.md                     # Project manual for AI-assisted development
 ├── .env.example                  # Template for environment configuration
-├── docker-compose.yml            # Docker Compose configuration for all services
-├── Makefile                       # Convenient commands for Docker operations
-├── backend/                       # FastAPI Backend (Clean Architecture)
-│   ├── Dockerfile                # Backend container configuration
-│   ├── pyproject.toml            # Python dependencies (Poetry)
-│   ├── poetry.lock               # Locked dependency versions
+├── docker-compose.yml            # Docker Compose for db, backend and frontend
+├── Makefile                      # Docker operation shortcuts
+├── deploy.sh                     # Deployment script
+├── backend/                      # FastAPI Backend (Clean Architecture)
+│   ├── Dockerfile
+│   ├── pyproject.toml            # Dependencies and project version (Poetry)
 │   ├── src/
-│   │   ├── main.py               # FastAPI application entry point
-│   │   ├── application/          # Application/Presentation Layer
-│   │   │   ├── router.py         # API route definitions
-│   │   │   └── dependencies.py   # FastAPI dependency injection
-│   │   ├── core/                 # Core configurations
-│   │   │   ├── config.py         # Pydantic settings (environment variables)
-│   │   │   └── constants.py      # Application constants
-│   │   ├── domain/               # Domain Layer (Business Logic)
-│   │   │   ├── entities.py       # Data models and entities
-│   │   │   └── interfaces.py     # Repository and service contracts
-│   │   ├── infrastructure/       # Infrastructure Layer
-│   │   │   ├── database.py       # Database connection
-│   │   │   ├── repository.py     # Data access implementations
-│   │   │   └── pdf_service.py    # Multi-engine PDF generation service
-│   │   ├── helpers/              # Utility functions
-│   │   │   └── common/
-│   │   │       └── formatting/
-│   │   │           └── number_formatting_processing.py
-│   │   └── static/               # Static assets and templates
-│   │       └── report/           # PDF report templates
-│   │           ├── page_01/      # First report page
-│   │           │   ├── report_template.html
-│   │           │   ├── css/
-│   │           │   │   └── style.css
-│   │           │   └── logos/
-│   │           └── page_02/      # Second report page
-│   │               ├── report_template.html
-│   │               ├── css/
-│   │               │   └── style.css
-│   │               └── logos/
-│   └── tests/                    # Unit and integration tests (pytest)
-├── frontend/                     # Static Frontend (Vanilla JS)
-│   ├── Dockerfile                # Frontend container configuration (Nginx)
-│   ├── nginx.conf                # Nginx web server configuration
-│   ├── index.html                # Main HTML entry point
-│   ├── css/
-│   │   └── style.css             # Global stylesheets
-│   └── js/
-│       └── app.js                # Application logic and API communication
-├── README.md                     # This file
-├── LICENSE                       # MIT License
-└── CODE_OF_CONDUCT.md            # Community guidelines
+│   │   ├── main.py               # App entry point (CORS, rate limiting, routes)
+│   │   ├── application/          # Routers and dependency injection
+│   │   ├── core/                 # Settings (.env), page registry, error constants
+│   │   ├── domain/               # Entities, formatting rules and interfaces
+│   │   ├── infrastructure/       # Database, repositories, PDF/image/project-info services
+│   │   ├── helpers/              # Pure utilities (number formatting)
+│   │   └── static/report/        # Report page templates
+│   │       ├── pagina0/          # Cover (index.html, styles.css, data.js, imgs/)
+│   │       ├── pagina1/          # Static institutional page (file.pdf)
+│   │       ├── pagina2..pagina6/ # Data-driven pages (risks, indicators, resilience, climate, health)
+│   │       ├── pagina7..pagina8/ # Static institutional pages (file.pdf)
+│   │       └── shared/           # Shared fonts, images and JS
+│   └── tests/                    # Test suite (pytest)
+├── frontend/                     # Static Frontend (Vanilla JS + Nginx)
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── index.html
+│   ├── css/style.css
+│   └── js/app.js                 # Municipality selector + PDF download
+├── scripts/                      # Batch download/merge/audit scripts for reports
+└── local_data/                   # Staging area for Penpot design exports (not deployed)
 ```
 
-## PDF Generation Architecture
+## 📄 PDF Generation Architecture
 
-The PDF generation system uses a **multi-page merge strategy**:
+The report uses a **multi-page merge strategy** (details in [`.specs/architecture/03-pdf-generation.md`](.specs/architecture/03-pdf-generation.md)):
 
-1. **Independent Page Definition**: Each report page (e.g., `page_01/`, `page_02/`) has its own:
-   - HTML template with custom Jinja2 variables
-   - CSS stylesheet for styling
-   - Configuration (format, margins, orientation)
+1. **Page registry**: each page is declared in `backend/src/core/config.py` (`pages_dir`) with its own print configuration; the declaration order is the final PDF order.
+2. **Isolated rendering**: HTML pages (842×595 px) are rendered with Jinja2 and printed by Playwright/Chromium; static pages (`file.pdf`) are appended as-is, rescaled to the standard size.
+3. **Per-page data fetching**: `page_context_records` maps each page to the database records its template actually uses, so single-page requests only query what is needed.
+4. **In-memory merge**: all pages are merged with pypdf and returned as a single download named `{geocode}.pdf`.
 
-2. **Isolated Rendering**: Each page is rendered independently using the selected PDF engine (Playwright by default).
+## 📚 Project Documentation (.specs and .claude)
 
-3. **Automatic Merge**: All generated PDFs are merged in memory using PyPDF into a single document.
-
-4. **Single Download**: The final merged PDF is returned to the client for download.
-
-This approach provides maximum flexibility, allowing each page to have completely different designs, styles, and layouts without conflicts.
+- **[`.specs/`](.specs/README.md)** — the source of truth for requirements: system architecture, data model, REST API contract, business rules (Brazilian number formatting, report page rules) and use cases (UC-001…UC-004). New features should start from these documents and keep them updated.
+- **[`.claude/`](.claude/)** — Claude Code configuration for AI-assisted development: modular guidelines in `rules/` (code style, git workflow, testing, security), custom slash commands in `commands/` (`/generate-pdf`, `/review-changes`, `/release`, `/new-page`), specialized subagents in `agents/` and reusable skills in `skills/`. [`CLAUDE.md`](CLAUDE.md) is the concise project manual loaded in every session.
 
 ## 🤝 Contributing
 
-### Development Process
-
-1. **Fork** the repository on GitHub
-2. **Clone** your fork locally
-   ```bash
-   git clone https://github.com/your-username/painel_municipal.git
-   cd painel_municipal
-   ```
-3. **Create** a feature branch
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-4. **Implement** your changes with tests
-5. **Commit** following conventional commits
-   ```bash
-   git commit -m "feat: add new feature" -m "Description of changes"
-   ```
-6. **Push** to your branch
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-7. **Open** a Pull Request to the main repository
-
-### Code Guidelines
-
-- Follow **PEP 8** standard for Python code
-- Use **type hints** for all function parameters and return values
-- Write **docstrings** for all public functions and classes
-- Maintain **test coverage >= 50%** for backend code
-- Use **Vanilla JavaScript** without frameworks for frontend (unless explicitly approved)
-- Document your changes in commit messages
-
-### Backend Standards (Python)
-- Target Python 3.12+
-- Use new typing syntax: `T | None`, `list[int]` instead of `Optional[T]`, `List[int]`
-- Organize code following Clean Architecture principles
-- Use Poetry for dependency management
-- Run tests with `pytest` before submitting
-
-### Frontend Standards (JavaScript)
-- Write vanilla JavaScript, HTML5, and CSS3
-- Avoid frameworks (React, Vue, Angular) unless explicitly requested
-- Keep CSS organized in dedicated folders
-- Document API calls and their expected responses
+1. **Fork** and clone the repository, create a feature branch (`git checkout -b feature/your-feature-name`).
+2. **Implement** your changes following the project guidelines:
+   - Source code (identifiers, comments, docstrings, logs) written in **English**; UI/report texts in Brazilian Portuguese.
+   - Python: PEP 8, type hints, Clean Architecture boundaries (see `.claude/rules/code-style.md`).
+   - Frontend: Vanilla JavaScript only, no frameworks or CDN dependencies.
+   - Keep `.specs/` in sync with behavior changes.
+3. **Commit** in English using semantic tags (`feat:`, `fix:`, `style:`, `docs:`, `chore:`…).
+4. **Push** and open a Pull Request.
 
 ## 📋 Roadmap
 
 ### Version 0.1.X (Current)
 - [x] Backend API with FastAPI and PostgreSQL
 - [x] Static Frontend with Vanilla JS/HTML/CSS
-- [x] Multi-page PDF export with merge functionality
-- [x] Support for Playwright, Puppeteer, WeasyPrint, WkHtmlToPdf PDF engines
+- [x] Multi-page PDF export with merge functionality (Playwright)
 - [x] Clean Architecture backend structure
 - [x] Docker containerization
+- [x] Technical specifications (`.specs/`) and AI-assisted development setup (`.claude/`)
+- [x] CI/CD Pipeline (GitHub Actions)
 - [ ] Unit and Integration Tests suite
-- [ ] Comprehensive API documentation
-- [ ] CI/CD Pipeline (GitHub Actions)
-- [ ] Performance benchmarks and optimizations
 - [ ] Security audit and hardening
-- [ ] Multi-language support (i18n)
 
 ### Version 0.2.X (Planned)
+- [ ] Additional PDF engines (Puppeteer, WeasyPrint, WkHtmlToPdf)
 - [ ] Advanced data filtering and analytics
-- [ ] Real-time data updates
 - [ ] Enhanced PDF export templates
 - [ ] User authentication and authorization
 - [ ] Audit logging
@@ -388,16 +219,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **Organization**: [AdaptaBrasil GitHub](https://github.com/AdaptaBrasil/)
 - **Repository**: [painel_municipal](https://github.com/AdaptaBrasil/painel_municipal)
 - **Issues & Bug Reports**: [Issue Tracker](https://github.com/AdaptaBrasil/painel_municipal/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/AdaptaBrasil/painel_municipal/discussions)
-
----
-
-## 🚀 Getting Help
-
-- **Documentation**: Check the inline code comments and docstrings
-- **API Reference**: Visit `http://localhost:8000/docs` (Swagger UI) when the application is running
-- **Issues**: Search existing GitHub issues or create a new one
-- **Discussions**: Join community discussions on GitHub
+- **API Reference**: `http://localhost:3000/docs` (Swagger UI) when running
 
 ---
 

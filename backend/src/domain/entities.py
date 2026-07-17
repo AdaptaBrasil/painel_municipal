@@ -8,16 +8,16 @@ from ..helpers.common.formatting.number_formatting_processing import NumberForma
 
 class CommonBusinessRules(BaseModel):
     @staticmethod
-    def brazilian_formatted_value(value: Optional[float | int]) -> Optional[str]:
+    def brazilian_formatted_value(value: Optional[float | int], precision: int = 2) -> Optional[str]:
         if value is None:
             return "—"
-        truncated_value = NumberFormattingProcessing.to_decimal_truncated(value, value_to_ignore=None, precision=2)
-        
+        truncated_value = NumberFormattingProcessing.to_decimal_truncated(value, value_to_ignore=None, precision=precision)
+
         if isinstance(value, (float)):
-            return NumberFormattingProcessing.format_number_brazilian(float(truncated_value))
+            return NumberFormattingProcessing.format_number_brazilian(float(truncated_value), precision=precision)
         elif isinstance(value, (int)):
-            return NumberFormattingProcessing.format_number_brazilian(int(truncated_value))
-        
+            return NumberFormattingProcessing.format_number_brazilian(int(truncated_value), precision=precision)
+
         return "—"
     
     @staticmethod
@@ -226,8 +226,8 @@ class MunicipalIndicators(BaseModel):
     acesso_lixo: Optional[float] = None
     
     # MOBILIDADE POPULATION
-    imig_regist: Optional[float] = None
-    solic_refugio: Optional[float] = None
+    imig_regist: Optional[int] = None
+    solic_refugio: Optional[int] = None
     imigrantes: Optional[float] = None
     tx_turismo: Optional[float] = None
     
@@ -253,7 +253,7 @@ class MunicipalIndicatorsReport(BaseModel):
             elif key in ["bolsa_familia"]:
                 data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}% das famílias pobres" 
             elif key in ["firjan"]:
-                data[key] = CommonBusinessRules.brazilian_formatted_value(value)
+                data[key] = CommonBusinessRules.brazilian_formatted_value(value, precision=4)
             elif key in ["acesso_agua2", "acesso_esgoto", "acesso_energia", "acesso_lixo"]:
                 data[key] = f'{CommonBusinessRules.brazilian_formatted_value(value)}%'
             elif key in ["pop_urb_pessoas", "pop_rural_pessoas"]:
@@ -271,17 +271,17 @@ class MunicipalIndicatorsReport(BaseModel):
                 if not isinstance(value, (float, int)):
                     data[key] = "—"
                 elif value >= 0.800:
-                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Muito Alto)"
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value, precision=3)} (Muito Alto)"
                 elif 0.700 <= value < 0.800:
-                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Alto)"
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value, precision=3)} (Alto)"
                 elif 0.550 <= value < 0.700:
-                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Médio)"
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value, precision=3)} (Médio)"
                 else:
-                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)} (Baixo)"
+                    data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value, precision=3)} (Baixo)"
             
-            elif key in ["imig_regist"]:
-                data[key] = CommonBusinessRules.brazilian_formatted_value(value)
-            elif key in ["solic_refugio", "imigrantes", "tx_turismo"]:
+            elif key in ["imig_regist", "solic_refugio"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value_integer(value)
+            elif key in ["imigrantes", "tx_turismo"]:
                 data[key] = f"{CommonBusinessRules.brazilian_formatted_value(value)}%"
             
             
@@ -302,14 +302,13 @@ class ClimateProjection(BaseModel):
     temp_med_otim: Optional[float] = None
     temp_med_pes: Optional[float] = None
 
-
     temp_max: Optional[float] = None
     temp_max_tend: Optional[float] = None
     temp_max_otim: Optional[float] = None
     temp_max_pes: Optional[float] = None
 
-    temp_min_otim: Optional[float] = None
     temp_min: Optional[float] = None
+    temp_min_otim: Optional[float] = None
     temp_min_tend: Optional[float] = None
     temp_min_pes: Optional[float] = None
     
@@ -318,15 +317,13 @@ class ClimateProjection(BaseModel):
     dias_secos_otim: Optional[float] = None
     dias_secos_pes: Optional[float] = None
 
-
     dias_chuva: Optional[float] = None
     dias_chuva_tend: Optional[float] = None
     dias_chuva_otim: Optional[float] = None
     dias_chuva_pes: Optional[float] = None
 
-    
-    chuva_ext_pes: Optional[float] = None
     chuva_ext: Optional[float] = None
+    chuva_ext_pes: Optional[float] = None
     chuva_ext_tend: Optional[float] = None
     chuva_ext_otim: Optional[float] = None
 
@@ -339,6 +336,10 @@ class ClimateProjection(BaseModel):
     nivel_mar_tend: Optional[float] = None
     nivel_mar_30: Optional[float] = None
     nivel_mar_50: Optional[float] = None
+    
+    # Correção 
+    nivel_mar_otim: Optional[float] = None
+    nivel_mar_pes: Optional[float] = None
     
 class ClimateProjectionReport(BaseModel):
     climate_projection: ClimateProjection
@@ -356,7 +357,7 @@ class ClimateProjectionReport(BaseModel):
                 continue
 
             # Scenario columns (tendência observada, otimista, pessimista) carry an explicit sign
-            if key.endswith(("_tend", "_otim", "_pes")):
+            if key.endswith(("_tend", "_otim", "_pes", "_30", "_50")):
                 formatted_value = CommonBusinessRules.brazilian_formatted_signed_value(value)
             else:
                 formatted_value = CommonBusinessRules.brazilian_formatted_value(value)
@@ -371,8 +372,16 @@ class ClimateProjectionReport(BaseModel):
             elif key in ["chuva_ext", "chuva_ext_tend", "chuva_ext_otim", "chuva_ext_pes",
                          "precip", "precip_tend", "precip_otim", "precip_pes"]:
                 data[key] = f"{formatted_value} mm"
-            elif key in ["nivel_mar", "nivel_mar_tend", "nivel_mar_30", "nivel_mar_50"]:
-                data[key] = f"{formatted_value} mm"
+            
+            elif key in ["nivel_mar", "nivel_mar_tend"]:
+                data[key] = f"{formatted_value} cm"
+                
+            elif key in ["nivel_mar_30"]:
+                data["nivel_mar_otim"] = f"{formatted_value} cm"
+                data[key] = f"{formatted_value} cm"
+            elif key in ["nivel_mar_50"]:
+                data["nivel_mar_pes"] = f"{formatted_value} cm"
+                data[key] = f"{formatted_value} cm"
 
         return data
 

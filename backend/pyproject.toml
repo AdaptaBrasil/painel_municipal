@@ -1,6 +1,6 @@
 [project]
 name = "backend"
-version = "0.1.7"
+version = "0.1.8"
 description = "Folha Municipal Backend API"
 authors = [
     {name = "Mário Carvalho", email = "mariodearaujocarvalho@gmail.com"}

@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/mario/Desktop/Pessoal/INPE/painel_municipal/**)",
+      "Bash(git status *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git diff)",
+      "Bash(git log *)",
+      "Bash(git log)",
+      "Bash(git add *)",
+      "Bash(git branch *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(make ps)",
+      "Bash(make logs*)",
+      "Bash(docker compose ps*)",
+      "Bash(docker compose logs*)",
+      "Bash(poetry run pytest*)",
+      "Bash(poetry check*)",
+      "Bash(curl http://localhost:3000/api/v1/health*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Bash(git push --force*)",
+      "Bash(docker compose down -v*)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}

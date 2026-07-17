@@ -63,7 +63,7 @@ body {
 .fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-2,
 .fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-3 {
   color: var(--color-onSurface, rgba(30, 30, 30, 1));
-  text-transform: capitalize;
+  text-transform: uppercase;
   line-break: auto;
   overflow-wrap: initial;
   white-space: pre;
@@ -80,9 +80,9 @@ body {
 /* Rectangle (caixa do município) */
 .rectangle-54ff94c2cd22 {
   position: absolute;
-  left: 266px;
+  left: 241px;
   top: 492px;
-  width: 310px;
+  width: 360px;
   height: 40px;
   display: flex;
   align-items: center;

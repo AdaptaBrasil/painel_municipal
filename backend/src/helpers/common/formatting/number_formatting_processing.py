@@ -96,13 +96,14 @@ class NumberFormattingProcessing:
             return Decimal("0")
 
     @staticmethod
-    def format_number_brazilian(n: float | int, locale: str = "pt_BR") -> str:
+    def format_number_brazilian(n: float | int, locale: str = "pt_BR", precision: int = 2) -> str:
         """
         Format a number using Brazilian locale conventions.
 
         Args:
             n (float | int): Number to format.
             locale (str, optional): Locale string. Default is "pt_BR".
+            precision (int, optional): Number of decimal places for floats. Default is 2.
 
         Returns:
             str: Formatted number string (e.g., '1.234,56').
@@ -110,9 +111,10 @@ class NumberFormattingProcessing:
         # If it's a strictly integer value (like population), format without decimal places
         if isinstance(n, int):
             return format_decimal(number=n, locale=locale)
-        
-        # For floats (like area, risks), force the format with exactly 2 decimal places
-        return format_decimal(number=n, format='#,##0.00', locale=locale)
+
+        # For floats (like area, risks), force the format with exactly `precision` decimal places
+        pattern = f"#,##0.{'0' * precision}" if precision > 0 else "#,##0"
+        return format_decimal(number=n, format=pattern, locale=locale)
     
     @staticmethod
     def format_number_brazilian_ignore_two_zeros(n: float | int, locale: str = "pt_BR") -> str:

@@ -145,3 +145,6 @@ hunspell-win/
 
 # Cython debug symbols
 cython_debug/
+
+# Claude Code local (per-user) settings
+.claude/settings.local.json
