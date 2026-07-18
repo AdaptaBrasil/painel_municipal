@@ -34,7 +34,7 @@ Land use (`bioma`, `veg_natural`, `agropec`, `ucs`, `ti`); municipal management 
 For each climate variable — `temp_med`, `temp_max`, `temp_min`, `dias_secos`, `dias_chuva`, `chuva_ext`, `precip` — there are 4 columns: observed value, `*_tend` (observed trend), `*_otim` (optimistic scenario) and `*_pes` (pessimistic scenario). Sea level: `nivel_mar`, `nivel_mar_tend`, `nivel_mar_30`, `nivel_mar_50`. Also carries `geocode` and `nm_munic`.
 
 ### MunicipalHealth
-Epidemiological profile (`incid_arbo_2025`, `incid_lepto_2025`, `incid_hepatitea_2023`, `intern_dda_2025`, `inter_doenc_circ_2025`, `intern_doenc_resp_2025`); resources (`leitos_1000_hab`, `prof_saude_hab_2025`, `medicos_hab_2025`, `despesas_saude`); vaccine coverage (`cob_vac_geral` — may arrive as a string in Brazilian format —, `cob_vac_menor_2`, `cob_vac_influenza`).
+Epidemiological profile (`incid_arbo_2025`, `incid_lepto_2025`, `incid_hepatitea_2023`, `intern_dda_2025`, `inter_doenc_circ_2025`, `intern_doenc_resp_2025`); resources (`leitos_1000_hab`, `prof_saude_hab_2025`, `medicos_hab_2025`, `despesas_saude`); vaccine coverage (`cob_vac_geral` — may arrive as a string in Brazilian format —, `cob_vac_menor_2`, `cob_vac_influenza_novo`).
 
 ## Invariants and conventions
 

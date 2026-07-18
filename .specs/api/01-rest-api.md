@@ -13,7 +13,7 @@ Service diagnostics.
   "backend": {"status": "ok", "message": "Service is running"},
   "pdf_engine": "playwright",
   "pages_dir": ["..."],
-  "project": {"name": "backend", "version": "0.1.7", "description": "Folha Municipal Backend API"},
+  "project": {"name": "backend", "version": "0.1.7", "description": "Fichas Municipais Backend API"},
   "database_status": "connected"
 }
 ```

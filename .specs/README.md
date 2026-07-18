@@ -1,6 +1,6 @@
-# .specs — Folha Municipal Technical Specifications
+# .specs — Fichas Municipais Technical Specifications
 
-Central repository of technical specifications and requirements for the **Folha Municipal — AdaptaBrasil (INPE)** project.
+Central repository of technical specifications and requirements for the **Fichas Municipais — AdaptaBrasil (INPE)** project.
 This folder documents use cases, business rules and detailed technical definitions to guide the development of new features.
 
 ## Structure

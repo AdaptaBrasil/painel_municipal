@@ -68,11 +68,11 @@ window.PAGE_DATA = {
     "title": "Estrutura e Recursos em Saúde",
     "itens": [
       {
-        "label": "Estabelecimentos de saúde SUS:",
+        "label": "Estabelecimentos de saúde atendem SUS:",
         "valor": "45"
       },
       {
-        "label": "Estabelecimentos de saúde não SUS:",
+        "label": "Estabelecimentos de saúde não atendem SUS:",
         "valor": "15"
       },
       {
@@ -120,7 +120,7 @@ window.PAGE_DATA = {
       },
       {
         "id": "despesas_saude",
-        "label": "Despesas em saúde :",
+        "label": "Despesas em saúde:",
         "valor": "R$5000/hab"
       }
     ]
@@ -161,7 +161,7 @@ window.PAGE_DATA = {
         "valor": "88,7"
       },
       {
-        "id": "cob_vac_influenza",
+        "id": "cob_vac_influenza_novo",
         "label": "Influenza 60+:",
         "valor": "56"
       }

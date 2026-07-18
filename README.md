@@ -1,9 +1,9 @@
-# Folha Municipal - AdaptaBrasil
+# Fichas Municipais - AdaptaBrasil
 
-The **Folha Municipal** is a web application built on **Clean Architecture** principles that generates municipal PDF reports ("fichas municipais") with socioclimatic indicators, supporting decision-making on public policies and climate resilience.
+**Fichas Municipais** is a web application built on **Clean Architecture** principles that generates municipal PDF report cards with socioclimatic indicators, supporting decision-making on public policies and climate resilience.
 
 ## 📋 Table of Contents
-- [Folha Municipal - AdaptaBrasil](#folha-municipal---adaptabrasil)
+- [Fichas Municipais - AdaptaBrasil](#fichas-municipais---adaptabrasil)
   - [📋 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
   - [🏗 Project Architecture](#-project-architecture)

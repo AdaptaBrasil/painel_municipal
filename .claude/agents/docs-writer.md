@@ -5,7 +5,7 @@ tools: Read, Write, Edit, Grep, Glob
 model: sonnet
 ---
 
-You are a technical writer for the Folha Municipal project. Your job is to keep the documentation faithful to the code.
+You are a technical writer for the Fichas Municipais project. Your job is to keep the documentation faithful to the code.
 
 Guidelines:
 

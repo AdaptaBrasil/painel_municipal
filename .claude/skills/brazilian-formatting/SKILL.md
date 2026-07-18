@@ -1,6 +1,6 @@
 ---
 name: brazilian-formatting
-description: Brazilian number formatting rules for Folha Municipal. Use when creating/changing any value displayed in the report (currency, percentage, units, IDH, climate scenarios) or when adding fields to *Report entities.
+description: Brazilian number formatting rules for Fichas Municipais. Use when creating/changing any value displayed in the report (currency, percentage, units, IDH, climate scenarios) or when adding fields to *Report entities.
 ---
 
 # Brazilian Number Formatting

@@ -261,11 +261,11 @@ body {
 .valor-90934337d73c .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(30, 30, 30, 1);
   text-transform: none;
-  
+
   line-break: auto;
   overflow-wrap: initial;
   white-space: break-spaces;
-  font-size: 10px;
+  font-size: 12px;
   text-rendering: geometricPrecision;
   caret-color: rgba(30, 30, 30, 1);
   text-decoration: none;
@@ -1432,7 +1432,7 @@ body {
   mix-blend-mode: normal;
 }
 
-/* Estabelecimentos de saúde SUS: */
+/* Estabelecimentos de saúde atendem SUS: */
 .estabeleci-4f6d20794d2c {
   position: absolute;
   left: 20.01px;
@@ -1443,7 +1443,7 @@ body {
   mix-blend-mode: normal;
 }
 
-/* Estabelecimentos de saúde SUS: */
+/* Estabelecimentos de saúde atendem SUS: */
 .estabeleci-7cf8c0b34a12 {
   position: absolute;
   left: 0px;
@@ -1540,9 +1540,9 @@ body {
 /* Rectangle 91 */
 .rectangle-64e3feccbcaa {
   position: absolute;
-  left: 195.34px;
+  left: 250px;
   top: 0px;
-  width: 122.4px;
+  width: 67.74px;
   height: 20px;
   background: #ffffffFF;
   border-start-start-radius: 4px;
@@ -1553,7 +1553,7 @@ body {
   mix-blend-mode: normal;
 }
 
-/* Despesas em saúde : */
+/* Despesas em saúde: */
 .despesas-e-15a94b6a3566 {
   position: absolute;
   left: 20.01px;
@@ -1611,7 +1611,7 @@ body {
   font-weight: 400;
 }
 
-/* Despesas em saúde : */
+/* Despesas em saúde: */
 .despesas-e-b767c7fcc2cc {
   position: absolute;
   left: 0px;
@@ -2763,7 +2763,7 @@ body {
   mix-blend-mode: normal;
 }
 
-/* Estabelecimentos de saúde não SUS: */
+/* Estabelecimentos de saúde não atendem SUS: */
 .estabeleci-0361dfea69d1 {
   position: absolute;
   left: 20.01px;
@@ -2821,7 +2821,7 @@ body {
   font-weight: 400;
 }
 
-/* Estabelecimentos de saúde não SUS: */
+/* Estabelecimentos de saúde não atendem SUS: */
 .estabeleci-c015b7db1ad4 {
   position: absolute;
   left: 0px;
@@ -2871,9 +2871,9 @@ body {
 /* Rectangle 85 */
 .rectangle-fc85caadeb2a {
   position: absolute;
-  left: 222.52px;
+  left: 273px;
   top: 0px;
-  width: 95.22px;
+  width: 44.74px;
   height: 20px;
   background: #ffffffFF;
   border-start-start-radius: 4px;
@@ -4257,8 +4257,8 @@ body {
 .link-503fb37e39e5  { left: 378.19px; }  /* Painel de excesso de calor */
 
 /* Estrutura e Recursos em Saúde */
-.c-45-7479cf067b9e         { left: 203.34px; width: 106.4px; }   /* Estab. SUS */
-.c-15-f1091d6fd124         { left: 230.52px; width: 79.22px; }   /* Estab. não SUS */
+.c-45-7479cf067b9e         { left: 258px; width: 51.74px; }      /* Estab. atendem SUS */
+.c-15-f1091d6fd124         { left: 281px; width: 28.74px; }      /* Estab. não atendem SUS */
 .c-0-0d09ffd74ee5          { left: 199.96px; width: 43.31px; }   /* Hospital */
 .c-26-16fb620b918a         { left: 151.27px; width: 93px; }      /* Centro de saúde e UBS */
 .c-2-por-hab-7f5ae3645148  { left: 42.97px;  width: 201.3px; }   /* UPA */

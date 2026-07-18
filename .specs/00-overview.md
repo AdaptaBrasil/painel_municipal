@@ -1,8 +1,8 @@
-# Overview — Folha Municipal (AdaptaBrasil)
+# Overview — Fichas Municipais (AdaptaBrasil)
 
 ## Purpose
 
-**Folha Municipal** is a web application that generates **municipal PDF report cards** ("fichas municipais") with socioclimatic indicators for Brazilian municipalities, in the context of the AdaptaBrasil (INPE) project. Its goal is to support decision-making on climate adaptation public policies and municipal resilience.
+**Fichas Municipais** is a web application that generates **municipal PDF report cards** with socioclimatic indicators for Brazilian municipalities, in the context of the AdaptaBrasil (INPE) project. Its goal is to support decision-making on climate adaptation public policies and municipal resilience.
 
 ## Functional scope
 

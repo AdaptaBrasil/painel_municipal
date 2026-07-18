@@ -1,4 +1,4 @@
-# Folha Municipal — AdaptaBrasil (INPE)
+# Fichas Municipais — AdaptaBrasil (INPE)
 
 Generates municipal PDF report cards with socioclimatic indicators. Full specifications in `.specs/`.
 

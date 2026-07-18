@@ -9,7 +9,7 @@ from slowapi.errors import RateLimitExceeded
 
 from .application.router import router
 
-app = FastAPI(title="Folha Municipal API")
+app = FastAPI(title="Fichas Municipais API")
 
 # ==========================================
 # 1. Rate Limiting Configuration (SlowAPI)
