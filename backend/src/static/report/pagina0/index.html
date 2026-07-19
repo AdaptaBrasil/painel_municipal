@@ -30,7 +30,7 @@
       <div class="text-node-html" id="html-text-node-437c8563-38ab-80b2-8008-54ffe43fe100" data-x="292.5" data-y="502">
         <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
           <div class="paragraph-set root-0-paragraph-set-0">
-            <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="location.cityState">Curitiba/PR</span><span class="text-node root-0-paragraph-set-0-paragraph-0-text-3"> </span></p>
+            <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="auto"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0" data-bind="location.cityState">Curitiba/PR</span></p>
           </div>
         </div>
       </div>
@@ -74,12 +74,12 @@
       })();
 
       // Resizes the municipality box to fit the bound location.cityState text,
-      // keeping 5px of inner spacing on each side and the box centered on the
+      // keeping 10px of inner spacing on each side and the box centered on the
       // 842px page. Short names (e.g. "Ypê/MS") get a narrow box; long ones
       // (e.g. "Vila de Santíssima Trindade/MT") get a wider one.
       (function () {
         var PAGE_WIDTH = 842;
-        var TEXT_SIDE_SPACING = 5;
+        var TEXT_SIDE_SPACING = 10;
         var BORDER_WIDTH = 1; // .rectangle-* border; width includes it (box-sizing: border-box)
 
         var box = document.querySelector('.rectangle-54ff94c2cd22');

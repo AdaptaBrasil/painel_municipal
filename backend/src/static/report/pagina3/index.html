@@ -1359,15 +1359,19 @@
       window.PAGE_DATA.territorio.regiaoInfluencia = "{{ municipal_report_record.regic_influencia }}";
 
       const regiaoInfluenciaEl = document.querySelector('[data-bind="territorio.regiaoInfluencia"]');
-      const vilhenaEl = document.querySelector('.vilhena-401ee2e72666');
+      const vilhenaEl = document.querySelector('.vilhena-d10635292d99');
 
       if (regiaoInfluenciaEl) {
-        regiaoInfluenciaEl.style.fontSize = window.PAGE_DATA.territorio.regiaoInfluencia.length > 10 ? '9px' : '12px';  
-        if (vilhenaEl) {
+        regiaoInfluenciaEl.style.fontSize = window.PAGE_DATA.territorio.regiaoInfluencia.length > 10 ? '9px' : '12px';
+        
+        
+        if (regiaoInfluenciaEl.style.fontSize === '9px') {
           vilhenaEl.style.top = '94.87px';
-          vilhenaEl.style.left = '151.13px';
+        }else {
+          vilhenaEl.style.top = '90.87px';
         }
       }
+  
       window.PAGE_DATA.populacao.urbana.pct = "{{ municipal_report_record.pop_urb_pct }}";
       window.PAGE_DATA.populacao.urbana.total = "{{ municipal_report_record.pop_urb_pessoas }}";
       window.PAGE_DATA.populacao.rural.pct = "{{ municipal_report_record.pop_rural_pct }}";
@@ -1411,6 +1415,7 @@
       var geocode = "{{ county_record.geocode }}";
 
       console.log('PAGE_DATA (Depois da injeção):', window.PAGE_DATA);
+      
     </script>
 
   </body>

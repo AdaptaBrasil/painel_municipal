@@ -133,7 +133,10 @@ class MunicipalHealthRepository(MunicipalHealthRepositoryInterface):
         
     async def get_municipal_health(self, county_id: int) -> MunicipalHealth:
         query = """
-            SELECT * FROM painel_municipal.pg_6 WHERE county_id = $1;
+            SELECT pg6.*, csl.url AS clima_saude_url
+            FROM painel_municipal.pg_6 pg6
+            LEFT JOIN painel_municipal.clima_saude_links csl ON csl.county_id = pg6.county_id
+            WHERE pg6.county_id = $1;
         """
         try:
             records = await self.db.fetch_all(query, county_id)

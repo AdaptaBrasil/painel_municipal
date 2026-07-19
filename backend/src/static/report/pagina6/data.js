@@ -68,38 +68,47 @@ window.PAGE_DATA = {
     "title": "Estrutura e Recursos em Saúde",
     "itens": [
       {
+        "id": "atendem_ao_sus",
         "label": "Estabelecimentos de saúde atendem SUS:",
         "valor": "45"
       },
       {
+        "id": "nao_atendem_ao_sus",
         "label": "Estabelecimentos de saúde não atendem SUS:",
         "valor": "15"
       },
       {
+        "id": "hospitais",
         "label": "Hospital (geral e especializado):",
         "valor": "0"
       },
       {
+        "id": "centro_saude",
         "label": "Centro de saúde e UBS:",
         "valor": "26"
       },
       {
+        "id": "upa_26",
         "label": "UPA:",
-        "valor": "2 por hab"
+        "valor": "2"
       },
       {
+        "id": "caps_26",
         "label": "Centro de atenção psicossocial:",
-        "valor": "3 Caps"
+        "valor": "3"
       },
       {
+        "id": "cer_26",
         "label": "Centros especializados em reabilitação:",
         "valor": "0"
       },
       {
+        "id": "e_multi_2026",
         "label": "Equipe multiprofissional:",
         "valor": "1"
       },
       {
+        "id": "saude_bucal_26",
         "label": "Equipe saúde bucal:",
         "valor": "11"
       },
@@ -129,18 +138,22 @@ window.PAGE_DATA = {
     "title": "Políticas e Programas de Saúde",
     "itens": [
       {
+        "id": "pas_26",
         "label": "Programa Academia da Saúde (PAS):",
         "valor": "3 polos"
       },
       {
+        "id": "pfpb_26",
         "label": "Programa Farmácia Popular do Brasil (PFPB):",
         "valor": "3.516 beneficiados"
       },
       {
+        "id": "pdm_26",
         "label": "Programa Dignidade Menstrual (PDM):",
         "valor": "221 beneficiadas"
       },
       {
+        "id": "pnsipn_21",
         "label": "Política Nacional de Saúde Integral da População Negra (PNSIPN):",
         "valor": "sem ações"
       }

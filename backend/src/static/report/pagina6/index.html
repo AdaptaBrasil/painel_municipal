@@ -769,6 +769,7 @@
       </div>
       <!-- rect: link -->
       <div class="shape rect link-6bf2578517b6">
+        <a href="https://shiny.icict.fiocruz.br/adaptasus/" target="_blank" rel="noopener noreferrer" aria-label="Plano AdaptaSUS"></a>
       </div>
     </div>
     <!-- group: flor de risco2 -->
@@ -896,8 +897,9 @@
       </div>
     </div>
   </div>
-  <!-- rect: link -->
+  <!-- rect: link (href injetado do banco: clima_saude_links.url) -->
   <div class="shape rect link-503fb37e39e5">
+    <a id="link-painel-calor-anchor" href="https://clima.saude.gov.br/" target="_blank" rel="noopener noreferrer" aria-label="Painel de excesso de calor"></a>
   </div>
 </div>
   
@@ -926,6 +928,7 @@
           window.PAGE_DATA.perfilEpidemiologico.incidencia,
           window.PAGE_DATA.perfilEpidemiologico.internacao,
           window.PAGE_DATA.estruturaRecursos.itens,
+          window.PAGE_DATA.politicasProgramas.itens,
           window.PAGE_DATA.coberturaVacinal.itens
         ].forEach(function (itens) {
           itens.forEach(function (item) {
@@ -934,6 +937,15 @@
             }
           });
         });
+
+        // Link "Painel de excesso de calor": URL por município vinda da
+        // tabela clima_saude_links (join na consulta pg_6). Valor ausente vem
+        // como "—" do formatted_data_dict; nesse caso mantém o href estático.
+        var painelCalorAnchor = document.getElementById('link-painel-calor-anchor');
+        var climaSaudeUrl = healthRecord.clima_saude_url;
+        if (painelCalorAnchor && climaSaudeUrl && climaSaudeUrl !== '—') {
+          painelCalorAnchor.href = climaSaudeUrl;
+        }
 
         console.log('PAGE_DATA (Depois da injeção):', window.PAGE_DATA);
       })();

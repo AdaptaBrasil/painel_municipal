@@ -62,6 +62,23 @@ class CommonBusinessRules(BaseModel):
         return f"{CommonBusinessRules.brazilian_formatted_value_integer(value)} {unit}"
 
     @staticmethod
+    def brazilian_formatted_value_with_unit(value: Optional[float | int], unit: str) -> Optional[str]:
+        """
+        Format a value with 2 decimal places followed by a unit suffix.
+
+        A value that truncates to zero collapses to a bare "0" (no unit suffix),
+        mirroring brazilian_formatted_integer_with_unit.
+        None: '—'
+        """
+        if value is None:
+            return "—"
+
+        truncated_value = NumberFormattingProcessing.to_decimal_truncated(value, value_to_ignore=None, precision=2)
+        if truncated_value == 0:
+            return "0"
+        return f"{CommonBusinessRules.brazilian_formatted_value(value)} {unit}"
+
+    @staticmethod
     def brazilian_formatted_value_currency_short(value: Optional[float | int]) -> Optional[str]:
         """
         Format a monetary value in short scale (Mi/Bi) with Brazilian conventions.
@@ -427,7 +444,6 @@ class MunicipalResilienceProfile(BaseModel):
     agropec: Optional[float] = None
     ucs: Optional[str] = None
     ti: Optional[str] = None
-    # TODO: Missing fields for : Uso e cobertura da terra
     
     # gestão municipal
     plano_saneam: Optional[str] = None
@@ -454,8 +470,6 @@ class MunicipalResilienceProfile(BaseModel):
     eventos_geohidro: Optional[float] = None
     pessoas_area_risco_cemaden: Optional[float] = None
     
-    # TODO: Missing fields for : Áreas de risco
-
 class MunicipalResilienceProfileReport(BaseModel):
     municipal_resilience_profile: MunicipalResilienceProfile
     
@@ -494,16 +508,36 @@ class MunicipalHealth(BaseModel):
     
     inter_doenc_circ_2025: Optional[int] = None
     intern_doenc_resp_2025: Optional[int] = None
-    
-    leitos_1000_hab: Optional[int] = None
-    prof_saude_hab_2025: Optional[int] = None
-    medicos_hab_2025: Optional[int] = None
+
+    # Estrutura e Recursos em Saúde
+    atendem_ao_sus: Optional[int] = None
+    nao_atendem_ao_sus: Optional[int] = None
+    hospitais: Optional[str] = None      # counts arrive as text; "-" means missing
+    centro_saude: Optional[str] = None   # counts arrive as text; "-" means missing
+    upa_26: Optional[int] = None
+    caps_26: Optional[int] = None
+    cer_26: Optional[int] = None
+    e_multi_2026: Optional[int] = None
+    saude_bucal_26: Optional[int] = None
+
+    leitos_1000_hab: Optional[float] = None
+    prof_saude_hab_2025: Optional[float] = None
+    medicos_hab_2025: Optional[float] = None
     
     despesas_saude: Optional[float] = None
-    
+
+    # Políticas e Programas de Saúde
+    pas_26: Optional[int] = None
+    pfpb_26: Optional[int] = None
+    pdm_26: Optional[int] = None
+    pnsipn_21: Optional[str] = None      # "Sim" / "Não" straight from the database
+
     cob_vac_geral: Optional[str] = None
     cob_vac_menor_2: Optional[float] = None
     cob_vac_influenza_novo: Optional[float] = None
+
+    # External link to the clima.saude.gov.br municipal panel (clima_saude_links table)
+    clima_saude_url: Optional[str] = None
 
 class MunicipalHealthReport(BaseModel):
     municipal_health: MunicipalHealth
@@ -522,7 +556,19 @@ class MunicipalHealthReport(BaseModel):
             elif key == "intern_dda_2025":
                 data[key] = f"{CommonBusinessRules.brazilian_formatted_value_integer(value)} por 100 mil hab"
             elif key in ["leitos_1000_hab", "prof_saude_hab_2025", "medicos_hab_2025"]:
-                data[key] = CommonBusinessRules.brazilian_formatted_integer_with_unit(value, "para cada mil hab")
+                data[key] = CommonBusinessRules.brazilian_formatted_value_with_unit(value, "para cada mil hab")
+            elif key in ["atendem_ao_sus", "nao_atendem_ao_sus", "upa_26", "caps_26",
+                         "cer_26", "e_multi_2026", "saude_bucal_26"]:
+                data[key] = CommonBusinessRules.brazilian_formatted_value_integer(value)
+            elif key in ["hospitais", "centro_saude"]:
+                # Counts stored as text in the database; "-" marks a missing value
+                data[key] = "—" if str(value).strip() in ("-", "") else str(value)
+            elif key == "pas_26":
+                data[key] = CommonBusinessRules.brazilian_formatted_integer_with_unit(value, "polos")
+            elif key == "pfpb_26":
+                data[key] = CommonBusinessRules.brazilian_formatted_integer_with_unit(value, "beneficiados")
+            elif key == "pdm_26":
+                data[key] = CommonBusinessRules.brazilian_formatted_integer_with_unit(value, "beneficiadas")
             elif key == "despesas_saude":
                 data[key] = f"R${CommonBusinessRules.brazilian_formatted_value_ignore_two_zeros(value)}/hab"
             elif key in ["cob_vac_menor_2", "cob_vac_influenza_novo"]:

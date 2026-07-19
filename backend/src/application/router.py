@@ -55,9 +55,9 @@ async def list_counties(
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# Rate Limit Decorator: Max 200 PDFs per minute per IP!
+# Rate Limit Decorator: Max 500 PDFs per minute per IP!
 @router.get("/reports/pdf/{county_id}")
-@limiter.limit("200/minute")
+@limiter.limit("500/minute")
 async def download_report_pdf(
     request: Request,
     county_id: int,
@@ -139,9 +139,9 @@ async def download_report_pdf(
     return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
 
 
-# Rate Limit Decorator: Max 200 PDFs per minute per IP!
+# Rate Limit Decorator: Max 500 PDFs per minute per IP!
 @router.get("/reports/pdf/{page_name}/{county_id}/")
-@limiter.limit("200/minute")
+@limiter.limit("500/minute")
 async def download_report_page_pdf(
     request: Request,
     page_name: str,

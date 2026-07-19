@@ -56,8 +56,12 @@ Final format: `0,754 (Alto)`.
 
 ### Municipal health (pagina6)
 - Incidences and hospitalizations (`incid_*`, `intern_*`, `inter_*`) → `{integer} por 100 mil hab`
-- `leitos_1000_hab`, `prof_saude_hab_2025`, `medicos_hab_2025` → `{integer} para cada mil hab`
+- `leitos_1000_hab`, `prof_saude_hab_2025`, `medicos_hab_2025` → `{value with 2 decimal places} para cada mil hab` (float; values that truncate to zero collapse to a bare `0`)
 - `despesas_saude` → `R${value}/hab`
+- Facility/team counts (`atendem_ao_sus`, `nao_atendem_ao_sus`, `upa_26`, `caps_26`, `cer_26`, `e_multi_2026`, `saude_bucal_26`) → formatted integer (no decimals, no unit)
+- `hospitais`, `centro_saude`: arrive as **text**; `"-"` (or empty) means missing → `—`; otherwise displayed as-is
+- `pas_26` → `{integer} polos`; `pfpb_26` → `{integer} beneficiados`; `pdm_26` → `{integer} beneficiadas` (zero collapses to a bare `0`)
+- `pnsipn_21`: string `Sim`/`Não` straight from the database, displayed as-is
 - Vaccine coverage (`cob_vac_menor_2`, `cob_vac_influenza_novo`) → `{value}%`
 - `cob_vac_geral`: may arrive as a **string in Brazilian format** (`"1.234,5"`); it must be normalized (strip thousands `.`, replace `,` with `.`) before formatting; if conversion fails, display the original value.
 
