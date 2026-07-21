@@ -27,7 +27,7 @@ window.PAGE_DATA = {
     "image": ""
   },
   "temperatura": {
-    "title": "temperatura"
+    "title": "temperatura do ar"
   },
   "florDeRisco": { "image": "" },
   "projecao": {

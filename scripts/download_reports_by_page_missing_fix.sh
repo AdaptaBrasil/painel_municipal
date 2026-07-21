@@ -8,20 +8,21 @@
 # are missing.
 #
 # Usage:
-#   ./download_reports_by_page_missing_fix.sh <base_url> <page_name> --lista=<file> [--processos=<n>] [output_dir]
+#   ./download_reports_by_page_missing_fix.sh <base_url> <page_name> <output_dir> --lista=<file> [--processos=<n>]
 #
 # Arguments:
 #   base_url          Base URL of the API, e.g. http://localhost:3000
 #   page_name         Name of the report page, e.g. pagina1, pagina2, pagina3 ...
+#   output_dir        Destination folder for the downloaded PDFs, e.g. pagina4.
+#                     Created (with parents) if it does not exist.
 #   --lista=<file>    Required. Path to a text file with one county_id per line.
 #   --processos=<n>   Optional. Number of parallel download processes.
 #                     The list is split into <n> contiguous chunks and each
 #                     chunk is downloaded by its own background process.
 #                     Default: 1 (sequential).
-#   output_dir        Optional. Destination folder. Default: pagina2
 #
 # Example:
-#   ./download_reports_by_page_missing_fix.sh http://localhost:3000 pagina2 --lista=county_id_nao_baixados_pagina2.txt --processos=4
+#   ./download_reports_by_page_missing_fix.sh http://localhost:3000 pagina3 pagina3 --lista=county_id_nao_baixados_pagina3.txt --processos=4
 #
 # Each file is saved with the same name provided by the server
 # (Content-Disposition header), e.g.:
@@ -33,10 +34,12 @@ set -uo pipefail
 
 BASE_URL=""
 PAGE_NAME=""
+OUTPUT_DIR=""
 LISTA_FILE=""
 PROCESSES=1
-OUTPUT_DIR="pagina5"
 POSITIONAL=()
+
+USAGE="Usage: $0 <base_url> <page_name> <output_dir> --lista=<file> [--processos=<n>]"
 
 for arg in "$@"; do
   case "$arg" in
@@ -52,20 +55,18 @@ for arg in "$@"; do
   esac
 done
 
-if [[ ${#POSITIONAL[@]} -lt 2 || ${#POSITIONAL[@]} -gt 3 ]]; then
-  echo "Usage: $0 <base_url> <page_name> --lista=<file> [--processos=<n>] [output_dir]" >&2
+if [[ ${#POSITIONAL[@]} -ne 3 ]]; then
+  echo "$USAGE" >&2
   exit 1
 fi
 
 BASE_URL="${POSITIONAL[0]}"
 PAGE_NAME="${POSITIONAL[1]}"
-if [[ ${#POSITIONAL[@]} -eq 3 ]]; then
-  OUTPUT_DIR="${POSITIONAL[2]}"
-fi
+OUTPUT_DIR="${POSITIONAL[2]}"
 
 if [[ -z "$LISTA_FILE" ]]; then
   echo "Error: missing required --lista=<file> argument." >&2
-  echo "Usage: $0 <base_url> <page_name> --lista=<file> [--processos=<n>] [output_dir]" >&2
+  echo "$USAGE" >&2
   exit 1
 fi
 

@@ -2937,24 +2937,26 @@ body {
 /* temperatura */
 .temperatur-4c35bc81c0f8 {
   position: absolute;
-  left: 125.5px;
+  left: 0px;
   top: 11px;
+  width: 357.78px;
   height: 17px;
   box-shadow: ;
   mix-blend-mode: normal;
 }
 .temperatur-4c35bc81c0f8 .root-0 {
-  
-  
+
+
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
+  justify-content: center;
 }
 .temperatur-4c35bc81c0f8 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
-  
+
   margin-right: 1px;
   vertical-align: top;
 }
@@ -2962,7 +2964,7 @@ body {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 .temperatur-4c35bc81c0f8 .root-0-paragraph-set-0-paragraph-0-text-0 {
   color: rgba(252, 252, 252, 1);

@@ -165,18 +165,15 @@ window.PAGE_DATA = {
     "itens": [
       {
         "id": "cob_vac_geral",
-        "label": "Geral:",
-        "valor": "78"
+        "label": "Geral \nCovid:"
       },
       {
         "id": "cob_vac_menor_2",
-        "label": "Menores \n2 anos:",
-        "valor": "88,7"
+        "label": "Menores \n2 anos:"
       },
       {
         "id": "cob_vac_influenza_novo",
-        "label": "Influenza 60+:",
-        "valor": "56"
+        "label": "Influenza 60+:"
       }
     ]
   }
