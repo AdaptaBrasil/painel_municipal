@@ -217,7 +217,7 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--position", default="bottom-right",
                         choices=["bottom-right", "bottom-center", "bottom-left"],
                         help="Where to place the number (default: bottom-right).")
-    parser.add_argument("--margin-right", type=float, default=32.0,
+    parser.add_argument("--margin-right", type=float, default=22.0,
                         help="Right (or left) margin in points (default: 32).")
     parser.add_argument("--margin-bottom", type=float, default=18.0,
                         help="Bottom margin in points (default: 18).")
