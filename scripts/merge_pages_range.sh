@@ -8,19 +8,34 @@
 # folders are given) and merges them into output_dir/{geocode}.pdf.
 #
 # Usage:
-#   ./merge_pages_range.sh [-n num_files] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]
+#   ./merge_pages_range.sh [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]
 #
 # Arguments:
 #   -n num_files  Optional. Process only the first num_files geocodes
 #                 (sorted order). Default: process all of them.
+#   -p            Optional. After merging, stamp a sequential page number on
+#                 every page of each output PDF (bottom-right corner). The
+#                 number reflects the page position in the document (1, 2, 3
+#                 ...). Requires a Python with pypdf (see PYTHON_BIN below);
+#                 links in the report are preserved (overlay, not re-render).
 #   num_folders   Natural positive integer (> 0), number of page folders
 #   folder1..N    Folders with the page PDFs, in merge order,
 #                 e.g. pagina1 pagina2 pagina3 ...
 #   output_dir    Optional. Destination folder. Default: paginas_completas/
 #
+# Environment:
+#   PYTHON_BIN    Interpreter used for the -p numbering step. It must have pypdf
+#                 installed (the project already depends on it). If unset, the
+#                 script auto-detects one, trying in order: ./.venv/bin/python,
+#                 ../.venv/bin/python, python3, python. Set it explicitly to
+#                 override, e.g. PYTHON_BIN=/path/to/poetry/venv/bin/python ...
+#                 The numbering can also be run separately on the output folder:
+#                 .venv/bin/python add_page_numbers.py paginas_completas/
+#
 # Example:
 #   ./merge_pages_range.sh 4 pagina2 pagina3 pagina4 pagina5
-#   ./merge_pages_range.sh -n 10 4 pagina2 pagina3 pagina4 pagina5
+#   ./merge_pages_range.sh -p 4 pagina2 pagina3 pagina4 pagina5
+#   ./merge_pages_range.sh -n 10 -p 4 pagina2 pagina3 pagina4 pagina5
 #   ./merge_pages_range.sh 2 pagina2 pagina3 my/custom/folder
 #
 # Each merged file is saved as {geocode}.pdf. A geocode is only merged when
@@ -37,17 +52,31 @@ set -uo pipefail
 COMMAND_LINE="$0 $*"
 
 MAX_FILES=0
-if [[ "${1:-}" == "-n" ]]; then
-  MAX_FILES="${2:-}"
-  if ! [[ "$MAX_FILES" =~ ^[1-9][0-9]*$ ]]; then
-    echo "Error: -n requires a natural positive integer greater than zero. Got: '${MAX_FILES}'" >&2
-    exit 1
-  fi
-  shift 2
-fi
+ADD_PAGE_NUMBERS=0
+while [[ "${1:-}" == -* ]]; do
+  case "$1" in
+    -n)
+      MAX_FILES="${2:-}"
+      if ! [[ "$MAX_FILES" =~ ^[1-9][0-9]*$ ]]; then
+        echo "Error: -n requires a natural positive integer greater than zero. Got: '${MAX_FILES}'" >&2
+        exit 1
+      fi
+      shift 2
+      ;;
+    -p)
+      ADD_PAGE_NUMBERS=1
+      shift
+      ;;
+    *)
+      echo "Error: unknown option '$1'." >&2
+      echo "Usage: $0 [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
+      exit 1
+      ;;
+  esac
+done
 
 if [[ $# -lt 2 ]]; then
-  echo "Usage: $0 [-n num_files] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
+  echo "Usage: $0 [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
   exit 1
 fi
 
@@ -97,6 +126,50 @@ Average time per merge: ${avg_elapsed} s"
 if ! command -v pdfunite >/dev/null 2>&1; then
   echo "Error: pdfunite not found. Install it with: sudo apt install poppler-utils" >&2
   exit 1
+fi
+
+# Page-numbering helper (only when -p is used). The numbering script sits next
+# to this one; prefer a copy in the current directory when present (e.g. when
+# running from an outputs/ working folder).
+NUMBER_SCRIPT="$(dirname "$0")/add_page_numbers.py"
+[[ -f "add_page_numbers.py" ]] && NUMBER_SCRIPT="add_page_numbers.py"
+
+# When the merge starts with pagina0, keep that cover page unnumbered and start
+# numbering from the following page.
+SKIP_FIRST_PAGE=0
+if [[ $(basename "${FOLDERS[0]}") == "pagina0" ]]; then
+  SKIP_FIRST_PAGE=1
+fi
+
+# Resolve a Python with pypdf. Honour an explicit PYTHON_BIN; otherwise probe a
+# nearby virtualenv (common in the outputs/ folder) before falling back to a
+# system interpreter, so the -p flag works without extra configuration.
+if [[ -n "${PYTHON_BIN:-}" ]]; then
+  PYTHON_CANDIDATES=("$PYTHON_BIN")
+else
+  PYTHON_CANDIDATES=(".venv/bin/python" "../.venv/bin/python" "python3" "python")
+fi
+
+if (( ADD_PAGE_NUMBERS )); then
+  if [[ ! -f "$NUMBER_SCRIPT" ]]; then
+    echo "Error: -p requested but 'add_page_numbers.py' was not found." >&2
+    exit 1
+  fi
+  PYTHON_BIN=""
+  for candidate in "${PYTHON_CANDIDATES[@]}"; do
+    if $candidate -c 'import pypdf' >/dev/null 2>&1; then
+      PYTHON_BIN="$candidate"
+      break
+    fi
+  done
+  if [[ -z "$PYTHON_BIN" ]]; then
+    echo "Error: -p requires a Python with pypdf, none was found." >&2
+    echo "       Tried: ${PYTHON_CANDIDATES[*]}" >&2
+    echo "       Install it (pip install 'pypdf>=4,<5') or set PYTHON_BIN to an" >&2
+    echo "       interpreter that has it (see the header of this script)." >&2
+    exit 1
+  fi
+  echo "Page numbering enabled (using: ${PYTHON_BIN})."
 fi
 
 for folder in "${FOLDERS[@]}"; do
@@ -177,6 +250,19 @@ for geocode in "${GEOCODES[@]}"; do
   fi
 
   if pdfunite "${parts[@]}" "${OUTPUT_DIR}/${geocode}.pdf"; then
+    if (( ADD_PAGE_NUMBERS )); then
+      number_args=(--in-place)
+      if (( SKIP_FIRST_PAGE )); then
+        number_args+=(--skip-first)
+      fi
+      if ! $PYTHON_BIN "$NUMBER_SCRIPT" "${number_args[@]}" "${OUTPUT_DIR}/${geocode}.pdf" >/dev/null; then
+        echo "[${geocode}] FAILED (page numbering error)." >&2
+        rm -f "${OUTPUT_DIR}/${geocode}.pdf" 2>/dev/null
+        (( ++failed ))
+        failed_geocodes+=("$geocode")
+        continue
+      fi
+    fi
     echo "[${geocode}] Saved: ${OUTPUT_DIR}/${geocode}.pdf"
     (( ++success ))
   else

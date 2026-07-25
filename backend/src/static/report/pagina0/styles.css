@@ -1,7 +1,7 @@
-/* Página 0 atualizada — Capa (Fichas Municipais). Board Penpot "PÁGINA-0-FINAL-15-07".
-   CSS extraído do export do Penpot (sem @font-face — vêm de ../shared/css/fonts.css). */
+/* PÁGINA-0-FINAL — Capa "Fichas Municipais"
+   Estilos extraídos do export Penpot. Fontes: ../shared/css/fonts.css
+   Imagens de fundo referenciam ./imgs/*.png (editáveis via data-bind-bg). */
 
-/* base */
 html, body {
   margin: 0;
   min-height: 100%;
@@ -23,129 +23,330 @@ body {
 
 .text-node { background-clip: text !important; -webkit-background-clip: text !important; }
 
-/* PÁGINA-0-FINAL-15-07 */
-.p-g-i-n-a0-f-aea8f8f65cec {
+/* PÁGINA-0-FINAL-22-07 */
+.p-g-i-n-a0-f-fbb9ea440efe {
   position: relative;
   width: 842px;
   height: 595px;
-  background: #ffffffFF;
+  background: #d9d9d9FF;
   overflow: hidden;
   mix-blend-mode: normal;
   z-index: 0;
 }
 
-/* São José do Vale do Rio Preto - RJ (centrado na caixa via flex do pai) */
-.fichas-mun-54ffe43fe100 {
-  height: 20px;
+/* elipse-vermelho */
+.elipsever-2578e21b07e3 {
+  position: absolute;
+  left: 704px;
+  top: 442.5px;
+  width: 7px;
+  height: 7px;
+  background: url("./imgs/elipse-vermelho.png") no-repeat center center / cover;
   mix-blend-mode: normal;
-  flex-shrink: 0;
+  display: none;
 }
-.fichas-mun-54ffe43fe100 .root-0 {
+
+/* retangulo-vermelho */
+.retangulo-f6221cae4066 {
+  position: absolute;
+  left: 704px;
+  top: 442.5px;
+  width: 7px;
+  height: 7px;
+  background: url("./imgs/NONE.png") no-repeat center center / cover;
+  mix-blend-mode: normal;
+}
+
+/* AdaptaCidades */
+.adapta-cida-659c56e2f4d6 {
+  position: absolute;
+  left: 325px;
+  top: 16.13px;
+  height: 34px;
+  mix-blend-mode: normal;
+}
+.adapta-cida-659c56e2f4d6 .root-0 {
   display: flex;
   white-space: break-spaces;
   align-items: flex-start;
 }
-.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0 {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: inherit;
-  vertical-align: top;
-}
-.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0 {
-  font-size: 0;
-  line-height: 1.2;
-  margin: 0;
-  text-align: start;
-}
-.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-0,
-.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-1,
-.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-2,
-.fichas-mun-54ffe43fe100 .root-0-paragraph-set-0-paragraph-0-text-3 {
-  color: var(--color-onSurface, rgba(30, 30, 30, 1));
-  text-transform: uppercase;
-  line-break: auto;
-  overflow-wrap: initial;
-  white-space: pre;
-  font-size: 16px;
-  text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
-  text-decoration: none;
-  letter-spacing: 0px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-}
-
-/* Rectangle (caixa do município) */
-.rectangle-54ff94c2cd22 {
-  position: absolute;
-  left: 241px;
-  top: 492px;
-  width: 360px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-boxSurface, #d9d9d9);
-  border: 1px solid var(--color-boxBorder, #6d797a);
-  border-end-start-radius: 8px;
-  border-end-end-radius: 8px;
-}
-
-/* figura-mapa-quadrados-coloridos */
-.figuramap-39cc7a3b95b8 {
-  position: absolute;
-  left: 0.23px;
-  top: 0px;
-  width: 842px;
-  height: 595px;
-  background: url("./imgs/figura-mapa-quadrados-coloridos.png") no-repeat center center / cover;
-  mix-blend-mode: normal;
-}
-
-/* Fichas Municipais (título) */
-.fichas-mun-7a7adbfef98a {
-  position: absolute;
-  left: 309.5px;
-  top: 71.58px;
-  height: 29px;
-  mix-blend-mode: normal;
-}
-.fichas-mun-7a7adbfef98a .root-0 {
-  display: flex;
-  white-space: break-spaces;
-  align-items: flex-start;
-}
-.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0 {
+.adapta-cida-659c56e2f4d6 .root-0-paragraph-set-0 {
   display: inline-flex;
   flex-direction: column;
   justify-content: inherit;
   margin-right: 1px;
   vertical-align: top;
 }
-.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0 {
+.adapta-cida-659c56e2f4d6 .root-0-paragraph-set-0-paragraph-0 {
   font-size: 0;
   line-height: 1.2;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
-.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-0,
-.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-1,
-.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-2 {
-  color: var(--color-onSurface, rgba(30, 30, 30, 1));
-  text-transform: uppercase;
+.adapta-cida-659c56e2f4d6 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: none;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 28px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+}
+.adapta-cida-659c56e2f4d6 .root-0-paragraph-set-0-paragraph-0-text-1 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: none;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 28px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+}
+
+/* São José do Vale do Rio Preto - RJ */
+.so-jos-d-6c468a3d3df2 {
+  position: absolute;
+  left: 60.32px;
+  top: 495.32px;
+  height: 29px;
+  mix-blend-mode: normal;
+}
+.so-jos-d-6c468a3d3df2 .root-0 {
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.so-jos-d-6c468a3d3df2 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.so-jos-d-6c468a3d3df2 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+.so-jos-d-6c468a3d3df2 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: none;
   line-break: auto;
   overflow-wrap: initial;
   white-space: pre;
   font-size: 24px;
   text-rendering: geometricPrecision;
-  caret-color: rgba(30, 30, 30, 1);
+  caret-color: rgba(252, 252, 252, 1);
   text-decoration: none;
   letter-spacing: 0px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
 }
-.fichas-mun-7a7adbfef98a .root-0-paragraph-set-0-paragraph-0-text-1 {
+.so-jos-d-6c468a3d3df2 .root-0-paragraph-set-0-paragraph-0-text-1 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: none;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 24px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+}
+.so-jos-d-6c468a3d3df2 .root-0-paragraph-set-0-paragraph-0-text-2 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: none;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 24px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+}
+.so-jos-d-6c468a3d3df2 .root-0-paragraph-set-0-paragraph-0-text-3 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: none;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 24px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
   font-weight: 400;
+}
+.so-jos-d-6c468a3d3df2 .root-0-paragraph-set-0-paragraph-0-text-4 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: none;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 24px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Fichas Municipais */
+.fichas-mun-c3058b79a619 {
+  position: absolute;
+  left: 60.32px;
+  top: 375.32px;
+  height: 114px;
+  mix-blend-mode: normal;
+}
+.fichas-mun-c3058b79a619 .root-0 {
+  display: flex;
+  white-space: break-spaces;
+  align-items: flex-start;
+}
+.fichas-mun-c3058b79a619 .root-0-paragraph-set-0 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: inherit;
+  margin-right: 1px;
+  vertical-align: top;
+}
+.fichas-mun-c3058b79a619 .root-0-paragraph-set-0-paragraph-0 {
+  font-size: 0;
+  line-height: 1.1100585460662842;
+  margin: 0;
+  text-align: left;
+}
+.fichas-mun-c3058b79a619 .root-0-paragraph-set-0-paragraph-0-text-0 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 51.203792572021484px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+}
+.fichas-mun-c3058b79a619 .root-0-paragraph-set-0-paragraph-0-text-1 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 51.203792572021484px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+}
+.fichas-mun-c3058b79a619 .root-0-paragraph-set-0-paragraph-0-text-2 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 51.203792572021484px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+}
+.fichas-mun-c3058b79a619 .root-0-paragraph-set-0-paragraph-0-text-3 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 51.203792572021484px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+}
+.fichas-mun-c3058b79a619 .root-0-paragraph-set-0-paragraph-0-text-4 {
+  color: rgba(252, 252, 252, 1);
+  text-transform: uppercase;
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: pre;
+  font-size: 51.203792572021484px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(252, 252, 252, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* brasil */
+.brasil-542d5e634e19 {
+  position: absolute;
+  left: 383.5px;
+  top: 148.32px;
+  width: 415px;
+  height: 415px;
+  background: url("./imgs/mapa-brasil.png") no-repeat center center / contain;
+  mix-blend-mode: normal;
+}
+
+/* quadrado-verde */
+.quadradov-f889edb3e5c9 {
+  position: absolute;
+  left: 251px;
+  top: -251px;
+  width: 340px;
+  height: 333px;
+  background: url("./imgs/quadrado-verde.png") no-repeat center center / cover;
+  mix-blend-mode: normal;
+}
+
+/* quadrado-azul */
+.quadradoa-1be9756afcd4 {
+  position: absolute;
+  left: -196.5px;
+  top: 49.13px;
+  width: 1043px;
+  height: 1048px;
+  background: url("./imgs/quadrado-azul.png") no-repeat center center / cover;
+  mix-blend-mode: normal;
 }
