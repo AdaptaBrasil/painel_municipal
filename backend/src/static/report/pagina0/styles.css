@@ -325,7 +325,7 @@ body {
   top: 148.32px;
   width: 415px;
   height: 415px;
-  background: url("./imgs/mapa-brasil.png") no-repeat center center / cover;
+  background: url("./imgs/mapa-brasil.png") no-repeat center center / contain;
   mix-blend-mode: normal;
 }
 

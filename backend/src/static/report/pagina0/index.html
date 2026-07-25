@@ -80,7 +80,9 @@
 
         function applyBackground(src) {
           window.PAGE_DATA.images.mapaBrasil = src;
-          mapEl.style.background = 'url("' + src + '") no-repeat center center / cover';
+          // 'contain' (not 'cover') so wider municipality maps (e.g. 951x830)
+          // show whole instead of being cropped on the sides in the 415x415 box.
+          mapEl.style.background = 'url("' + src + '") no-repeat center center / contain';
         }
 
         if (!geocode || geocode === "None") {
