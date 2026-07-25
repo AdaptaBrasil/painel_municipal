@@ -26,9 +26,9 @@ class Settings(BaseSettings):
         PAGE_01 = "pagina1"
         PAGE_02 = "pagina2"
         PAGE_03 = "pagina3"
+        PAGE_06 = "pagina6"
         PAGE_04 = "pagina4"
         PAGE_05 = "pagina5"
-        PAGE_06 = "pagina6"
         PAGE_07 = "pagina7"
         PAGE_08 = "pagina8"
         PAGE_09 = "pagina9"
@@ -44,9 +44,9 @@ class Settings(BaseSettings):
         PageName.PAGE_01.value: [],
         PageName.PAGE_02.value: ["county_record", "risks_record"],
         PageName.PAGE_03.value: ["county_record", "municipal_report_record"],
+        PageName.PAGE_06.value: ["county_record", "municipal_health_record"],
         PageName.PAGE_04.value: ["county_record", "municipal_resilience_profile_record"],
         PageName.PAGE_05.value: ["county_record", "climate_projection_record"],
-        PageName.PAGE_06.value: ["county_record", "municipal_health_record"],
         PageName.PAGE_07.value: [],
         PageName.PAGE_08.value: [],
         PageName.PAGE_09.value: [],
@@ -59,9 +59,9 @@ class Settings(BaseSettings):
         {template_dir / PageName.PAGE_01.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_02.value / "index.html": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_03.value / "index.html": {"width": "842px", "height": "595px", "scale": 1.50, "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+        {template_dir / PageName.PAGE_06.value / "index.html": {"width": "842px", "height": "595px", "scale": 1, "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_04.value / "index.html": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_05.value / "index.html": {"width": "842px", "height": "595px", "scale": 1, "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
-        {template_dir / PageName.PAGE_06.value / "index.html": {"width": "842px", "height": "595px", "scale": 1, "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_07.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_08.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_09.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
