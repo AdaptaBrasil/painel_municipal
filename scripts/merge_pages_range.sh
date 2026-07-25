@@ -134,6 +134,13 @@ fi
 NUMBER_SCRIPT="$(dirname "$0")/add_page_numbers.py"
 [[ -f "add_page_numbers.py" ]] && NUMBER_SCRIPT="add_page_numbers.py"
 
+# When the merge starts with pagina0, keep that cover page unnumbered and start
+# numbering from the following page.
+SKIP_FIRST_PAGE=0
+if [[ $(basename "${FOLDERS[0]}") == "pagina0" ]]; then
+  SKIP_FIRST_PAGE=1
+fi
+
 # Resolve a Python with pypdf. Honour an explicit PYTHON_BIN; otherwise probe a
 # nearby virtualenv (common in the outputs/ folder) before falling back to a
 # system interpreter, so the -p flag works without extra configuration.
@@ -244,7 +251,11 @@ for geocode in "${GEOCODES[@]}"; do
 
   if pdfunite "${parts[@]}" "${OUTPUT_DIR}/${geocode}.pdf"; then
     if (( ADD_PAGE_NUMBERS )); then
-      if ! $PYTHON_BIN "$NUMBER_SCRIPT" --in-place "${OUTPUT_DIR}/${geocode}.pdf" >/dev/null; then
+      number_args=(--in-place)
+      if (( SKIP_FIRST_PAGE )); then
+        number_args+=(--skip-first)
+      fi
+      if ! $PYTHON_BIN "$NUMBER_SCRIPT" "${number_args[@]}" "${OUTPUT_DIR}/${geocode}.pdf" >/dev/null; then
         echo "[${geocode}] FAILED (page numbering error)." >&2
         rm -f "${OUTPUT_DIR}/${geocode}.pdf" 2>/dev/null
         (( ++failed ))

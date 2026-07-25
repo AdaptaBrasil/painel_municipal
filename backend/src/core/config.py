@@ -30,7 +30,10 @@ class Settings(BaseSettings):
         PAGE_05 = "pagina5"
         PAGE_06 = "pagina6"
         PAGE_07 = "pagina7"
-        PAGE_08 = "pagina8" 
+        PAGE_08 = "pagina8"
+        PAGE_09 = "pagina9"
+        PAGE_10 = "pagina10"
+        PAGE_11 = "pagina11"
         
     # Records each page's template actually renders (see each pagina's index.html).
     # download_report_page_pdf uses this to skip database queries whose data would
@@ -46,6 +49,9 @@ class Settings(BaseSettings):
         PageName.PAGE_06.value: ["county_record", "municipal_health_record"],
         PageName.PAGE_07.value: [],
         PageName.PAGE_08.value: [],
+        PageName.PAGE_09.value: [],
+        PageName.PAGE_10.value: [],
+        PageName.PAGE_11.value: [],
     }
 
     pages_dir: List[Dict[Path, dict]] = [
@@ -58,6 +64,10 @@ class Settings(BaseSettings):
         {template_dir / PageName.PAGE_06.value / "index.html": {"width": "842px", "height": "595px", "scale": 1, "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_07.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_08.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+        {template_dir / PageName.PAGE_09.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+        {template_dir / PageName.PAGE_10.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+        {template_dir / PageName.PAGE_11.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
+    
     ]
     
     pyproject_path: Path = BACKEND_DIR / "pyproject.toml"
