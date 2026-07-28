@@ -32,6 +32,8 @@
 #   ./merge_server.sh -p                   # same, with page numbering
 #   ./merge_server.sh -n 5 -p /tmp/saida   # dry run with 5 municipalities
 #   ./merge_server.sh -d /data/fichas -p
+# Exemplo com output_dir:
+#   ./merge_server.sh -d /data/fichas -p /tmp/saida
 #
 # All options are forwarded to merge_pages_range.sh, which does the actual
 # merge (pdfunite) and writes execution_time_range.log.
