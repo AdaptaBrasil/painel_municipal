@@ -17,15 +17,22 @@
 #   - otherwise pagina{N}-{slug}/ itself is used (single shared file.pdf).
 #
 # Usage:
-#   ./merge_server.sh [-d base_dir] [-n num_files] [-p] [output_dir]
+#   ./merge_server.sh [-d base_dir] [-n num_files] [--geocodes-from-file file] [-p] [output_dir]
 #
 # Arguments:
 #   -d base_dir   Optional. Root folder holding the pagina{N}-* directories.
 #                 Default: current directory.
 #   -n num_files  Optional. Process only the first num_files geocodes.
+#   --geocodes-from-file file
+#                 Optional (short form: -g). Merge only the geocodes listed in
+#                 file, one per line (blank lines, '#' comments and a trailing
+#                 '.pdf' are accepted). Use it to reprocess only the
+#                 municipalities missing from a previous run. Applied before -n.
 #   -p            Optional. Stamp sequential page numbers on the merged PDFs
 #                 (the pagina0 cover stays unnumbered).
 #   output_dir    Optional. Destination folder. Default: paginas_completas/
+#
+# Options may appear before or after output_dir.
 #
 # Example:
 #   ./merge_server.sh                      # merge everything into paginas_completas/
@@ -34,6 +41,8 @@
 #   ./merge_server.sh -d /data/fichas -p
 # Exemplo com output_dir:
 #   ./merge_server.sh -d /data/fichas -p /tmp/saida
+# Exemplo remerge apenas dos faltantes:
+#   ./merge_server.sh -d /data/fichas -p /tmp/saida --geocodes-from-file missing.txt
 #
 # All options are forwarded to merge_pages_range.sh, which does the actual
 # merge (pdfunite) and writes execution_time_range.log.
@@ -55,10 +64,13 @@ MERGE_SCRIPT="${SCRIPT_DIR}/merge_pages_range.sh"
 
 # ---- Argument parsing -------------------------------------------------------
 
+USAGE="Usage: $0 [-d base_dir] [-n num_files] [--geocodes-from-file file] [-p] [output_dir]"
+
 BASE_DIR="."
 PASSTHROUGH=()
+POSITIONAL=()
 
-while [[ "${1:-}" == -* ]]; do
+while (( $# > 0 )); do
   case "$1" in
     -d)
       BASE_DIR="${2:-}"
@@ -76,29 +88,50 @@ while [[ "${1:-}" == -* ]]; do
       PASSTHROUGH+=(-n "$2")
       shift 2
       ;;
+    -g|--geocodes-from-file)
+      if [[ -z "${2:-}" ]]; then
+        echo "Error: $1 requires a file path." >&2
+        exit 1
+      fi
+      if [[ ! -f "$2" ]]; then
+        echo "Error: geocode list '$2' does not exist or is not a file." >&2
+        exit 1
+      fi
+      PASSTHROUGH+=(-g "$2")
+      shift 2
+      ;;
     -p)
       PASSTHROUGH+=(-p)
       shift
       ;;
     -h|--help)
-      sed -n '2,40p' "${BASH_SOURCE[0]}"
+      sed -n '2,48p' "${BASH_SOURCE[0]}"
       exit 0
       ;;
-    *)
+    --)
+      shift
+      POSITIONAL+=("$@")
+      break
+      ;;
+    -*)
       echo "Error: unknown option '$1'." >&2
-      echo "Usage: $0 [-d base_dir] [-n num_files] [-p] [output_dir]" >&2
+      echo "$USAGE" >&2
       exit 1
+      ;;
+    *)
+      POSITIONAL+=("$1")
+      shift
       ;;
   esac
 done
 
-if [[ $# -gt 1 ]]; then
-  echo "Error: expected at most one output_dir, got $# argument(s)." >&2
-  echo "Usage: $0 [-d base_dir] [-n num_files] [-p] [output_dir]" >&2
+if (( ${#POSITIONAL[@]} > 1 )); then
+  echo "Error: expected at most one output_dir, got ${#POSITIONAL[@]} argument(s): ${POSITIONAL[*]}" >&2
+  echo "$USAGE" >&2
   exit 1
 fi
 
-OUTPUT_DIR="${1:-}"
+OUTPUT_DIR="${POSITIONAL[0]:-}"
 
 # ---- Validation -------------------------------------------------------------
 

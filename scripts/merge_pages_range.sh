@@ -8,11 +8,14 @@
 # folders are given) and merges them into output_dir/{geocode}.pdf.
 #
 # Usage:
-#   ./merge_pages_range.sh [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]
+#   ./merge_pages_range.sh [-n num_files] [-g geocodes_file] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]
 #
 # Arguments:
 #   -n num_files  Optional. Process only the first num_files geocodes
 #                 (sorted order). Default: process all of them.
+#   -g file       Optional (--geocodes-from-file). Process only the geocodes
+#                 listed in file, one per line. Blank lines, '#' comments and a
+#                 trailing '.pdf' are accepted. Applied before -n.
 #   -p            Optional. After merging, stamp a sequential page number on
 #                 every page of each output PDF (bottom-right corner). The
 #                 number reflects the page position in the document (1, 2, 3
@@ -36,6 +39,7 @@
 #   ./merge_pages_range.sh 4 pagina2 pagina3 pagina4 pagina5
 #   ./merge_pages_range.sh -p 4 pagina2 pagina3 pagina4 pagina5
 #   ./merge_pages_range.sh -n 10 -p 4 pagina2 pagina3 pagina4 pagina5
+#   ./merge_pages_range.sh -g missing.txt -p 4 pagina2 pagina3 pagina4 pagina5
 #   ./merge_pages_range.sh 2 pagina2 pagina3 my/custom/folder
 #
 # Each merged file is saved as {geocode}.pdf. A geocode is only merged when
@@ -53,6 +57,7 @@ COMMAND_LINE="$0 $*"
 
 MAX_FILES=0
 ADD_PAGE_NUMBERS=0
+GEOCODES_FILE=""
 while [[ "${1:-}" == -* ]]; do
   case "$1" in
     -n)
@@ -63,20 +68,32 @@ while [[ "${1:-}" == -* ]]; do
       fi
       shift 2
       ;;
+    -g|--geocodes-from-file)
+      GEOCODES_FILE="${2:-}"
+      if [[ -z "$GEOCODES_FILE" ]]; then
+        echo "Error: $1 requires a file path." >&2
+        exit 1
+      fi
+      if [[ ! -f "$GEOCODES_FILE" ]]; then
+        echo "Error: geocode list '${GEOCODES_FILE}' does not exist or is not a file." >&2
+        exit 1
+      fi
+      shift 2
+      ;;
     -p)
       ADD_PAGE_NUMBERS=1
       shift
       ;;
     *)
       echo "Error: unknown option '$1'." >&2
-      echo "Usage: $0 [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
+      echo "Usage: $0 [-n num_files] [-g geocodes_file] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
       exit 1
       ;;
   esac
 done
 
 if [[ $# -lt 2 ]]; then
-  echo "Usage: $0 [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
+  echo "Usage: $0 [-n num_files] [-g geocodes_file] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
   exit 1
 fi
 
@@ -207,6 +224,45 @@ mapfile -t GEOCODES < <(
 if (( ${#GEOCODES[@]} == 0 )); then
   echo "Error: no PDF files found in the given folder(s)." >&2
   exit 1
+fi
+
+# Keep only the requested geocodes when -g was given. The list is normalised
+# (CRLF, '#' comments, surrounding blanks and a trailing '.pdf' are stripped)
+# and intersected with the geocodes actually present in the input folders.
+if [[ -n "$GEOCODES_FILE" ]]; then
+  mapfile -t REQUESTED < <(
+    sed -e 's/\r$//' -e 's/#.*//' \
+        -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' \
+        -e 's/\.pdf$//' "$GEOCODES_FILE" | grep -v '^$' | sort -u
+  )
+
+  if (( ${#REQUESTED[@]} == 0 )); then
+    echo "Error: geocode list '${GEOCODES_FILE}' has no usable entry." >&2
+    exit 1
+  fi
+
+  declare -A REQUESTED_SET=()
+  for requested in "${REQUESTED[@]}"; do
+    REQUESTED_SET["$requested"]=1
+  done
+
+  selected=()
+  for geocode in "${GEOCODES[@]}"; do
+    [[ -n "${REQUESTED_SET[$geocode]:-}" ]] && selected+=("$geocode")
+  done
+
+  echo "Geocode list '${GEOCODES_FILE}': ${#REQUESTED[@]} requested, ${#selected[@]} found in the input folder(s)."
+
+  if (( ${#selected[@]} == 0 )); then
+    echo "Error: none of the geocodes in '${GEOCODES_FILE}' have PDFs in the given folder(s)." >&2
+    exit 1
+  fi
+
+  if (( ${#selected[@]} < ${#REQUESTED[@]} )); then
+    echo "Warning: $(( ${#REQUESTED[@]} - ${#selected[@]} )) requested geocode(s) have no PDF in the input folder(s) and were skipped." >&2
+  fi
+
+  GEOCODES=("${selected[@]}")
 fi
 
 # Keep only the first MAX_FILES geocodes when -n was given.
