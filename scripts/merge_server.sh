@@ -17,7 +17,7 @@
 #   - otherwise pagina{N}-{slug}/ itself is used (single shared file.pdf).
 #
 # Usage:
-#   ./merge_server.sh [-d base_dir] [-n num_files] [--geocodes-from-file file] [-p] [output_dir]
+#   ./merge_server.sh [-d base_dir] [-n num_files] [--geocodes-from-file file] [-j workers] [-p] [output_dir]
 #
 # Arguments:
 #   -d base_dir   Optional. Root folder holding the pagina{N}-* directories.
@@ -28,6 +28,10 @@
 #                 file, one per line (blank lines, '#' comments and a trailing
 #                 '.pdf' are accepted). Use it to reprocess only the
 #                 municipalities missing from a previous run. Applied before -n.
+#   -j workers    Optional (--jobs). Merge up to workers municipalities in
+#                 parallel. Default: 1 (sequential). Try -j "$(nproc)"; on
+#                 network/Drive-mounted folders the bottleneck is I/O, so
+#                 higher values stop helping.
 #   -p            Optional. Stamp sequential page numbers on the merged PDFs
 #                 (the pagina0 cover stays unnumbered).
 #   output_dir    Optional. Destination folder. Default: paginas_completas/
@@ -43,6 +47,8 @@
 #   ./merge_server.sh -d /data/fichas -p /tmp/saida
 # Exemplo remerge apenas dos faltantes:
 #   ./merge_server.sh -d /data/fichas -p /tmp/saida --geocodes-from-file missing.txt
+# Exemplo em paralelo (8 workers):
+#   ./merge_server.sh -d /data/fichas -p -j 8 /tmp/saida
 #
 # All options are forwarded to merge_pages_range.sh, which does the actual
 # merge (pdfunite) and writes execution_time_range.log.
@@ -64,7 +70,7 @@ MERGE_SCRIPT="${SCRIPT_DIR}/merge_pages_range.sh"
 
 # ---- Argument parsing -------------------------------------------------------
 
-USAGE="Usage: $0 [-d base_dir] [-n num_files] [--geocodes-from-file file] [-p] [output_dir]"
+USAGE="Usage: $0 [-d base_dir] [-n num_files] [--geocodes-from-file file] [-j workers] [-p] [output_dir]"
 
 BASE_DIR="."
 PASSTHROUGH=()
@@ -88,6 +94,14 @@ while (( $# > 0 )); do
       PASSTHROUGH+=(-n "$2")
       shift 2
       ;;
+    -j|--jobs)
+      if [[ -z "${2:-}" ]]; then
+        echo "Error: $1 requires a value." >&2
+        exit 1
+      fi
+      PASSTHROUGH+=(-j "$2")
+      shift 2
+      ;;
     -g|--geocodes-from-file)
       if [[ -z "${2:-}" ]]; then
         echo "Error: $1 requires a file path." >&2
@@ -105,7 +119,7 @@ while (( $# > 0 )); do
       shift
       ;;
     -h|--help)
-      sed -n '2,48p' "${BASH_SOURCE[0]}"
+      sed -n '2,54p' "${BASH_SOURCE[0]}"
       exit 0
       ;;
     --)
