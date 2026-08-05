@@ -34,6 +34,7 @@ class Settings(BaseSettings):
         PAGE_09 = "pagina9"
         PAGE_10 = "pagina10"
         PAGE_11 = "pagina11"
+        PAGE_12 = "pagina12"
         
     # Records each page's template actually renders (see each pagina's index.html).
     # download_report_page_pdf uses this to skip database queries whose data would
@@ -52,6 +53,7 @@ class Settings(BaseSettings):
         PageName.PAGE_09.value: [],
         PageName.PAGE_10.value: [],
         PageName.PAGE_11.value: [],
+        PageName.PAGE_12.value: [],
     }
 
     pages_dir: List[Dict[Path, dict]] = [
@@ -67,7 +69,7 @@ class Settings(BaseSettings):
         {template_dir / PageName.PAGE_09.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_10.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
         {template_dir / PageName.PAGE_11.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
-    
+        {template_dir / PageName.PAGE_12.value / "file.pdf": {"width": "842px", "height": "595px", "print_background": True, "landscape": False, "margin": {"top": "0px", "right": "0px", "bottom": "0px", "left": "0px"}}},
     ]
     
     pyproject_path: Path = BACKEND_DIR / "pyproject.toml"

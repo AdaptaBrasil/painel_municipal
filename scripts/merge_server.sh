@@ -59,7 +59,7 @@ set -uo pipefail
 
 # Pages to merge, in document order.
 FIRST_PAGE=0
-LAST_PAGE=11
+LAST_PAGE=12
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
