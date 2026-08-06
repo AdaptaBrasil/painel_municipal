@@ -1,0 +1,33 @@
+# backend/.dockerignore
+# The build context is ./backend (see docker-compose.yml), so the root
+# .dockerignore does not apply here.
+
+.git
+.gitignore
+.github/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+tests/
+.env
+
+# Generated map/chart assets (gitignored, several GB).
+# They reach the container through the ./backend:/app volume mount,
+# so shipping them inside the image only inflates the build.
+src/static/report/pagina0/imgs/mapas_capa/
+src/static/report/pagina4/imgs/mapas/
+src/static/report/pagina5/imgs/graficos_temperatura/
+src/static/report/pagina5/imgs/mapas_temperatura/
+
+# Archives and logs
+*.zip
+*.log

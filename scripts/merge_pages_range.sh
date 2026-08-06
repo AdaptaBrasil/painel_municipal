@@ -8,11 +8,19 @@
 # folders are given) and merges them into output_dir/{geocode}.pdf.
 #
 # Usage:
-#   ./merge_pages_range.sh [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]
+#   ./merge_pages_range.sh [-n num_files] [-g geocodes_file] [-j workers] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]
 #
 # Arguments:
 #   -n num_files  Optional. Process only the first num_files geocodes
 #                 (sorted order). Default: process all of them.
+#   -g file       Optional (--geocodes-from-file). Process only the geocodes
+#                 listed in file, one per line. Blank lines, '#' comments and a
+#                 trailing '.pdf' are accepted. Applied before -n.
+#   -j workers    Optional (--jobs). Number of municipalities merged in
+#                 parallel, each in its own background worker. Default: 1
+#                 (sequential). A good starting point is the number of CPU
+#                 cores (nproc); on network/Drive-mounted folders the limit is
+#                 usually I/O, so higher values stop helping.
 #   -p            Optional. After merging, stamp a sequential page number on
 #                 every page of each output PDF (bottom-right corner). The
 #                 number reflects the page position in the document (1, 2, 3
@@ -36,6 +44,8 @@
 #   ./merge_pages_range.sh 4 pagina2 pagina3 pagina4 pagina5
 #   ./merge_pages_range.sh -p 4 pagina2 pagina3 pagina4 pagina5
 #   ./merge_pages_range.sh -n 10 -p 4 pagina2 pagina3 pagina4 pagina5
+#   ./merge_pages_range.sh -g missing.txt -p 4 pagina2 pagina3 pagina4 pagina5
+#   ./merge_pages_range.sh -j 8 -p 4 pagina2 pagina3 pagina4 pagina5
 #   ./merge_pages_range.sh 2 pagina2 pagina3 my/custom/folder
 #
 # Each merged file is saved as {geocode}.pdf. A geocode is only merged when
@@ -53,12 +63,34 @@ COMMAND_LINE="$0 $*"
 
 MAX_FILES=0
 ADD_PAGE_NUMBERS=0
+GEOCODES_FILE=""
+JOBS=1
 while [[ "${1:-}" == -* ]]; do
   case "$1" in
+    -j|--jobs)
+      JOBS="${2:-}"
+      if ! [[ "$JOBS" =~ ^[1-9][0-9]*$ ]]; then
+        echo "Error: $1 requires a natural positive integer greater than zero. Got: '${JOBS}'" >&2
+        exit 1
+      fi
+      shift 2
+      ;;
     -n)
       MAX_FILES="${2:-}"
       if ! [[ "$MAX_FILES" =~ ^[1-9][0-9]*$ ]]; then
         echo "Error: -n requires a natural positive integer greater than zero. Got: '${MAX_FILES}'" >&2
+        exit 1
+      fi
+      shift 2
+      ;;
+    -g|--geocodes-from-file)
+      GEOCODES_FILE="${2:-}"
+      if [[ -z "$GEOCODES_FILE" ]]; then
+        echo "Error: $1 requires a file path." >&2
+        exit 1
+      fi
+      if [[ ! -f "$GEOCODES_FILE" ]]; then
+        echo "Error: geocode list '${GEOCODES_FILE}' does not exist or is not a file." >&2
         exit 1
       fi
       shift 2
@@ -69,14 +101,14 @@ while [[ "${1:-}" == -* ]]; do
       ;;
     *)
       echo "Error: unknown option '$1'." >&2
-      echo "Usage: $0 [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
+      echo "Usage: $0 [-n num_files] [-g geocodes_file] [-j workers] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
       exit 1
       ;;
   esac
 done
 
 if [[ $# -lt 2 ]]; then
-  echo "Usage: $0 [-n num_files] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
+  echo "Usage: $0 [-n num_files] [-g geocodes_file] [-j workers] [-p] <num_folders> <folder1> <folder2> ... <folderN> [output_dir]" >&2
   exit 1
 fi
 
@@ -125,6 +157,12 @@ Average time per merge: ${avg_elapsed} s"
 
 if ! command -v pdfunite >/dev/null 2>&1; then
   echo "Error: pdfunite not found. Install it with: sudo apt install poppler-utils" >&2
+  exit 1
+fi
+
+# The parallel mode throttles workers with 'wait -n', added in bash 4.3.
+if (( JOBS > 1 )) && (( BASH_VERSINFO[0] < 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] < 3) )); then
+  echo "Error: -j requires bash 4.3 or newer (running ${BASH_VERSION})." >&2
   exit 1
 fi
 
@@ -209,6 +247,45 @@ if (( ${#GEOCODES[@]} == 0 )); then
   exit 1
 fi
 
+# Keep only the requested geocodes when -g was given. The list is normalised
+# (CRLF, '#' comments, surrounding blanks and a trailing '.pdf' are stripped)
+# and intersected with the geocodes actually present in the input folders.
+if [[ -n "$GEOCODES_FILE" ]]; then
+  mapfile -t REQUESTED < <(
+    sed -e 's/\r$//' -e 's/#.*//' \
+        -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' \
+        -e 's/\.pdf$//' "$GEOCODES_FILE" | grep -v '^$' | sort -u
+  )
+
+  if (( ${#REQUESTED[@]} == 0 )); then
+    echo "Error: geocode list '${GEOCODES_FILE}' has no usable entry." >&2
+    exit 1
+  fi
+
+  declare -A REQUESTED_SET=()
+  for requested in "${REQUESTED[@]}"; do
+    REQUESTED_SET["$requested"]=1
+  done
+
+  selected=()
+  for geocode in "${GEOCODES[@]}"; do
+    [[ -n "${REQUESTED_SET[$geocode]:-}" ]] && selected+=("$geocode")
+  done
+
+  echo "Geocode list '${GEOCODES_FILE}': ${#REQUESTED[@]} requested, ${#selected[@]} found in the input folder(s)."
+
+  if (( ${#selected[@]} == 0 )); then
+    echo "Error: none of the geocodes in '${GEOCODES_FILE}' have PDFs in the given folder(s)." >&2
+    exit 1
+  fi
+
+  if (( ${#selected[@]} < ${#REQUESTED[@]} )); then
+    echo "Warning: $(( ${#REQUESTED[@]} - ${#selected[@]} )) requested geocode(s) have no PDF in the input folder(s) and were skipped." >&2
+  fi
+
+  GEOCODES=("${selected[@]}")
+fi
+
 # Keep only the first MAX_FILES geocodes when -n was given.
 if (( MAX_FILES > 0 && MAX_FILES < ${#GEOCODES[@]} )); then
   GEOCODES=("${GEOCODES[@]:0:MAX_FILES}")
@@ -219,15 +296,14 @@ success=0
 failed=0
 failed_geocodes=()
 
-echo "Merging ${total} municipality PDF(s) from ${NUM_FOLDERS} folder(s): ${FOLDERS[*]}"
-echo "Output directory: ${OUTPUT_DIR}"
-echo
-
-START_TIME="$(date +%s.%N)"
-
-for geocode in "${GEOCODES[@]}"; do
-  parts=()
-  missing_in=()
+# Merges every page of a single municipality into OUTPUT_DIR/{geocode}.pdf.
+# Prints its own progress line; returns 0 on success and 1 on failure. Each
+# call only touches its own output file, so calls are independent and safe to
+# run concurrently.
+merge_geocode() {
+  local geocode="$1"
+  local parts=() missing_in=() number_args=()
+  local folder part status
 
   for folder in "${FOLDERS[@]}"; do
     if [[ -n "${SHARED_PDF[$folder]:-}" ]]; then
@@ -244,9 +320,7 @@ for geocode in "${GEOCODES[@]}"; do
 
   if (( ${#missing_in[@]} > 0 )); then
     echo "[${geocode}] FAILED (missing in: ${missing_in[*]})." >&2
-    (( ++failed ))
-    failed_geocodes+=("$geocode")
-    continue
+    return 1
   fi
 
   if pdfunite "${parts[@]}" "${OUTPUT_DIR}/${geocode}.pdf"; then
@@ -258,21 +332,73 @@ for geocode in "${GEOCODES[@]}"; do
       if ! $PYTHON_BIN "$NUMBER_SCRIPT" "${number_args[@]}" "${OUTPUT_DIR}/${geocode}.pdf" >/dev/null; then
         echo "[${geocode}] FAILED (page numbering error)." >&2
         rm -f "${OUTPUT_DIR}/${geocode}.pdf" 2>/dev/null
-        (( ++failed ))
-        failed_geocodes+=("$geocode")
-        continue
+        return 1
       fi
     fi
     echo "[${geocode}] Saved: ${OUTPUT_DIR}/${geocode}.pdf"
-    (( ++success ))
+    return 0
   else
     status=$?
     echo "[${geocode}] FAILED (pdfunite exit code ${status})." >&2
     rm -f "${OUTPUT_DIR}/${geocode}.pdf" 2>/dev/null
-    (( ++failed ))
-    failed_geocodes+=("$geocode")
+    return 1
   fi
-done
+}
+
+echo "Merging ${total} municipality PDF(s) from ${NUM_FOLDERS} folder(s): ${FOLDERS[*]}"
+echo "Output directory: ${OUTPUT_DIR}"
+echo "Workers: ${JOBS}"
+echo
+
+START_TIME="$(date +%s.%N)"
+
+if (( JOBS == 1 )); then
+  for geocode in "${GEOCODES[@]}"; do
+    if merge_geocode "$geocode"; then
+      (( ++success ))
+    else
+      (( ++failed ))
+      failed_geocodes+=("$geocode")
+    fi
+  done
+else
+  # Parallel mode: each municipality is merged in a background subshell, at
+  # most JOBS at a time. A subshell cannot update the parent's counters, so
+  # every worker records its outcome as an empty file in STATUS_DIR and the
+  # totals are recomputed from those files once all workers are done.
+  STATUS_DIR="$(mktemp -d)"
+  trap 'rm -rf "$STATUS_DIR"' EXIT
+
+  running=0
+  for geocode in "${GEOCODES[@]}"; do
+    (
+      if merge_geocode "$geocode"; then
+        : > "${STATUS_DIR}/${geocode}.ok"
+      else
+        : > "${STATUS_DIR}/${geocode}.fail"
+      fi
+    ) &
+
+    (( ++running ))
+    # Free a slot as soon as any worker finishes (its exit status is ignored:
+    # outcomes are read back from STATUS_DIR).
+    if (( running >= JOBS )); then
+      wait -n
+      (( --running ))
+    fi
+  done
+  wait
+
+  success=$(find "$STATUS_DIR" -maxdepth 1 -type f -name '*.ok' | wc -l)
+  mapfile -t failed_geocodes < <(
+    find "$STATUS_DIR" -maxdepth 1 -type f -name '*.fail' -printf '%f\n' \
+      | sed 's/\.fail$//' | sort
+  )
+  failed=${#failed_geocodes[@]}
+
+  rm -rf "$STATUS_DIR"
+  trap - EXIT
+fi
 
 # ---- Summary ----------------------------------------------------------------
 
@@ -284,8 +410,8 @@ echo "Finished. ${success} succeeded, ${failed} failed (out of ${total})."
 
 if (( failed > 0 )); then
   echo "Failed geocode(s): ${failed_geocodes[*]}" >&2
-  log_result "ERROR: merge of ${NUM_FOLDERS} folder(s) (${FOLDERS[*]}) - ${success} succeeded, ${failed} failed (out of ${total}) - failed geocode(s): ${failed_geocodes[*]}" "$TOTAL_ELAPSED" "$AVG_ELAPSED"
+  log_result "ERROR: merge of ${NUM_FOLDERS} folder(s) (${FOLDERS[*]}) with ${JOBS} worker(s) - ${success} succeeded, ${failed} failed (out of ${total}) - failed geocode(s): ${failed_geocodes[*]}" "$TOTAL_ELAPSED" "$AVG_ELAPSED"
   exit 1
 fi
 
-log_result "SUCCESS: merge of ${NUM_FOLDERS} folder(s) (${FOLDERS[*]}) - ${success} succeeded, ${failed} failed (out of ${total})" "$TOTAL_ELAPSED" "$AVG_ELAPSED"
+log_result "SUCCESS: merge of ${NUM_FOLDERS} folder(s) (${FOLDERS[*]}) with ${JOBS} worker(s) - ${success} succeeded, ${failed} failed (out of ${total})" "$TOTAL_ELAPSED" "$AVG_ELAPSED"
