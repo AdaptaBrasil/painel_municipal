@@ -50,8 +50,8 @@ Full specifications live in [`.specs/`](.specs/README.md).
 ## 🚀 Quick Start (Docker - Recommended)
 
 ```bash
-git clone https://github.com/AdaptaBrasil/painel_municipal.git
-cd painel_municipal
+git clone https://github.com/AdaptaBrasil/FichasMunicipais.git
+cd FichasMunicipais
 cp .env.example .env   # then edit database credentials and ports
 make run
 ```
@@ -123,7 +123,7 @@ Base path `/api/v1` — full contract in [`.specs/api/01-rest-api.md`](.specs/ap
 ## 📂 Directory Structure
 
 ```text
-painel_municipal/
+FichasMunicipais/
 ├── .specs/                       # Technical specifications (architecture, API, business rules, use cases)
 ├── .claude/                      # Claude Code configuration (rules, commands, agents, skills)
 ├── CLAUDE.md                     # Project manual for AI-assisted development
@@ -217,8 +217,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 🔗 Useful Links
 
 - **Organization**: [AdaptaBrasil GitHub](https://github.com/AdaptaBrasil/)
-- **Repository**: [painel_municipal](https://github.com/AdaptaBrasil/painel_municipal)
-- **Issues & Bug Reports**: [Issue Tracker](https://github.com/AdaptaBrasil/painel_municipal/issues)
+- **Repository**: [FichasMunicipais](https://github.com/AdaptaBrasil/FichasMunicipais)
+- **Issues & Bug Reports**: [Issue Tracker](https://github.com/AdaptaBrasil/FichasMunicipais/issues)
 - **API Reference**: `http://localhost:3000/docs` (Swagger UI) when running
 
 ---

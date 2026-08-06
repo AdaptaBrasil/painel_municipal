@@ -70,7 +70,7 @@ except ImportError:  # pragma: no cover - environment guard
         "Install it (pip install 'pypdf>=4,<5') or run this script with a\n"
         "Python that has it, e.g.:\n"
         "  PYTHON_BIN=python3 ...            (set an interpreter with pypdf)\n"
-        "  docker exec painel_backend python /path/to/add_page_numbers.py ...\n"
+        "  docker exec fichas_backend python /path/to/add_page_numbers.py ...\n"
     )
     sys.exit(1)
 
