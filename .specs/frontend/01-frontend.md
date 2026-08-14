@@ -2,7 +2,7 @@
 
 ## Scope
 
-Minimal static application (no framework): `frontend/index.html`, `frontend/css/style.css`, `frontend/js/app.js`, served by **Nginx** (`painel_frontend` container).
+Minimal static application (no framework): `frontend/index.html`, `frontend/css/style.css`, `frontend/js/app.js`, served by **Nginx** (`fichas_frontend` container).
 
 ## Functionality
 

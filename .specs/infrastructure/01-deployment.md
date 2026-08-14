@@ -4,9 +4,9 @@
 
 | Service | Container | Image/Build | Port (host → container) |
 |---|---|---|---|
-| `db` | `painel_db` | `postgres:15-alpine` | `127.0.0.1:${DATABASE_SECRET_PORT}` → 5432 |
-| `backend` | `painel_backend` | `backend/Dockerfile` (arg `PDF_ENGINE`) | `${BACKEND_SECRET_PORT}` → 8000 |
-| `frontend` | `painel_frontend` | `frontend/Dockerfile` (Nginx) | `${FRONTEND_SECRET_PORT}` → 80 |
+| `db` | `fichas_db` | `postgres:15-alpine` | `127.0.0.1:${DATABASE_SECRET_PORT}` → 5432 |
+| `backend` | `fichas_backend` | `backend/Dockerfile` (arg `PDF_ENGINE`) | `${BACKEND_SECRET_PORT}` → 8000 |
+| `frontend` | `fichas_frontend` | `frontend/Dockerfile` (Nginx) | `${FRONTEND_SECRET_PORT}` → 80 |
 
 Rules:
 
